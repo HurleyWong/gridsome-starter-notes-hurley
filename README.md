@@ -1,23 +1,31 @@
-[![Subscribe via RSS](https://img.shields.io/badge/subscribe%20via-RSS-ffa500?logo=rss)](https://blog.spencerwoo.com/posts/index.xml)
-[![Feedly subscribers](https://img.shields.io/badge/dynamic/json?color=2bb24c&amp;label=subscribers&amp;query=%24.source.subscribers&amp;url=https%3A%2F%2Ffeedly.com%2Fv3%2Frecommendations%2Ffeeds%2Ffeed%252Fhttps%253A%252F%252Fblog.spencerwoo.com%252Fposts%252Findex.xml&amp;logo=feedly)](https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Fblog.spencerwoo.com%2Fposts%2Findex.xml)
+<p align="center">
+  <a href="https://tech-hurley.netlify.app/">
+    <img alt="Gatsby" src="https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/icon.png" width="100" />
+    <h2 align="center">Hurley's Blog</h2>
+  </a>
+</p>
 
-# Spencer's blog
+## Copyrights
 
-<h5>Live at: <a href="https://blog.spencerwoo.com">blog.spencerwoo.com</a></h5>
+This portfolio is developed and designed by [Spencer Wooo](https://github.com/spencerwooo/blog) and Gridsome's official template [gridsome-starter-blog](https://github.com/gridsome/gridsome-starter-blog). Thanks for their excellent portfolio templates.
 
-## Build & preview
+## Install Locally
+
+### 1. Install Gridsome CLI tool if you don't have
 
 ```bash
-yarn develop
+npm install --global @gridsome/cli
 ```
 
-## Deploy
+### 2. Install this blog starter
 
-```bash
-yarn build
-```
+1. `gridsome create your-own-name https://github.com/HurleyJames/gridsome-blog-starter-hurley`
+2. `cd your-own-name` to open folder
+3. `gridsome develop` to start local dev server at http://localhost:8080
+4. Prettier by `yarn prettier`
+5. Happy coding by yourself 🎉
 
-## Prettier
+### Prettier
 
 ```bash
 yarn prettier
@@ -25,8 +33,4 @@ yarn prettier
 
 ---
 
-👨‍💻 **Spencer's blog** ©Spencer Woo. Released under the MIT License.
-
-Authored and maintained by Spencer Woo.
-
-[@Portfolio](https://spencerwoo.com/) · [@Blog](https://blog.spencerwoo.com/) · [@GitHub](https://github.com/spencerwooo)
+**Hurley's blog** ©Hurley. Released under the MIT License.
