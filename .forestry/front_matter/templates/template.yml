@@ -1,0 +1,33 @@
+---
+label: Template
+hide_body: false
+fields:
+- type: text
+  name: title
+  label: title
+- type: datetime
+  name: date
+  label: date
+- type: boolean
+  name: published
+  label: published
+- type: text
+  name: slug
+  label: slug
+- type: list
+  name: tags
+  label: tags
+- type: file
+  name: cover_image
+  label: cover_image
+- type: boolean
+  name: canonical_url
+  label: canonical_url
+- type: text
+  name: description
+  label: description
+pages:
+- content/posts/debugging-netlify-static-site.md
+- content/posts/nesterov-accelerated-gradient-and-scale-invariance-for-adversarial-attacks.md
+- content/posts/serverless-ga-hit-count-api.md
+- content/posts/that-eureka-moment.md
