@@ -133,11 +133,11 @@ export default {
     // Initialize post comment by DisqusJS
     if (process.env.NODE_ENV === 'production') {
       const disqusjs = new DisqusJS({
-        shortname: 'https-tech-hurley-netlify-app',
+        shortname: 'hurleyhuang',
         siteName: "Hurley's Blog",
         identifier: this.$page.post.path,
         apikey:
-          'umcw1NpaKronQEErzF5wXARKsh8cBlOQV2idjvW2ttgpqj8g1waoCXT2R86blmuK',
+          '9WqpAITfoFb5woJPBMxOLBEDTYoQyPmiP3g6h4rtOGXz9YMfLnDuiE59uS7TO1vt',
         admin: 'hurleyhuang',
         adminLabel: 'Admin',
       })
