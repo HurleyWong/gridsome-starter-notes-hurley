@@ -133,7 +133,7 @@ export default {
     // Initialize post comment by DisqusJS
     if (process.env.NODE_ENV === 'production') {
       const disqusjs = new DisqusJS({
-        shortname: 'hurleyhuang',
+        shortname: 'hurleys-tech-blog',
         siteName: "Hurley's Blog",
         identifier: this.$page.post.path,
         apikey:
