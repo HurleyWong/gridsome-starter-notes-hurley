@@ -8,9 +8,9 @@ const marked = require('marked')
 const yaml = require('js-yaml')
 
 module.exports = {
-    siteUrl: 'https://blog.spencerwoo.com',
+    siteUrl: 'https://tech-hurley.netlify.app/',
     siteName: "Hurley's Blog",
-    siteDescription: '开发者 / 设计师 / 少数派 / 学生',
+    siteDescription: '',
 
     templates: {
         Post: '/:year/:month/:slug',
