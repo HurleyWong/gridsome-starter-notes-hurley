@@ -1,11 +1,12 @@
 ---
-title: Perceptron Algorithm and Backpropagation
+title: Perceptron Algorithm and Backpropagation with Iris Flower Data
 date: 2020-04-23T21:00:00+08:00
 published: true
 slug: iris-perceptron-backpropagation
 tags:
 - perceptron
 - backpropagation
+- iris
 cover_image: "./images/iris-perceptron-backpropagation.png"
 canonical_url: false
 description: 使用多层感知机和反向传播算法对Iris Flower Data Set进行分类。
