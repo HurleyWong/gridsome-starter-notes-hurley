@@ -6,10 +6,17 @@ slug: image-caption-generation
 tags:
 - RNN
 - LSTM
+- PyTorch
+- BLEU
 cover_image: "./images/image-caption-generation.png"
 canonical_url: false
 description: Do text pre-processing and text embeddings with an image to text model, compare the performance and usage of RNNs versus LSTMs as sequence generators.
 ---
+
+:::note ℹ️ Introduction
+
+This project is using RNN and LSTM to generate captions separately according to the images in the Flick8k data set, then compare the BLEU scores for captions.
+:::
 
 ### Dataset download
 
@@ -456,7 +463,7 @@ plot_loss(loss_lstm, loss_rnn)
 
 ### BLEU for evaluation
 
-One common way of comparing a generated text to a reference text  is using BLEU (Binlingual Evaluation Understudy). This article gives a good intuition to how the BLEU score is computed: [https://machinelearningmastery.com/calculate-bleu-score-for-text-python/](https://machinelearningmastery.com/calculate-bleu-score-for-text-python/). And here is a version translated by myself: [Calculating the BELU Score for Text Python](http://hurley.fun/2020/04/04/Calculating-the-BLEU-Score-for-Text-in-Python/#bilingual-evaluation-understudy-score).
+One common way of comparing a generated text to a reference text  is using BLEU (Binlingual Evaluation Understudy). This article gives a good intuition to how the BLEU score is computed: [https://machinelearningmastery.com/calculate-bleu-score-for-text-python/](https://machinelearningmastery.com/calculate-bleu-score-for-text-python/). And here is a version translated by myself: [Calculating the BELU Score for Text Python](https://tech-hurley.netlify.app/2020/04/calculating-belu-for-text/).
 
 The Python `nltk` package for natural language processing provides functions which computes this score given one or more reference texts and a hypothesis. You can import it on Google Colab like this:
 
@@ -732,4 +739,4 @@ The full code can be viewed at Github: [Image_Caption_Generation.ipynb](https://
 
 [1] M. Hodosh, P. Young and J. Hockenmaier (2013) "Framing Image Description as a Ranking Task: Data, Models and Evaluation Metrics", Journal of Artifical Intellegence Research, Volume 47, pages 853-899 (http://www.jair.org/papers/paper3994.html)
 
-[2] [A Gentle Introduction to Calculating the BELU Score for Text in Python](
+[2] [A Gentle Introduction to Calculating the BELU Score for Text in Python](https://machinelearningmastery.com/calculate-bleu-score-for-text-python/)
