@@ -11,9 +11,13 @@ canonical_url: false
 description: 未来一代云计算的宣言，于2018年7月发表在ACM Computing Surveys。
 ---
 
+:::note 🍗 Main Contribution
+Provide an overview of the existing solutions addressing problems related to the secure and private management of data and computations in the Cloud along with some observations on their limitations and challenges that still need to be addressed.
+:::
+
 ### Abstract
 
-> The Cloud computing paradigm has revolutionized the computer science horizon during the past decade. 
+> The Cloud computing paradigm has revolutionized the computer science horizon during the past decade and has enabled the emergence of computing as the [fifth utility](https://en.wikipedia.org/w/index.php?title=Special:Search&search=fifth utility).
 
 **它的作用**：
 
