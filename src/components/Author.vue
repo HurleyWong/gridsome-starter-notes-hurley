@@ -19,21 +19,21 @@
 
     <p class="author__links">
       <!-- <g-link to="/"><font-awesome :icon="['fas', 'home']"/></g-link> -->
-      <a href="//hurley.vercel.app" target="_blank"
+      <a href="//hurley.fun" target="_blank"
         ><font-awesome :icon="['fas', 'id-badge']"
       /></a>
-      <a
+      <!-- <a
         href="//blog.spencerwoo.com/posts/index.xml"
         target="_blank"
         style="color: #F5A623;">
         <font-awesome :icon="['fas', 'rss']"/>
-      </a>
+      </a> -->
       
       <!-- <g-link to="/friends" style="color: #06a878;"
         ><font-awesome :icon="['fas', 'comment-dots']"/>
       </g-link> -->
       
-      /
+      <!-- / -->
       
       <!-- <a
         href="//medium.com/spencerweekly"
