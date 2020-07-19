@@ -5,12 +5,16 @@ published: true
 slug: witness-presence-blockchain-consensus
 tags:
 - Blockchain
+- paper
 cover_image: "./images/witness-presence-blockchain-consensus.png"
 canonical_url: false
 description: Dr. Pournaras的一篇论文，通过智慧城市中，增强民主的区块链共识来见证存在的证明。
 ---
 
-因为参与了Dr. Evangelos Pournaras的毕设项目，选题也是跟区块链融入智慧城市有关的课题，所以有必要把他的有关区块链共识、智慧城市的论文都看一遍。这一篇论文的标题的中文意思是**见证存在的证明：智慧城市中增强民主的区块链共识**。
+:::note 📚 Background
+
+因为参与了Dr. Evangelos Pournaras的毕设项目，选题也是跟区块链融入智慧城市有关的课题，所以有必要阅读他这篇有关区块链共识、proof of witness presence的论文。实际上，毕业设计即是他论文中的一部分。这一篇论文的标题的中文意思是**见证存在的证明：智慧城市中增强民主的区块链共识**。
+:::
 
 ### Abstract
 

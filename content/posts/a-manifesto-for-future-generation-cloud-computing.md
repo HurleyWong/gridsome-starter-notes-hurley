@@ -17,7 +17,7 @@ Provide an overview of the existing solutions addressing problems related to the
 
 ### Abstract
 
-> The Cloud computing paradigm has revolutionized the computer science horizon during the past decade and has enabled the emergence of computing as the [fifth utility](https://en.wikipedia.org/w/index.php?title=Special:Search&search=fifth utility).
+> The Cloud computing paradigm has revolutionized the computer science horizon during the past decade and has enabled the emergence of computing as the fifth utility.
 
 **它的作用**：
 
@@ -33,6 +33,8 @@ Provide an overview of the existing solutions addressing problems related to the
 ### Section1: Introduction
 
 引言部分介绍了云计算带来的好处，引出了三种主要的服务模型——**SaaS**、**PaaS**、**IaaS**。
+
+> As can be observed from the emerging trends and proposed future research directions, there will be significant developments across all the service models (IaaS, PaaS and IaaS) of Cloud computing.
 
 #### Motivation and Goals of the Manifesto
 

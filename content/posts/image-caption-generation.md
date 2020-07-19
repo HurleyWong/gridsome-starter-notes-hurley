@@ -1,5 +1,5 @@
 ---
-title: Image Caption Generation
+title: Image Caption Generation with BLEU
 date: 2020-04-08T21:00:00+08:00
 published: true
 slug: image-caption-generation
@@ -463,7 +463,7 @@ plot_loss(loss_lstm, loss_rnn)
 
 ### BLEU for evaluation
 
-One common way of comparing a generated text to a reference text  is using BLEU (Binlingual Evaluation Understudy). This article gives a good intuition to how the BLEU score is computed: [https://machinelearningmastery.com/calculate-bleu-score-for-text-python/](https://machinelearningmastery.com/calculate-bleu-score-for-text-python/). And here is a version translated by myself: [Calculating the BELU Score for Text Python](https://tech-hurley.netlify.app/2020/04/calculating-belu-for-text/).
+One common way of comparing a generated text to a reference text  is using BLEU (Binlingual Evaluation Understudy). This article gives a good intuition to how the BLEU score is computed: [A Gentle Introduction to Calculating the BELU Score for Text in Python](https://machinelearningmastery.com/calculate-bleu-score-for-text-python). And here is a version translated by myself: [Calculating the BELU Score for Text Python](https://tech-hurley.netlify.app/2020/04/calculating-belu-for-text/).
 
 The Python `nltk` package for natural language processing provides functions which computes this score given one or more reference texts and a hypothesis. You can import it on Google Colab like this:
 
@@ -738,5 +738,3 @@ The full code can be viewed at Github: [Image_Caption_Generation.ipynb](https://
 ### Reference
 
 [1] M. Hodosh, P. Young and J. Hockenmaier (2013) "Framing Image Description as a Ranking Task: Data, Models and Evaluation Metrics", Journal of Artifical Intellegence Research, Volume 47, pages 853-899 (http://www.jair.org/papers/paper3994.html)
-
-[2] [A Gentle Introduction to Calculating the BELU Score for Text in Python](https://machinelearningmastery.com/calculate-bleu-score-for-text-python/)

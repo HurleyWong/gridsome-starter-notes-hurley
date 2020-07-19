@@ -11,17 +11,25 @@ canonical_url: false
 description: Build and use neural networks for the Iris classification task via Keras.
 ---
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/0.jpg)
+:::note 📕 Motto
 
-> “现今程序员的情况好多了，只要有一台便宜的二手电脑，一张Linux光盘和一个互联网帐户，你就已经拥有了把自己提升到任何级别的编程水平所需的全部工具。”
-> “在信息时代，进入编程领域的壁垒完全不存在了。即使有也是自我强加的。如果你想着手去开发一些全新的东西，你不需要数百万美元的资本。你只需要足够的比萨和健怡可乐存在你的冰箱里，有一台便宜的PC用于工作，以及让你坚持下来的奉献精神。**我们睡在地板上。我们跋山涉水**。”
-> －约翰·卡马克 
+“现今程序员的情况好多了，只要有一台便宜的二手电脑，一张Linux光盘和一个互联网帐户，你就已经拥有了把自己提升到任何级别的编程水平所需的全部工具。”
+“在信息时代，进入编程领域的壁垒完全不存在了。即使有也是自我强加的。如果你想着手去开发一些全新的东西，你不需要数百万美元的资本。你只需要足够的比萨和健怡可乐存在你的冰箱里，有一台便宜的PC用于工作，以及让你坚持下来的奉献精神。**我们睡在地板上。我们跋山涉水**。”
+
+—— 约翰·卡马克 
+:::
+
+![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/0.jpg)
 
 约翰·卡马克的最后一句话，通俗易懂。又不禁让我想起了那段台词：
 
 > 这是最好的时代，这是最坏的时代。我们一无所有，我们巍然矗立。
 
-We will build and use a neural network for the Iris classification task. We will use "keras" as a high-level library for managing neural networks.  
+:::note ℹ️ Introduction
+
+We will build and use a neural network for the Iris classification task. We will use Keras as a high-level library for managing neural networks.  
+
+:::
 
 <!-- more -->
 
@@ -97,8 +105,7 @@ def baseline_model():
     # compile用于配置训练模型，loss是字符串或目标函数名，optimizer是优化器名或优化器实例，metrics是在训练和测试期间的模型评估标准
     # binary_crossentropy是交叉熵损失函数，一般用于二分类
     # 因为这里要实现3中分类即多分类，所以使用categorical_crossentropy
-    model.compile(loss='categorical_crossentropy', optimizer=opt, metrics=[
-        'accuracy'])
+    model.compile(loss='categorical_crossentropy', optimizer=opt, metrics=['accuracy'])
     return model
 
 
@@ -173,17 +180,21 @@ plot_train_performance(trained_model)
 
 在按照提示修改代码后，会一直提示以下这个错误，即实际输出的数组形状为与预期数据的形状不同。
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/Snipaste_2019-11-01_21-20-09.png)
+:::warning
+
+`ValueError: Error when checking target: expected dense_2 to have shape (1,) but got array with shape (3,)`
+
+:::
 
 最终通过Stack Overflow上的[一篇帖子](https://stackoverflow.com/questions/51456613/valueerror-error-when-checking-target-expected-dense-3-to-have-shape-1-but)找到了问题所在。
 
-the following line is wrong
+the following line is wrong:
 
 ```python
 nb_Classes = 1
 ```
 
-change it to 
+change it to:
 
 ```python
 nb_Classes = 3

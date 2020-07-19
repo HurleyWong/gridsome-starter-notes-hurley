@@ -11,9 +11,10 @@ canonical_url: false
 description: Using OpenNebula and Java OpenNebula API (OCA) to find a suitable strategy for VM migration.
 ---
 
-### Introduction
+:::note ℹ️ Introduction
 
 This exercise aims to give you some practical experience of using a Cloud Virtual Infrastructure Manager (OpenNebula) and Java OpenNebula Cloud API (OCA). It will also give you the opportunity to research on the cloud computing domain of trade-offs between performance and energy efficiency.
+:::
 
 ### Part1: Java OpenNebula Cloud API (OCA)
 
@@ -296,10 +297,15 @@ if (choice.equals("yes")) {
 
 它们分别可以通过以下代码获取到：
 
-* `cpuUsage = (Double.parseDouble(host.xpath("/HOST/HOST_SHARE/CPU_USAGE"))/Double.parseDouble(host.xpath("/HOST/HOST_SHARE/MAX_CPU")))*100;`
-* `memUsage = (Double.parseDouble(host.xpath("/HOST/HOST_SHARE/MEM_USAGE"))/Double.parseDouble(host.xpath("/HOST/HOST_SHARE/MAX_MEM")))*100;`
-* `diskUsage = (Double.parseDouble(host.xpath("/HOST/HOST_SHARE/DISK_USAGE"))/Double.parseDouble(host.xpath("/HOST/HOST_SHARE/MAX_DISK")))*100;`
-* `int numVM = Integer.parseInt(host.xpath("/HOST/HOST_SHARE/RUNNING_VMS"));`
+```java
+cpuUsage = (Double.parseDouble(host.xpath("/HOST/HOST_SHARE/CPU_USAGE")) / Double.parseDouble(host.xpath("/HOST/HOST_SHARE/MAX_CPU"))) * 100;
+
+memUsage = (Double.parseDouble(host.xpath("/HOST/HOST_SHARE/MEM_USAGE")) / Double.parseDouble(host.xpath("/HOST/HOST_SHARE/MAX_MEM"))) * 100;
+
+diskUsage = (Double.parseDouble(host.xpath("/HOST/HOST_SHARE/DISK_USAGE")) / Double.parseDouble(host.xpath("/HOST/HOST_SHARE/MAX_DISK"))) * 100;
+
+int numVM = Integer.parseInt(host.xpath("/HOST/HOST_SHARE/RUNNING_VMS"));
+```
 
 在制定策略上，因为一个主机中存在的虚拟机数量对于性能的影响相对较小，因为有些虚拟机会占用更多的CPU和内存，有些则不会，所以并不是意味着虚拟机越多，其占用的性能也就越多。因此，在**权重**分配上，我让`numVM`占50%，别的则占100%，最终相加即是结果。结果越小的说明该主机的负荷越小，就应该把该虚拟机迁移过去。
 
