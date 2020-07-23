@@ -7,7 +7,7 @@
 
 ## Copyrights
 
-This portfolio is developed and designed by [Spencer Wooo](https://github.com/spencerwooo/blog) and Gridsome's official template [gridsome-starter-blog](https://github.com/gridsome/gridsome-starter-blog). Thanks for their excellent portfolio templates.
+This portfolio is developed and designed by [Spencer Wooo](https://github.com/spencerwooo/blog) and Gridsome's official template [gridsome-starter-blog](https://github.com/gridsome/gridsome-starter-blog). Thanks for their excellent blog templates.
 
 ## Install Locally
 
@@ -25,7 +25,7 @@ npm install --global @gridsome/cli
 4. Prettier by `yarn prettier`
 5. Happy coding by yourself 🎉
 
-### Prettier
+### 3. Prettier
 
 ```bash
 yarn prettier
