@@ -26,8 +26,8 @@
         <a href="//gridsome.org">Gridsome</a> .
         Deployed on
         <font-awesome :icon="['fas', 'caret-square-up']" /><a
-          href="//vercel.com/spencerwoo/blog"
-          >Vercel</a
+          href="//app.netlify.com/sites/tech-hurley/"
+          >Netlify</a
         >.
       </div>
       <div class="footer__links"></div>

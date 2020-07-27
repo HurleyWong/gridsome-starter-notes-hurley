@@ -9,7 +9,7 @@ const yaml = require('js-yaml')
 
 module.exports = {
     siteUrl: 'https://tech-hurley.netlify.app/',
-    siteName: "Hurley's Blog",
+    siteName: "Hurley's Tech Site",
     siteDescription: '',
 
     templates: {
