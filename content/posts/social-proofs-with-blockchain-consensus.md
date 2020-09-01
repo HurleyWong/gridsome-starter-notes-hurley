@@ -13,7 +13,11 @@ canonical_url: false
 description: Proof of Witness Presence - Social Proofs, to develop blockchain smart contracts that prove social claims (situation awareness) on the smart phone.
 ---
 
+:::note ℹ️ Introduction
+
 在Dr. Evangelos Pournaras的毕设项目中，我主要负责第二部分的内容：Proof of Witness Presence - Social Proofs, and main job is to develop blockchain smart contracts that prove social claims (situation awareness) on the smart phone. The smart contracts can use a combination of CAPTCHA, QR codes, puzzles tests, social proofs and other. A demonstrator needs to be delivered and later an integration to Smart Agora.
+
+:::
 
 <!-- more -->
 
@@ -35,7 +39,7 @@ social还可以被理解为社会，所以是社会证明？社会是一个十�
 
 > Other means to verify witness presence include the following: Contextual QR codes, challenge questions, puzzles and CAPTCHA-like tests, whose solutions re-quire information mined at the point of interests. In addition, collaborative social challenges between citizens are means to introduce social proofs based on social psychol-ogy as well as community trust for protection against social engineering attacks. Moreover, communities can also institutionalize their own digital witnesses based on privacy-preserving forensic techniques introduced in the context of blockchain.
 
-Entity!
+**Entity**!
 
 是的，尽管用证人来证明一个公民到达兴趣点的方式很难实现也很难确定其真实性，但如果公民能用一些实体来证明，就再好不过了。
 
@@ -59,12 +63,12 @@ Entity!
 
 总结起来就是如下6个场景：
 
-* Transport Ticket (train station, airport, etc.)
-* Receipt (shopping mall, store, restaurant, etc.)
-* Id Card (school, accommodation, workplace, government, etc.)
-* Ticket (park, museum, etc.)
-* Prescription (hospital, pharmacy, etc.)
-* Certificate (company, insurance agency, etc.)
+* **Transport Ticket** (train station, airport, etc.)
+* **Receipt** (shopping mall, store, restaurant, etc.)
+* **Id Card** (school, accommodation, workplace, government, etc.)
+* **Ticket** (park, museum, etc.)
+* **Prescription** (hospital, pharmacy, etc.)
+* **Certificate** (company, insurance agency, etc.)
 
 场景是归纳完毕了。但实际上，总结出来后自己也产生了一些疑惑。
 
@@ -82,7 +86,9 @@ Entity!
 
 所以，这也是没有办法的办法了。当无法直接证明公民到达过某个兴趣点附近时，那么只能找该兴趣点附近的地点，通过间接证明的方式来完成。具体如下：
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/Secondary%20Proof.png)
+<center>
+    <img width="60%" src="https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/Secondary%20Proof.png">
+</center>
 
 As figure shown above, setting a park as a point of interest can be given by an oracle. In addition, there are some locations such as a bus stop, a shop, a cinema, a hospital and a train station (from near to far) within the scope of this oracle.
 
@@ -136,7 +142,7 @@ mapping (bytes32 => uint256) hashToTransportTicketId;
 uint256 transportTicketIndex = 0;
 ```
 
-### 以太坊
+### Ethereum
 
 在开发完智能合约后，需要将智能合约部署到以太坊网络中，这样移动终端才能随时随地地通过访问以太坊网络来调用智能合约，从而对数据信息进行比对。这里需要使用到的工具主要用Infura、MetaMask等。
 
@@ -150,7 +156,7 @@ uint256 transportTicketIndex = 0;
 truffle migrate --reset --network ropsten # --reset optional
 ```
 
-部署完毕之后，控制台中会出现智能合约的具体信息，包括被部署到的具体地址中，例如https://ropsten.etherscan.io/tx/address。
+部署完毕之后，控制台中会出现智能合约的具体信息，包括被部署到的具体地址中，例如https://ropsten.etherscan.io/tx/address.
 
 ### web3j
 
@@ -180,7 +186,7 @@ Social Proof Point是指当公民无法直接证明他们在某个特定时间�
 
 因此，需要在公民（用户）进入手机端的Google Map界面后，根据提示询问公民是将该地点添加为Point of Interest还是Social Proof Point。选择完毕之后，就进入证明的过程，即下一部分（二维码）。
 
-#### 二维码
+#### QR Code
 
 该项目设想的场景是处于一个智慧城市中。在该智慧城市中，所有的购买、交易等都是处于一个庞大的大数据网络中。因此，无论公民在线上还是线下进行了某笔交易时，所有的交易细节都会上传到网络中，同时会返回给公民一个包含所有交易细节的二维码作为凭证，那么公民就可以凭借二维码作为Entity去证明他们在某个特定的时间内到达过某个兴趣点。
 
@@ -191,6 +197,8 @@ Social Proof Point是指当公民无法直接证明他们在某个特定时间�
 :::note 💡 Tips
 
 > 这里注意并不仅仅是QR Code的二维码格式，Barcode的条形码格式同样支持。
+
+:::
 
 ## Dissertation
 
