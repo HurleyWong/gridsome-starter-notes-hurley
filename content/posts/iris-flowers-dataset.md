@@ -16,7 +16,7 @@ description: Build and use neural networks for the Iris classification task via 
 “现今程序员的情况好多了，只要有一台便宜的二手电脑，一张Linux光盘和一个互联网帐户，你就已经拥有了把自己提升到任何级别的编程水平所需的全部工具。”
 “在信息时代，进入编程领域的壁垒完全不存在了。即使有也是自我强加的。如果你想着手去开发一些全新的东西，你不需要数百万美元的资本。你只需要足够的比萨和健怡可乐存在你的冰箱里，有一台便宜的PC用于工作，以及让你坚持下来的奉献精神。**我们睡在地板上。我们跋山涉水**。”
 
-—— 约翰·卡马克 
+—— 约翰·卡马克
 :::
 
 ![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/0.jpg)
@@ -27,7 +27,7 @@ description: Build and use neural networks for the Iris classification task via 
 
 :::note ℹ️ Introduction
 
-We will build and use a neural network for the Iris classification task. We will use Keras as a high-level library for managing neural networks.  
+We will build and use a neural network for the Iris classification task. We will use Keras as a high-level library for managing neural networks.
 
 :::
 
@@ -66,7 +66,7 @@ y = iris.target
 #     if y[i] == 0:
 #         y[i] = 1
 #     else:
-#         y[i] = 0  
+#         y[i] = 0
 y_one_hot = to_categorical(y)
 print(X.shape)
 print(y_one_hot.shape)
@@ -74,7 +74,7 @@ print(y_one_hot.shape)
 
 # -- Split the dataset for training, validation, and test -- ##
 
-# x是被划分的样本特征集 
+# x是被划分的样本特征集
 # y_one_hot是被划分的样本标签
 # 如果是浮点数，就在0~1之间，表示样本所占比例；如果是整数，就是样本的数量
 train_and_valid_X, test_X, train_and_valid_y, test_y = train_test_split(X, y_one_hot, test_size=0.1)
