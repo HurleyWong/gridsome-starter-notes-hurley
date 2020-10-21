@@ -32,7 +32,7 @@ This paper shows:
 
 ### Introduction
 
-Introduction部分主要是介绍了智慧城市以及面临的挑战，然后应对这些挑战而引入的数字化民主范式，以及解决办法的三个支柱：
+Introduction部分主要是介绍了智慧城市以及面临的挑战，然后应对这些挑战而引入的数字化民主范式，以及解决办法的三个关键部分：
 
 1. participatory crowd-sensing
 2. proof of witness presence
@@ -48,11 +48,11 @@ Introduction部分主要是介绍了智慧城市以及面临的挑战，然后�
 
 * A new three-tier paradigm of augmented democracy in Smart Cities.
 * The Smart Agora crowd-sensing platform for modeling complex crowd-sensing scenarios of augmented decision-making.
-* The concept of 'proof of witness presence' for blockchain consensus.
+* The concept of '**proof of witness presence**' for blockchain consensus.
 * A review of  related initiatives on digital democracy as well as blockchain-based approaches for proof of location.
 * The concept of encapsulation in collective measurements that filters out geolocated data and determines the point of interest from which data are aggregated.
 * A first working prototype of the augmented democracy paradigm meeting minimal requirements set for a proof of concept.
-* A use case scenario on cycling safety demonstrating the capactiy of citizen's witness presence to match accurate information from official public authorities. 
+* A **use case scenario** on cycling safety demonstrating the capactiy of citizen's witness presence to match accurate information from official public authorities.
 
 然后介绍了这篇论文各个部分主要是陈述了什么。
 
@@ -92,13 +92,13 @@ Therefore, this paper claims that in principle any digital democracy paradigm ca
 
 The **positioning** of this paper is that **decentralized information systems**, particularly **distributed ledgers**, **consensus mechanisms** and **crypto-economic models**.
 
-智慧城市的增强型民主模式由三个支柱组成：
+智慧城市的增强型民主模式由三个关键部分组成：
 
 1. Crowd-sensing is performed within participatory witness presence scenarios of augmented reality in public spaces.
 2. Proof of witness presence is performed by securely verifying the location and the situation awareness of citizens without revealing privacy-sensitive information.
 3. Real-time and privacy-preserving collective measurements are performed, subject of witness presence.
 
-本篇论文的其余的部分就是分别阐述了拟议的增强民主框架中的三个支柱。
+本篇论文的其余的部分就是分别阐述了拟议的增强民主框架中的关键部分。
 
 ### IV. PARTICIPATORY CROWD-SENSING
 
