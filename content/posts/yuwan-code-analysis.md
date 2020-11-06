@@ -65,7 +65,7 @@ description: 对某社交安卓应用的源码进行解读与分析，理清架�
 
 该类主要是使用Retrofit与OkHttp搭配封装网络类，创建实例。
 
-```Java
+```java
 protected Retrofit retrofit;
 protected OkHttpClient okHttpClient;
 
@@ -159,7 +159,7 @@ Present类中主要就有处理逻辑的相关方法，例如`netRequest()`请�
 
 #### CommThreadPool类
 
-```Java
+```java
 public class CommThreadPool {
     private static volatile Executor sPool;
     private static volatile Handler sHandler;
