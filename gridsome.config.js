@@ -63,7 +63,7 @@ module.exports = {
     ],
 
     transformers: {
-        //Add markdown support to all file-system sources
+        // Add markdown support to all file-system sources
         remark: {
             useBuiltIns: true,
             externalLinksTarget: '_blank',
@@ -73,7 +73,7 @@ module.exports = {
             autolinkClassName: 'icon icon-link',
             plugins: [
                 '@gridsome/remark-prismjs',
-                // ['gridsome-plugin-remark-shiki', { theme: 'light_plus', skipInline: true }],
+                // ['gridsome-plugin-remark-shiki', { theme: 'Material-Theme-Palenight', skipInline: true }],
                 'gridsome-plugin-remark-container',
                 'gridsome-remark-katex',
                 'gridsome-plugin-remark-youtube',

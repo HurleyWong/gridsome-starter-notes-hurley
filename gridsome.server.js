@@ -8,28 +8,28 @@
 const count = require('word-count')
 
 module.exports = function(api) {
-  api.loadSource(({ addCollection }) => {
-    // Use the Data store API here: https://gridsome.org/docs/data-store-api/
-  })
+    api.loadSource(({ addCollection }) => {
+        // Use the Data store API here: https://gridsome.org/docs/data-store-api/
+    })
 
-  api.onCreateNode(options => {
-    if (options.internal.typeName === 'Post') {
-      const postContent = options.content.replace(/<\/?[^>]+(>|$)/g, '')
-      const wpm = 230
+    api.onCreateNode(options => {
+        if (options.internal.typeName === 'Post') {
+            const postContent = options.content.replace(/<\/?[^>]+(>|$)/g, '')
+            const wpm = 230
 
-      const cjkWordCount = count(postContent)
-      const cjkReadTime = Math.ceil(cjkWordCount / wpm)
-      return {
-        ...options,
-        cjkWordCount,
-        cjkReadTime,
-      }
-    }
-  })
+            const cjkWordCount = count(postContent)
+            const cjkReadTime = Math.ceil(cjkWordCount / wpm)
+            return {
+                ...options,
+                cjkWordCount,
+                cjkReadTime,
+            }
+        }
+    })
 
-  api.createPages(async ({ graphql, createPage }) => {
-    // Use the Pages API here: https://gridsome.org/docs/pages-api
-    const { data } = await graphql(`
+    api.createPages(async({ graphql, createPage }) => {
+        // Use the Pages API here: https://gridsome.org/docs/pages-api
+        const { data } = await graphql(`
       {
         allPost {
           edges {
@@ -48,16 +48,16 @@ module.exports = function(api) {
       }
     `)
 
-    data.allPost.edges.forEach(element => {
-      createPage({
-        path: element.node.path,
-        component: './src/templates/BlogPost.vue',
-        context: {
-          previousElement: element.previous ? element.previous.id : '##empty##',
-          nextElement: element.next ? element.next.id : '##empty##',
-          id: element.node.id,
-        },
-      })
+        data.allPost.edges.forEach(element => {
+            createPage({
+                path: element.node.path,
+                component: './src/templates/BlogPost.vue',
+                context: {
+                    previousElement: element.previous ? element.previous.id : '##empty##',
+                    nextElement: element.next ? element.next.id : '##empty##',
+                    id: element.node.id,
+                },
+            })
+        })
     })
-  })
 }
