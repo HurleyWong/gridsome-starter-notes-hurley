@@ -1,6 +1,6 @@
 ---
 title: 基于WanAndroid开放API编写的安卓应用CodeHub源码分析
-date: 2020-11-06T21:00:00+08:00
+date: 2020-11-07T21:00:00+08:00
 published: true
 slug: codehub-code-analysis
 tags:
@@ -38,19 +38,19 @@ CodeHub是一款使用WanAndroid开放API开发的技术阅读类的开源项目
 
 ```java
 /**
-     * 登录
-     * http://www.wanandroid.com/user/login
-     *
-     * @param username 用户名
-     * @param password 密码
-     *                 🔥用@FormUrlEncoded注解来标明这是一个表单请求
-     *                 🔥用@Field注解来标识所对应的某个类型数据的键，从而组成一组键值对进行传递
-     * @return
-     */
-    @POST(WanAndroidUrlContainer.LOGIN)
-    @FormUrlEncoded
-    Observable<BaseBean<UserBean>> login(@Field("username") String username,
-                                         @Field("password") String password);
+ * 登录
+ * http://www.wanandroid.com/user/login
+ *
+ * @param username 用户名
+ * @param password 密码
+ *                 🔥用@FormUrlEncoded注解来标明这是一个表单请求
+ *                 🔥用@Field注解来标识所对应的某个类型数据的键，从而组成一组键值对进行传递
+ * @return
+ */
+@POST(WanAndroidUrlContainer.LOGIN)
+@FormUrlEncoded
+Observable<BaseBean<UserBean>> login(@Field("username") String username,
+                                        @Field("password") String password);
 ```
 
 ## app包
@@ -164,7 +164,7 @@ public interface BaseContract {
 
 ### BasePresent类
 
-主要是实现了绑定View`attachView()`和解绑View`detachView`的方法。
+主要是实现了绑定View`attachView()`和解绑View`detachView()`的方法。
 
 ## helper包
 
@@ -184,7 +184,7 @@ public interface BaseContract {
 
 ### RxSchedulers类
 
-这是通用的Rx线程转换类，主要是使用RxJava的方法来切换线程。通过`subscribeOn`操作符来判断`Observable自身在哪个线程上运行`，如果需要进行耗时的操作，那么就开启一个子线程来运行。
+这是通用的Rx线程转换类，主要是使用RxJava的方法来切换线程。通过`subscribeOn`操作符来判断`Observabe`自身在哪个线程上运行，如果需要进行耗时的操作，那么就开启一个子线程来运行。
 
 ```java
 static final ObservableTransformer schedulersTransformer = upstream -> {
