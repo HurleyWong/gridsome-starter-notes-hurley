@@ -18,13 +18,23 @@ description: How to make a blog cover with suitable size and awesome image?
 
 <!-- more -->
 
-## freepik
+## 矢量插画网站
+
+在这里，我就收集了很多功能强大、种类繁多的可免费可商用的插画素材网站，支持主流的图片格式，有些图片可以免费运用到自己的项目中，而且没有版权限制。
+
+### freepik
 
 众所周知，并不是每一位博主都是设计师，这些插画图也并不都是自己完成的，绝大部分还是来源于网络。freepik给了大家一个便捷的使用矢量图的通道。
 
 [freepik](https://www.freepik.com/)这个网站是寻找「矢量图」的一个便捷的网站。即使不是会员，也能够下载很多精美的矢量图片（非会员每天会有下载数量限制），当前，前提是使用英文去进行搜索，但我相信这对大家并不是一个难题。
 
 [![freepik.png](https://s1.ax1x.com/2020/10/09/0DIB6S.png)](https://imgchr.com/i/0DIB6S)
+
+### Delesign
+
+![Delesign网站](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/delesign.png)
+
+如上图所示，打开网站就可以看到默认显示的插画素材，输入Email就可以订阅此网站并且免费下载图片，插画的种类也是应有尽有。
 
 ## Canva
 
@@ -42,15 +52,33 @@ Canva是一个设计网站，可以设计例如Post、Presentation、Video、Log
 
 那么，如何将图片背景透明化，并与文字融入一体呢？
 
-除了有些下载下来的图片是自带透明化的，除此之外，从freepik下载下来的图片解压缩后，一般仅有3种格式：`.jpg`、`.eps`、`.ai`，且都是非透明化的。那么，这时候就需要网络上的一些透明化图片工具了。
+除了有些下载下来的格式为`.svg`的图片是自带透明化的，除此之外，例如从freepik下载下来的图片解压缩后，一般仅有3种格式：`.jpg`、`.eps`、`.ai`，且都是非透明化的。那么，这时候就需要网络上的一些透明化图片工具了。下面这三个工具：**RemoveBg**、**Slazzer**、**UnScreen**可以帮助到我们。
 
-这里建议，可以自行谷歌搜索「图片去底色」或者「图片 背景透明化」等关键词，因为有太多的网站支持这个功能，我并没有详细地做过对比，所以不好推荐。
+我本人之前使用的是[bgremover](http://www.aigei.com/bgremover)这个网站，即使这个网站的样式十分的简陋，但实测功能还算不错，基本能满足个人的需求。
 
-我本人使用的是[bgremover](http://www.aigei.com/bgremover)这个网站，即使这个网站的样式十分的简陋，但实测功能还算不错，基本能满足个人的需求。
+### RemoveBg
+
+![RemoveBg网站截图](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/removebg.png)
+
+RemoveBg是一个基于AI技术，以训练好的模型快速分辨招聘前景和背景，将主题分离后成为透明背景的网站。
+
+### Slazzer
+
+![Slazzer网站截图](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/slazzer.png)
+
+Slazzer是基于AI技术实现的在短短几秒内自动删除图像背景，只需要5秒就可以实现一键抠图去除背景。
+
+## Unscreen
+
+![Unscreen网站截图](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/unscreen.png)
+
+Unscreen同样是一个在线免费的**扣视频神器**，支持`mp4`、`gif`、`mov`等格式，可以上传视频或者GIF，自动去除背景，保留视频主体。
+
+---
 
 当去除图片背景色之后，本篇Post的封面图也就应运而生啦！
 
-![](./images/blog-cover.png)
+![本篇文章的Blog封面图](./images/blog-cover.png)
 
 尽管仍然不是特别满意的效果（毕竟我不懂设计），但基本能发现本是两张不同背景的图片最终融合在了一个图片里，且底色一样，就姑且认为成功了吧～
 
