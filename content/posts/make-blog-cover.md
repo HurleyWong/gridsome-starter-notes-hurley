@@ -74,6 +74,15 @@ Slazzer是基于AI技术实现的在短短几秒内自动删除图像背景，�
 
 Unscreen同样是一个在线免费的**扣视频神器**，支持`mp4`、`gif`、`mov`等格式，可以上传视频或者GIF，自动去除背景，保留视频主体。
 
+### vtracer
+
+vtracer，可快速将jpg、png等格式的图片快速转换为svg矢量图，并支持过滤斑点、色彩精度等多种参数配置。
+
+![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/006fiYtfgy1gk6rj45eebj32bm1ew1kx.jpg)
+
+![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/006fiYtfgy1gk6rj4hjjkj31cg1gwqjr.jpg)
+
+
 ---
 
 当去除图片背景色之后，本篇Post的封面图也就应运而生啦！
