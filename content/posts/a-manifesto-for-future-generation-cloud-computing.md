@@ -36,6 +36,54 @@ Provide an overview of the existing solutions addressing problems related to the
 
 > As can be observed from the emerging trends and proposed future research directions, there will be significant developments across all the service models (IaaS, PaaS and IaaS) of Cloud computing.
 
+![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/iaas-paas-saas-comparison-1024x759.jpg)
+
+#### SaaS
+
+软件即服务，代表了云计算市场中企业最常用的选项。SaaS利用互联网向其用户提供应用程序，这些应用程序由第三方供应商管理。大多数的SaaS应用程序可以直接通过Web服务器来运行，无需安装客户端。
+
+SaaS的优势是大大减少了安装、管理和升级软件等繁琐任务所花费的时间和金钱。它的特点是：
+
+* 在统一的地方管理
+* 托管在远程服务器上
+* 可通过互联网访问
+* 用户不负责硬件或者软件的更新
+
+#### PaaS
+
+平台即服务，是通过平台为软件提供云组件，这些组件则主要运用于应用程序。PaaS为开发人员提供了一个框架，使得他们可以基于此创建自定义的应用程序。所有服务器、存储和网络都可以由企业或者第三方供应商进行管理，而开发人员可以负责应用程序的管理。
+
+PaaS有很多优势：
+
+* 使应用程序的开发和部署变得简单并且经济高效
+* 可扩展
+* 高度可用
+* 使得开发人员能够创建自定义的应用程序，而无须维护软件
+* 大大地减少了代码量
+* 自动化业务策略
+* 允许轻松迁移到混合模型
+
+关于PaaS，其实就可以接近定义为云服务。它的特征包括了：
+
+* 它基于虚拟化技术，意味着随着业务的变化，资源可以轻松扩展或者缩小
+* 提供各种服务以协助开发、测试和部署应用程序
+* 许多用户可以访问相同的开发应用程序
+
+#### IaaS
+
+基础架构即服务，由高度可扩展和自动化的计算资源组成。IaaS是完全自助服务，用于访问和监控计算、网络、存储和其它服务等内容。它允许企业按照需求购买资源，而不必购买全部的硬件。
+
+IaaS通过虚拟化技术为组织提供云计算基础架构，包括服务器、网络、操作系统和存储等，但是无须对其进行物理上的维护和管理。
+
+所以，IaaS的优势是：
+
+* 是最灵活的云计算模型
+* 轻松实现存储、网络、服务器和处理能力的自动部署
+* 可以根据消耗量购买硬件
+* 使用户能够完全控制其基础架构
+* 可以根据需要购买资源
+* 高度可扩展
+
 #### Motivation and Goals of the Manifesto
 
 在云计算的发展过程中，云计算的应用越来越广泛，不仅出现的先进的新的模型，而且基于云计算范式的技术（例如**虚拟化**）也在不断进步。另一个明显的趋势就是云计算在地理上作用得越来越多。根据IDC的报告指出，云计算的开销一直在增长。
