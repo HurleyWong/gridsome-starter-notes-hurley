@@ -60,7 +60,7 @@ Canva是一个设计网站，可以设计例如Post、Presentation、Video、Log
 
 ![RemoveBg网站截图](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/removebg.png)
 
-RemoveBg是一个基于AI技术，以训练好的模型快速分辨招聘前景和背景，将主题分离后成为透明背景的网站。
+RemoveBg是一个基于AI技术，以训练好的模型快速分辨招聘前景和背景，将主题分离后成为透明背景的网站（除免费次数之外，需要收费）。
 
 ### Slazzer
 
