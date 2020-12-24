@@ -148,7 +148,11 @@ uint256 transportTicketIndex = 0;
 
 首先在Infura中创建项目，选择使用Ropsten网络。完成后复制下EndPoints的地址，并将其配置在truffle-config.js文件中。
 
+![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/Infura_stats.png)
+
 同时在Chrome浏览器中安装MetaMask插件，注册账号并获得3个测试以太币。在设置隐私界面中找到12个助记词并将其配置在truffle-config.js文件中。
+
+![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/MetaMask_Detail.png)
 
 最后，在控制台中，使用`truffle compile`命令编译智能合约，并使用以下命令将智能合约部署迁移到以太坊区块链测试网络中：
 
@@ -156,11 +160,18 @@ uint256 transportTicketIndex = 0;
 truffle migrate --reset --network ropsten # --reset optional
 ```
 
+![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/truffle.png)
+
+
 部署完毕之后，控制台中会出现智能合约的具体信息，包括被部署到的具体地址中，例如https://ropsten.etherscan.io/tx/address.
+
+![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/contract%20address.JPG)
 
 ### web3j
 
 需要将移动终端与智能合约连接起来的方式有很多，最传统的就是使用网络请求的方式。然后对于Java语言，有一个web3j的库能够很方便地帮助我们实现。
+
+![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/web3j.png)
 
 通过在本地安装好web3j，然后使用web3j的以下命令，可以将智能合约的代码逻辑自动以Java的方式实现。
 
@@ -186,6 +197,8 @@ Social Proof Point是指当公民无法直接证明他们在某个特定时间�
 
 因此，需要在公民（用户）进入手机端的Google Map界面后，根据提示询问公民是将该地点添加为Point of Interest还是Social Proof Point。选择完毕之后，就进入证明的过程，即下一部分（二维码）。
 
+![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/Google%20Map.JPG)
+
 #### QR Code
 
 该项目设想的场景是处于一个智慧城市中。在该智慧城市中，所有的购买、交易等都是处于一个庞大的大数据网络中。因此，无论公民在线上还是线下进行了某笔交易时，所有的交易细节都会上传到网络中，同时会返回给公民一个包含所有交易细节的二维码作为凭证，那么公民就可以凭借二维码作为Entity去证明他们在某个特定的时间内到达过某个兴趣点。
@@ -193,6 +206,8 @@ Social Proof Point是指当公民无法直接证明他们在某个特定时间�
 因为这仍然是一个设想，所以目前只有测试数据而并没有真实的数据，因为目前完全智能的城市仍然是不存在的。所以需要提供储存一个测试数据的二维码作为测试使用。
 
 具体解析二维码的方式可以使用Google提供的开源库ZXing。通过扫描二维码，解析二维码的数据并与区块链中已保存的数据进行比对，判断是否真实并且有效。如果有效，则说明成功证明公民到达过Point of Interest或者Social Proof Point。
+
+![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/Social%20Proof%20by%20Barcode.JPG)
 
 :::note 💡 Tips
 
