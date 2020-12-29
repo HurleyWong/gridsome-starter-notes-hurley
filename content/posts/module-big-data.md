@@ -276,4 +276,14 @@ On a Storm cluster there are two types of nodes: a master node and workder nodes
 
 ![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/zookeeper.png)
 
+ZooKeeper是一个针对大型应用提供高可用的数据管理、应用程序协调服务的分布式服务框架，基于对Paxos算法的实现，使该框架保证了分布式环境中数据的强一致性，提供的功能包括：配合维护、统一命名服务、状态同步服务、集群管理等。
+
 ## 12. Kafka
+
+> Apache Kafka is an open-source distributed event streaming platform for high-performance data pipelines, streaming analytics, data integration, and mission-critical applications.
+
+Apache Kafka是一个快速、可扩展的、高吞吐、可容错的分布式发布-订阅消息系统，具有高吞吐量、内置分区、支持数据副本和容错的特性，适合在大规模消息处理的场景中使用。
+
+在发布-订阅消息系统中，消息被持久化到一个topic中，消费者可以订阅一个或者多个topic，消费者可以消费该topic中所有的数据，同一条数据也可以被多个消费者消费。消费的生产者被定义为发布者，消费者被定义为订阅者。
+
+![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/kafka.png)
