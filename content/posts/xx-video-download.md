@@ -1,6 +1,6 @@
 ---
 title: XXX视频下载折腾总结
-date: 2020-01-05T21:00:00+08:00
+date: 2021-01-05T21:00:00+08:00
 published: true
 slug: xx-video-download
 tags:
@@ -12,7 +12,7 @@ canonical_url: false
 description: 不怕XX耍流氓，就怕XX有文化
 ---
 
-:::note ℹ️ Introduction
+:::note ℹ️ Why Do This
 
 随着马上就要成为一名社畜，也意味着马上就会拥有一个自己的小家（租的）。因此，折腾狂的我不禁就想把一切能想到的配置都给配上。虽然暂时没钱配群辉NAS，但是作为一名司机，如何离线的、流畅地观看视频也是一项必备技能！在国外时，我最常访问的视频网站，除了Netflix就是XX了。然而，国内网络环境的限制，导致即使你有了梯子，速度也不尽如人意，总不能动手的同时，眼睛却得盯着进度条转圈圈吧？赶紧动手下载下来！
 
@@ -58,11 +58,25 @@ Mac端的迅雷应用应该相比Windows端的广告要少很多，Windows端的
 
 :::
 
-### IDM
+### FDM
+
+Free Download Manager，简称FDM。它是一款免费的软件，界面十分简洁易用，更没有任何广告捆绑。它支持直接的链接下载、磁力链接、BT文件。除此之外，它还可以下载YouTube视频，并选择视频的分辨率。
+
+![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/20210106103822.png)
+
+然而，它并不支持下载XX网站中的视频。
 
 ### Motrix
 
+Motrix是一款开源免费的全功能下载器，支持HTTP、FTP、BT、Magnet（磁力链接）以及百度网络和迅雷下载协议。这个开源部门调用了Aria2，并且是支持全平台的（Windows、macOS、Linux）。
+
+![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/20210106104313.png)
+
 ### Downie
+
+Downie是一款macOS下的在线视频下载工具，它的功能非常强大，支持1000+视频网站，常见的如YouTube、优酷、腾讯视频、B站、爱奇艺等都支持，还支持字幕下载、格式转换等等。除此之外，据我查询得知，它还支持m3u8(HLS)下载，这个对我们很有帮助，后文会提到m3u8的相关信息。
+
+亲测这款软件可以下载市面上主流的视频网站，例如Youtube等，但是对于XX网站的视频，它仍然是束手无策。这究竟是为什么呢？这不禁让我们想到了是否是**视频格式**的问题。
 
 ## 视频格式
 
@@ -70,7 +84,11 @@ Mac端的迅雷应用应该相比Windows端的广告要少很多，Windows端的
 
 ### HLS
 
-HLS(Http Live Streaming)，是由Apple公司定义的用于实时流传输的协议。HLS基于HTTP协议实现，传输内容包括两部分：
+HLS(Http Live Streaming)，是由Apple公司定义的用于实时流传输的协议。它的工作原理是把整个流分隔成一个个小的基于HTTP的文件来下载，每次只下载一部分。当媒体流正在播放的时候，客户端可以选择从许多不同的备用源中以不同的速率下载同样的资源，允许流媒体会话适应不同的数据速率。HLS只请求基本的HTTP报文，可以穿过任何允许HTTP数据通过的防火墙或者是代理服务器。
+
+简而言之，HLS是新一代流媒体传输协议，其基本实现原理是将一个大的媒体文件进行分片，将该分片文件资源路径记录在m3u8文件中（即playlist），除此之外会附带一些额外的描述用于提供给客户端。客户端根据该m3u8文件即可获取到对应的媒体资源。
+
+所以，其传输内容包括两部分：
 
 * m3u8描述文件
 * ts媒体文件
@@ -118,9 +136,9 @@ ts文件分为三层：
 
 ## 下载
 
-我们决定从Github中找找相关的办法。通过搜索「XX」关键字，我们发现第一个出现的开源项目就有解决办法。它提供了一个Chrome插件，通过安装插件的方式来下载m3u8文件。
+我们决定从Github中找找相关的办法。通过搜索「XX」关键字，我们发现第一个出现的开源项目就有解决办法。它提供了一个叫做「chrome-xx-helper」的Chrome插件，可以通过安装插件的方式来下载m3u8文件。
 
-### Chrome Helper
+### 插件
 
 这个插件的开源项目有两个主要分支，目前最新的分支是`3.x.x`，另外一个分支就是`master`。最开始，我认为应该使用`master`分支更为稳定，结果按照README.md的使用说明操作后，发现的确是将视频的m3u8文件下载下来了。然而不幸的是，它的格式并不与我们上面介绍的m3u8的格式一样。它的格式如下：
 
@@ -128,11 +146,167 @@ ts文件分为三层：
 
 可以发现，这应该是Base64解密后的文本。通过复制后进行Base64加密，我们发现仍然是一大串的文本，仍然不是传统的m3u8格式。
 
+通过查询发现，现在大部分网站都会对ts片段加密，所以还需要一个ts密钥，然后才能进行下载。
+
 那么，如果换成`3.x.x`分支再使用插件，下载下来的是一个`video-name.sh`的脚本文件，通过执行脚本文件，我们就可以调用aria2来多线程地下载视频。
+
+#### Install & Usage
+
+1. use `git` to clone the repository into your local computer
+2. install Chrome extension
+   1. navigate to `chrome://extensions` in Chrome browser
+   2. check `Developer mode` on, then click `Load Unpacked Extension`
+   3. choose the folder `extension` under this project / this repo
+3. install download and merge scripts
+   1. for Most Linux / Unix Systems / WSL: `./install.sh /usr/local/bin/` or `./install.sh ~/bin`
+   2. for Windows User(Git Bash / Cygwin): `./install.sh`
+4. Download video follow command on the online player page by script `XXDownloader`
+5. Combine video files by script `XX`
+
+亲测，当使用分支`master`（稳定版本）时，需要按照顺序执行以上的步骤，但是问题仍然如之前说过的那样，下载下来的m3u8文件被加密，可能是XX网站最近已经做出了更改。当切换到`3.x.x`分支时，亲测第3步似乎无法成功执行，但是也无需执行，便可以下载下来一个可执行脚本`xxx-video-name.sh`，在命令行中运行该脚本，调动aria2多线程下载即可。
 
 这个脚本内容写得非常好，不仅解析了m3u8文件，生成ts文件的列表，调用aria2下载，最终还使用ffmpeg来将下载下来的ts文件合并成mp4文件。
 
 ![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/20210105232929.png)
+
+### 分析
+
+通过查看这个插件的执行脚本，我们可以简单分析一下其中的代码和原理。
+
+既然是脚本，就经常会有让用户输入选项进行操作的时候，下面的代码就是这个作用。
+
+```shell
+function isYes() { [[ "$1" == y* ]] || [[ "$1" == Y* ]]; }
+function isNo() { [[ "$1" == n* ]] || [[ "$1" == N* ]]; }
+function beginAsk() { echo -e "\n${BLUE_BOLD}>> ${BLUE}${1}"; }
+function endAsk() { printf "${RESET}"; }
+
+# usage confirm "question" "pre-chosen value"
+function confirm() {
+	if isYes "$2"; then return 0; fi
+	if isNo "$2"; then return 1; fi
+
+	local yn;
+	beginAsk "$1";
+	while read -p "Confirm (y/n) > " yn; do
+		if isYes "$yn"; then endAsk; return 0; fi
+		if isNo "$yn"; then endAsk; return 1; fi
+	done
+}
+```
+
+对于网路请求的方法，首先我们要规范化URL链接。
+
+```shell
+function normalizeURL() {
+	echo "$1" | gawk '{
+		gsub(/^[ \t\r\n]+/, "", $0);
+		gsub(/[ \t\r\n]+$/, "", $0);
+		if(length($0) > 0 && index($0, ".") > 0) {
+			if(match($0, /^[a-zA-Z]+:\/\//)) printf("%s", $0);
+			else printf("http://%s", $0);
+		}
+	}';
+}
+```
+
+然后，我们肯定要设置动态代理，不然长时间请求下载某个视频网站，肯定会被检测到并封禁。
+
+```shell
+function setupProxy() {
+	[[ -z "$CFG_PROXY" ]] && return;
+
+	local proxyURL="$(normalizeURL "$CFG_PROXY")";
+	[[ -z "$proxyURL" ]] && fatal "invalid proxy url: ${CFG_PROXY}";
+
+	export http_proxy="$proxyURL";
+	export https_proxy="$proxyURL";
+	logInfo 'export `http_proxy` and `https_proxy` as '"$proxyURL";
+}
+```
+
+对于下载的方法，这个插件提供了普通的wget的下载方式：
+
+```shell
+function _download() {
+	# declare `referer` as a local variable, because it should be reset after
+	#    "with_referer" to "no_referer"
+	local referer ref1 ref2 out1 out2 exitCode;
+	if [[ "$DOWNLOADER_TYPE" == aria2c ]]; then
+		cleanDownloadLogOnce;
+		[[ "$1" == with_referer ]] && referer="--referer=$HTTP_REFERER";
+
+		# default console log level: notice
+		beginDim;
+		generateDownloadListForAria2FromStdin "$3" <<< "$2" |
+			"$ARIA2C_BIN" "$referer" --user-agent="$CFG_USER_AGENT" \
+				--console-log-level=warn --log-level=debug \
+				--max-download-result="${CFG_MAX_CONCURRENT_DL}" \
+				--keep-unfinished-download-result=true \
+				--enable-color=false \
+				--summary-interval=120 \
+				--show-files --continue=true --input-file=- "$ARIA2C_OPT_J" \
+				--log="$DOWNLOAD_LOG" --log-level=info;
+		exitCode=$?;
+		endDim;
+		return $exitCode;
+	fi
+	# wget
+	if [[ "$1" == with_referer ]]; then ref1="--header"; ref2="Referer: $HTTP_REFERER"; fi
+	if [[ -n "$3" ]]; then  out1="-O"; out2="$3"; fi
+
+	beginDim;
+	"$WGET_BIN" "$ref1" "$ref2" --header "User-Agent: $CFG_USER_AGENT" "$out1" "$out2" $2;
+	exitCode=$?;
+	endDim;
+	return $exitCode;
+}
+```
+
+以及速度更快、支持多线程同步、断点续传的aria2的下载方式：
+
+```shell
+# Usage: betterDownloader <description> <urlArray> [targetFile]
+# Example:
+#   betterDownloader "download m3u8 file" "https://xxx.xx/xx.m3u8" "xxx.m3u8"
+#   betterDownloader "download 1..100" "https://xxx.xx/xx-1.ts https://xxx.xx/xx-2.ts ..."
+function betterDownloader() {
+	local download_ok=true;
+	if [[ $ENABLE_REFERER == true ]]; then
+		_download with_referer "$2" "$3" || download_ok=false;
+
+		if [[ $download_ok != true ]]; then
+			isLastDownload410 && downloadFailed "$1" "Reason: link is expired!";
+			if [[ -f "$DOWNLOAD_LOG" ]]; then
+				# If download log was generated, but there no traces of 403. then just exit script
+				isLastDownload403 || downloadFailed "$1";
+			fi
+			logWarn "download with 'Referer' header failed! (trying to download again without 'Referer' header)";
+			ENABLE_REFERER=false;
+			_download no_referer "$2" "$3" || downloadFailed "$1";
+		fi
+	else
+		_download no_referer "$2" "$3" || downloadFailed "$1";
+	fi
+}
+```
+
+通过以上的下载方式，将所有的ts片段文件下载到一个临时的隐藏文件夹中保存，然后通过`ffmpeg`的命令去将这些ts文件合并成一个mp4文件，并且询问是否删除储存ts片段的临时文件夹，并且是否删除该脚本等。
+
+所以，该脚本总的流程图大致如下所示：
+
+```mermaid
+graph TD;
+    显示Banner图-->设置动态代理
+    设置动态代理-->加载相关依赖
+    加载相关依赖-->显示该视频的相关信息,包括视频名称和ts片段数量等;
+    显示该视频的相关信息,包括视频名称和ts片段数量等-->解析文件内容;
+    解析文件内容-->生成下载队列;
+    生成下载队列-->调用aria2下载,储存进临时文件夹
+    调用aria2下载,储存进临时文件夹-->调用ffmpeg合成mp4视频文件
+```
+
+
 
 ### Bug
 
@@ -148,11 +322,13 @@ ts文件分为三层：
 
 在这里，我放上一些在这个下载过程中临时编写出的「救急」脚本：
 
-**复制文件并且批量改名**：
+**复制文件并且批量改名**的脚本`copyAndRename.sh`：
 
-```Shell
+```shell
+#!/bin/bash
+
 # 要复制的文件名
-cpFileName=seg-900-v1-a1.ts
+cp FileName=seg-900-v1-a1.ts
 # 复制的起始文件名的index
 firstNum=901
 # 复制的最终文件名的index
@@ -168,6 +344,47 @@ while [ $firstNum -le $lastNum ]; do
 	# 循环加1，改名
 	let i+=1
 done
+```
+
+因为在`3.x.x`分支，除了可以下载下来一个可执行脚本之外，还可以下载下来一个`.txt`文件，其中包含了所有的下载ts片段的链接，所以，其实拿到这个文本，我们就可以提取出所有的ts片段链接进行下载。下面这个脚本`getUrlsFromFile.py`就是从`.txt`文件中提取所有的链接：
+
+```python
+#!/usr/bin/env python3
+
+import urllib
+import os
+import sys
+
+def _get_file_urls(file_url_txt):
+	filepath = []
+	file = open(file_url_txt, 'r')
+	for line in file.readlines():
+        # strip()用于移除字符串头尾指定的字符（只能开头或者结尾），默认删除空格或者换行符
+		line = line.strip()
+		filepath.append(line)
+
+	file.close()
+	return filepath
+
+if __name__ == '__main__':
+	file_url_txt = '/Users/hurley/Downloads/list-avgle-I0VmbmTHymz.txt'
+	save_dir = 'save_dir/'
+	filepath = _get_file_urls(file_url_txt)
+	print(filepath)
+
+```
+
+在Github上查找项目解决办法的时候，我同样发现一个项目，描述的是通过复制m3u8的url链接进去，就可以自动解析进行下载，但是我并没有办法获得XX网站的m3u8的url，只有之前通过插件下载得到的m3u8文件，那么，如何将m3u8文件地址转化为url呢？
+
+我们可以通过该维基百科的说明来进行更改：[File_URI_scheme](https://en.wikipedia.org/wiki/File_URI_scheme)，但我们也可以通过编写脚本`path2url.js`来完成：
+
+```js
+//前提需要安装好node.js
+//前提需要通过以下命令安装好file-url
+//npm install --save file-url
+var fileUrl = require('file-url');
+
+console.log(fileUrl('/path/of/your/m3u8/in/your/computer.m3u8'))
 ```
 
 ---
