@@ -28,11 +28,11 @@ description: How to make a blog cover with suitable size and awesome image?
 
 [freepik](https://www.freepik.com/)这个网站是寻找「矢量图」的一个便捷的网站。即使不是会员，也能够下载很多精美的矢量图片（非会员每天会有下载数量限制），当前，前提是使用英文去进行搜索，但我相信这对大家并不是一个难题。
 
-[![freepik.png](https://s1.ax1x.com/2020/10/09/0DIB6S.png)](https://imgchr.com/i/0DIB6S)
+![](https://i.loli.net/2021/01/07/1dyGQvucCfE5hWk.png)
 
 ### Delesign
 
-![Delesign网站](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/delesign.png)
+![](https://i.loli.net/2021/01/07/Q2IfceG851jlug9.png)
 
 如上图所示，打开网站就可以看到默认显示的插画素材，输入Email就可以订阅此网站并且免费下载图片，插画的种类也是应有尽有。
 
@@ -58,19 +58,19 @@ Canva是一个设计网站，可以设计例如Post、Presentation、Video、Log
 
 ### RemoveBg
 
-![RemoveBg网站截图](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/removebg.png)
+![](https://i.loli.net/2021/01/07/CsE6Rz4cyJG73mX.png)
 
 RemoveBg是一个基于AI技术，以训练好的模型快速分辨招聘前景和背景，将主题分离后成为透明背景的网站（除免费次数之外，需要收费）。
 
 ### Slazzer
 
-![Slazzer网站截图](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/slazzer.png)
+![](https://i.loli.net/2021/01/07/9WxUMOGd3E5BSLT.png)
 
 Slazzer是基于AI技术实现的在短短几秒内自动删除图像背景，只需要5秒就可以实现一键抠图去除背景。
 
 ## Unscreen
 
-![Unscreen网站截图](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/unscreen.png)
+![](https://i.loli.net/2021/01/07/R8baXvCu2JyT5jf.png)
 
 Unscreen同样是一个在线免费的**扣视频神器**，支持`mp4`、`gif`、`mov`等格式，可以上传视频或者GIF，自动去除背景，保留视频主体。
 
@@ -78,9 +78,9 @@ Unscreen同样是一个在线免费的**扣视频神器**，支持`mp4`、`gif`�
 
 vtracer，可快速将jpg、png等格式的图片快速转换为svg矢量图，并支持过滤斑点、色彩精度等多种参数配置。
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/006fiYtfgy1gk6rj45eebj32bm1ew1kx.jpg)
+![](https://i.loli.net/2021/01/07/XgCukyfDqREWpBA.png)
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/006fiYtfgy1gk6rj4hjjkj31cg1gwqjr.jpg)
+![](https://i.loli.net/2021/01/07/ybzYXnKZeNxBI23.png)
 
 
 ---
