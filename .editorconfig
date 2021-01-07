@@ -1,0 +1,35 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# 表示是最顶层的配置文件
+# 发现设为true时，才会停止查找.editorconfig文件
+root = true
+
+# 对于所有的文件的配置
+# 设置始终在文件末尾插入一个新行
+[*]
+end_of_line = lf
+insert_final_newline = true
+
+# 对于所有的JS和PY文件的配置
+# 设置文件的字符集为utf-8格式
+[*.{java,js,py}]
+charset = utf-8
+
+# 控制PY文件缩进类型和缩进大小
+[*.py]
+indent_style = space
+indent_size = 4
+
+# 设置Makefile文件使用tab缩进
+[Makefile]
+indent_style = tab
+
+# 设置在lib目录下所有JS的缩进样式
+[lib/**.js]
+indent_style = space
+indent_size = 2
+
+# 设置确切文件package.json和.travis/.yml的缩进类型
+[{package.json,.travis.yml}]
+indent_style = space
+indent_size = 2
