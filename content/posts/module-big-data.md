@@ -20,7 +20,7 @@ description: 对「大数据」这门课程学习过的知识进行总结。
 
 Doug Laney first defined 3 characteristics of Big Data (Three V's) in 2001.
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/IMG_0275.jpg)
+![](https://i.loli.net/2021/01/07/2SrqzOnRk98ZvV7.png)
 
 * **Volume** means that many different factors can contribute to the increase in data volume.
 * **Data velocity** is both the speed at which data streams in, and the timely manner in which data must be dealt with to maintain time based relevance.
@@ -30,7 +30,7 @@ Doug Laney first defined 3 characteristics of Big Data (Three V's) in 2001.
 
 Although the three V's have traditionally been used to define Big Data, increasingly extra Vs have been proposed. However, these typically describe characteristics rather than being deinitional.
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/IMG_0276.jpg)
+![](https://i.loli.net/2021/01/07/Ri5qSWl4Hd2AzYh.png)
 
 Therefore, The Five V's:
 
@@ -95,7 +95,7 @@ Job Tracker会始终尝试为Map任务选择具有本地数据的节点，NameNo
 
 $$Input \rightarrow Splitting \rightarrow Mapping \rightarrow Shuffling \rightarrow Reducing \rightarrow Final Result$$
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/mapreduce.png)
+![](https://i.loli.net/2021/01/07/9janJXCMkwuEoWc.png)
 
 ## 3. Hadoop
 
@@ -105,7 +105,7 @@ Hadoop的第一个核心版本就是HDFS和MapReduce，HDFS是Hadoop的第一层
 
 HDFS was inspired by the GFS(Google File System), published in 2003. It has a **master/slave** architecture.
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/hdfs.jpg)
+![](https://i.loli.net/2021/01/07/DvUSRMtZpfme9gQ.png)
 
 An HDFS cluster consists of **a single NameNode**, additionally, there are a number of **DataNodes**.
 
@@ -115,7 +115,7 @@ An HDFS cluster consists of **a single NameNode**, additionally, there are a num
 
 Hadoop 2 moves from a restricted batch-oriented model to **more interactive and specialized processing models**. The biggest changes in Hadoop 2 are **HDFS Federation**, **YARN**, a highly available **NameNode**, and the concept of **Containers**.
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/IMG_0277.jpg)
+![](https://i.loli.net/2021/01/07/YMBH4lzwkZeGyUc.png)
 
 The fundamental idea of YARN is to **Split Hadoop resource management and job scheduling into separate processes (daemons)**.   将Hadoop资源管理和作业调度划分为单独的流程。
 
@@ -145,7 +145,7 @@ NoSQL databases can be categorised into four types:
 * Document databases
 * Graph databases
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/nosql.png)
+![](https://i.loli.net/2021/01/07/2wlzIPZqc3msDOi.png)
 
 #### Key-value Stores
 
@@ -194,9 +194,9 @@ Problem spaces with connected data:
 
 数据仓库，是为企业所有级别的决策制定过程提供所有类型数据支持的战略集合。
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/d1.png)
+![](https://i.loli.net/2021/01/07/1hHbDMrynxTCg3w.png)
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/d2.png)
+![](https://i.loli.net/2021/01/07/LIfwcQFpOh6G2n4.png)
 
 * Subject-oriented: 着重于将资料按照其意义归类至相同的主题区
 * Integrated: 资料来自于企业的各个系统，在数据仓库中是集成并且一致的
@@ -225,7 +225,7 @@ BigTable is a simple concept - map two arbitrary string values (a row key and a 
 (row:string, column:string, time:int64) -> string
 ```
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/bigtable.jpg)
+![](https://i.loli.net/2021/01/07/EJYP7AzyiRkmq3I.png)
 
 ## 8. Neo4j
 
@@ -241,7 +241,7 @@ MapReduce on Hadoop has a number of limitations, like difficulty and performance
 
 Apache Spark is a general-purpose data processing engine. The features of Spark: In memory computation engine, almost 10x faster than Hadoop MapReduce using computations with Disk IO, almost 100x faster than Hadoop MapReduce with in-memory computations. 总而言之就是，Spark比Hadoop MapReduce快很多。
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/spark.png)
+![](https://i.loli.net/2021/01/07/XCYlJNtzMe9rDTB.png)
 
 ### Spark Streaming
 
@@ -256,15 +256,14 @@ To address these issues, the Spark Streaming component uses a new architecture c
 
 Each of these batches of data is an RDD. This allows the streaming data to be processed using any Spark code or library.
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/IMG_0278.jpg)
-
+![](https://i.loli.net/2021/01/07/sUWL4bY71ZwKlmG.png)
 ## 10. Storm
 
 > Apache Storm is a distributed real-time computation system for processing large volumes of high-velocity data.
 
 It is extremely fast, and can process over one million records per second per node.
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/storm.png)
+![](https://i.loli.net/2021/01/07/24Ayoh7g5HSTIP1.png)
 
 The core abstraction in Storm is the **Stream**. A stream is data in the form of an unbounded sequence of tuples.
 
@@ -274,7 +273,7 @@ On a Storm cluster there are two types of nodes: a master node and workder nodes
 
 > Zookeeper was originally a Hadoop sub-project but is now a full Apache project. ZooKeeper is a centralized service for distributed configuration, synchronization services, and naming registry for distributed systems. It allows distributed processes to coordinate with each other through a shared hierarchical namespace of data registers.
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/zookeeper.png)
+![](https://i.loli.net/2021/01/07/dAxBoaNCmUv72tF.png)
 
 ZooKeeper是一个针对大型应用提供高可用的数据管理、应用程序协调服务的分布式服务框架，基于对Paxos算法的实现，使该框架保证了分布式环境中数据的强一致性，提供的功能包括：配合维护、统一命名服务、状态同步服务、集群管理等。
 
@@ -286,4 +285,4 @@ Apache Kafka是一个快速、可扩展的、高吞吐、可容错的分布式�
 
 在发布-订阅消息系统中，消息被持久化到一个topic中，消费者可以订阅一个或者多个topic，消费者可以消费该topic中所有的数据，同一条数据也可以被多个消费者消费。消费的生产者被定义为发布者，消费者被定义为订阅者。
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/kafka.png)
+![](https://i.loli.net/2021/01/07/gCb5TRKqV7tEHZY.png)
