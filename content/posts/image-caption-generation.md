@@ -33,9 +33,9 @@ drive.mount('/content/drive', force_remount=True)
 
 ```python
 # remember replace the path of your own
-root = "drive/My Drive/Flickr8k/" 
-caption_dir = root + "captions/"                       
-image_dir = root + "images/"                           
+root = "drive/My Drive/Flickr8k/"
+caption_dir = root + "captions/"
+image_dir = root + "images/"
 
 token_file = "Flickr8k.token.txt"
 ```
@@ -90,13 +90,13 @@ def read_lines(filepath):
     file = open(filepath, 'r')
     lines = []
 
-    while True: 
+    while True:
         # Get next line from file until there's no more
-        line = file.readline() 
-        if not line: 
+        line = file.readline()
+        if not line:
             break
         lines.append(line.strip())
-    file.close() 
+    file.close()
     return lines
 
 lines = read_lines(caption_dir + token_file)
@@ -147,7 +147,7 @@ vocab.add_word('<unk>')
 
 for i in word:
     vocab.add_word(i)
-    
+
 len(vocab)
 ```
 
@@ -165,10 +165,10 @@ from torch.utils.data import Dataset, DataLoader
 
 class Flickr8k(Dataset):
     """ Flickr8k custom dataset compatible with torch.utils.data.DataLoader. """
-    
+
     def __init__(self, df, vocab, transform=None):
         """ Set the path for images, captions and vocabulary wrapper.
-        
+
         Args:
             df: df containing image paths and captions.
             vocab: vocabulary wrapper.
@@ -219,7 +219,7 @@ Because our ground truth captions are sequential data of varying lengths. The de
 def caption_collate_fn(data):
     """ Creates mini-batch tensors from the list of tuples (image, caption).
     Args:
-        data: list of tuple (image, caption). 
+        data: list of tuple (image, caption).
             - image: torch tensor of shape (3, 256, 256).
             - caption: torch tensor of shape (?); variable length.
     Returns:
@@ -239,7 +239,7 @@ def caption_collate_fn(data):
     targets = torch.zeros(len(captions), max(lengths)).long()
     for i, cap in enumerate(captions):
         end = lengths[i]
-        targets[i, :end] = cap[:end]        
+        targets[i, :end] = cap[:end]
     return images, targets, lengths
 ```
 
@@ -285,18 +285,18 @@ class EncoderCNN(nn.Module):
         layers = list(resnet.children())[:-1]      # Keep all layers except the last one
         # Unpack the layers and create a new Sequential
         self.resnet = nn.Sequential(*layers)
-        
+
         # We want a specific output size, which is the size of our embedding, so
         # we feed our extracted features from the last fc layer (dimensions 1 x 1000)
         # into a Linear layer to resize
         self.linear = nn.Linear(resnet.fc.in_features, embed_size)
-        
+
         # Batch normalisation helps to speed up training
         self.bn = nn.BatchNorm1d(embed_size, momentum=0.01)
-        
+
     def forward(self, images):
         """Extract feature vectors from input images."""
-        
+
         # Complete graph here. Remember to put the ResNet layer in a with torch.no_grad() block
         with torch.no_grad():
             features = self.resnet(images)
@@ -314,7 +314,7 @@ class DecoderRNN(nn.Module):
     def __init__(self, embed_size, hidden_size, vocab_size, num_layers, max_seq_length=20):
         """Set the hyper-parameters and build the layers."""
         super(DecoderRNN, self).__init__()
-        
+
         # What is an embedding layer?
         self.embed = nn.Embedding(vocab_size, embed_size)
 
@@ -322,10 +322,10 @@ class DecoderRNN(nn.Module):
         # self.lstm / self.rnn
         self.lstm = nn.LSTM(input_size=embed_size, hidden_size=hidden_size, num_layers=num_layers, batch_first=True)
         # self.lstm = nn.RNN(input_size=embed_size, hidden_size=hidden_size, num_layers=num_layers, batch_first=True)
-        
+
         self.linear = nn.Linear(hidden_size, vocab_size)
         self.max_seq_length = max_seq_length
-        
+
     def forward(self, features, captions, lengths):
         """Decode image feature vectors and generates captions."""
         embeddings = self.embed(captions)
@@ -336,7 +336,7 @@ class DecoderRNN(nn.Module):
         hiddens, _ = self.lstm(packed) # Replace with self.rnn when using RNN
         outputs = self.linear(hiddens[0])
         return outputs
-    
+
     def sample(self, features, states=None):
         """Generate captions for given image features using greedy search."""
         sampled_ids = []
@@ -386,7 +386,7 @@ Train for 5 epochs. Generate a sample caption from two test set images before an
 
 #### Train using an LSTM for decoder
 
-Replace the RNN layer with an LSTM: https://pytorch.org/docs/stable/nn.html#lstm. The other operation is same as RNN. 
+Replace the RNN layer with an LSTM: https://pytorch.org/docs/stable/nn.html#lstm. The other operation is same as RNN.
 
 ```python
 encoder.train()
@@ -416,7 +416,7 @@ for epoch in range(num_epochs):
         outputs = decoder(features, captions, lengths)
 
         loss = criterion(outputs, targets)
-        
+
         # Zero gradients for both networks
         decoder.zero_grad()
         encoder.zero_grad()
@@ -434,7 +434,7 @@ for epoch in range(num_epochs):
         # if (i+1) % save_step == 0:
         #     torch.save(decoder.state_dict(), os.path.join(model_path, 'decoder-{}-{}.ckpt'.format(epoch+1, i+1)))
         #     torch.save(encoder.state_dict(), os.path.join(model_path, 'encoder-{}-{}.ckpt'.format(epoch+1, i+1)))
-    # loss_lstm.append(loss.item())    
+    # loss_lstm.append(loss.item())
     loss_rnn.append(loss.item())
     torch.save(decoder.state_dict(), os.path.join(model_path, 'RNN-decoder-{}.ckpt'.format(epoch+1)))
     torch.save(encoder.state_dict(), os.path.join(model_path, 'RNN-encoder-{}.ckpt'.format(epoch+1)))
@@ -455,11 +455,11 @@ def plot_loss(lstm, rnn):
     plt.xlabel("epoch")
     plt.ylabel("loss")
     plt.title("Loss of LSTM and RNN")
-    
+
 plot_loss(loss_lstm, loss_rnn)
 ```
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/Snipaste_2020-04-10_11-26-38.png)
+![](https://i.loli.net/2021/01/07/kLKFWE2YeNbUulo.png)
 
 ### BLEU for evaluation
 
@@ -500,14 +500,14 @@ img_path = caption_dir + "Flickr_8k.testImages.txt"
 with open(img_path, 'r') as f:
     for i in f:
         img_list.append(i.strip())
-        
+
 img_list = []
 img_path = caption_dir + "Flickr_8k.testImages.txt"
 
 with open(img_path, 'r') as f:
     for i in f:
         img_list.append(i.strip())
-        
+
 image1_id = image_ids.index(filename1[:-4])
 image2_id = image_ids.index(filename2[:-4])
 ```
@@ -530,10 +530,10 @@ def transform_idx_to_words(input):
 
         if word == '<end>':
             break
-    
+
     output = ' '.join(sampled_caption[1:-1])
     output = output.replace(' ,', ',')
-    
+
     return output.split(' ')
 ```
 
@@ -557,7 +557,7 @@ for model_name in range(len(epoch_checkpoint)):
     decoder_model_path = os.path.join(model_path, 'LSTM-decoder-{}.ckpt'.format(model_name))
 
     test_encoder = EncoderCNN(embed_size)
-    test_decoder = DecoderRNN(embed_size, hidden_size, len(vocab), num_layers)    
+    test_decoder = DecoderRNN(embed_size, hidden_size, len(vocab), num_layers)
 
     test_encoder.load_state_dict(torch.load(encoder_model_path))
     test_decoder.load_state_dict(torch.load(decoder_model_path))
@@ -573,7 +573,7 @@ for model_name in range(len(epoch_checkpoint)):
     image2 = image2.to(device)
 
     predicted, actual = list(), list()
-    predicted_total, actual_total = list(), list()    
+    predicted_total, actual_total = list(), list()
 
     for i in range(len(test_loader.dataset)):
         image, caption = test_loader.dataset.__getitem__(i)
@@ -632,7 +632,7 @@ for model_name in range(len(epoch_checkpoint)):
     cap2 = test_decoder.sample(feature2)
     cap2 = cap2.cpu().data.numpy()
     # cap2 = cap2[0,:]
- 
+
     predicted.append(cap1)
     predicted.append(cap2)
 
@@ -667,7 +667,7 @@ for model_name in range(len(epoch_checkpoint)):
         refer.append(cleaned_captions[image2_id + i])
     references.append(refer)
 
-    bleu2 = corpus_bleu(references, hypotheses, weights=(0.5, 0.5, 0, 0)) 
+    bleu2 = corpus_bleu(references, hypotheses, weights=(0.5, 0.5, 0, 0))
 
     bleu_score1.append((model_name, bleu1))
     bleu_score2.append((model_name, bleu2))
@@ -681,7 +681,7 @@ The code above includes the BLEU scores of two sample images, the whole test dat
 
 Get the scores as following shows:
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/Snipaste_2020-04-10_11-39-49.png)
+![](https://i.loli.net/2021/01/07/oQFaVfMy8WUh4Du.png)
 
 Plot figures to show two sample image and the scores of each epoch:
 
@@ -717,11 +717,11 @@ for j in range(2):
         else:
             ax.text(0,i,'BLEU score: ' + str(bleu_score2[i][1]) + ', ' + caption,fontsize=20)
 
-    count += 1  
+    count += 1
 plt.show()
 ```
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/Snipaste_2020-04-10_11-41-29.png)
+![](https://i.loli.net/2021/01/07/Qfx63COUaD74yez.png)
 
 #### Get BLEU Scores of RNN
 

@@ -47,7 +47,7 @@ C++有很多新的特性，例如[虚函数](https://zh.wikipedia.org/wiki/虚�
 
 **Cheese类**：
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/image-20200402093326240.png)
+![](https://i.loli.net/2021/01/07/gFPXEB8ecL4vVKr.png)
 
 定义Cheese类。半径为2.5f，颜色为黄色，位置随机初始化。
 
@@ -55,19 +55,19 @@ C++有很多新的特性，例如[虚函数](https://zh.wikipedia.org/wiki/虚�
 
 **Mouse类**：
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/image-20200402093415951.png)
+![](https://i.loli.net/2021/01/07/6QegSvYZn4fFIx7.png)
 
 定义Mouse类。定义其使用`NearestAngleSensor<Cheese>()`最近角度传感器检测Cheese，并且随机初始化。一个简单的`Control()`方法定义Mouse的左右移动。定义虚函数`OnCollision()`即当Mouse与Cheese发生碰撞时，就会调用Cheese的`Eaten()`方法，即Cheese被吃。
 
 **NeuralMouse类**：
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/image-20200402093457276.png)
+![](https://i.loli.net/2021/01/07/3PxtmYAy8vXwaL2.png)
 
 拥有神经网络的Mouse会使用传感器去探测最近的Cheese。目前还没有遗传算法或者其它的学习算法。上述代码中主要两层hidden layer，使用到了神经网络是`FeedForwardNet`。
 
 **EvoMouse类**：
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/image-20200402093558251.png)
+![](https://i.loli.net/2021/01/07/OIfyNsiw9nJPD14.png)
 
 对于EvoMouse类，其初始化代码的`OnCollision()`方法几乎都与Mouse类一样，但是增加了遗传算法和FFN。
 
@@ -77,7 +77,7 @@ C++有很多新的特性，例如[虚函数](https://zh.wikipedia.org/wiki/虚�
 
 **MouseSimulation类**：
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/image-20200402093629147.png)
+![](https://i.loli.net/2021/01/07/AfgRHaC7GjNTxDv.png)
 
 这个类是最终将Simulation在BEAST中启动
 
@@ -97,13 +97,13 @@ Group<Cheese> theCheese;
 
 **Prey类**：
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/image-20200402093716674.png)
+![](https://i.loli.net/2021/01/07/zk7G5b9crtxMFmY.png)
 
 这里定义了Prey的具体实现。其拥有最大速度，最小速度，使用了两个`ProximitySensor<Predator>`传感器进行探测从而躲避捕食者的追捕，其适应度函数`GetFitness`为`1.0f / static_cast<float>(timeEaten)`，即`timeEaten`越小，其适应度越高，越难被捕捉。
 
 **Predator类**：
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/image-20200402093744558.png)
+![](https://i.loli.net/2021/01/07/ucvZ8On9f1jzRsT.png)
 
 捕食者Predator同样使用了两个`Proximity<Prey>`传感器，但是范围比Prey的要大。速度和Prey的一样，但是增加半径`Radius`因素。它的`GetFitness`直接返回`preyEaten`，这样就代表其捕捉的猎物越高适应度越高。
 
@@ -111,7 +111,7 @@ Group<Cheese> theCheese;
 
 **结果**：
 
-![chase100_pred](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/chase100_pred.png)
+![](https://i.loli.net/2021/01/07/FQwDEc8ztV9SOXd.png)
 
 上面两张图片是运行了100 generation后的图片，可以看到，无论是average fitness还是best fitness，两张图片都呈**互补**关系。即当Prey上升到时候，Predator下降；反之，Prey下降则是因为Predator上升了。
 

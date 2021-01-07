@@ -14,7 +14,7 @@ description: 使用多层感知机和反向传播算法对Iris Flower Data Set�
 
 ### Introduction
 
-The Iris Data Set includes the width and length of both petal and sepal of 150 flowers. The measurements were obtained from 50 flowers from three iris varieties: iris setosa; iris versicolor; and iris virginica. The iris data set is a list of these measurements labelled with the variety of the flower from which the measurement were taken. 
+The Iris Data Set includes the width and length of both petal and sepal of 150 flowers. The measurements were obtained from 50 flowers from three iris varieties: iris setosa; iris versicolor; and iris virginica. The iris data set is a list of these measurements labelled with the variety of the flower from which the measurement were taken.
 
 ### Objectives
 
@@ -24,7 +24,7 @@ Clearly it is interesting to see if we can train a neural network to classify ir
 
 1. Make a scatter plot of petal length against petal width. This means that for each entry in the data set you plot a point in the 2D plane with petal length as y coordinate, and petal width as x coordinate. Use three different markers (or different colours), one for setosa, one for versicolor and one for virginica. Plot other sepal/petal length/width combinations as well.
 
-    <!-- more -->
+<!-- more -->
 
 2. Based on the plots, do you believe that setosa vs. non-setosa can be learnt by a perceptron? That is, given a perceptron with 4 inputs, for petal length, petal width sepal length, and sepal width, can you find four weights and a bias which can classify setosa vs. non-setosa? Explain your answer. If you can, give these weights and bias. Draw the decision line of your perceptron on the plots of the last question.
 
@@ -46,17 +46,17 @@ At first, I need to do data pre-processing. Add a header to iris.data because it
 
 To plot a scatter of sepal/petal length/width combinations, there will have 12 differenct combinations. Use `Matplotlib` can help me solve this problem. The plot as shown below: (blue = setosa, green = versicolor, red = virginica)
 
-![img](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/iris.png)
+![](https://i.loli.net/2021/01/07/UHlM81bxoKEIFaW.png)
 
 #### 2. Decision Line
 
-Decision line also can be named Decision boundary. Look at the figure above, the blue points are clearly separated from the other two colors in each subplot. Thus, I can draw a straight line to separate the points of the setosa from the colors of the other two classes in each subplot. It means **the setosa is linearly separated from the non-setosa class**. 
+Decision line also can be named Decision boundary. Look at the figure above, the blue points are clearly separated from the other two colors in each subplot. Thus, I can draw a straight line to separate the points of the setosa from the colors of the other two classes in each subplot. It means **the setosa is linearly separated from the non-setosa class**.
 
 The classes can be learnt by a perceptron or not is depend on whether it can be separated linearly. Therefore, the setosa vs. non-setosa can be learnt by a perceptron.
 
 For example, I can give sample weights and bias. I draw it in a 2D plot, the horizontal coordinate is **petal width** and the vertical coordinate is **petal length**. The figure are shown below:
 
-![img](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/PLvsPW.png)
+![](https://i.loli.net/2021/01/07/5fz2YIRPoLcpW6B.png)
 
 In this figure, these four weights and a bias are .
 
@@ -104,7 +104,7 @@ The plot of loss and accuracy as shown below:
 
 ![img](https://s1.ax1x.com/2020/04/23/JdlWLQ.png)
 
-According to this plot above, it is clear that the curves have converged after 200 epochs. In addition, the accuracy is high as  (even more than ), and the accuracy of the test data set (30 data) is , which means this model by Keras is excellent. So, it is clear that this model has better performance that the network I built in Q4. 
+According to this plot above, it is clear that the curves have converged after 200 epochs. In addition, the accuracy is high as  (even more than ), and the accuracy of the test data set (30 data) is , which means this model by Keras is excellent. So, it is clear that this model has better performance that the network I built in Q4.
 
 There are some reasons can explain it:
 

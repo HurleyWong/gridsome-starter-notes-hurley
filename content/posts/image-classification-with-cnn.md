@@ -16,7 +16,7 @@ description: Build the CNN network and improve performance, do filter and featur
 
 #### Building the network
 
-The first part of the assignment is to build a CNN and train it on ImageNet10. Start by building a CNN with the following depth and parameters: 
+The first part of the assignment is to build a CNN and train it on ImageNet10. Start by building a CNN with the following depth and parameters:
 
 | Input_channels | Output_channels |                 | Kernel_size |
 | :------------: | :-------------: | :-------------: | :---------: |
@@ -30,7 +30,7 @@ The first part of the assignment is to build a CNN and train it on ImageNet10. S
 
 <!-- more -->
 
-Follow each convolutional layer by ReLU and a max-pool operation with kernel size 2 x 2. 
+Follow each convolutional layer by ReLU and a max-pool operation with kernel size 2 x 2.
 
 After each sequence of convolution, ReLU and max-pool, add a dropout operation with p=0.3. Dropout is a regularisation technique where layer outputs are randomly (with likelihood of p) dropped out, or ignored. This helps the neural network to avoid overfitting to noise in the training data.
 
@@ -38,7 +38,7 @@ Use a learning rate of 0.001, momentum 0.9, and stochastic gradient descent to t
 
 #### Experiments
 
-Now, run two experiments testing various network architectures: 
+Now, run two experiments testing various network architectures:
 
 1. How does the number of layers affect the training process and test performance? Try between 2 and 5 layers.
 2. Choose one more architectural element to test (filter size, max-pool kernel size, number/dimensions of fully-connected layers, etc.).
@@ -57,20 +57,20 @@ Choose two input images of different classes and compare the resulting feature m
 
 :::note ⚡️ Tips
 
-When visualising a PyTorch tensor object, you will want to first move the tensor to CPU (if using a GPU), detach it from the gradients, make a copy, and convert to a NumPy array. 
+When visualising a PyTorch tensor object, you will want to first move the tensor to CPU (if using a GPU), detach it from the gradients, make a copy, and convert to a NumPy array.
 :::
 
 You can do this as follows:
 
 `tensor_name.cpu().detach().clone().numpy()`
 
-The most intuitive way to get layer activations is to directly access them in the network. 
+The most intuitive way to get layer activations is to directly access them in the network.
 
 `conv1_activs = model.conv_layer1.forward(input_image)`
 
 The layer activations for the subsequent layer can then be obtained by passing in the previous layer activations: `conv2_activs = model.conv_layer2.forward(conv1_activs) `
 
-Alternately, for a more elegant solution, you may choose to save layer activations by registering a hook into your network. Look for documentation on the `model.register_forward_hook()` function to see how to use it. 
+Alternately, for a more elegant solution, you may choose to save layer activations by registering a hook into your network. Look for documentation on the `model.register_forward_hook()` function to see how to use it.
 
 #### Improving network performance
 
@@ -105,7 +105,7 @@ class ConvNet2(nn.Module):
 
         self.conv1 = nn.Conv2d(3, 16, 3)
         self.conv2 = nn.Conv2d(16, 24, 4)
-        
+
         self.fc1 = nn.Linear(24*62*62, 512)
         self.fc2 = nn.Linear(512, num_classes)
         self.pool1 = nn.MaxPool2d(2)
@@ -120,7 +120,7 @@ class ConvNet2(nn.Module):
         x = self.pool2(F.relu(self.conv2(x)))
         x = self.dropout2(x)
 
-        x = x.view(-1, 24*62*62) 
+        x = x.view(-1, 24*62*62)
         x = F.relu(self.fc1(x))
         x = F.relu(self.fc2(x))
 
@@ -136,7 +136,7 @@ print(model2)
 
 ```python
 class ConvNet3(nn.Module):
-    
+
     def __init__(self, num_classes=10):
         super(ConvNet3, self).__init__()
 
@@ -152,7 +152,7 @@ class ConvNet3(nn.Module):
         self.dropout1 = nn.Dropout2d(0.3)
         self.dropout2 = nn.Dropout2d(0.3)
         self.dropout3 = nn.Dropout2d(0.3)
-        
+
     def forward(self, x):
         x = self.pool1(F.relu(self.conv1(x)))
         x = self.dropout1(x)
@@ -163,7 +163,7 @@ class ConvNet3(nn.Module):
         x = self.pool3(F.relu(self.conv3(x)))
         x = self.dropout3(x)
 
-        x = x.view(-1, 32*29*29) 
+        x = x.view(-1, 32*29*29)
         x = F.relu(self.fc1(x))
         x = F.relu(self.fc2(x))
 
@@ -179,7 +179,7 @@ print(model3)
 
 ```python
 class ConvNet4(nn.Module):
-    
+
     def __init__(self, num_classes=10):
         super(ConvNet4, self).__init__()
 
@@ -198,7 +198,7 @@ class ConvNet4(nn.Module):
         self.dropout2 = nn.Dropout2d(0.3)
         self.dropout3 = nn.Dropout2d(0.3)
         self.dropout4 = nn.Dropout2d(0.3)
-        
+
     def forward(self, x):
 
         x = self.pool1(F.relu(self.conv1(x)))
@@ -213,7 +213,7 @@ class ConvNet4(nn.Module):
         x = self.pool4(F.relu(self.conv4(x)))
         x = self.dropout4(x)
 
-        x = x.view(-1, 40*13*13) 
+        x = x.view(-1, 40*13*13)
         x = F.relu(self.fc1(x))
         x = F.relu(self.fc2(x))
 
@@ -229,7 +229,7 @@ print(model4)
 
 ```python
 class ConvNet5(nn.Module):
-    
+
     def __init__(self, num_classes=10):
         super(ConvNet5, self).__init__()
 
@@ -252,7 +252,7 @@ class ConvNet5(nn.Module):
         self.dropout4 = nn.Dropout2d(0.3)
         self.dropout5 = nn.Dropout2d(0.3)
 
-        
+
     def forward(self, x):
 
         x = self.pool1(F.relu(self.conv1(x)))
@@ -270,7 +270,7 @@ class ConvNet5(nn.Module):
         x = self.pool5(F.relu(self.conv5(x)))
         x = self.dropout5(x)
 
-        x = x.view(-1, 48*5*5) 
+        x = x.view(-1, 48*5*5)
         x = F.relu(self.fc1(x))
         x = F.relu(self.fc2(x))
 
@@ -289,8 +289,8 @@ print(model5)
 在搭建完网络，定义损失函数和优化器之后，需要通过训练和验证来判断性能的优劣。这里需要注意的是，判断性能并不是意味着是训练模型之后去跑测试集来根据准确率的高低去判断，而是要根据训练集与验证集的损失率或者准确率的曲线是否收敛来判断，否则如果有很明显的过拟合或者欠拟合，都不是好的性能。
 
 ```python
-def train_and_valid(num_epochs, model, optimizer, flag):  
-    for epoch in range(num_epochs): 
+def train_and_valid(num_epochs, model, optimizer, flag):
+    for epoch in range(num_epochs):
         correct = 0
         total = 0 # loop over the dataset multiple times
 
@@ -325,12 +325,12 @@ def train_and_valid(num_epochs, model, optimizer, flag):
         acc_lst.append(correct/total*100)
 
         with torch.no_grad():
-            val_correct = 0 
+            val_correct = 0
             val_total = 0
             for inputs, labels in valid_loader:
                 inputs = inputs.to(device)
                 labels = labels.to(device)
-                    
+
                 val_outputs = model(inputs)
                 val_loss = loss_fn(val_outputs, labels)
                 total_val_loss += val_loss.item()
@@ -342,7 +342,7 @@ def train_and_valid(num_epochs, model, optimizer, flag):
 
         val_loss_lst.append(total_val_loss / len(valid_loader))
         val_acc_lst.append(val_correct/val_total*100)
-        
+
     print('Finished')
 ```
 
@@ -350,11 +350,11 @@ def train_and_valid(num_epochs, model, optimizer, flag):
 
 2层的损失率：
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/Unknown.png)
+![](https://i.loli.net/2021/01/07/UKkgazHCnT9WM6E.png)
 
 2层的准确率：
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/Unknown-2.png)
+![](https://i.loli.net/2021/01/07/UfHelP9g7Ty1uwR.png)
 
 可以看见图像仍然没完全收敛，存在欠拟合现象。
 
@@ -362,7 +362,7 @@ def train_and_valid(num_epochs, model, optimizer, flag):
 
 4层的损失率：
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/Unknown-3.png)
+![](https://i.loli.net/2021/01/07/Qh79pqrGmLutKEZ.png)
 
 ##### 改变参数
 
@@ -370,7 +370,7 @@ def train_and_valid(num_epochs, model, optimizer, flag):
 
 ```python
 class ReConvNet(nn.Module):
-    
+
     def __init__(self, num_classes=10):
         super(ReConvNet, self).__init__()
 
@@ -389,7 +389,7 @@ class ReConvNet(nn.Module):
         self.dropout2 = nn.Dropout2d(0.1)
         self.dropout3 = nn.Dropout2d(0.1)
         self.dropout4 = nn.Dropout2d(0.1)
-        
+
     def forward(self, x):
 
         x = self.pool1(F.relu(self.conv1(x)))
@@ -404,7 +404,7 @@ class ReConvNet(nn.Module):
         x = self.pool4(F.relu(self.conv4(x)))
         x = self.dropout4(x)
 
-        x = x.view(-1, 40*13*13) 
+        x = x.view(-1, 40*13*13)
         x = F.relu(self.fc1(x))
         x = F.relu(self.fc2(x))
 
@@ -467,7 +467,7 @@ Normalized confusion matrix
  [  1  25   1   4   2   0   1   1   5 129]]
 ```
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/img.png)
+![](https://i.loli.net/2021/01/07/xOh8PFrzBKqdZH2.png)
 
 #### Filter visualisation
 
@@ -479,7 +479,7 @@ def filter_visual():
   k = 0
 
   for i in range(16):
-    
+
     filter_mix = np.zeros(shape = [3,3])
     for j in range(3):
       k = k + 1
@@ -493,15 +493,15 @@ def filter_visual():
 
 **训练前**：
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/Unknown-4.png)
+![](https://i.loli.net/2021/01/07/wJc6iKuYrWyPEbD.png)
 
 **训练中**：
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/Unknown-5.png)
+![](https://i.loli.net/2021/01/07/hSjB4NXfOmGRAF8.png)
 
 **训练后**：
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/Unknown-6.png)
+![](https://i.loli.net/2021/01/07/uVjPcpHQeRmTF61.png)
 
 #### Feature map visualisation
 
@@ -525,7 +525,7 @@ for i in range(4):
     plt.imshow(feature_maps_x[0][0, i, ...].data.cpu().numpy(), cmap='gray')
 ```
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/Unknown-7.png)
+![](https://i.loli.net/2021/01/07/yaHFVB1tZ4h6plo.png)
 
 **第二层**：
 
@@ -537,7 +537,7 @@ for i in range(4):
     plt.imshow(feature_maps_x[1][0, i,...].data.cpu().numpy(), cmap='gray')
 ```
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/Unknown-8.png)
+![](https://i.loli.net/2021/01/07/WyjNrPRLVQ5BZU1.png)
 
 **第三层**：
 
@@ -549,7 +549,7 @@ for i in range(4):
     plt.imshow(feature_maps_x[3][0, i,...].data.cpu().numpy(), cmap='gray')
 ```
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/Unknown-9.png)
+![](https://i.loli.net/2021/01/07/i32LDheCuvUZfIz.png)
 
 可以看见，随着层次的增加，图片越来越模糊，特征越来越不明显。
 
@@ -575,11 +575,11 @@ final_optimizer = optim.Adam(final_model.parameters(), lr = 0.001)
 
 训练集和验证集的损失率：
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/Unknown-10.png)
+![](https://i.loli.net/2021/01/07/5ADsNBhtLITmnbj.png)
 
 训练集和验证集的准确率：
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/Unknown-11.png)
+![](https://i.loli.net/2021/01/07/XDrMy2zSl6TA8pv.png)
 
 **测试集的准确率**：
 
@@ -615,6 +615,6 @@ Normalized confusion matrix
  [  2   5   4   1   8   1   1   0   6 141]]
 ```
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/img2.png)
+![](https://i.loli.net/2021/01/07/P5rNXj7Qgu8kanF.png)
 
 可以发现自带的性能的确比我们自己搭建的模型要好的多，同理也可以使用其它PyTorch中自带的网络模型，例如VGG16等。
