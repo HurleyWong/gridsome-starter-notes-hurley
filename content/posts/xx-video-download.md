@@ -32,7 +32,7 @@ description: 不怕XX耍流氓，就怕XX有文化
 
 作为一个非常喜欢收集工具的人，我接触过很多下载类的工具，目前电脑里还留存的有：
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/20210105193857.png)
+![](https://i.loli.net/2021/01/07/4gPhZtC3NKywQTc.png)
 
 ### 迅雷
 
@@ -62,7 +62,7 @@ Mac端的迅雷应用应该相比Windows端的广告要少很多，Windows端的
 
 Free Download Manager，简称FDM。它是一款免费的软件，界面十分简洁易用，更没有任何广告捆绑。它支持直接的链接下载、磁力链接、BT文件。除此之外，它还可以下载YouTube视频，并选择视频的分辨率。
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/20210106103822.png)
+![](https://i.loli.net/2021/01/07/xzCSi48dGsrk6XY.png)
 
 然而，它并不支持下载XX网站中的视频。
 
@@ -70,7 +70,7 @@ Free Download Manager，简称FDM。它是一款免费的软件，界面十分�
 
 Motrix是一款开源免费的全功能下载器，支持HTTP、FTP、BT、Magnet（磁力链接）以及百度网络和迅雷下载协议。这个开源部门调用了Aria2，并且是支持全平台的（Windows、macOS、Linux）。
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/20210106104313.png)
+![](https://i.loli.net/2021/01/07/LuzUcnZkG7VyAwY.png)
 
 ### Downie
 
@@ -118,7 +118,7 @@ ts文件分为三层：
 * pes(Packet Elemental Stream)层：在音视频数据上加了时间戳等对数据帧的说明信息
 * es(Elementray Stream)层：音视频数据
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/27100307_wUox.png)
+![](https://i.loli.net/2021/01/07/A1ht7gXpu6ywWrl.png)
 
 ### 获得m3u8和ts
 
@@ -142,7 +142,7 @@ ts文件分为三层：
 
 这个插件的开源项目有两个主要分支，目前最新的分支是`3.x.x`，另外一个分支就是`master`。最开始，我认为应该使用`master`分支更为稳定，结果按照README.md的使用说明操作后，发现的确是将视频的m3u8文件下载下来了。然而不幸的是，它的格式并不与我们上面介绍的m3u8的格式一样。它的格式如下：
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/20210105231827.png)
+![](https://i.loli.net/2021/01/07/C2tGTmh6pxYKBzP.png)
 
 可以发现，这应该是Base64解密后的文本。通过复制后进行Base64加密，我们发现仍然是一大串的文本，仍然不是传统的m3u8格式。
 
@@ -167,7 +167,7 @@ ts文件分为三层：
 
 这个脚本内容写得非常好，不仅解析了m3u8文件，生成ts文件的列表，调用aria2下载，最终还使用ffmpeg来将下载下来的ts文件合并成mp4文件。
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/20210105232929.png)
+![](https://i.loli.net/2021/01/07/njqDwlkahJBZ8PN.png)
 
 ### 分析
 
