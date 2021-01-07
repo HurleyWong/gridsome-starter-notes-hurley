@@ -19,7 +19,7 @@ description: Build and use neural networks for the Iris classification task via 
 —— 约翰·卡马克
 :::
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/0.jpg)
+![](https://i.loli.net/2021/01/07/XR892ceDVO5h1fZ.png)
 
 约翰·卡马克的最后一句话，通俗易懂。又不禁让我想起了那段台词：
 
@@ -124,7 +124,7 @@ def find_correct_and_incorrect_labels(model, test_X, test_y):
     print("Found %d incorrect labels using the model" % len(incorrectIndex))
 
 
-def plot_train_performance(trained_model):  
+def plot_train_performance(trained_model):
   	# history函数会每轮训练收集损失和准确率，如果有测试集也会收集测试集的数据
     print(trained_model.history.keys())
     accuracy = trained_model.history['accuracy']
@@ -174,7 +174,7 @@ plot_train_performance(trained_model)
 
 ## Result
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/Snipaste_2019-11-01_21-10-25.png)
+![](https://i.loli.net/2021/01/07/2flu4zmsqdJ1FLR.png)
 
 ## Error
 

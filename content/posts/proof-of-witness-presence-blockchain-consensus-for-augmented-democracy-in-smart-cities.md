@@ -20,7 +20,7 @@ description: Dr. Pournaras的一篇论文，通过智慧城市中，增强民主
 
 摘要部分主要介绍了本文的核心内容。
 
-This paper introduces **a new paradigm of augmented democracy** that promises actively engaging citizens in a more informed decision-making augmented to public urban space. The **core contribution of the proposed paradigm** is **the concept of proving witness presence**. 
+This paper introduces **a new paradigm of augmented democracy** that promises actively engaging citizens in a more informed decision-making augmented to public urban space. The **core contribution of the proposed paradigm** is **the concept of proving witness presence**.
 
 This paper shows:
 
@@ -129,7 +129,7 @@ Each question as well as their possible answers can be incentivized with **rewar
 
 #### A review on proof of location
 
-The core of witness presence lies **proof of location** that is the secure verification of a citizen's location. 
+The core of witness presence lies **proof of location** that is the secure verification of a citizen's location.
 
 证明证人证词所需的位置证明可以通过以下一个或多个基础设施来实现：
 
@@ -140,7 +140,7 @@ The core of witness presence lies **proof of location** that is the secure verif
 
 **关于四者的对比**：
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/%E5%9B%9B%E8%80%85.png)
+![](https://i.loli.net/2021/01/07/4uITy9kDm6OJ3nq.png)
 
 **GPS的好处**：
 
@@ -154,10 +154,10 @@ Moreover, GPS cannot provide indoor localization, it underperforms in high densi
 
 **Mobile cellular network**:
 
-A geofence can be used by a local community to self-regulate its 
+A geofence can be used by a local community to self-regulate its
 
 1. decision-making territory. It determines the validation territory of witness presence claims.
-2. crypto-economic activity resulting from the incentivized participation in decision-making. It determines the geographic areas in which transactions are permitted with collected tokens. 
+2. crypto-economic activity resulting from the incentivized participation in decision-making. It determines the geographic areas in which transactions are permitted with collected tokens.
 
 But, localization via mobile cellular networks can only though take place within the covered area of the mobile operator and global converage requires special roaming service and collaboration between different mobile network operators.
 
@@ -187,13 +187,13 @@ Real-time collective measurements are the aggregation of citizens' crowd-sensing
 
 In summary, collective measurements provide a live pulse of a crowd, whose localization at points of interest is verified for witness presence.
 
-A possible feasible decentralized approach to realize this ambitious concept is the use of **DIAS**, the Dynamic Intelligent Aggregation Service. DIAS is a network of interconnected agents deployed in citizens' personal devices or in computational resources of regional communities around points of interest. 
+A possible feasible decentralized approach to realize this ambitious concept is the use of **DIAS**, the Dynamic Intelligent Aggregation Service. DIAS is a network of interconnected agents deployed in citizens' personal devices or in computational resources of regional communities around points of interest.
 
 DIAS聚合网络和一个兴趣点的关系可以是**一对多**和**一对一**。
 
 **In the one-to-many encapsulation**：
 
-Aggregation functions receive the input data of citizens, who prove witness presence in one out of several possible points of interest. A logical disjunction (OR) requires the proof of witness presence at one possible point of interest as the required condition to participate in the collective measurements. 
+Aggregation functions receive the input data of citizens, who prove witness presence in one out of several possible points of interest. A logical disjunction (OR) requires the proof of witness presence at one possible point of interest as the required condition to participate in the collective measurements.
 
 **In the one-to-one encapsulation**:
 

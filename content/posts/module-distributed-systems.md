@@ -167,15 +167,15 @@ Many client-server applications are constructed logically from **three** differe
 * Clients and servers can be on different machines
 * Clients follow request/reply model with respect to using services
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/IMG_0279.jpg)
+![](https://i.loli.net/2021/01/07/7nd2Yrgk1CREJxH.png)
 
 #### 2-Tiered Architecture
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/IMG_0281.jpg)
+![](https://i.loli.net/2021/01/07/8tQIcZPkUy6gulG.png)
 
 #### 3-Tiered Architecture
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/IMG_0280.jpg)
+![](https://i.loli.net/2021/01/07/wmbnViC5JfTzZ7L.png)
 
 ### Decentralised Organisations
 
@@ -217,7 +217,7 @@ Communication in distributed systems is always based on low level message passin
 * B服务器收到请求后，需要进行反序列化（序列化的逆操作），恢复为内存中的表达方式，然后找到对应的方法（寻址的一部分）进行本地调用，然后得到返回值。
 * 返回值也是通过序列化的方式发送回A服务器上的应用，服务器A收到后，再进行反序列化，恢复为内存中的表达方式，交个A服务器上的应用
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/rpc.jpg)
+![](https://i.loli.net/2021/01/07/XMgVKv7LaR62Jtx.png)
 
 目前，比较流行的开源RPC框架有：
 
@@ -324,7 +324,7 @@ LDAP, implemented directly on top of TCP, provides a simple protocol for accessi
 * Each record is uniquely named as a sequence of naming attributes(called <font color="red">Relative Distinguished Name</font>), so that it can be looked up.
 * <font color="red">Directory Information Tree</font>: the naming graph of an LDAP directory service; each node represents a directory entry.
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/IMG_0282.jpg)
+![](https://i.loli.net/2021/01/07/ANxe7FpbkDLn5cQ.png)
 
 ## 9. Timing and Synchronisation
 

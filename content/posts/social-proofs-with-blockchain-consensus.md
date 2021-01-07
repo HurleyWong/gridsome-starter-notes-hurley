@@ -87,7 +87,7 @@ social还可以被理解为社会，所以是社会证明？社会是一个十�
 所以，这也是没有办法的办法了。当无法直接证明公民到达过某个兴趣点附近时，那么只能找该兴趣点附近的地点，通过间接证明的方式来完成。具体如下：
 
 <center>
-    <img width="60%" src="https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/Secondary%20Proof.png">
+    <img width="60%" src="https://i.loli.net/2021/01/07/rumjFoIV8JPLBz5.png">
 </center>
 
 As figure shown above, setting a park as a point of interest can be given by an oracle. In addition, there are some locations such as a bus stop, a shop, a cinema, a hospital and a train station (from near to far) within the scope of this oracle.
@@ -148,11 +148,11 @@ uint256 transportTicketIndex = 0;
 
 首先在Infura中创建项目，选择使用Ropsten网络。完成后复制下EndPoints的地址，并将其配置在truffle-config.js文件中。
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/Infura_stats.png)
+![](https://i.loli.net/2021/01/07/zFoct9vxPmwjbuM.png)
 
 同时在Chrome浏览器中安装MetaMask插件，注册账号并获得3个测试以太币。在设置隐私界面中找到12个助记词并将其配置在truffle-config.js文件中。
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/MetaMask_Detail.png)
+![](https://i.loli.net/2021/01/07/JnaSUuTvzb2rx4W.png)
 
 最后，在控制台中，使用`truffle compile`命令编译智能合约，并使用以下命令将智能合约部署迁移到以太坊区块链测试网络中：
 
@@ -160,18 +160,18 @@ uint256 transportTicketIndex = 0;
 truffle migrate --reset --network ropsten # --reset optional
 ```
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/truffle.png)
+![](https://i.loli.net/2021/01/07/GRapZlI96EhzV2f.png)
 
 
 部署完毕之后，控制台中会出现智能合约的具体信息，包括被部署到的具体地址中，例如https://ropsten.etherscan.io/tx/address.
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/contract%20address.JPG)
+![](https://i.loli.net/2021/01/07/4PtqNuaQTZwO5fH.png)
 
 ### web3j
 
 需要将移动终端与智能合约连接起来的方式有很多，最传统的就是使用网络请求的方式。然后对于Java语言，有一个web3j的库能够很方便地帮助我们实现。
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/web3j.png)
+![](https://i.loli.net/2021/01/07/vfQXc9oZEFgGrnl.png)
 
 通过在本地安装好web3j，然后使用web3j的以下命令，可以将智能合约的代码逻辑自动以Java的方式实现。
 
@@ -197,7 +197,7 @@ Social Proof Point是指当公民无法直接证明他们在某个特定时间�
 
 因此，需要在公民（用户）进入手机端的Google Map界面后，根据提示询问公民是将该地点添加为Point of Interest还是Social Proof Point。选择完毕之后，就进入证明的过程，即下一部分（二维码）。
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/Google%20Map.JPG)
+![](https://s3.ax1x.com/2021/01/07/se2fGF.jpg)
 
 #### QR Code
 
@@ -207,7 +207,7 @@ Social Proof Point是指当公民无法直接证明他们在某个特定时间�
 
 具体解析二维码的方式可以使用Google提供的开源库ZXing。通过扫描二维码，解析二维码的数据并与区块链中已保存的数据进行比对，判断是否真实并且有效。如果有效，则说明成功证明公民到达过Point of Interest或者Social Proof Point。
 
-![](https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/Social%20Proof%20by%20Barcode.JPG)
+![](https://s3.ax1x.com/2021/01/07/seRSsA.jpg)
 
 :::note 💡 Tips
 
