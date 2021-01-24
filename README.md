@@ -1,9 +1,10 @@
 <p align="center">
-  <a href="https://tech-hurley.netlify.app/">
-    <img alt="Gatsby" src="https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/icon.png" width="100" />
-    <h2 align="center">Hurley's Tech Blog</h2>
+  <a href="https://tech.hurley.fun/">
+    <h2 align="center">Hurley's Tech Site</h2>
   </a>
 </p>
+
+![](/assets/index.png)
 
 ## Copyrights
 
