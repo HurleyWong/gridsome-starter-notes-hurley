@@ -60,6 +60,9 @@ library.add(
 import Notifications from 'vue-notification/dist/ssr'
 import '~/assets/style/notification.scss'
 
+// Tooltip popovers
+import VTooltip from 'v-tooltip'
+
 // back to top
 import VueScrollTo from 'vue-scrollto'
 
@@ -98,6 +101,9 @@ export default function(Vue, { router, head, isClient }) {
         x: false,
         y: true,
     })
+
+    // Popover tooltip
+    Vue.use(VTooltip)
 
     // notifications
     Vue.use(Notifications)

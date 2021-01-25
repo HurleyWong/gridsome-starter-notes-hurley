@@ -4,8 +4,8 @@
       alt="Author image"
       class="author__image"
       src="~/assets/images/author.jpg"
-      width="180"
-      height="180"
+      width="200"
+      height="200"
       blur="5"
     />
 
@@ -19,22 +19,32 @@
 
     <p class="author__links">
       <!-- <g-link to="/"><font-awesome :icon="['fas', 'home']"/></g-link> -->
-      <a href="//hurley.fun" target="_blank"
+      <g-link
+        href="//hurley.fun"
+        target="_blank"
+        v-tooltip="{ content: '🚀 Portfolio' }"
         ><font-awesome :icon="['fas', 'id-badge']"
-      /></a>
+      /></g-link>
+
+      <g-link
+        to="/archives"
+        style="color: var(--title-color);"
+        v-tooltip="{ content: '📂 Archives' }"
+        ><font-awesome :icon="['fas', 'archive']"/></g-link
+      >/
       <!-- <a
         href="//blog.spencerwoo.com/posts/index.xml"
         target="_blank"
         style="color: #F5A623;">
         <font-awesome :icon="['fas', 'rss']"/>
       </a> -->
-      
+
       <!-- <g-link to="/friends" style="color: #06a878;"
         ><font-awesome :icon="['fas', 'comment-dots']"/>
       </g-link> -->
-      
+
       <!-- / -->
-      
+
       <!-- <a
         href="//medium.com/spencerweekly"
         target="_blank"
@@ -106,6 +116,102 @@ export default {
       color: var(--link-color);
       margin: 0 0.5em;
     }
+  }
+}
+
+.tooltip {
+  display: block !important;
+  z-index: 10000;
+  .tooltip-inner {
+    background: var(--bg-content-color);
+    border-radius: var(--radius);
+    padding: 0.2em 0.8em 0.2em;
+    box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.02),
+      1px 1px 15px 0 rgba(0, 0, 0, 0.03);
+  }
+  .tooltip-arrow {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    position: absolute;
+    margin: 2em;
+    border-color: var(--bg-content-color);
+    z-index: 1;
+  }
+  &[x-placement^='top'] {
+    margin-bottom: 5px;
+    .tooltip-arrow {
+      border-width: 5px 5px 0 5px;
+      border-left-color: transparent !important;
+      border-right-color: transparent !important;
+      border-bottom-color: transparent !important;
+      bottom: -5px;
+      left: calc(50% - 5px);
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+  &[x-placement^='bottom'] {
+    margin-top: 5px;
+    .tooltip-arrow {
+      border-width: 0 5px 5px 5px;
+      border-left-color: transparent !important;
+      border-right-color: transparent !important;
+      border-top-color: transparent !important;
+      top: -5px;
+      left: calc(50% - 5px);
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+  &[x-placement^='right'] {
+    margin-left: 5px;
+    .tooltip-arrow {
+      border-width: 5px 5px 5px 0;
+      border-left-color: transparent !important;
+      border-top-color: transparent !important;
+      border-bottom-color: transparent !important;
+      left: -5px;
+      top: calc(50% - 5px);
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+  &[x-placement^='left'] {
+    margin-right: 5px;
+    .tooltip-arrow {
+      border-width: 5px 0 5px 5px;
+      border-top-color: transparent !important;
+      border-right-color: transparent !important;
+      border-bottom-color: transparent !important;
+      right: -5px;
+      top: calc(50% - 5px);
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+  &.popover {
+    $color: #f9f9f9;
+    .popover-inner {
+      background: $color;
+      color: black;
+      padding: 24px;
+      border-radius: 5px;
+      box-shadow: 0 5px 30px rgba(black, 0.1);
+    }
+    .popover-arrow {
+      border-color: $color;
+    }
+  }
+  &[aria-hidden='true'] {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.15s, visibility 0.15s;
+  }
+  &[aria-hidden='false'] {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.15s;
   }
 }
 </style>

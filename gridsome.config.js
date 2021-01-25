@@ -8,7 +8,7 @@ const marked = require('marked')
 const yaml = require('js-yaml')
 
 module.exports = {
-    siteUrl: 'https://tech-hurley.netlify.app/',
+    siteUrl: 'https://tech.hurley.fun/',
     siteName: "Hurley's Tech Site",
     siteDescription: '',
 
@@ -79,6 +79,7 @@ module.exports = {
                 'gridsome-plugin-remark-container',
                 'gridsome-remark-katex',
                 'gridsome-plugin-remark-youtube',
+                'gridsome-remark-figure-caption',
             ],
             config: {
                 footnotes: true,
