@@ -8,7 +8,7 @@ import '~/assets/style/index.scss'
 
 // Disqus
 // import VueDisqus from 'vue-disqus'
-import 'disqusjs/dist/disqusjs.css'
+// import 'disqusjs/dist/disqusjs.css'
 
 // import 'prismjs/themes/prism.css'
 
@@ -38,7 +38,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 
-config.autoAddCss = false
+config.au6toAddCss = false
 library.add(
     faGithub,
     faTwitter,
@@ -58,7 +58,7 @@ library.add(
 
 // notifications
 import Notifications from 'vue-notification/dist/ssr'
-import '~/assets/style/notification.scss'
+// import '~/assets/style/notification.scss'
 
 // Tooltip popovers
 import VTooltip from 'v-tooltip'
@@ -71,10 +71,10 @@ import axios from 'axios'
 
 // NProgress
 import NProgress from 'nprogress'
-import '~/assets/style/nprogress.scss'
+// import '~/assets/style/nprogress.scss'
 
 // container
-import '~/assets/style/container.scss'
+// import '~/assets/style/container.scss'
 
 // katex
 import 'katex/dist/katex.min.css'

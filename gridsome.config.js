@@ -75,7 +75,7 @@ module.exports = {
                 // flow chart plugin
                 'gridsome-plugin-remark-mermaid',
                 '@gridsome/remark-prismjs',
-                // ['gridsome-plugin-remark-shiki', { theme: 'Material-Theme-Palenight', skipInline: true }],
+                // ['gridsome-plugin-remark-shiki', { theme: 'nord', skipInline: true }],
                 'gridsome-plugin-remark-container',
                 'gridsome-remark-katex',
                 'gridsome-plugin-remark-youtube',

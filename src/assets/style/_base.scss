@@ -9,7 +9,7 @@ body {
     background-color: var(--bg-color);
     color: var(--body-color);
     transition: color 0.6s, background-color 0.6s;
-    font-family: monospace, -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.5;
@@ -61,4 +61,16 @@ sup {
     &::after {
         content: ']';
     }
+}
+
+hr {
+    text-align: center;
+    border: none;
+    margin: calc(var(--space) / 2) 0;
+}
+
+hr:before {
+    content: '...';
+    letter-spacing: 0.6em;
+    font-size: 1.2em;
 }

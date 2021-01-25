@@ -1,18 +1,24 @@
-// @import url('https://fonts.googleapis.com/css?family=Miriam+Libre:400,700|Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Open+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&Inter:wght@400;600&family=Rubik:wght@400;600&display=swap');
 html {
     font-size: var(--base-font-size);
 }
 
 body {
-    font-family: monospace, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, pingfang sc, source han sans sc, noto sans cjk sc, sarasa gothic sc, microsoft yahei, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+    font-family: var(--base-font-family);
     font-weight: 400;
     line-height: 1.5;
 }
 
 p {
     margin-bottom: 1.25em;
-    font-family: monospace, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, pingfang sc, source han sans sc, noto sans cjk sc, sarasa gothic sc, microsoft yahei, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+    font-family: var(--base-font-family);
+}
+
+figcaption {
+    margin: 1em 0;
+    text-align: center;
+    opacity: 0.7;
+    font-family: var(--base-font-family);
 }
 
 table,
@@ -21,7 +27,7 @@ ul,
 ol,
 .navlink,
 .notification-content {
-    font-family: monospace, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, pingfang sc, source han sans sc, noto sans cjk sc, sarasa gothic sc, microsoft yahei, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+    font-family: var(--base-font-family);
 }
 
 h1,
@@ -32,7 +38,7 @@ h5 {
     transition: color 0.6s;
     color: var(--title-color);
     margin: 2.75rem 0 1rem;
-    font-family: open sans, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, pingfang sc, source han sans sc, noto sans cjk sc, sarasa gothic sc, microsoft yahei, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+    font-family: var(--title-font-family);
     font-weight: 600;
     line-height: 1.5;
 }
@@ -70,6 +76,9 @@ blockquote {
     border-left: 4px solid var(--border-color);
     padding-left: calc(var(--space) / 2);
     color: var(--title-color);
+    p {
+        opacity: 0.7;
+    }
 }
 
 em {

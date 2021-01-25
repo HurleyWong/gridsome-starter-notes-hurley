@@ -1,11 +1,15 @@
 // Default variables
 html {
     --base-font-size: 16px;
+    --base-font-family: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, Source Han Sans SC, Noto Sans CJK SC, Sarasa Gothic SC, Microsoft YaHei, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+    --title-font-family: Rubik, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, Source Han Sans SC, Noto Sans CJK SC, Sarasa Gothic SC, Microsoft YaHei, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+    --monospace-font-family: IBM Plex Mono, Ubuntu Mono, Consolas, Liberation Mono, Menlo, monospace;
 }
 
 // Light default theme
 body {
     --bg-color: #fafafa;
+    --bg-color-rgb: 250, 250, 250;
     --bg-content-color: #fff;
     --bg-code: #f1f3f4;
     --text-code: #d400ff;
@@ -38,11 +42,13 @@ body {
 // Override variables for Dark theme
 body[data-theme='dark'] {
     --bg-color: #101213;
+    --bg-color-rgb: 16, 18, 19;
     --bg-content-color: #2d3235;
     --bg-code: #1e2224;
     --text-code-block: #fff;
     --border-color: rgba(255, 255, 255, 0.1);
     --body-color: #ced8de;
     --title-color: #fff;
-    --link-color: #0070f3;
+    --link-color: #2a89f5;
+    --text-code: #df41ff;
 }
