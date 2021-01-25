@@ -203,16 +203,16 @@ private static final ThreadFactory sThreadFactory = new ThreadFactory() {
 };
 
 /**
-    * 定义了一个线程池
-    */
+ * 定义了一个线程池
+ */
 public static final Executor THREAD_POOL_EXECUTOR = new ThreadPoolExecutor(
         CORE_POOL_SIZE, MAXIMUM_POOL_SIZE, KEEP_ALIVE, TimeUnit.SECONDS,
         new LinkedBlockingQueue<Runnable>(), sThreadFactory
 );
 
 /**
-    * 构建Handler
-    */
+ * 构建Handler
+ */
 private Handler mMainHandler = new Handler(Looper.getMainLooper()) {
     @Override
     public void handleMessage(Message msg) {
