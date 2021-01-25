@@ -81,26 +81,35 @@ export default {
   scroll-behavior: smooth;
 }
 
-.header {
+#nprogress-container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   min-height: var(--header-height);
   padding: 0 calc(var(--space) / 2);
   top: 0;
+  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba($color: var(--bg-color-rgb), $alpha: 0.6);
+  backdrop-filter: blur(32px);
   z-index: 10;
+
+  @media screen and (min-width: 1300px) {
+    // Make header sticky for large screens
+    position: sticky;
+    width: 100%;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 
   &__left,
   &__right {
     display: flex;
     align-items: center;
-    font-family: Lato, sans-serif;
-  }
-
-  @media screen and (min-width: 1300px) {
-    //Make header sticky for large screens
-    position: sticky;
-    width: 100%;
+    font-family: var(--base-font-family);
   }
 }
 
@@ -120,9 +129,7 @@ export default {
   text-align: center;
   line-height: 1.8;
   font-size: 0.9em;
-  font-family: Lato, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica,
-    Arial, pingfang sc, noto sans cjk sc, sarasa gothic sc, microsoft yahei,
-    sans-serif, Apple Color Emoji, Segoe UI Emoji;
+  font-family: var(--base-font-family);
 
   > span {
     margin: 0 0.35em;

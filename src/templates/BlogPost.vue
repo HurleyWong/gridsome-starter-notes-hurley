@@ -219,7 +219,7 @@ query Post ($id: ID!, $previousElement: ID!, $nextElement: ID!) {
 }
 
 .post-meta {
-  font-family: Lato, sans-serif;
+  font-family: var(--base-font-family);
 }
 
 .post {
@@ -296,7 +296,7 @@ query Post ($id: ID!, $previousElement: ID!, $nextElement: ID!) {
 }
 
 .post-comments {
-  font-family: Lato, sans-serif !important;
+  font-family: var(--base-font-family);
   padding: calc(var(--space) / 2);
   max-width: var(--content-width);
   margin: 0 auto;

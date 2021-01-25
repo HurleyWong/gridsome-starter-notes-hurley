@@ -26,12 +26,12 @@
         ><font-awesome :icon="['fas', 'id-badge']"
       /></g-link>
 
-      <!-- <g-link
+      <g-link
         to="/archives"
         style="color: var(--title-color);"
         v-tooltip="{ content: '📂 Archives' }"
         ><font-awesome :icon="['fas', 'archive']"/></g-link
-      > -->
+      >/
       <!-- <a
         href="//blog.spencerwoo.com/posts/index.xml"
         target="_blank"

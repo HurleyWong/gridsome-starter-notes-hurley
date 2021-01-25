@@ -31,7 +31,6 @@ code {
 
 code[class*="language-"],
 pre[class*="language-"] {
-    // font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     font-family: var(--monospace-font-family);
     text-align: left;
     text-align: left;
@@ -68,16 +67,16 @@ pre[class*="language-"] {
 /* Inline code */
 
 :not(pre)>code[class*="language-"] {
-    border-radius: var(--radius);
+    // border-radius: var(--radius);
     color: var(--text-code);
     white-space: normal;
     background-color: var(--bg-content-color);
-    &::before {
-        content: '`';
-    }
-    &::after {
-        content: '`';
-    }
+    // &::before {
+    //     content: '`';
+    // }
+    // &::after {
+    //     content: '`';
+    // }
 }
 
 .token.comment,

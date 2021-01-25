@@ -5,7 +5,7 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 const marked = require('marked')
-const yaml = require('js-yaml')
+    // const yaml = require('js-yaml')
 
 module.exports = {
     siteUrl: 'https://tech.hurley.fun/',
@@ -74,7 +74,7 @@ module.exports = {
             plugins: [
                 // flow chart plugin
                 'gridsome-plugin-remark-mermaid',
-                '@gridsome/remark-prismjs',
+                // ['@gridsome/remark-prismjs', { transformInlineCode: false }],
                 // ['gridsome-plugin-remark-shiki', { theme: 'nord', skipInline: true }],
                 'gridsome-plugin-remark-container',
                 'gridsome-remark-katex',

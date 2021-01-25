@@ -27,6 +27,7 @@ import {
     faCaretSquareUp,
     faArrowUp,
     faCommentDots,
+    faArchive,
     faSpinner,
 } from '@fortawesome/free-solid-svg-icons'
 import {
@@ -53,12 +54,9 @@ library.add(
     faCaretSquareUp,
     faArrowUp,
     faCommentDots,
+    faArchive,
     faSpinner
 )
-
-// notifications
-import Notifications from 'vue-notification/dist/ssr'
-// import '~/assets/style/notification.scss'
 
 // Tooltip popovers
 import VTooltip from 'v-tooltip'
@@ -81,10 +79,14 @@ import 'katex/dist/katex.min.css'
 
 // The Client API can be used here. Learn more: gridsome.org/docs/client-api
 export default function(Vue, { router, head, isClient }) {
-    NProgress.configure({ easing: 'ease', speed: 500, showSpinner: false })
-
-    // Set default layout as a global component
-    // Vue.component('Layout', DefaultLayout)
+    NProgress.configure({
+            easing: 'ease',
+            speed: 500,
+            showSpinner: false,
+            parent: '#nprogress-container',
+        })
+        // Set default layout as a global component
+        // Vue.component('Layout', DefaultLayout)
     Vue.component('Pager', Pager)
     Vue.component('font-awesome', FontAwesomeIcon)
 
@@ -104,9 +106,6 @@ export default function(Vue, { router, head, isClient }) {
 
     // Popover tooltip
     Vue.use(VTooltip)
-
-    // notifications
-    Vue.use(Notifications)
 
     router.beforeEach((to, from, next) => {
         if (from.name !== null) {
