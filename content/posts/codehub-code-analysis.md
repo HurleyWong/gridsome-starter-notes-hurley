@@ -1,5 +1,5 @@
 ---
-title: 基于WanAndroid开放API编写的安卓应用CodeHub源码分析
+title: 基于 WanAndroid 开放 API 编写的安卓应用 CodeHub 源码分析
 date: 2020-11-07T21:00:00+08:00
 published: true
 slug: codehub-code-analysis
@@ -7,32 +7,32 @@ tags:
 - Android
 cover_image: "./images/codehub-code-analysis.png"
 canonical_url: false
-description: 基于WanAndroid开放API编写的安卓应用Codehub的源码进行解读与分析，理清架构。
+description: 基于 WanAndroid 开放 API 编写的安卓应用 Codehub 的源码进行解读与分析，理清架构。
 ---
 
 :::note ℹ️ Introduction
 
-CodeHub是一款使用WanAndroid开放API开发的技术阅读类的开源项目。项目技术栈使用到了Material Design + MVP + RxJava + Retrofit + Dagger2 + Glide等框架，由本人一人开发。项目开源链接位于：https://github.com/HurleyJames/CodeHub
+CodeHub 是一款使用 WanAndroid 开放 API 开发的技术阅读类的开源项目。项目技术栈使用到了 Material Design + MVP + RxJava + Retrofit + Dagger2 + Glide 等框架，由本人一人开发。项目开源链接位于：https://github.com/HurleyJames/CodeHub
 
 :::
 
 ## 目录结构
 
-* api：存放与网络请求相关的URL地址
-* app：存放Application类、缓存类、常量等等
-* base：存放Activity、Fragment以及Presenter的基类
+* api：存放与网络请求相关的 URL 地址
+* app：存放 Application 类、缓存类、常量等等
+* base：存放 Activity、Fragment 以及 Presenter 的基类
 * bean：存放数据模型实体类
 * dao：存放与数据库有关的类
-* di：存放与依赖注入相关的类，主要是Dagger2
+* di：存放与依赖注入相关的类，主要是 Dagger2
 * helper：存放辅助类（与工具类有区别）
 * module：各个模块的类
 * net：网络类
 * util：工具类
-* widget：与View相关的类
+* widget：与 View 相关的类
 
-## api包
+## api 包
 
-主要用来存放网络请求的地址。因为Retrofit使用的是基于RESTFUL风格的api地址，所以通过使用注解的方式，可以进行网络请求。
+主要用来存放网络请求的地址。因为 Retrofit 使用的是基于 RESTFUL 风格的 api 地址，所以通过使用注解的方式，可以进行网络请求。
 
 例如，下面是一个登陆的请求，使用`@POST`的注解，携带用户名和密码的字段。
 
@@ -53,23 +53,23 @@ Observable<BaseBean<UserBean>> login(@Field("username") String username,
                                         @Field("password") String password);
 ```
 
-## app包
+## app 包
 
-### App类
+### App 类
 
-继承至`Application`类，主要存放一些全局应用配置的方法，例如初始化全局Dialog、初始化ARouter、Litepal等等。
+继承至`Application`类，主要存放一些全局应用配置的方法，例如初始化全局 Dialog、初始化 ARouter、Litepal 等等。
 
-因为本项目使用到的第三方框架特别多，所以可能导致代码量很多，所以App类继承的是`MultiDexApplication`类，而`MultiDexApplication`类继承的又是`Application`类。
+因为本项目使用到的第三方框架特别多，所以可能导致代码量很多，所以 App 类继承的是`MultiDexApplication`类，而`MultiDexApplication`类继承的又是`Application`类。
 
-### Constants类
+### Constants 类
 
 存放静态常量。这样当需要修改时，就可以直接在该类中修改，而不需要到具体的代码位置修改（因为使用到的地方可能很多）。
 
-## base包
+## base 包
 
-### BaseActivity类
+### BaseActivity 类
 
-这是一个抽象类，继承至`RxAppCompatActivity`类，而`RxAppCompatActivity`类又是继承至`AppCompatActivity`类。这里主要存放一些Activity通用的方法。例如：
+这是一个抽象类，继承至`RxAppCompatActivity`类，而`RxAppCompatActivity`类又是继承至`AppCompatActivity`类。这里主要存放一些 Activity 通用的方法。例如：
 
 * 沉浸式状态栏
 
@@ -84,13 +84,13 @@ ImmersionBar.with(this)
 ```
 
 * 夜间模式
-* 返回按钮/右上角设置选项
-* 显示Toast
-* 使用ButterKnife绑定控件
+* 返回按钮 / 右上角设置选项
+* 显示 Toast
+* 使用 ButterKnife 绑定控件
 
-### BaseContract类
+### BaseContract 类
 
-我们都知道MVP模式需要一个契约类Contract来作为桥梁，连接Model和View，所以需要编写一个Contract的基类。
+我们都知道 MVP 模式需要一个契约类 Contract 来作为桥梁，连接 Model 和 View，所以需要编写一个 Contract 的基类。
 
 ```java
 public interface BaseContract {
@@ -154,25 +154,25 @@ public interface BaseContract {
 }
 ```
 
-### BaseFragment类
+### BaseFragment 类
 
-同样继承至`RxFragment`类，然后`RxFragment`类继承制`Fragment`类，主要存放Fragment通用的方法。
+同样继承至`RxFragment`类，然后`RxFragment`类继承制`Fragment`类，主要存放 Fragment 通用的方法。
 
-### BaseFragmentPageAdapter类
+### BaseFragmentPageAdapter 类
 
-该类继承至`FragmentPageAdapter`类，因为该项目使用到的模式是单Activity搭配多个Fragment的方式，例如首页，所以必然要使用到`FragmentPageAdapter`类。
+该类继承至`FragmentPageAdapter`类，因为该项目使用到的模式是单 Activity 搭配多个 Fragment 的方式，例如首页，所以必然要使用到`FragmentPageAdapter`类。
 
-### BasePresent类
+### BasePresent 类
 
-主要是实现了绑定View`attachView()`和解绑View`detachView()`的方法。
+主要是实现了绑定 View`attachView()`和解绑 View`detachView()`的方法。
 
-## helper包
+## helper 包
 
-该包里主要存放了与数据库、Preference以及Http网络请求相关的辅助类。
+该包里主要存放了与数据库、Preference 以及 Http 网络请求相关的辅助类。
 
-### PreferenceHelper类
+### PreferenceHelper 类
 
-该类是一个接口。主要定义了以下方法，可以通过Preference来存储：
+该类是一个接口。主要定义了以下方法，可以通过 Preference 来存储：
 
 * 登录状态
 * Cookie
@@ -180,11 +180,11 @@ public interface BaseContract {
 * 是否自动缓存
 * 是否开启夜间模式
 
-## net包
+## net 包
 
-### RxSchedulers类
+### RxSchedulers 类
 
-这是通用的Rx线程转换类，主要是使用RxJava的方法来切换线程。通过`subscribeOn`操作符来判断`Observabe`自身在哪个线程上运行，如果需要进行耗时的操作，那么就开启一个子线程来运行。
+这是通用的 Rx 线程转换类，主要是使用 RxJava 的方法来切换线程。通过`subscribeOn`操作符来判断`Observabe`自身在哪个线程上运行，如果需要进行耗时的操作，那么就开启一个子线程来运行。
 
 ```java
 static final ObservableTransformer schedulersTransformer = upstream -> {
@@ -197,9 +197,9 @@ static final ObservableTransformer schedulersTransformer = upstream -> {
 };
 ```
 
-### RxBus类
+### RxBus 类
 
-该类是一个自定义的事件总线类，主要用来代替EventBus框架等等。该类的作用就是用来发送和接收事件，从而进行相应的操作。实际上还是用RxJava相关的操作符来实现的。
+该类是一个自定义的事件总线类，主要用来代替 EventBus 框架等等。该类的作用就是用来发送和接收事件，从而进行相应的操作。实际上还是用 RxJava 相关的操作符来实现的。
 
 ```java
 /**
@@ -224,9 +224,9 @@ public <T> Flowable<T> toFlowable(Class<T> eventType) {
 }
 ```
 
-### LoadCookieInterceptor类和SaveCookieInterceptor类
+### LoadCookieInterceptor 类和 SaveCookieInterceptor 类
 
-这是两个自定义的有关Cookie加载和储存的拦截器类。
+这是两个自定义的有关 Cookie 加载和储存的拦截器类。
 
 ```java
 public class LoadCookieInterceptor implements Interceptor {
@@ -266,9 +266,9 @@ public class SaveCookieInterceptor implements Interceptor {
 }
 ```
 
-### RetrofitManager类
+### RetrofitManager 类
 
-这是一个至关重要的网络封装类，它封装了有关的OkHttp与Retrofit类，之后在相应的Present类中发起网络请求，就可以直接使用该类来操作。
+这是一个至关重要的网络封装类，它封装了有关的 OkHttp 与 Retrofit 类，之后在相应的 Present 类中发起网络请求，就可以直接使用该类来操作。
 
 下面是添加相应的拦截器。
 
@@ -324,7 +324,7 @@ private static final Interceptor mHeaderInterceptor = chain -> {
 };
 ```
 
-然后对OkHttp与Retrofit进行配置：
+然后对 OkHttp 与 Retrofit 进行配置：
 
 ```java
 /**

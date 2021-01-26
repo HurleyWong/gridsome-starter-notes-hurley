@@ -8,12 +8,12 @@ tags:
 - paper
 cover_image: "./images/witness-presence-blockchain-consensus.png"
 canonical_url: false
-description: Dr. Pournaras的一篇论文，通过智慧城市中，增强民主的区块链共识来见证存在的证明。
+description: Dr. Pournaras 的一篇论文，通过智慧城市中，增强民主的区块链共识来见证存在的证明。
 ---
 
 :::note 📚 Background
 
-因为参与了Dr. Evangelos Pournaras的毕设项目，选题也是跟区块链融入智慧城市有关的课题，所以有必要阅读他这篇有关区块链共识、proof of witness presence的论文。实际上，毕业设计即是他论文中的一部分。这一篇论文的标题的中文意思是**见证存在的证明：智慧城市中增强民主的区块链共识**。
+因为参与了 Dr. Evangelos Pournaras 的毕设项目，选题也是跟区块链融入智慧城市有关的课题，所以有必要阅读他这篇有关区块链共识、proof of witness presence 的论文。实际上，毕业设计即是他论文中的一部分。这一篇论文的标题的中文意思是**见证存在的证明：智慧城市中增强民主的区块链共识**。
 :::
 
 ### Abstract
@@ -28,11 +28,9 @@ This paper shows:
 2. how complex crowd-sensing decision-making processes can be designed with the Smart Agora platform.
 3. how real-time collective measurements can be performed in a fully decentralized and privacy-preserving way.
 
-<!-- more -->
-
 ### Introduction
 
-Introduction部分主要是介绍了智慧城市以及面临的挑战，然后应对这些挑战而引入的数字化民主范式，以及解决办法的三个关键部分：
+Introduction 部分主要是介绍了智慧城市以及面临的挑战，然后应对这些挑战而引入的数字化民主范式，以及解决办法的三个关键部分：
 
 1. participatory crowd-sensing
 2. proof of witness presence
@@ -76,7 +74,7 @@ Introduction部分主要是介绍了智慧城市以及面临的挑战，然后�
 
 ### III. AUGMENTED DEMOCRACY: VISION AND CHALLENGES
 
-这一部分提出了一个设想——古雅典Agora的数字复兴，一个公共的网络物理论述的舞台。
+这一部分提出了一个设想——古雅典 Agora 的数字复兴，一个公共的网络物理论述的舞台。
 
 Individual citizens, regional communities or policy makers actively assemble, deliberate and engage in informed collective decision-making about a wide range of complex public matters.
 
@@ -102,12 +100,12 @@ The **positioning** of this paper is that **decentralized information systems**,
 
 ### IV. PARTICIPATORY CROWD-SENSING
 
-通过使用获奖的Smart Agora平台，市民可以
+通过使用获奖的 Smart Agora 平台，市民可以
 
 1. visually design and crowd-source complex decision-making processes augmented in the urban environment.
 2. make more informed decisions by witnessing the urban environment for which decisions are made.
 
-然后定义了一个兴趣点的概念，在兴趣点回答问题都可以通过加密货币的方式获得奖励。其实兴趣点（point of interest）指的是：
+然后定义了一个兴趣点的概念，在兴趣点回答问题都可以通过加密货币的方式获得奖励。其实兴趣点 (point of interest) 指的是：
 
 > 电子地图上的某个地标、景点等处所。
 
@@ -142,11 +140,11 @@ The core of witness presence lies **proof of location** that is the secure verif
 
 ![](https://i.loli.net/2021/01/07/4uITy9kDm6OJ3nq.png)
 
-**GPS的好处**：
+**GPS 的好处**：
 
 GPS is a free service with planetary converage and as such it can be easily used by the Smart Agora application for outdoor localization.
 
-**GPS的坏处**：
+**GPS 的坏处**：
 
 GPS is a single point of failure, it is highly susceptible to fraud, spoofing, jamming and cyber-attacks, it does not provide any proof of origin or authentication and therefore it is unreliable by itself to prove claims of locations.
 
@@ -189,7 +187,7 @@ In summary, collective measurements provide a live pulse of a crowd, whose local
 
 A possible feasible decentralized approach to realize this ambitious concept is the use of **DIAS**, the Dynamic Intelligent Aggregation Service. DIAS is a network of interconnected agents deployed in citizens' personal devices or in computational resources of regional communities around points of interest.
 
-DIAS聚合网络和一个兴趣点的关系可以是**一对多**和**一对一**。
+DIAS 聚合网络和一个兴趣点的关系可以是**一对多**和**一对一**。
 
 **In the one-to-many encapsulation**：
 
@@ -213,9 +211,9 @@ Aggregation functions receive citizens' input data by proving witness presence a
 
 The goal of the testnet scenario is to assess the preferred transport mean with which citizens visit a place they witness.
 
-这个用例假设了一个线性模型的可持续性的六种交通工具：小车、巴士、火车、有轨电车、自行车、步行。这个线性模型规定小车的可持续性值为最小的0，步行的可持续性值为最大的5。这样设计以满足**第一个需求**。
+这个用例假设了一个线性模型的可持续性的六种交通工具：小车、巴士、火车、有轨电车、自行车、步行。这个线性模型规定小车的可持续性值为最小的0，步行的可持续性值为最大的 5。这样设计以满足**第一个需求**。
 
-**第二个需求**是通过在Smart Agora中为测试网场景设计决策过程来满足。The test users make a choice via a likert scale question that pops up in the Smart Agora app when they are localized at a point of interest.
+**第二个需求**是通过在 Smart Agora 中为测试网场景设计决策过程来满足。The test users make a choice via a likert scale question that pops up in the Smart Agora app when they are localized at a point of interest.
 
 为了满足**第三个需求**：each crowd-sensing asset is designed in the sequential navigational modality with two points of interest traversed in reversed order among the two groups to assess the one-to-many encapsulation of the DIAS collective measurements, i.e. choices of test users are aggregated in real-time from different remote points of interest.
 
@@ -226,7 +224,7 @@ The goal of the testnet scenario is to assess the preferred transport mean with 
 3. 公民在一个分散的通信网络中相互连接，在这个网络上可以进行集体测量，即数据的汇总。
 4. 只有在有证据证明证人在场的情况下，公民才进行集体测量。
 
-这里注意为了限制同步效果，每个用户都有一个半径不同的定位圆：50米、100米或150米。
+这里注意为了限制同步效果，每个用户都有一个半径不同的定位圆：50 米、100 米或 150 米。
 
 通过统计每个测试用户在每个兴趣点选择的交通工具，可以的得到在该地点最受欢迎的交通工具，同时得到平均可持续性。
 
@@ -234,7 +232,7 @@ The goal of the testnet scenario is to assess the preferred transport mean with 
 
 这一部分主要是统计了苏黎世四个经典组成的路线的骑行事故的风险，用风险值作为比较的基准。
 
-这里用到了**皮尔逊相关系数**，即两个值序列之间的最大值为1就表示一个完美的线性关系。
+这里用到了**皮尔逊相关系数**，即两个值序列之间的最大值为 1 就表示一个完美的线性关系。
 
 最终能得出的结论是：
 
@@ -258,7 +256,7 @@ There are three three pillars:
 * proof of witness presence
 * real-time collective measurements
 
-This paper shows how blockchain consensus and crypto-economic design can realize such a grand vision by validating location proofs and incentivizing physical presence. 
+This paper shows how blockchain consensus and crypto-economic design can realize such a grand vision by validating location proofs and incentivizing physical presence.
 
 ### 个人总结
 
@@ -266,7 +264,7 @@ This paper shows how blockchain consensus and crypto-economic design can realize
 
 最开始是介绍了智慧城市以及所面临的挑战，然后引出解决办法的三个关键因素。
 
-为了使论证更有依据，找到了一些理论基础，列举了目前的一些有关的应用或平台；然后由此提出了一个设想——古雅典Agora的数字复兴。
+为了使论证更有依据，找到了一些理论基础，列举了目前的一些有关的应用或平台；然后由此提出了一个设想——古雅典 Agora 的数字复兴。
 
 然后开始主要介绍这三个支柱：
 
@@ -276,7 +274,7 @@ This paper shows how blockchain consensus and crypto-economic design can realize
 
 总结来说，就是地图上有很多兴趣点，当每个公民位于兴趣点附近时，都能通过智能手机去回答问题，而回答问题后都可以通过加密货币的方式获得奖励。
 
-为了证明公民在兴趣点附近，我们需要一些基础设施去实现位置证明，例如GPS或者mobile celluar network等。当不能使用位置证明时，就需要用到社会证明，例如一些实体能够证明公民出现在此兴趣点附近，证人也可以。除此之外，还要进行一个集体实时测量。
+为了证明公民在兴趣点附近，我们需要一些基础设施去实现位置证明，例如 GPS 或者 mobile celluar network 等。当不能使用位置证明时，就需要用到社会证明，例如一些实体能够证明公民出现在此兴趣点附近，证人也可以。除此之外，还要进行一个集体实时测量。
 
 为了使这三个论证更有说服力，这里研究了一个苏黎世自行车安全的应用场景。通过比较可持续性值和骑行事故的风险值，得出结论是
 

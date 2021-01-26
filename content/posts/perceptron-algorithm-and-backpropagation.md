@@ -9,7 +9,7 @@ tags:
 - iris
 cover_image: "./images/iris-perceptron-backpropagation.png"
 canonical_url: false
-description: 使用多层感知机和反向传播算法对Iris Flower Data Set进行分类。
+description: 使用多层感知机和反向传播算法对 Iris Flower Data Set 进行分类。
 ---
 
 ### Introduction

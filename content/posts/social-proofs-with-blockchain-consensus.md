@@ -15,7 +15,7 @@ description: Proof of Witness Presence - Social Proofs, to develop blockchain sm
 
 :::note ℹ️ Introduction
 
-在Dr. Evangelos Pournaras的毕设项目中，我主要负责第二部分的内容：Proof of Witness Presence - Social Proofs, and main job is to develop blockchain smart contracts that prove social claims (situation awareness) on the smart phone. The smart contracts can use a combination of CAPTCHA, QR codes, puzzles tests, social proofs and other. A demonstrator needs to be delivered and later an integration to Smart Agora.
+在 Dr. Evangelos Pournaras 的毕设项目中，我主要负责第二部分的内容：Proof of Witness Presence - Social Proofs, and main job is to develop blockchain smart contracts that prove social claims (situation awareness) on the smart phone. The smart contracts can use a combination of CAPTCHA, QR codes, puzzles tests, social proofs and other. A demonstrator needs to be delivered and later an integration to Smart Agora.
 
 :::
 
@@ -25,15 +25,15 @@ description: Proof of Witness Presence - Social Proofs, to develop blockchain sm
 
 ### 初探索
 
-在一开始，我对这个项目是十分不了解的。即使我阅读了导师的[Proof of Witness Presence--Blockchain Consensus for Augmented Democracy in Smart Cities]()这篇论文以及关于这篇论文的一个use case的work paper: [On cycling risk and discomfort: urban safety mapping and bike route recommendations]()，我只是大致理清了整个场景中公民（用户）的操作流程：当用户到达地图中的某个兴趣点（地图中具有一定范围的圆圈）附近时，可以使用他们的智能手机回答问题或者评估风险等，公民的这些意见都会为系统设计者或者城市规划者带来巨大的帮助。同时，公民通过制定决策也可以获得虚拟加密货币的奖励。第三部分是关于游戏化的，即问题和兴趣点的设置具有引导式，让公民从兴趣点A到兴趣点B这样的方式，连续回答问题等。当然，第三部分就不是我负责的项目部分了，所以这里不作考虑。
+在一开始，我对这个项目是十分不了解的。即使我阅读了导师的 [Proof of Witness Presence--Blockchain Consensus for Augmented Democracy in Smart Cities]() 这篇论文以及关于这篇论文的一个 use case 的 work paper: [On cycling risk and discomfort: urban safety mapping and bike route recommendations]()，我只是大致理清了整个场景中公民（用户）的操作流程：当用户到达地图中的某个兴趣点（地图中具有一定范围的圆圈）附近时，可以使用他们的智能手机回答问题或者评估风险等，公民的这些意见都会为系统设计者或者城市规划者带来巨大的帮助。同时，公民通过制定决策也可以获得虚拟加密货币的奖励。第三部分是关于游戏化的，即问题和兴趣点的设置具有引导式，让公民从兴趣点A到兴趣点B这样的方式，连续回答问题等。当然，第三部分就不是我负责的项目部分了，所以这里不作考虑。
 
-我负责的部分就是除了位置证明之外，需要使用social proof来证明公民到达了兴趣点附近。因为只有公民到达了兴趣点附近，才能开始制定决策的过程。可是social proof究竟是什么呢？
+我负责的部分就是除了位置证明之外，需要使用 social proof 来证明公民到达了兴趣点附近。因为只有公民到达了兴趣点附近，才能开始制定决策的过程。可是 social proof 究竟是什么呢？
 
-在我的第一印象中，social这个词被我理解为社交，所以是社交证明？难道需要其他人来证明一个公民到达了兴趣点附近？这样也太不符合系统的设计了，因为这样如何确定真实性呢？
+在我的第一印象中，social 这个词被我理解为社交，所以是社交证明？难道需要其他人来证明一个公民到达了兴趣点附近？这样也太不符合系统的设计了，因为这样如何确定真实性呢？
 
-social还可以被理解为社会，所以是社会证明？社会是一个十分“大”的词，所有的人和行为都处在社会中。我仍然没有找到合理的答案。
+social 还可以被理解为社会，所以是社会证明？社会是一个十分“大”的词，所有的人和行为都处在社会中。我仍然没有找到合理的答案。
 
-通过谷歌搜索social proof，我发现大部分有关的结果都是social proof如何影响人的行为。例如，用户在购物时会根据评论、评分的高低来判断是否要购买该商品等等。但这些显然与本项目的witness presence毫无关联。
+通过谷歌搜索 social proof，我发现大部分有关的结果都是 social proof 如何影响人的行为。例如，用户在购物时会根据评论、评分的高低来判断是否要购买该商品等等。但这些显然与本项目的 witness presence 毫无关联。
 
 终于，导师论文中的这段文字给了我启发：
 
@@ -49,9 +49,9 @@ social还可以被理解为社会，所以是社会证明？社会是一个十�
 
 通过与导师沟通后确认可以使用二维码的方式来帮助确定公民在某位置出现过，导师又给了我的建议：开动你的脑筋，想出至少六个场景，不需要太过具体，但是基本能够包括地图上的所有不同类型的地点。
 
-具体的意思就是，如果仅仅是在火车站需要用火车票，在飞机场需要用飞机票的方式的话，那么地图上的地点可太多了，这样设计系统的话，可能永远也设计不完。因为在不同的地点就需要使用不同的实体，这相当于我要开发N个场景，这显然是不现实的。因此，需要总结为6个场景，基本代表地图所有不同种类的地点。
+具体的意思就是，如果仅仅是在火车站需要用火车票，在飞机场需要用飞机票的方式的话，那么地图上的地点可太多了，这样设计系统的话，可能永远也设计不完。因为在不同的地点就需要使用不同的实体，这相当于我要开发 N 个场景，这显然是不现实的。因此，需要总结为 6 个场景，基本代表地图所有不同种类的地点。
 
-好吧。那就归纳出6个场景吧。如之前提到的火车站、飞机场，这些显然都是一些公共交通地点，那么就可以归为一类，统一使用Transport Ticket来完成验证。
+好吧。那就归纳出 6 个场景吧。如之前提到的火车站、飞机场，这些显然都是一些公共交通地点，那么就可以归为一类，统一使用 Transport Ticket 来完成验证。
 
 接下来，门票也是很容易想到的。当公民去一些娱乐场所，例如电影院、博物馆等等，肯定需要购买门票吧。所以，很多公共场所都可以用Ticket来完成验证了。嗯，这里其实有一个问题，当时心中也已经产生了疑惑。因为在英国，福利待遇非常好，很多公共场所对用户都是免费开放的。例如，大量的公园，art gallery，甚至一些博物馆等等都是免费开放的。免费就意味着并不需要门票，那怎么证明公民到达了该兴趣点附近呢？这个疑问在之后与导师的探讨中得到了解答。
 
@@ -61,7 +61,7 @@ social还可以被理解为社会，所以是社会证明？社会是一个十�
 
 在购物场所可以使用收据来证明。众所周知，在英国，稍微正规店的商店都是提供收据的。在医院或者药房等场所可以使用医疗证明或者处方来证明。在一些办公场所、学习场所等需要证件来能进入的场所，就可以用证件来证明。最后在一些公司、保险机构等可以需要营业资质的场所就用营业资质来证明了。
 
-总结起来就是如下6个场景：
+总结起来就是如下 6 个场景：
 
 * **Transport Ticket** (train station, airport, etc.)
 * **Receipt** (shopping mall, store, restaurant, etc.)
@@ -72,9 +72,9 @@ social还可以被理解为社会，所以是社会证明？社会是一个十�
 
 场景是归纳完毕了。但实际上，总结出来后自己也产生了一些疑惑。
 
-第一，按照论文的设想，需要证明公民实时出现在某个兴趣点附近，或者在某个符合条件的时间段内出现在某个兴趣点附近。然而，通过以上Entity，某些实体例如火车票、收据等，是的确包含时间属性的，即可以通过时间来判断用户在某个时间段的位置。但是对于某些实体例如ID Card，例如Certificate，这些也可能包含时间属性，但是指的是有效时间和过期时间。例如Student ID Card上的时间是有效期到过期日，总不能这么长的可能一年的时间段都能够证明公民一年内都到达过该地点吧？这显然是不合乎逻辑的。
+第一，按照论文的设想，需要证明公民实时出现在某个兴趣点附近，或者在某个符合条件的时间段内出现在某个兴趣点附近。然而，通过以上 Entity，某些实体例如火车票、收据等，是的确包含时间属性的，即可以通过时间来判断用户在某个时间段的位置。但是对于某些实体例如 ID Card，例如 Certificate，这些也可能包含时间属性，但是指的是有效时间和过期时间。例如 Student ID Card 上的时间是有效期到过期日，总不能这么长的可能一年的时间段都能够证明公民一年内都到达过该地点吧？这显然是不合乎逻辑的。
 
-第二，接着第一点进行分析，那么似乎绝大多数情况下，6个场景仅需要4个场景就能证明所有的地点了，即Transport Ticket、Ticket、Receipt、Prescription。剩下的两个因为时间属性不明确，并且**Certificate**这个营业资质并不容易拿出来进行证明，所以其实个人认为并不是两个很好的场景。但是，有些时候又的确很难证明，因为显然生活中有那么多的地点，并不是所有地点都能用这几个场景就覆盖，也并不是所有地点都能够有实体物证来证明。很简单的一个例子，大学的图书馆，凭借学生卡刷卡进入，那么学生（公民）仅凭学生卡的话，似乎就能完成证明。但是无法通过学生卡证明在某个特定的时间段出现过图书馆（除非学校图书馆后台调取刷卡记录，但这显然我们是做不到的）。除此之外，假设要证明学生在某个时间段出现学校的某个大楼里，例如EC Stoner，这是一个并不需要刷卡进入的大楼，那么又如何证明呢？
+第二，接着第一点进行分析，那么似乎绝大多数情况下，6 个场景仅需要 4 个场景就能证明所有的地点了，即 Transport Ticket、Ticket、Receipt、Prescription。剩下的两个因为时间属性不明确，并且 **Certificate** 这个营业资质并不容易拿出来进行证明，所以其实个人认为并不是两个很好的场景。但是，有些时候又的确很难证明，因为显然生活中有那么多的地点，并不是所有地点都能用这几个场景就覆盖，也并不是所有地点都能够有实体物证来证明。很简单的一个例子，大学的图书馆，凭借学生卡刷卡进入，那么学生（公民）仅凭学生卡的话，似乎就能完成证明。但是无法通过学生卡证明在某个特定的时间段出现过图书馆（除非学校图书馆后台调取刷卡记录，但这显然我们是做不到的）。除此之外，假设要证明学生在某个时间段出现学校的某个大楼里，例如 EC Stoner，这是一个并不需要刷卡进入的大楼，那么又如何证明呢？
 
 所以，严谨地说，这个系统或者场景设计得并不完美，但是可能也很难面面俱到。
 
@@ -108,19 +108,19 @@ Similarly, because the weights are cumulative, if the total weight of each point
 
 ### 小总结
 
-总的来说，大致流程以及证明的方法我们是确定下来了。但实际上，内心还是觉得与导师那篇论文相去甚远。因为论文中除了使用二维码条形码之外，还需要使用CAPTCHA，puzzles等方式进行证明。除此之外，大方向上还推荐用传感器融合/随时变化的行为/点对点目击的方式证明。但是我这里第一是很难实现传感器的，第二是像CAPTCHA，puzzles等方式，我认为是区别机器与真人的，并不能为证明提供任何帮助，所以在系统中并没有添加这种验证的程序。
+总的来说，大致流程以及证明的方法我们是确定下来了。但实际上，内心还是觉得与导师那篇论文相去甚远。因为论文中除了使用二维码条形码之外，还需要使用 CAPTCHA，puzzles 等方式进行证明。除此之外，大方向上还推荐用传感器融合 / 随时变化的行为 / 点对点目击的方式证明。但是我这里第一是很难实现传感器的，第二是像 CAPTCHA，puzzles 等方式，我认为是区别机器与真人的，并不能为证明提供任何帮助，所以在系统中并没有添加这种验证的程序。
 
-最后还有一个失误的地方，就是在设想场景的时候。因为这些都属于背景研究吧，还没有进行Coding部分。后来在开发过程中，使用Google Map SDK for Android的时候才发现，谷歌地图都已经对这些地点进行了详细的分类，如果当时在设想场景时用到，就会更方便地总结6个场景了。
+最后还有一个失误的地方，就是在设想场景的时候。因为这些都属于背景研究吧，还没有进行 Coding 部分。后来在开发过程中，使用 Google Map SDK for Android 的时候才发现，谷歌地图都已经对这些地点进行了详细的分类，如果当时在设想场景时用到，就会更方便地总结 6 个场景了。
 
 ## Coding
 
-代码部分主要分为Solidity和Java部分，Solidity负责智能合约的编写，Java则是Android部分的实现。
+代码部分主要分为 Solidity 和 Java 部分，Solidity 负责智能合约的编写，Java 则是 Android 部分的实现。
 
 ### Solidity
 
 这部分主要是编写智能合约并部署到以太坊网络中。其实逻辑相对简单，主要就是预先存入了大量的测试数据，然后用户就可以根据数据生成的二维码检验这些数据是否在区块链的块中真实有效。
 
-因为之前的分析我设想出了6个不同的场景，再加上兴趣点这个对象，所以一共有7个。在Solidity中则是7个结构体。下面以Transport Ticket的结构体为例：
+因为之前的分析我设想出了 6 个不同的场景，再加上兴趣点这个对象，所以一共有 7 个。在 Solidity 中则是 7 个结构体。下面以 Transport Ticket 的结构体为例：
 
 ```Solidity
 struct TransportTicket {
@@ -134,7 +134,7 @@ struct TransportTicket {
 }
 ```
 
-然后就是常规的增删查操作，不过Solidity不同在于需要`mapping`和`event`。
+然后就是常规的增删查操作，不过 Solidity 不同在于需要`mapping`和`event`。
 
 ```Solidity
 mapping (uint256 => TransportTicket) transportTickets;
@@ -144,13 +144,13 @@ uint256 transportTicketIndex = 0;
 
 ### Ethereum
 
-在开发完智能合约后，需要将智能合约部署到以太坊网络中，这样移动终端才能随时随地地通过访问以太坊网络来调用智能合约，从而对数据信息进行比对。这里需要使用到的工具主要用Infura、MetaMask等。
+在开发完智能合约后，需要将智能合约部署到以太坊网络中，这样移动终端才能随时随地地通过访问以太坊网络来调用智能合约，从而对数据信息进行比对。这里需要使用到的工具主要用 Infura、MetaMask 等。
 
-首先在Infura中创建项目，选择使用Ropsten网络。完成后复制下EndPoints的地址，并将其配置在truffle-config.js文件中。
+首先在 Infura 中创建项目，选择使用 Ropsten 网络。完成后复制下 EndPoints 的地址，并将其配置在`truffle-config.js`文件中。
 
 ![](https://i.loli.net/2021/01/07/zFoct9vxPmwjbuM.png)
 
-同时在Chrome浏览器中安装MetaMask插件，注册账号并获得3个测试以太币。在设置隐私界面中找到12个助记词并将其配置在truffle-config.js文件中。
+同时在 Chrome 浏览器中安装 MetaMask 插件，注册账号并获得 3 个测试以太币。在设置隐私界面中找到 12 个助记词并将其配置在`truffle-config.js`文件中。
 
 ![](https://i.loli.net/2021/01/07/JnaSUuTvzb2rx4W.png)
 
@@ -169,11 +169,11 @@ truffle migrate --reset --network ropsten # --reset optional
 
 ### web3j
 
-需要将移动终端与智能合约连接起来的方式有很多，最传统的就是使用网络请求的方式。然后对于Java语言，有一个web3j的库能够很方便地帮助我们实现。
+需要将移动终端与智能合约连接起来的方式有很多，最传统的就是使用网络请求的方式。然后对于 Java 语言，有一个 web3j 的库能够很方便地帮助我们实现。
 
 ![](https://i.loli.net/2021/01/07/vfQXc9oZEFgGrnl.png)
 
-通过在本地安装好web3j，然后使用web3j的以下命令，可以将智能合约的代码逻辑自动以Java的方式实现。
+通过在本地安装好 web3j ，然后使用 web3j 的以下命令，可以将智能合约的代码逻辑自动以 Java 的方式实现。
 
 ```shell
 cd /path/to/your/web3j/java/project
@@ -181,37 +181,37 @@ cd /path/to/your/web3j/java/project
 web3j truffle generate /path/to/<truffle-smart-contract-output>.json -o /path/to/src/main/java/ -p com.your.organization.name
 ```
 
-然后就会发现在Android项目中出现了智能合约的代码，那么如果需要在Android中调用智能合约，只需要调用其中的方法即可。
+然后就会发现在 Android 项目中出现了智能合约的代码，那么如果需要在 Android 中调用智能合约，只需要调用其中的方法即可。
 
 ### Android
 
-Android部分则是与用户交互的系统，主要需要实现两个部分，一个是Google Map地图中获得位置的标注来判断是否Social Proof成功，另一个是扫描二维码解析信息，将所得到的数据进行拼接再哈希操作后，访问以太坊网络判断信息是否真实有效。
+Android 部分则是与用户交互的系统，主要需要实现两个部分，一个是 Google Map 地图中获得位置的标注来判断是否 Social Proof 成功，另一个是扫描二维码解析信息，将所得到的数据进行拼接再哈希操作后，访问以太坊网络判断信息是否真实有效。
 
 #### Google Map
 
-首先需要注册获得Google Map SDK的API，然后在安卓应用中添加谷歌地图。在本项目中，自定义了两个概念：一个是兴趣点Point of Interest，一个是社会证明点Social Proof Point。
+首先需要注册获得 Google Map SDK 的 API，然后在安卓应用中添加谷歌地图。在本项目中，自定义了两个概念：一个是兴趣点 Point of Interest，一个是社会证明点 Social Proof Point。
 
-Point of Interest是指公民或者项目管理者可以指定地图中的某个地点为兴趣点，公民只需要证明他们在某段特定的时间内到达过该地点即可，就可以在该地点回答问题或者制定决策等。
+Point of Interest 是指公民或者项目管理者可以指定地图中的某个地点为兴趣点，公民只需要证明他们在某段特定的时间内到达过该地点即可，就可以在该地点回答问题或者制定决策等。
 
-Social Proof Point是指当公民无法直接证明他们在某个特定时间内到达过某个兴趣点时（可能是因为丢失了相关的证明文件或者该兴趣点是免费开放的，不提供相关凭证），他们就可以选择使用「**辅助法**」的方式，通过证明他们到达过周围一定范围内的地点，这些地点就被称为Social Proof Point。
+Social Proof Point 是指当公民无法直接证明他们在某个特定时间内到达过某个兴趣点时（可能是因为丢失了相关的证明文件或者该兴趣点是免费开放的，不提供相关凭证），他们就可以选择使用「**辅助法**」的方式，通过证明他们到达过周围一定范围内的地点，这些地点就被称为 Social Proof Point。
 
-因此，需要在公民（用户）进入手机端的Google Map界面后，根据提示询问公民是将该地点添加为Point of Interest还是Social Proof Point。选择完毕之后，就进入证明的过程，即下一部分（二维码）。
+因此，需要在公民（用户）进入手机端的Google Map界面后，根据提示询问公民是将该地点添加为 Point of Interest 还是 Social Proof Point。选择完毕之后，就进入证明的过程，即下一部分（二维码）。
 
 ![](https://s3.ax1x.com/2021/01/07/se2fGF.jpg)
 
 #### QR Code
 
-该项目设想的场景是处于一个智慧城市中。在该智慧城市中，所有的购买、交易等都是处于一个庞大的大数据网络中。因此，无论公民在线上还是线下进行了某笔交易时，所有的交易细节都会上传到网络中，同时会返回给公民一个包含所有交易细节的二维码作为凭证，那么公民就可以凭借二维码作为Entity去证明他们在某个特定的时间内到达过某个兴趣点。
+该项目设想的场景是处于一个智慧城市中。在该智慧城市中，所有的购买、交易等都是处于一个庞大的大数据网络中。因此，无论公民在线上还是线下进行了某笔交易时，所有的交易细节都会上传到网络中，同时会返回给公民一个包含所有交易细节的二维码作为凭证，那么公民就可以凭借二维码作为 Entity 去证明他们在某个特定的时间内到达过某个兴趣点。
 
 因为这仍然是一个设想，所以目前只有测试数据而并没有真实的数据，因为目前完全智能的城市仍然是不存在的。所以需要提供储存一个测试数据的二维码作为测试使用。
 
-具体解析二维码的方式可以使用Google提供的开源库ZXing。通过扫描二维码，解析二维码的数据并与区块链中已保存的数据进行比对，判断是否真实并且有效。如果有效，则说明成功证明公民到达过Point of Interest或者Social Proof Point。
+具体解析二维码的方式可以使用 Google 提供的开源库 ZXing。通过扫描二维码，解析二维码的数据并与区块链中已保存的数据进行比对，判断是否真实并且有效。如果有效，则说明成功证明公民到达过 Point of Interest 或者 Social Proof Point。
 
 ![](https://s3.ax1x.com/2021/01/07/seRSsA.jpg)
 
 :::note 💡 Tips
 
-> 这里注意并不仅仅是QR Code的二维码格式，Barcode的条形码格式同样支持。
+> 这里注意并不仅仅是 QR Code 的二维码格式，Barcode 的条形码格式同样支持。
 
 :::
 

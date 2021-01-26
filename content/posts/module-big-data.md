@@ -87,9 +87,9 @@ reduce(String key, Iterator values):
 
 ### MapReduce in Hadoop
 
-客户端提交MapReduce到Job Tracker，Job Tracker查询NameNode，哪些DataNodes有文件夹。Job Tracker让Task Tracker运行在这些节点之上，代码在本地数据上执行Map运算。Task Tracker启动Map服务，并监视进度。
+客户端提交 MapReduce 到 Job Tracker，Job Tracker 查询 NameNode，哪些 DataNodes 有文件夹。Job Tracker 让 Task Tracker 运行在这些节点之上，代码在本地数据上执行 Map 运算。Task Tracker 启动 Map 服务，并监视进度。
 
-Job Tracker会始终尝试为Map任务选择具有本地数据的节点，NameNode指示节点会从相关的DataNode复制数据。最后，Job Tracker会执行Reduce Task.
+Job Tracker 会始终尝试为 Map 任务选择具有本地数据的节点，NameNode 指示节点会从相关的 DataNode 复制数据。最后，Job Tracker 会执行 Reduce Task。
 
 所以，一个完整的执行步骤就是：
 
@@ -99,7 +99,7 @@ $$Input \rightarrow Splitting \rightarrow Mapping \rightarrow Shuffling \rightar
 
 ## 3. Hadoop
 
-Hadoop的第一个核心版本就是HDFS和MapReduce，HDFS是Hadoop的第一层面，MapReduce是Hadoop的第二层面。
+Hadoop 的第一个核心版本就是 HDFS 和 MapReduce，HDFS 是 Hadoop 的第一层面，MapReduce 是 Hadoop 的第二层面。
 
 ### HDFS
 
@@ -109,7 +109,7 @@ HDFS was inspired by the GFS(Google File System), published in 2003. It has a **
 
 An HDFS cluster consists of **a single NameNode**, additionally, there are a number of **DataNodes**.
 
-也几乎是说，一个NameNode会有很多个DataNode，在内部，一个文件会被分成一个或者很多个块，这些块会被存储进DataNode集合中。这样的好处就是，一个DataNode的损坏不要紧，其它的DataNodes仍然能够自动保存数据。
+也几乎是说，一个 NameNode 会有很多个 DataNode，在内部，一个文件会被分成一个或者很多个块，这些块会被存储进 DataNode 集合中。这样的好处就是，一个 DataNode 的损坏不要紧，其它的 DataNodes 仍然能够自动保存数据。
 
 ### YARN
 
@@ -117,9 +117,9 @@ Hadoop 2 moves from a restricted batch-oriented model to **more interactive and 
 
 ![](https://i.loli.net/2021/01/07/YMBH4lzwkZeGyUc.png)
 
-The fundamental idea of YARN is to **Split Hadoop resource management and job scheduling into separate processes (daemons)**.   将Hadoop资源管理和作业调度划分为单独的流程。
+The fundamental idea of YARN is to **Split Hadoop resource management and job scheduling into separate processes (daemons)**.   将 Hadoop 资源管理和作业调度划分为单独的流程。
 
-**ResourceManager** is the authority that arbitrates resources among all applications. Replaces the **JobTracker**. ResourceManger决定哪个应用会获得下一个集群资源。
+**ResourceManager** is the authority that arbitrates resources among all applications. Replaces the **JobTracker**. ResourceManger 决定哪个应用会获得下一个集群资源。
 
 **NodeManager** is a per-machine framework responsible for **containers**, monitoring resource usage, and reporting to the **ResourceManager**. Each machine in a cluster is a NodeManager and a DataNode.
 
@@ -149,7 +149,7 @@ NoSQL databases can be categorised into four types:
 
 #### Key-value Stores
 
-K-V键值对是NoSQL最简单的类型，易于实现。
+K-V 键值对是 NoSQL 最简单的类型，易于实现。
 
 It good at:
 
@@ -177,7 +177,7 @@ Document-oriented databases are similar to key-value, except that the key links 
 
 Graph databases use a flexible graph model, which can scale across multiple machines. It consists of two elements: a **node** and a **relationship**. Each node represents an entity and each relationship represents how two entites are related.
 
-即每个node都代表一个实体，而relationship代表两个节点之间的关系。
+即每个 node 都代表一个实体，而 relationship 代表两个节点之间的关系。
 
 It good at:
 
@@ -208,8 +208,8 @@ Problem spaces with connected data:
 现在流行的重复数据删除主要采用三种级别：
 
 * File-level: 以特定文件为基础，整合数据并且删除重复（速度快，但是去重性能一般）
-* Block-level: 以磁盘block为单位来删除整合数据（能去除更多的重复，但是CPU、IO操作要求高）
-* Byte-level: 字节级重复数据的删除（基于字节，对CPU要求更高）
+* Block-level: 以磁盘 block 为单位来删除整合数据（能去除更多的重复，但是 CPU、IO 操作要求高）
+* Byte-level: 字节级重复数据的删除（基于字节，对 CPU 要求更高）
 
 ### Source/Target - Based Deduplication
 
@@ -275,14 +275,14 @@ On a Storm cluster there are two types of nodes: a master node and workder nodes
 
 ![](https://i.loli.net/2021/01/07/dAxBoaNCmUv72tF.png)
 
-ZooKeeper是一个针对大型应用提供高可用的数据管理、应用程序协调服务的分布式服务框架，基于对Paxos算法的实现，使该框架保证了分布式环境中数据的强一致性，提供的功能包括：配合维护、统一命名服务、状态同步服务、集群管理等。
+ZooKeeper 是一个针对大型应用提供高可用的数据管理、应用程序协调服务的分布式服务框架，基于对 Paxos 算法的实现，使该框架保证了分布式环境中数据的强一致性，提供的功能包括：配合维护、统一命名服务、状态同步服务、集群管理等。
 
 ## 12. Kafka
 
 > Apache Kafka is an open-source distributed event streaming platform for high-performance data pipelines, streaming analytics, data integration, and mission-critical applications.
 
-Apache Kafka是一个快速、可扩展的、高吞吐、可容错的分布式发布-订阅消息系统，具有高吞吐量、内置分区、支持数据副本和容错的特性，适合在大规模消息处理的场景中使用。
+Apache Kafka 是一个快速、可扩展的、高吞吐、可容错的分布式发布-订阅消息系统，具有高吞吐量、内置分区、支持数据副本和容错的特性，适合在大规模消息处理的场景中使用。
 
-在发布-订阅消息系统中，消息被持久化到一个topic中，消费者可以订阅一个或者多个topic，消费者可以消费该topic中所有的数据，同一条数据也可以被多个消费者消费。消费的生产者被定义为发布者，消费者被定义为订阅者。
+在发布-订阅消息系统中，消息被持久化到一个 topic 中，消费者可以订阅一个或者多个 topic，消费者可以消费该 topic 中所有的数据，同一条数据也可以被多个消费者消费。消费的生产者被定义为发布者，消费者被定义为订阅者。
 
 ![](https://i.loli.net/2021/01/07/gCb5TRKqV7tEHZY.png)

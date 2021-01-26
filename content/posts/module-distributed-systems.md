@@ -55,7 +55,7 @@ We need to consider whether a DS scales in
 #### Scaling Techniques
 
 * **Hiding Communication latencies**: 对于地域拓展比较适用。尽量避免等待远程服务对请求的响应（异步通信）
-* **Distribution**: 分布技术把某个组件分隔成多个部分，然后再将它们分散到系统中去。例如，DNS名字空间是由域（domain）组成的分层树状结构，域又被划分为互不重叠的区（zone）
+* **Distribution**: 分布技术把某个组件分隔成多个部分，然后再将它们分散到系统中去。例如，DNS 名字空间是由域 (domain) 组成的分层树状结构，域又被划分为互不重叠的区 (zone)
 * **Replication**: Replicate components across a DS
 
 ### Centralised vs. Decentralised Systems
@@ -82,9 +82,9 @@ We need to consider whether a DS scales in
 
 #### Grid Computing 网格计算
 
-网格计算系统是分布式计算的一种，具有高度异构性。网格计算通过大量异构计算机的未用资源（CPU周期和磁盘存储）等，将其作为嵌入在分布式基础设施中的一个虚拟的计算机集群，为解决大规模的计算问题提供一个模型。
+网格计算系统是分布式计算的一种，具有高度异构性。网格计算通过大量异构计算机的未用资源（CPU 周期和磁盘存储）等，将其作为嵌入在分布式基础设施中的一个虚拟的计算机集群，为解决大规模的计算问题提供一个模型。
 
-Layered Grid Architecture具有4层：
+Layered Grid Architecture 具有 4 层：
 
 * **Application**: 该层负责处理对多个资源的访问，通常由资源分派、把任务分配、调度到多个资源等服务组成
   * **Collective**
@@ -111,7 +111,7 @@ Layered Grid Architecture具有4层：
 * Context: Integrating applications
 * Situation: organisations confronted with many networked applications, but achieving interoperability was painful.
 
-### Distributed Pervasive Systems   分布式普适系统
+### Distributed Pervasive Systems 分布式普适系统
 
 #### Ubiquitous Computing Systems
 
@@ -186,7 +186,7 @@ Many client-server applications are constructed logically from **three** differe
 
 ### Hybrid Architectures
 
-Edge-server systems就是一个典型的混合型架构。其部署在因特网中，服务器放置在网络的边界中。这条边界是由企业网络和实际的因特网之间的分界线形成的。
+Edge-server systems 就是一个典型的混合型架构。其部署在因特网中，服务器放置在网络的边界中。这条边界是由企业网络和实际的因特网之间的分界线形成的。
 
 * End-users connect to the Internet by means of an edge server
 * Edge servers serve content; a collection of edge servers can be used to optimise content and application distribution.
@@ -201,33 +201,33 @@ Communication in distributed systems is always based on low level message passin
 * **Remote Method Invocation**
 * **Message Oriented Çommunication**
 
-### Remote Procedure Call(RPC)
+### Remote Procedure Call (RPC)
 
 允许程序调用另一个地址空间的过程或函数，而不是显式编码这个远程调用的细节。
 
-在异步RPC中，服务器在接收到RPC请求后立即向客户端送回应答，之后再调用客户端请求的过程。客户接收到服务器的确认信息之后，不会阻塞而是继续向下执行。
+在异步 RPC 中，服务器在接收到 RPC 请求后立即向客户端送回应答，之后再调用客户端请求的过程。客户接收到服务器的确认信息之后，不会阻塞而是继续向下执行。
 
-例如，两台服务器A、B，一个应用部署在A服务器上，想要调用B服务器上的应用提供的函数。但是因为不在同一个内存空间，不能直接调用，需要通过网路来表达调用的语义和传递调用的数据。
+例如，两台服务器 A、B，一个应用部署在 A 服务器上，想要调用 B 服务器上的应用提供的函数。但是因为不在同一个内存空间，不能直接调用，需要通过网路来表达调用的语义和传递调用的数据。
 
 那么：
 
-* 首先，要解决通讯的问题，主要通过在客户端和服务器之间建立TCP连接，RPC所有的数据交换都是在这个连接里传输的。
-* 第二，解决寻址的问题。A服务器上的应用如何告诉底层的RPC框架，如何连接到服务器以及特定的端口，其方法的名称又是什么。
-* 当A服务器上的应用发起RPC时，方法的参数需要通过底层的网络协议如TCP传递到B服务器，由于网络协议的是基于二进制的，所以内存中的参数的值需要序列化为二进制的形式，即进行Serialize（序列化）或者编组（marshal），通过寻址和传输的方式将序列化的二进制发送给B服务器。
+* 首先，要解决通讯的问题，主要通过在客户端和服务器之间建立 TCP 连接，RPC 所有的数据交换都是在这个连接里传输的。
+* 第二，解决寻址的问题。A 服务器上的应用如何告诉底层的 RPC 框架，如何连接到服务器以及特定的端口，其方法的名称又是什么。
+* 当 A 服务器上的应用发起 RPC 时，方法的参数需要通过底层的网络协议如 TCP 传递到 B 服务器，由于网络协议的是基于二进制的，所以内存中的参数的值需要序列化为二进制的形式，即进行 Serialize（序列化）或者编组（marshal），通过寻址和传输的方式将序列化的二进制发送给 B 服务器。
 * B服务器收到请求后，需要进行反序列化（序列化的逆操作），恢复为内存中的表达方式，然后找到对应的方法（寻址的一部分）进行本地调用，然后得到返回值。
-* 返回值也是通过序列化的方式发送回A服务器上的应用，服务器A收到后，再进行反序列化，恢复为内存中的表达方式，交个A服务器上的应用
+* 返回值也是通过序列化的方式发送回 A 服务器上的应用，服务器 A 收到后，再进行反序列化，恢复为内存中的表达方式，交个 A 服务器上的应用
 
 ![](https://i.loli.net/2021/01/07/XMgVKv7LaR62Jtx.png)
 
-目前，比较流行的开源RPC框架有：
+目前，比较流行的开源 RPC 框架有：
 
-* Dubbo：由阿里巴巴开发并开源，仅支持Java
-* Spring Cloud：仅支持Java语言
-* Thrift：最初由Facebook开发，之后贡献给Apache，支持多种语言
+* Dubbo：由阿里巴巴开发并开源，仅支持 Java
+* Spring Cloud：仅支持 Java 语言
+* Thrift：最初由 Facebook 开发，之后贡献给 Apache，支持多种语言
 
 ---
 
-远程方法调用（Remote Method Invocation）和RPC有着紧密的联系，只是RMI被扩展到了分布式对象的范畴。
+远程方法调用 (Remote Method Invocation) 和 RPC 有着紧密的联系，只是RMI被扩展到了分布式对象的范畴。
 
 * **RMI**：访问对象能够调用位于潜在的远程对象上的方法
 * **RPC**：底层细节被隐藏了
@@ -238,19 +238,19 @@ Communication in distributed systems is always based on low level message passin
 * 它们都是典型的基于请求——应答协议构造的，并能提供一系列如最少一次、最多一次的调用语义
 * 提供相似程度的透明性，本地调用和远程调用，采用相同的语法
 
-### The Message-Passing Interface(MPI)
+### The Message-Passing Interface (MPI)
 
-MPI是一个跨语言的通讯协议，用于编写并行计算机，支持**点对点**和**广播**。MPI是为了并行应用程序设计的，因而是为瞬时通信打造的，直接使用底层网络。其目标是高性能，大规模性，和可移植性。
+MPI 是一个跨语言的通讯协议，用于编写并行计算机，支持**点对点**和**广播**。MPI是为了并行应用程序设计的，因而是为瞬时通信打造的，直接使用底层网络。其目标是高性能，大规模性，和可移植性。
 
 ### Message Oriented Persistent Communication: Message-Queueing Model
 
 消息队列模型的基本思想是应用程序可以通过在特定队列中插入消息来进行通信。
 
-AMQP是一个提供统一消息服务的应用层标准高级消息队列协议，为面向消息的中间层设计。
+AMQP 是一个提供统一消息服务的应用层标准高级消息队列协议，为面向消息的中间层设计。
 
-## 6. Service Oriented Architectures(SOA)
+## 6. Service Oriented Architectures (SOA)
 
-SOA是一种分布式运算的软件设计方法，软件的调用者可以通过网络上的通用协议调用另一个应用软件组件运行，让调用者获得服务。它的精髓是严格的松散耦合，不允许直接访问其它服务的数据，所有人都按照一个标准来进行通信交流。
+SOA 是一种分布式运算的软件设计方法，软件的调用者可以通过网络上的通用协议调用另一个应用软件组件运行，让调用者获得服务。它的精髓是严格的松散耦合，不允许直接访问其它服务的数据，所有人都按照一个标准来进行通信交流。
 
 它的优点有：
 
@@ -270,7 +270,7 @@ What are Web Services?
   * Invoked through a declared API, usually over a network
   * Composed with other services
 
-最普遍的一种说法是：Web Service = SOAP + HTTP + WSDL。其中，SOAP协议是Web Service的主体部分，它通过HTTP等应用层协议进行通讯，自身使用XML文件来描述程序的函数方法和参数信息，从而完成不同主机的异构系统间的计算服务处理。WSDL也是一个XML文档，它通过HTTP向公众发布，公告客户端程序关于某个具体的Web Service服务的URL信息，方法的命令，参数，返回值等信息。
+最普遍的一种说法是：Web Service = SOAP + HTTP + WSDL。其中，SOAP 协议是 Web Service 的主体部分，它通过 HTTP 等应用层协议进行通讯，自身使用 XML 文件来描述程序的函数方法和参数信息，从而完成不同主机的异构系统间的计算服务处理。WSDL 也是一个 XML 文档，它通过 HTTP 向公众发布，公告客户端程序关于某个具体的 Web Service 服务的 URL 信息，方法的命令，参数，返回值等信息。
 
 ### SOAP: Simple Object Access Protocol
 
@@ -278,11 +278,11 @@ What are Web Services?
 * Supports synchronous (RPC-style) and asynchronous (document transfer) modes of communication
 * Provides an interoperability abstraction of conventional RPC/RMI
 
-对于应用程序开发来说，使程序之间进行因特网通信是很重要的。目前的应用程序可以通过RPC来进行通信，但是RPC会产生兼容性以及安全的问题，防火墙或者代理服务器通常会阻止此类流量。所以，通过HTTP在应用程序间通信是更好的方法，因为HTTP得到了所有的因特网浏览器以及服务器的支持，SOAP就是设计出来，基于XML的简单协议，可以使应用程序在HTTP之上进行信息交换。
+对于应用程序开发来说，使程序之间进行因特网通信是很重要的。目前的应用程序可以通过 RPC 来进行通信，但是 RPC 会产生兼容性以及安全的问题，防火墙或者代理服务器通常会阻止此类流量。所以，通过 HTTP 在应用程序间通信是更好的方法，因为 HTTP 得到了所有的因特网浏览器以及服务器的支持，SOAP 就是设计出来，基于XML的简单协议，可以使应用程序在 HTTP 之上进行信息交换。
 
 ### WSDL: Web Services Description Language
 
-WSDL是来描述web服务的，描述如何访问到web服务，所以也可以说WSDL是用来描述SOAP的，它也是一个XML文件。
+WSDL 是来描述 web 服务的，描述如何访问到 web 服务，所以也可以说 WSDL 是用来描述 SOAP 的，它也是一个 XML 文件。
 
 * Describes the <font color="red">interface</font> of a web service in a standard way, in XML
 * Allows disparate clients to understand automatically how they may interact with a Web Service
@@ -294,13 +294,13 @@ WSDL是来描述web服务的，描述如何访问到web服务，所以也可以�
 * Organisation wishing to expose web servies creates a <font color="red">UDDI business registration</font> in XML and publishes it.
 * Business registrations are held in a database, the UDDI business registry, replicated at <font color="red">UDDI operator sites.</font>
 
-UUDI是一个统一描述、发现和集成的，基于XML的跨平台的描述规范，可以使世界范围内的企业在互联网上发布自己所提供的服务。
+UUDI 是一个统一描述、发现和集成的，基于 XML 的跨平台的描述规范，可以使世界范围内的企业在互联网上发布自己所提供的服务。
 
-## 7. Representational State Transfer(REST)
+## 7. Representational State Transfer (REST)
 
 > REST is an architectural style for distributed hypermedia systems.
 
-通俗的说法就是，URL定位资源，用HTTP动词（GET | POST | DELETE | PUT）等描述操作。
+通俗的说法就是，URL 定位资源，用 HTTP 动词 (GET | POST | DELETE | PUT) 等描述操作。
 
 SOAP and REST are essentially the same in what they do, but different in how they work. There are some differences:
 
@@ -356,7 +356,7 @@ There are two types of clock synchronisation algorithms:
 
 #### Berkeley Algorithm
 
-这个算法存在一个time daemon，即时间守护程序。所以其原理就是：
+这个算法存在一个 time daemon，即时间守护程序。所以其原理就是：
 
 * 时间守护程序向所有其他的机器询问时钟值
 * 其他机器做出应答
@@ -373,8 +373,8 @@ There are two types of clock synchronisation algorithms:
 
 The structure of NTP:
 
-* Servers from a logical hierarchy called a <font color="red">synchronisation subnet</font>.    即时钟为第0层
-* <font color="red">Primary servers</font>, in <font color="red">stratum 1</font>, are connected directly to a time source such as a radio clock receiving UTC. 主服务器在第1层
+* Servers from a logical hierarchy called a <font color="red">synchronisation subnet</font>. 即时钟为第 0 层
+* <font color="red">Primary servers</font>, in <font color="red">stratum 1</font>, are connected directly to a time source such as a radio clock receiving UTC. 主服务器在第 1 层
 * <font color="red">Secondary servers</font>, in <font color="red">stratum 2</font>, synchronise directly with primary servers; <font color="red">stratum 3</font> servers synchronise with stratum 2 servers, etc...
 * Leaf servers execute in users' workstations.
 

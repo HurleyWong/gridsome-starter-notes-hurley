@@ -26,21 +26,19 @@ Complete the implementation of this file. You should focus on the following aspe
 
 * VM template: specify a template of your choice. Note: Feel free to use the template provided in the code.
 
-* the information OpenNebula provides about the VM, e.g. name of host where it is running; 
+* the information OpenNebula provides about the VM, e.g. name of host where it is running;
 
-* the time is takes to instantiate the VM; 
+* the time is takes to instantiate the VM;
 
 * the time it takes to delete the VM.
 
 Compile the program. Run it and record its output.
 
-<!-- more -->
-
 **Note**: You are expected to run the experiments n times (e.g. n = 5) because of the inherent dynamic nature of the cloud infrastructure. A statistical analysis (average, standard deviation) is therefore expected. Compare the results of the various executions and discuss any discrepancies in performance.
 
 #### Solution
 
-按照题目要求，这里主要是搭配OpenNebula，使用模板template创建虚拟机，删除虚拟机等操作。其中注意要记录实例化虚拟机的时间和删除虚拟机的时间。
+按照题目要求，这里主要是搭配 OpenNebula，使用模板 template 创建虚拟机，删除虚拟机等操作。其中注意要记录实例化虚拟机的时间和删除虚拟机的时间。
 
 ```java
 public static void main(String[] args) {
@@ -193,13 +191,13 @@ public static void main(String[] args) {
 
 ```
 
-首先使用学校用户名和密码登录学校的OpenNebula。然后使用自己定义的一个`vmTemplate`（具体配置信息可以借鉴已给出的样例代码）。然后使用`OneResponse rc = VirtualMachine.allocate(oneClient, vmTemplate)`去使用该模板创建虚拟机。
+首先使用学校用户名和密码登录学校的 OpenNebula。然后使用自己定义的一个`vmTemplate`（具体配置信息可以借鉴已给出的样例代码）。然后使用`OneResponse rc = VirtualMachine.allocate(oneClient, vmTemplate)`去使用该模板创建虚拟机。
 
 对于删除虚拟机，则需要使用`VirtualMachinePool vmPool = new VirtualMachinePool(oneClient)`去从虚拟机池中获取所有的虚拟机，然后遍历询问是否要删除。删除的方法主要是`vm.finalizeVM()`（在最新版本的OpenNebula中，该方法已废弃，已经改成`terminate()`方法）。
 
-至于获得实例化和删除所需的时间，无非就是在之前获得系统时间t1，之后获得系统时间t2，两者相减即为花费的时间。
+至于获得实例化和删除所需的时间，无非就是在之前获得系统时间 t1，之后获得系统时间 t2，两者相减即为花费的时间。
 
-### Part2:  VM Migration
+### Part2: VM Migration
 
 You are told VM migration in clouds brings multiple benefits such as higher performance, improved manageability and fault tolerance. There are a number of VM migration mechanisms you may consider, e.g. heuristics, power-aware, performance-aware and network-aware.
 
@@ -288,9 +286,9 @@ if (choice.equals("yes")) {
 
 对于迁移虚拟机到其它的主机的方法其实很简单，就是使用`vm.liveMigrate(hostId)`或者`vm.migrate(hostId, false)`方法即可。但是要制定策略将虚拟机迁移到合适的主机才行，这就需要考虑到很多因素。
 
-对于这道题目，考虑到OpenNebula网站中可以查看到的信息，主要考虑以下四个因素：
+对于这道题目，考虑到 OpenNebula 网站中可以查看到的信息，主要考虑以下四个因素：
 
-* CPU占用量
+* CPU 占用量
 * 内存占用量
 * 磁盘占用量
 * 该主机中含有的虚拟机数量
@@ -307,9 +305,9 @@ diskUsage = (Double.parseDouble(host.xpath("/HOST/HOST_SHARE/DISK_USAGE")) / Dou
 int numVM = Integer.parseInt(host.xpath("/HOST/HOST_SHARE/RUNNING_VMS"));
 ```
 
-在制定策略上，因为一个主机中存在的虚拟机数量对于性能的影响相对较小，因为有些虚拟机会占用更多的CPU和内存，有些则不会，所以并不是意味着虚拟机越多，其占用的性能也就越多。因此，在**权重**分配上，我让`numVM`占50%，别的则占100%，最终相加即是结果。结果越小的说明该主机的负荷越小，就应该把该虚拟机迁移过去。
+在制定策略上，因为一个主机中存在的虚拟机数量对于性能的影响相对较小，因为有些虚拟机会占用更多的 CPU 和内存，有些则不会，所以并不是意味着虚拟机越多，其占用的性能也就越多。因此，在**权重**分配上，我让`numVM`占50%，别的则占 100%，最终相加即是结果。结果越小的说明该主机的负荷越小，就应该把该虚拟机迁移过去。
 
-通过在OpenNebula网站中查看，可以知道学校有9个Host，并且**名称和HOSTID**的数字并不是一样的，所以需要自己手动设置。
+通过在 OpenNebula 网站中查看，可以知道学校有 9 个 Host，并且**名称和HOSTID**的数字并不是一样的，所以需要自己手动设置。
 
 ```java
 double[] host1 = new double[5];
@@ -348,7 +346,7 @@ for(HOSTPERF h: arrHost)
 }
 ```
 
-然后按照上文所说一样，利用权重计算负荷值，通过交换找到最小的负荷值以及其对应的HOSTID。
+然后按照上文所说一样，利用权重计算负荷值，通过交换找到最小的负荷值以及其对应的 HOSTID。
 
 ```java
 public static double getTotal(double[] a){
@@ -374,5 +372,5 @@ public static int findSuitable(double[] a){
 }
 ```
 
-这样就能找出负荷最低的主机ID，然后将该虚拟机迁移过去即可。
+这样就能找出负荷最低的主机 ID，然后将该虚拟机迁移过去即可。
 

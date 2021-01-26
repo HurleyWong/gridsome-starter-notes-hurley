@@ -13,13 +13,13 @@ description: Build and use neural networks for the Iris classification task via 
 
 :::note 📕 Motto
 
-“现今程序员的情况好多了，只要有一台便宜的二手电脑，一张Linux光盘和一个互联网帐户，你就已经拥有了把自己提升到任何级别的编程水平所需的全部工具。”
-“在信息时代，进入编程领域的壁垒完全不存在了。即使有也是自我强加的。如果你想着手去开发一些全新的东西，你不需要数百万美元的资本。你只需要足够的比萨和健怡可乐存在你的冰箱里，有一台便宜的PC用于工作，以及让你坚持下来的奉献精神。**我们睡在地板上。我们跋山涉水**。”
+“现今程序员的情况好多了，只要有一台便宜的二手电脑，一张 Linux 光盘和一个互联网帐户，你就已经拥有了把自己提升到任何级别的编程水平所需的全部工具。”
+“在信息时代，进入编程领域的壁垒完全不存在了。即使有也是自我强加的。如果你想着手去开发一些全新的东西，你不需要数百万美元的资本。你只需要足够的比萨和健怡可乐存在你的冰箱里，有一台便宜的 PC 用于工作，以及让你坚持下来的奉献精神。**我们睡在地板上。我们跋山涉水**。”
 
 —— 约翰·卡马克
 :::
 
-![](https://i.loli.net/2021/01/07/XR892ceDVO5h1fZ.png)
+![约翰·卡马克](https://i.loli.net/2021/01/07/XR892ceDVO5h1fZ.png)
 
 约翰·卡马克的最后一句话，通俗易懂。又不禁让我想起了那段台词：
 
@@ -174,7 +174,7 @@ plot_train_performance(trained_model)
 
 ## Result
 
-![](https://i.loli.net/2021/01/07/2flu4zmsqdJ1FLR.png)
+![运行结果](https://i.loli.net/2021/01/07/2flu4zmsqdJ1FLR.png)
 
 ## Error
 
@@ -186,7 +186,7 @@ plot_train_performance(trained_model)
 
 :::
 
-最终通过Stack Overflow上的[一篇帖子](https://stackoverflow.com/questions/51456613/valueerror-error-when-checking-target-expected-dense-3-to-have-shape-1-but)找到了问题所在。
+最终通过 Stack Overflow 上的[一篇帖子](https://stackoverflow.com/questions/51456613/valueerror-error-when-checking-target-expected-dense-3-to-have-shape-1-but)找到了问题所在。
 
 the following line is wrong:
 

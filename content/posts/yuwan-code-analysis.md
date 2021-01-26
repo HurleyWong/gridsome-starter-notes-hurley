@@ -15,10 +15,10 @@ description: 对某社交安卓应用的源码进行解读与分析，理清架�
 该项目工程的包结构主要还是根据功能来分包。
 
 * base：存放项目的基类
-  * data：数据Model层
+  * data：数据 Model 层
   * job
-  * view：View层
-  * presenter：Presenter层
+  * view：View 层
+  * presenter：Presenter 层
 * media：媒体包
 * module：主要是根据功能版块进行分类
   * app
@@ -41,29 +41,29 @@ description: 对某社交安卓应用的源码进行解读与分析，理清架�
 * persistence：持久层，存放不大且暂时储存的数据
 * qiniu：有关七牛云的工具类
 * util：工具类
-* widget：与界面View相关的类
+* widget：与界面 View 相关的类
   * adapter：适配器类
   * comm：通用类
-  * dialog：dialog相关类
-  * header：顶部View类
+  * dialog：dialog 相关类
+  * header：顶部 View 类
   * recyclerview
 * wxapi：与调用微信相关的类
 
-## Network包
+## Network 包
 
-### ErrorCode类
+### ErrorCode 类
 
 主要是用来存放各种错误的**状态码**。
 
-### CacheInterceptor类与GlobalInterceptor类
+### CacheInterceptor 类与 GlobalInterceptor 类
 
-因为OkHttp都支持自定义拦截器类，所以这两个就是自定义的缓存拦截器类与全局拦截器类。
+因为 OkHttp 都支持自定义拦截器类，所以这两个就是自定义的缓存拦截器类与全局拦截器类。
 
 自定义拦截器的方法都是`implements Interceptor`，然后重写`public Response intercept(Chain chain)`方法，然后创建`Builder`实例，使用`addHeader()`方法添加。
 
-### HttpClient类
+### HttpClient 类
 
-该类主要是使用Retrofit与OkHttp搭配封装网络类，创建实例。
+该类主要是使用 Retrofit 与 OkHttp 搭配封装网络类，创建实例。
 
 ```java
 protected Retrofit retrofit;
@@ -123,41 +123,41 @@ public void subscribe(Flowable observable, Subscriber subscriber) {
 }
 ```
 
-### RxManager类
+### RxManager 类
 
-## Widget包
+## Widget 包
 
-该包中的类基本都是自定义View。
+该包中的类基本都是自定义 View。
 
-### CommViewPager类
+### CommViewPager 类
 
-这就是一个典型的自定义View类，即通过继承`ViewPager`类，然后重写`onInterceptTouchEvent`方法，`onTouchEvent`方法等。
+这就是一个典型的自定义 View 类，即通过继承`ViewPager`类，然后重写`onInterceptTouchEvent`方法，`onTouchEvent`方法等。
 
-## Base包
+## Base 包
 
-### BaseActivity类和BaseFragment类
+### BaseActivity 类和 BaseFragment 类
 
-是一个MVC结构的抽象的Activity或者Fragment基类，主要可以存放一些通用的方法，例如`showDialog()`等等。当该类逻辑并不复杂时，就没有必要使用MVP的模式增加不必要的代码量，就可以直接使用MVC的方式去编写。
+是一个 MVC 结构的抽象的 Activity 或者 Fragment 基类，主要可以存放一些通用的方法，例如`showDialog()`等等。当该类逻辑并不复杂时，就没有必要使用 MVP 的模式增加不必要的代码量，就可以直接使用 MVC 的方式去编写。
 
-### MVPBaseActivity类和MVPBaseFragment类
+### MVPBaseActivity 类和 MVPBaseFragment 类
 
-这两个类作用是与上面两个类的作用一样的，不同之处就是使用MVP模式的时候才会用到，那么就会多出一些与Presenter层交互的方法。
+这两个类作用是与上面两个类的作用一样的，不同之处就是使用 MVP 模式的时候才会用到，那么就会多出一些与 Presenter 层交互的方法。
 
-### MvpBaseRefreshFragment类
+### MvpBaseRefreshFragment 类
 
-该类继承至MVPBaseFragment类，当又多添加了有关刷新的方法，例如下拉刷新界面与数据、上拉加载更多等等。从以上写法也可以看出，基本上是定义一个抽象的基类，然后在基类的基础上，创建一些子类，重写其中的部分方法并添加属于子类特性的方法。
+该类继承至 MVPBaseFragment 类，当又多添加了有关刷新的方法，例如下拉刷新界面与数据、上拉加载更多等等。从以上写法也可以看出，基本上是定义一个抽象的基类，然后在基类的基础上，创建一些子类，重写其中的部分方法并添加属于子类特性的方法。
 
-### MVPBasePresent类和MVPActivityPresenter类和MVPFragmentPresent类
+### MVPBasePresent 类和 MVPActivityPresenter 类和 MVPFragmentPresent 类
 
-原理与之前都是一样，定义Present的基类，并且编写相应的子类以对应不同的使用场景。
+原理与之前都是一样，定义 Present 的基类，并且编写相应的子类以对应不同的使用场景。
 
-Present类中主要就有处理逻辑的相关方法，例如`netRequest()`请求网络，`postDelayJob()`发送延时任务等等。
+Present 类中主要就有处理逻辑的相关方法，例如`netRequest()`请求网络，`postDelayJob()`发送延时任务等等。
 
-## Module包
+## Module 包
 
-### app包
+### app 包
 
-#### CommThreadPool类
+#### CommThreadPool 类
 
 ```java
 public class CommThreadPool {
@@ -219,7 +219,7 @@ public class CommThreadPool {
 }
 ```
 
-#### Config类
+#### Config 类
 
 主要是定义生产环境与测试环境的相关配置。
 

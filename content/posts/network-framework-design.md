@@ -7,21 +7,21 @@ tags:
 - Android
 cover_image: "./images/network-framework-design.png"
 canonical_url: false
-description: 借鉴Volley的实现思路，设计与实现一个简单的HTTP网络请求库。
+description: 借鉴 Volley 的实现思路，设计与实现一个简单的 HTTP 网络请求库。
 ---
 
-CustomeNet的基本架构主要分为4个部分：
+CustomeNe 的基本架构主要分为 4 个部分：
 
-* 最上面的部分是**Request**，包括了各种请求类型。比如：返回JSON数据格式的JsonRequest，返回字符串格式的StringRequest扥等
+* 最上面的部分是**`Request`**，包括了各种请求类型。比如：返回 JSON 数据格式的 JsonRequest ，返回字符串格式的 StringRequest 扥等
 * 第二个部分是**消息队列**，维护了提交给网络框架的请求列表，并且根据相应的规则进行排序。默认情况下，消息队列会按照**优先级**和**进入队列的顺序**来执行，使用到的是线程安全的**`PriorityBlockingQueue<E>`**，因为他们的队列会被并发执行，需要保证队列访问的原子性。
 * 第三部分是**`NetworkExecutor`**，也就是网络的执行部分。该`Executor`是继承至`Thread`，在`run()`方法中会循环访问请求队列，从请求队列中获取并执行`HTTP`请求，请求完成之后再将结果传递给UI线程，实际上是一个线程类。
-* 第四部分是**`Response`以及其传递类**。因为第三部分的网络执行部分`Executor`实际上是一个线程类，但是Android中并不能在该线程中更新UI。所以我们需要通过一种方式将请求结果传递给UI线程。**`ResponseDelivery`**封装了`Response`的投递，保证了`Response`执行在UI线程。
+* 第四部分是**`Response`以及其传递类**。因为第三部分的网络执行部分`Executor`实际上是一个线程类，但是 Android 中并不能在该线程中更新 UI。所以我们需要通过一种方式将请求结果传递给 UI 线程。**`ResponseDelivery`**封装了`Response`的投递，保证了`Response`执行在UI线程。
 
 如下图所示：
 
 <img width="80%" src="https://i.loli.net/2021/01/07/5fLkdRDlSbNnmM2.png"></img>
 
-## Request部分
+## Request 部分
 
 首先，我们定义网络请求的方式。我们知道，常见的网络请求方式有`GET`、`POST`、`PUT`、`DELETE`等。那么，我们就设置这四种最简单的网络请求方式。
 
@@ -58,7 +58,7 @@ public static enum Priority {
 }
 ```
 
-因为对于网络请求来说，实际上返回的请求结果的格式是不确定的，有可能是JSON的数据格式，有可能是XML数据格式，有的甚至直接是字符串。所以需要让Request是抽象部分，而不是具体。一种方式是让Request作为**泛型类**，即`Request<?>`，那么如果返回的是字符串类型，就是`Request<String>`。以下就是Request类的核心代码：
+因为对于网络请求来说，实际上返回的请求结果的格式是不确定的，有可能是 JSON 的数据格式，有可能是 XML 数据格式，有的甚至直接是字符串。所以需要让 Request 是抽象部分，而不是具体。一种方式是让 Request 作为**泛型类**，即`Request<?>`，那么如果返回的是字符串类型，就是`Request<String>`。以下就是 Request 类的核心代码：
 
 ```java
 public abstract class Request<T> implements Comparable<Request<T>> {
@@ -298,13 +298,13 @@ public abstract class Request<T> implements Comparable<Request<T>> {
 
 上述代码就是`Request<T>`的抽象类的实现，`T`是该请求Response的数据格式。因为不同场景会有不同的需求，返回的数据格式也是不一样的。
 
-每个Request会有一个序列号，该序列号由请求队列生成，标识该请求在队列中的序号，该序号和优先级决定了该请求在队列中的排序，即它在请求队列的执行顺序。
+每个 Request 会有一个序列号，该序列号由请求队列生成，标识该请求在队列中的序号，该序号和优先级决定了该请求在队列中的排序，即它在请求队列的执行顺序。
 
-在上面这个抽象类中，封装了通用的方法，即`parseResponse`这个方法。继承`Request`的子类只需要重写这个方法，对对应的数据格式进行解析即可。例如，解析JSON数据，就可以通过`JsonRequest`里重写这个方法进行解析；解析Bitmap数据，就可以创建一个`ImageRequest`对图片进行转化，将Response的数据转化为Bitmap即可。
+在上面这个抽象类中，封装了通用的方法，即`parseResponse`这个方法。继承`Request`的子类只需要重写这个方法，对对应的数据格式进行解析即可。例如，解析 JSON 数据，就可以通过`JsonRequest`里重写这个方法进行解析；解析 Bitmap 数据，就可以创建一个`ImageRequest`对图片进行转化，将 Response 的数据转化为 Bitmap 即可。
 
 ## 消息队列部分
 
-网络请求队列就是在内部封装了一个优先级队列，让网络请求器`NetworkExecutor`从请求队列中获取、执行请求。这样就可以保证优先级高的请求得到尽快的处理；如果优先级一致，就按照FIFO的策略执行；
+网络请求队列就是在内部封装了一个优先级队列，让网络请求器`NetworkExecutor`从请求队列中获取、执行请求。这样就可以保证优先级高的请求得到尽快的处理；如果优先级一致，就按照 FIFO 的策略执行；
 
 ### RequestQueue
 
@@ -398,13 +398,13 @@ public final class RequestQueue {
 }
 ```
 
-在`RequestQueue`中的两个核心是请求队列和网络执行器。消息队列是负责管理请求，网络请求器负责在后台执行。NetworkExecutor实际上是通过`HttpStack`接口，接口中定义了执行网络请求的对象。
+在`RequestQueue`中的两个核心是请求队列和网络执行器。消息队列是负责管理请求，网络请求器负责在后台执行。NetworkExecutor 实际上是通过`HttpStack`接口，接口中定义了执行网络请求的对象。
 
 ### HttpStack
 
 这是一个接口，里面定义了发起请求的方法`performRequest`。我们知道，原生库中发起网络请求的方式有`HttpClient`和`HttpURLConnection`的方法，所以我们可以定义不同的子类继承`HttpStack`，分别对应的是`HttpClientStack`和`HttpUrlConnStack`类。
 
-以`HttpUrlConnStack`类举例，其中应该包括HTTP请求，构建请求、设置header、设置请求参数、解析Response等操作。其实`HttpClientStack`也是这个逻辑操作，但是实现的模式不同。
+以`HttpUrlConnStack`类举例，其中应该包括 HTTP 请求，构建请求、设置 header、设置请求参数、解析 Response 等操作。其实`HttpClientStack`也是这个逻辑操作，但是实现的模式不同。
 
 ```java
 public class HttpUrlConnStack implements HttpStack {
@@ -528,9 +528,9 @@ public class HttpUrlConnStack implements HttpStack {
 }
 ```
 
-以上操作就是通过构建`HttpURLConnection`，通过其对象设置请求Header参数，发起请求，请求完成之后再解析结果，最后返回给`Response`。
+以上操作就是通过构建`HttpURLConnection`，通过其对象设置请求 Header 参数，发起请求，请求完成之后再解析结果，最后返回给`Response`。
 
-除此之外，因为我们知道，在Android6.0之后的版本中，`HttpClient`已废弃，都推荐使用`HttpUrlConnection`的方式发起网络请求，因此我们创建`HttpFactory`工具类，可以根据Android API的版本，来判断调用哪种方式来发起请求。
+除此之外，因为我们知道，在 Android 6.0 之后的版本中，`HttpClient`已废弃，都推荐使用`HttpUrlConnection`的方式发起网络请求，因此我们创建`HttpFactory`工具类，可以根据 Android API 的版本，来判断调用哪种方式来发起请求。
 
 ```java
 public final class HttpStackFactory {
@@ -551,9 +551,9 @@ public final class HttpStackFactory {
     }
 }
 ```
-## NetworkExecutor网络执行部分
+## NetworkExecutor 网络执行部分
 
-之前提到过，NetworkExecutor网络执行器实际上是一个继承至`Thread`的线程类。用户需要创建并启动一个请求队列之后，指定个数的`NetworkExecutor`来随之启动。多个`Executor`共享一个消息队列，然后每个启动器中的`run()`方法会循环地提取请求队列中的请求，拿到请求之后就交给`HttpStack`的具体实现子类来真正地执行请求。它的核心类代码如下：
+之前提到过，NetworkExecutor 网络执行器实际上是一个继承至`Thread`的线程类。用户需要创建并启动一个请求队列之后，指定个数的`NetworkExecutor`来随之启动。多个`Executor`共享一个消息队列，然后每个启动器中的`run()`方法会循环地提取请求队列中的请求，拿到请求之后就交给`HttpStack`的具体实现子类来真正地执行请求。它的核心类代码如下：
 
 ```java
 public final class NetworkExecutor extends Thread {
@@ -646,7 +646,7 @@ public final class NetworkExecutor extends Thread {
 
 ### Response类
 
-每个Request都对应一个Response，存储了请求的状态码、请求结果等内容。但框架中不应该使用太具体的内容，而是能够让开发者能够自由地、简单地扩展内容。因为我们知道，HTTP基于TCP协议，TCP协议基于Socket，Socket实际上操作的是输入输出流，。输出流是向服务器写数据，输入流是从服务器读取数据。所以在Response类中，我们应该使用`InputStream`存储结果或者用字节数组来存储结果。
+每个 Request 都对应一个 Response，存储了请求的状态码、请求结果等内容。但框架中不应该使用太具体的内容，而是能够让开发者能够自由地、简单地扩展内容。因为我们知道，HTTP 基于 TCP 协议，TCP 协议基于 Socket，Socket 实际上操作的是输入输出流。输出流是向服务器写数据，输入流是从服务器读取数据。所以在 Response 类中，我们应该使用`InputStream`存储结果或者用字节数组来存储结果。
 
 ```java
 public class Response extends BasicHttpResponse {
@@ -717,9 +717,9 @@ public class Response extends BasicHttpResponse {
 }
 ```
 
-### ResponseDelivery类
+### ResponseDelivery 类
 
-这个类的作用是将请求的回调执行到UI线程，以便用户可以更新UI等操作。
+这个类的作用是将请求的回调执行到 UI 线程，以便用户可以更新 UI 等操作。
 
 ```java
 public class ResponseDelivery implements Executor {
@@ -754,7 +754,7 @@ public class ResponseDelivery implements Executor {
 }
 ```
 
-我们也可以看到，ResponseDelivery类内部其实也是封装了关联UI线程消息队列的Handler，在`deliveryResponse`函数中将`request`执行在UI线程中，然后在子线程中再执行`request`的`deliveryResponse`方法，这个方法里会解析数据，并且将结果通过回调的方式传递给了UI线程。
+我们也可以看到，ResponseDelivery 类内部其实也是封装了关联UI线程消息队列的 Handler，在`deliveryResponse`函数中将`request`执行在UI线程中，然后在子线程中再执行`request`的`deliveryResponse`方法，这个方法里会解析数据，并且将结果通过回调的方式传递给了 UI 线程。
 
 ## 使用
 

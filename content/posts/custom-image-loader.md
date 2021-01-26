@@ -7,7 +7,7 @@ tags:
 - Android
 cover_image: "./images/custom-image-loader.png"
 canonical_url: false
-description: 通过Bitmap的高效加载模式，借助LruCache以及DiskLruCache，实现一个有三级缓存机制的ImageLoader。
+description: 通过 Bitmap 的高效加载模式，借助 LruCache 以及 DiskLruCache，实现一个有三级缓存机制的 ImageLoader。
 ---
 
 :::note ℹ️ Introduction
@@ -22,13 +22,13 @@ Generally speaking, a perfect ImageLoader should have serval functions as follow
   * 磁盘缓存
   * 网络请求
 
-所以，搭配Bitmap，使用LruCache以及DiskLruCache的三级缓存机制，就可以实现一个简单的、优秀的ImageLoader。
+所以，搭配 Bitmap，使用 LruCache 以及 DiskLruCache 的三级缓存机制，就可以实现一个简单的、优秀的 ImageLoader。
 
 :::
 
 ## 压缩功能
 
-图片压缩的作用毋庸置疑，是降低OOM的有效手段之一，一个ImageLoader必须合理地处理图片压缩问题。
+图片压缩的作用毋庸置疑，是降低 OOM 的有效手段之一，一个 ImageLoader 必须合理地处理图片压缩问题。
 
 ```java
 public class ImageResizer {
@@ -187,7 +187,7 @@ public void bindBitmap(final String uri, final ImageView imageView, final int re
 }
 ```
 
-`bindBitmap()`方法是在线程池中调用`loadBitmap`方法加载，加载成功后将图片、图片的地址以及imageView封装成一个对象，通过Handler向主线程发送一个消息，主线程就可以给imageView设置图片。
+`bindBitmap()`方法是在线程池中调用`loadBitmap`方法加载，加载成功后将图片、图片的地址以及 imageView 封装成一个对象，通过 Handler 向主线程发送一个消息，主线程就可以给 imageView 设置图片。
 
 那么，线程池是如何实现的呢？
 
@@ -229,7 +229,7 @@ private Handler mMainHandler = new Handler(Looper.getMainLooper()) {
 };
 ```
 
-通过线程池，可以避免产生大量的线程去加载图片，从而不利于整体效率的提升。所以，这里选择线程池和Handler来提供ImageLoader的并发能力。因为AysncTask的底层也是通过线程池和Handler实现的，所以也可以使用AsyncTask。
+通过线程池，可以避免产生大量的线程去加载图片，从而不利于整体效率的提升。所以，这里选择线程池和 Handler 来提供 ImageLoader 的并发能力。因为 AysncTask 的底层也是通过线程池和 Handler 实现的，所以也可以使用 AsyncTask。
 
 ## 其余方法
 
@@ -282,7 +282,7 @@ private Bitmap loadBitmapFromDiskCache(String url, int reqWidth, int reqHeight) 
 }
 ```
 
-关于从磁盘缓存中加载图片，又涉及到文件的读写，同时需要导入一个Android SDK中没有的DiskLruCache类。
+关于从磁盘缓存中加载图片，又涉及到文件的读写，同时需要导入一个 Android SDK 中没有的 DiskLruCache 类。
 
 接下来是从三级缓存机制中的最后一个，从网络中拉取图片。
 
@@ -345,7 +345,7 @@ public boolean downloadUrlToStream(String urlString, OutputStream outputStream) 
 }
 ```
 
-最后的方法就是假如三级缓存中并未找到该图片，那么需要重新从网络中，根据提供的uri下载图片，使用的是原生的`HttpURLConnection`。
+最后的方法就是假如三级缓存中并未找到该图片，那么需要重新从网络中，根据提供的 uri 下载图片，使用的是原生的`HttpURLConnection`。
 
 ```java
 private Bitmap downloadBitmapFromUrl(String urlString) {

@@ -28,8 +28,6 @@ The first part of the assignment is to build a CNN and train it on ImageNet10. S
 
 (*) Calculate the input size, which is the flattened previous layer.
 
-<!-- more -->
-
 Follow each convolutional layer by ReLU and a max-pool operation with kernel size 2 x 2.
 
 After each sequence of convolution, ReLU and max-pool, add a dropout operation with p=0.3. Dropout is a regularisation technique where layer outputs are randomly (with likelihood of p) dropped out, or ignored. This helps the neural network to avoid overfitting to noise in the training data.
@@ -41,13 +39,13 @@ Use a learning rate of 0.001, momentum 0.9, and stochastic gradient descent to t
 Now, run two experiments testing various network architectures:
 
 1. How does the number of layers affect the training process and test performance? Try between 2 and 5 layers.
-2. Choose one more architectural element to test (filter size, max-pool kernel size, number/dimensions of fully-connected layers, etc.).
+2. Choose one more architectural element to test (filter size, max-pool kernel size, number / dimensions of fully-connected layers, etc.).
 
 Generate and display the confusion matrices for the various experiments.
 
 #### Filter visualisation
 
-Now, choose the best-performing network architecture and visualise the filters from the first layer of the network. Compare the filters before training (random weight initialisation), halfway during training, and after training is completed. Normalise the filters before displaying as an image. The filters are 3D, but are easier to visualise when displayed in grayscale. You can do this using matplotlib.pyplot’s colour map argument: `plt.imshow(filter, cmap=”gray”)`
+Now, choose the best-performing network architecture and visualise the filters from the first layer of the network. Compare the filters before training (random weight initialisation), halfway during training, and after training is completed. Normalise the filters before displaying as an image. The filters are 3D, but are easier to visualise when displayed in grayscale. You can do this using matplotlib.pyplot’s colour map argument: `plt.imshow(filter, cmap="gray")`
 
 #### Feature map visualisation
 
@@ -82,20 +80,20 @@ Consider and implement at least two adjustments which you anticipate will improv
 
 #### Building the network
 
-第一步的**构建网络**意味着我们要根据已经给定的输入层和输出层通道的大小，以及卷积层卷积核（过滤器）的大小，计算出 * 对应的值的大小。具体的计算方法可以见[计算卷积层和池化层输出大小](http://hurley.fun/2020/02/29/PyTorch学习笔记（1）计算卷积层和池化层输出大小/#卷积操作输出的计算公式)。同时按照要求，设置使用的激活函数，池化层卷积核的大小，学习率，动量和Dropout的大小等，训练次数epoch为10次。根据以上固定数据和计算出的数据，就可以将该网络的模型搭建好。
+第一步的**构建网络**意味着我们要根据已经给定的输入层和输出层通道的大小，以及卷积层卷积核（过滤器）的大小，计算出 * 对应的值的大小。同时按照要求，设置使用的激活函数，池化层卷积核的大小，学习率，动量和 Dropout 的大小等，训练次数 epoch 为 10 次。根据以上固定数据和计算出的数据，就可以将该网络的模型搭建好。
 
 #### Experiments
 
 这一部分主要有两个步骤需要完成。
 
-1. 选取2-5层卷积层，判断究竟几层的性能是最好的；
+1. 选取 2-5 层卷积层，判断究竟几层的性能是最好的；
 2. 选择最少一个因素（卷积核大小，池化层卷积核大小，全连接层个数等）进行改变以提高性能表现。
 
-对于第一个步骤，则要分别搭建2-5层卷积层的网络模型。针对不同层数的网络模型，其 * 都要重新计算。
+对于第一个步骤，则要分别搭建 2-5 层卷积层的网络模型。针对不同层数的网络模型，其 * 都要重新计算。
 
 ##### 网络模型
 
-**2层**：
+**2 层**：
 
 ```python
 class ConvNet2(nn.Module):
@@ -130,9 +128,9 @@ model2 = ConvNet2()
 print(model2)
 ```
 
-2层卷积层时，全连接层的输入大小为$24*62*62$。
+2 层卷积层时，全连接层的输入大小为 $24*62*62$。
 
-**3层**：
+**3 层**：
 
 ```python
 class ConvNet3(nn.Module):
@@ -173,9 +171,9 @@ model3 = ConvNet3()
 print(model3)
 ```
 
-3层卷积层时，全连接层的输入大小为$32*29*29$。
+3 层卷积层时，全连接层的输入大小为 $32*29*29$。
 
-**4层**：
+**4 层**：
 
 ```python
 class ConvNet4(nn.Module):
@@ -223,9 +221,9 @@ model4 = ConvNet4()
 print(model4)
 ```
 
-4层卷积层时，全连接层的输入大小为$40*13*13$。
+4 层卷积层时，全连接层的输入大小为 $40*13*13$。
 
-**5层**：
+**5 层**：
 
 ```python
 class ConvNet5(nn.Module):
@@ -280,9 +278,9 @@ model5 = ConvNet5()
 print(model5)
 ```
 
-5卷积层时，全连接层的输入大小为$48*5*5$。
+5 层卷积层时，全连接层的输入大小为 $48*5*5$。
 
-由于Requirements中只给出了3层卷积层的数值大小，所以当添加到4-5层时，新增的大小可以自己设置，这里我仍然设置为以8为间隔。
+由于 Requirements 中只给出了 3 层卷积层的数值大小，所以当添加到 4-5 层时，新增的大小可以自己设置，这里我仍然设置为以 8 为间隔。
 
 ##### 判断性能
 
@@ -348,25 +346,25 @@ def train_and_valid(num_epochs, model, optimizer, flag):
 
 这里需要注意的是，在进行训练和验证时，要同步进行，而不是说在训练集训练完模型再去跑验证集。
 
-2层的损失率：
+2 层的损失率：
 
-![](https://i.loli.net/2021/01/07/UKkgazHCnT9WM6E.png)
+![2 层的损失率](https://i.loli.net/2021/01/07/UKkgazHCnT9WM6E.png)
 
-2层的准确率：
+2 层的准确率：
 
-![](https://i.loli.net/2021/01/07/UfHelP9g7Ty1uwR.png)
+![2 层的准确率](https://i.loli.net/2021/01/07/UfHelP9g7Ty1uwR.png)
 
 可以看见图像仍然没完全收敛，存在欠拟合现象。
 
-最终发现4层的相对来说收敛效果最好（5层虽然收敛很好，但是准确率已经明显低于40%，不满足要求）。
+最终发现 4 层的相对来说收敛效果最好（5 层虽然收敛很好，但是准确率已经明显低于 40%，不满足要求）。
 
-4层的损失率：
+4 层的损失率：
 
-![](https://i.loli.net/2021/01/07/Qh79pqrGmLutKEZ.png)
+![4 层的损失率](https://i.loli.net/2021/01/07/Qh79pqrGmLutKEZ.png)
 
 ##### 改变参数
 
-因为4层的收敛效果很好，所以可以适当的考虑降低Dropout的值，所以我这里仅仅改变了Dropout的值，由0.3变成0.1。
+因为 4 层的收敛效果很好，所以可以适当的考虑降低 Dropout 的值，所以我这里仅仅改变了 Dropout 的值，由 0.3 变成 0.1。
 
 ```python
 class ReConvNet(nn.Module):
@@ -433,7 +431,7 @@ model = ReConvNet()
 print(model)
 ```
 
-因为后面还有一个Feature map visualisation即特征图可视化，所以这里新添了一个方法`retrieve_features(self, x)`的方法，记录每一层的特征图。
+因为后面还有一个 Feature map visualisation 即特征图可视化，所以这里新添了一个方法`retrieve_features(self, x)`的方法，记录每一层的特征图。
 
 通过对该模型进行训练，最终拿测试集去跑，得到的准确率如下：
 
@@ -471,7 +469,7 @@ Normalized confusion matrix
 
 #### Filter visualisation
 
-卷积核（过滤器）可视化，主要是因为卷积核会随着网络训练而发生自我调整。因为第一层的输出是16，而该图片集又是RGB三通道的图片，所以第一层总共会输出$16*3=48$张卷积核的图片。
+卷积核（过滤器）可视化，主要是因为卷积核会随着网络训练而发生自我调整。因为第一层的输出是 16，而该图片集又是 RGB 三通道的图片，所以第一层总共会输出 $16*3=48$ 张卷积核的图片。
 
 ```python
 def filter_visual():
@@ -489,7 +487,7 @@ def filter_visual():
   plt.show()
 ```
 
-因为Requirements的要求在训练前、中、后分别进行卷积核可视化来观察变化。所以在`model.train()`之前就要调用`filter_visual()`。总共10轮，因此在中间即第6轮时再调用一次`filter_visual()`，然后在训练结束之后，再次调用`filter_visual()`。这样就能得到训练前、中、后三次的卷积核可视化。
+因为 Requirements 的要求在训练前、中、后分别进行卷积核可视化来观察变化。所以在`model.train()`之前就要调用`filter_visual()`。总共10轮，因此在中间即第 6 轮时再调用一次`filter_visual()`，然后在训练结束之后，再次调用`filter_visual()`。这样就能得到训练前、中、后三次的卷积核可视化。
 
 **训练前**：
 
@@ -555,7 +553,7 @@ for i in range(4):
 
 #### Improving network performance
 
-这步规定可以使用PyTorch内置的模型（不过不能是预训练好的，即`pretrained = False`），所以我这里采用的是ResNet18模型。
+这步规定可以使用 PyTorch 内置的模型（不过不能是预训练好的，即`pretrained = False`），所以我这里采用的是 ResNet18 模型。
 
 ```python
 from torchvision import models
@@ -617,4 +615,4 @@ Normalized confusion matrix
 
 ![](https://i.loli.net/2021/01/07/P5rNXj7Qgu8kanF.png)
 
-可以发现自带的性能的确比我们自己搭建的模型要好的多，同理也可以使用其它PyTorch中自带的网络模型，例如VGG16等。
+可以发现自带的性能的确比我们自己搭建的模型要好的多，同理也可以使用其它 PyTorch 中自带的网络模型，例如 VGG16 等。

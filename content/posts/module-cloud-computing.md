@@ -20,7 +20,6 @@ description: 对「云计算」这门课程学习过的知识进行总结。
 
 :::
 
-
 ## 1. Introduction to Cloud Computing: Enabling Technologies and Distributed System Models
 
 ### Distributed Computing Paradigms
@@ -51,7 +50,7 @@ description: 对「云计算」这门课程学习过的知识进行总结。
 
 ![](https://i.loli.net/2021/01/07/WetbXC7ZUB85oz4.png)
 
-可以利用Open Nebula轻松地创建私有云、混合云和公有云。
+可以利用 Open Nebula 轻松地创建私有云、混合云和公有云。
 
 Some features:
 
@@ -64,7 +63,7 @@ Some features:
 
 ### Openstack
 
-OpenStack是一个开源的云计算管理平台项目，是一系列开源项目的组合。OpenStack为私有云和公有云提供可拓展的弹性的云计算服务，项目目标是提供实施简单、可大规模扩展、标准统一的云计算管理平台。
+OpenStack 是一个开源的云计算管理平台项目，是一系列开源项目的组合。OpenStack 为私有云和公有云提供可拓展的弹性的云计算服务，项目目标是提供实施简单、可大规模扩展、标准统一的云计算管理平台。
 
 ![](https://i.loli.net/2021/01/07/MQhNS8UD79HeJCG.png)
 
@@ -110,30 +109,30 @@ For example, IBM Research Compute Cloud(RC2) has serval features as followings:
 
 ![](https://i.loli.net/2021/01/07/Syb2QfHjzBai7e4.png)
 
-我们可以看出用户是直连到web服务器的，所以如果服务器宕机了，那么用户也就自然无法访问了。或者如果是同时很多用户试图访问服务器，超过了其它处理的极限，就会出现加载速度变慢或者根本连接不上的情况。
+我们可以看出用户是直连到 web 服务器的，所以如果服务器宕机了，那么用户也就自然无法访问了。或者如果是同时很多用户试图访问服务器，超过了其它处理的极限，就会出现加载速度变慢或者根本连接不上的情况。
 
 那么，可以在后端引入一个「负载均衡器」和至少一个额外的web服务器，就可以解决这个故障。如下图所示，用户首先访问负载均衡器，再由负载均衡器将请求转发给后端的服务器。
 
 ![](https://i.loli.net/2021/01/07/G5igm94wdzDBpKt.png)
 
-但上面这个情况还有一个缺点，如果单点故障是出现在了负载均衡器上，那么在负载均衡器这里就无法转发给web服务器了，所以我们仍然需要引入第二个负载均衡器来缓解。
+但上面这个情况还有一个缺点，如果单点故障是出现在了负载均衡器上，那么在负载均衡器这里就无法转发给 web 服务器了，所以我们仍然需要引入第二个负载均衡器来缓解。
 
 ![](https://i.loli.net/2021/01/07/Yx39AtgP4J6asCb.png)
 
-当主负载均衡器发生了故障，就需要将用户请求转到第二个负载均衡器，因为DNS更改通常会较长的时间才会生效，因此需要解决IP地址重新映射的方法。所以，需要使用一个浮动IP的负载均衡架构示意图：
+当主负载均衡器发生了故障，就需要将用户请求转到第二个负载均衡器，因为 DNS 更改通常会较长的时间才会生效，因此需要解决 IP 地址重新映射的方法。所以，需要使用一个浮动IP的负载均衡架构示意图：
 
 ![](https://i.loli.net/2021/01/07/eE8jBaNVQKdoWUZ.gif)
 
 
 #### 负载均衡算法
 
-负载均衡器如何选择要转发到哪个后端服务器？负载均衡器一般根据两个因素来决定。首先，要确保所选择的服务器能够对请求做出相应，然后再根据预先配置的原则从健康服务器池（healthy pool）中进行选择。
+负载均衡器如何选择要转发到哪个后端服务器？负载均衡器一般根据两个因素来决定。首先，要确保所选择的服务器能够对请求做出相应，然后再根据预先配置的原则从健康服务器池 (healthy pool) 中进行选择。
 
 负载均衡算法决定了后端的哪些健康服务器会被选中，几个常用的算法是：
 
 * Round Robin（轮询）：为第一个请求选择列表中的第一个服务器，然后按顺序向下移动列表直到结尾，并且循环
 * Least Connections（最小连接）：优先选择连接数最少的服务器，这种情况推荐在普遍会话时间较长的情况下使用
-* Source：根据请求源IP的哈希值（hash）来选择要转发到哪个服务器，这种方式可以确保用户能够连接到相同的服务器
+* Source：根据请求源IP的哈希值 (hash) 来选择要转发到哪个服务器，这种方式可以确保用户能够连接到相同的服务器
 
 ## 3. Virtualisation
 
@@ -149,7 +148,7 @@ Hypervisor-based virtualisation techniques can be divided into three categories:
 
 #### Full Virtualisation
 
-* 全虚拟化是硬件虚拟化的一种，允许未经过修改的guest-os隔离运行。
+* 全虚拟化是硬件虚拟化的一种，允许未经过修改的 guest-os 隔离运行。
 * 虚拟机监控程序完全模拟或者仿真基础硬件。
 * 关键指令由软件使用二进制翻译来模拟。
 * 会降低性能。
@@ -166,7 +165,7 @@ A portion of the virtualization management task is transferred from the hypervis
 
 ### 虚拟化技术
 
-虚拟化技术指的是软件层面上实现的虚拟化技术，整体上分为开源虚拟化和商业虚拟化两个类。典型的代表有：Xen，KVM，WMware，Docker容器等。
+虚拟化技术指的是软件层面上实现的虚拟化技术，整体上分为开源虚拟化和商业虚拟化两个类。典型的代表有：Xen，KVM，WMware，Docker 容器等。
 
 ## 4. Containers
 
@@ -189,11 +188,11 @@ The difference between containers and VMs:
   * Batch computing
   * Microservices
 
-传统的虚拟化技术，创建环境和部署应用都很麻烦，应用的移植性也很繁琐，例如把VMware里的虚拟机迁移到KVM里就很繁琐。它极其轻量，且是秒级部署，易于移植，一次构建，随处部署。它不再依赖于独立的操作系统运行。除此之外，容器管理平台有着非常强大的弹性管理能力。
+传统的虚拟化技术，创建环境和部署应用都很麻烦，应用的移植性也很繁琐，例如把 VMware 里的虚拟机迁移到 KVM 里就很繁琐。它极其轻量，且是秒级部署，易于移植，一次构建，随处部署。它不再依赖于独立的操作系统运行。除此之外，容器管理平台有着非常强大的弹性管理能力。
 
 ### Microservices Architecture
 
-微服务架构（Microservice Architecture）是一种架构概念，旨在通过将功能分解到各个离散的服务中以实现对解决方案的解耦。
+微服务架构 (Microservice Architecture) 是一种架构概念，旨在通过将功能分解到各个离散的服务中以实现对解决方案的解耦。
 
 微服务是一种架构风格，一个大型复杂软件应用由一个或者多个微服务组成。系统中的各个微服务可以被独立部署，各个微服务之间是松耦合的。
 
@@ -218,7 +217,7 @@ The difference between containers and VMs:
 
 #### 集群架构
 
-随着业务的发展，大多数公司都会将单体应用进行集群部署，增加负载均衡服务器（例如Nginx），以应对用户量的增加而带来的高并发访问量。
+随着业务的发展，大多数公司都会将单体应用进行集群部署，增加负载均衡服务器（例如 Nginx），以应对用户量的增加而带来的高并发访问量。
 
 ![](https://i.loli.net/2021/01/07/G3I7AN6X8H5gtCJ.png)
 
@@ -226,7 +225,7 @@ The difference between containers and VMs:
 
 * **负载均衡**，通过分发服务器，将用户的访问分派到不同的应用服务器
 * **添加缓存**，使用缓存服务器来缓解数据库的数据以及数据库读取数据的压力
-* **读写分离**，当有大量的读写操作时，可以将数据库进行读写分离。例如MySQL的主从热备份，通过相关配置将主数据库的服务器同步到从数据库服务器，实现数据库的读写分离，读写分离能够改善数据库的负载能力
+* **读写分离**，当有大量的读写操作时，可以将数据库进行读写分离。例如 MySQL 的主从热备份，通过相关配置将主数据库的服务器同步到从数据库服务器，实现数据库的读写分离，读写分离能够改善数据库的负载能力
 * **分区分库分表**，将数据量较大的表水平或者垂直切分，分散到不同的库或者主机上，分散数据库的压力，提高性能
 * **应用拆分**，将较重要或者访问量较大的功能拆分出来作为新应用单独开发，通过接口调用等方式与新应用交互
 
@@ -253,9 +252,9 @@ The difference between containers and VMs:
 * **配置中心**：多环境配置管理，支持在线管理配置信息，支持版本管理、回滚等
 * **消息中心**：服务间异步通信的总线
 * **负载均衡**：服务调用服务会采用一定的分发策略
-* **服务间通信**：使用Http或者RPC协议进行服务调用
+* **服务间通信**：使用 Http 或者 RPC 协议进行服务调用
 * **服务降低、熔断、重试**：如果服务出现异常时，会有保底数据；若依赖服务多次失效，则断开。重试熔断后，定期探测依赖服务可用性，若恢复了再恢复调用
-* **服务发布与回滚**：支持红绿部署、灰度测试、AB测试等
+* **服务发布与回滚**：支持红绿部署、灰度测试、AB 测试等
 * **服务伸缩性、容器化**：根据服务的负载情况，可以快速手动地或者自动地增加、减少节点
 * **服务监控与警告**：服务定期健康检查
 * **请求缓存与合并**：如果服务间调用相同的请求缓存，会类似请求合并成批量请求，减少服务间通信，提高性能
@@ -317,7 +316,7 @@ There are some problems that should be considering:
 * **Where** to migrate VMs?
   * VM placement algorithms
 
-具体的例子可以参考这篇之前的文章：[OpenNebula and Java OpenNebula Cloud API (OCA)](https://tech-hurley.netlify.app/2020/03/opennebula-and-oca/)
+具体的例子可以参考这篇之前的文章：[OpenNebula and Java OpenNebula Cloud API (OCA)](https://tech.hurley.fun/2020/03/opennebula-and-oca/)
 
 ## 6. OpenNebula
 
@@ -342,19 +341,19 @@ What is OpenNebula? It is an open-source toolkit to build IaaS Cloud.
 
 ## 7. OpenStack
 
-OpenStack为云计算服务，是一套IaaS软件。主要功能包括：
+OpenStack 为云计算服务，是一套 IaaS 软件。主要功能包括：
 
 * 实例生命周期管理
 * 计算资源管理
-* 向外提供REST风格的API
+* 向外提供 REST 风格的 API
 
 ### Components
 
-OpenStack的组件非常多：
+OpenStack 的组件非常多：
 
 | 组件名称 | 服务类型 |
 | ---- | ---- |
-| Horizon | Dashborad，web前端服务 |
+| Horizon | Dashborad，web 前端服务 |
 | Nova | Compute，计算服务 |
 | Neutron | Networking，网络服务 |
 | Swift | Object Storage，对象存储服务 |
@@ -392,7 +391,7 @@ Example of AMQP Support:
 
 ![](https://i.loli.net/2021/01/07/oTBOcm9EsrMheUg.png)
 
-当容器实例越来越多的时候，容器管理对于我们来说是灾难的，这时候就需要Kubernetes登场了！它是一款优秀的开源容器管理软件，能够帮助我们对容器进行部署发布编排等一系列操作。
+当容器实例越来越多的时候，容器管理对于我们来说是灾难的，这时候就需要 Kubernetes 登场了！它是一款优秀的开源容器管理软件，能够帮助我们对容器进行部署发布编排等一系列操作。
 
 ### Kubernetes Role
 
@@ -406,18 +405,18 @@ Example of AMQP Support:
 
 ## Definitions
 
-Kubernetes中有两个重要的概念，一个是Cluster，一个是Pod。
+Kubernetes 中有两个重要的概念，一个是 Cluster，一个是 Pod。
 
 * Cluster: Kubernetes coordinates a highly available cluster of computers that are connected to work as a single unit. Consists of:
   * The Master coordinates the cluster
   * The Nodes are the workers that run applications
 * Pod: is smallest deployable unit of compute, consists of one or more containers that are always co-located, co-scheduled & run in a shared context
 
-Master负责调度资源和为客户端提供API，Node就是相对于Master的工作主机，可以是物理主机，也可以是虚拟机。
+Master 负责调度资源和为客户端提供 API，Node 就是相对于 Master 的工作主机，可以是物理主机，也可以是虚拟机。
 
-Master有三个组件：API Server、Scheduler、Controller Manager。
+Master 有三个组件：API Server、Scheduler、Controller Manager。
 
-API Server提供了友好易用的API外部调用，比如用一些工具kubectl等能封装大量的API调用。当API Server收到部署的请求后，Scheduler会根据所需资源，判断各个节点资源的占用情况来分配合适的Node给容器。而Controller负责整个集群的整体协调和健康，保证每个组件以正确的方式进行。
+API Server 提供了友好易用的 API 外部调用，比如用一些工具 kubectl 等能封装大量的API调用。当 API Server 收到部署的请求后，Scheduler 会根据所需资源，判断各个节点资源的占用情况来分配合适的 Node 给容器。而 Controller 负责整个集群的整体协调和健康，保证每个组件以正确的方式进行。
 
 ## 9. Cloud Middleware
 
@@ -425,7 +424,7 @@ API Server提供了友好易用的API外部调用，比如用一些工具kubectl
 
 ![](https://i.loli.net/2021/01/07/Fwg78CNjEuchsGa.png)
 
-Middleware的作用：
+Middleware 的作用：
 
 * Middleware provides a link between separate software components often referred to as plumbing.
 * Is a software layer between OS and distributed applications.
@@ -434,7 +433,7 @@ Middleware的作用：
 * Facilitate use of resource services
 * Connects the application to the infrastructure
 
-常用的中间件服务器就有Tomcat、WebLogic、jboss等。
+常用的中间件服务器就有 Tomcat、WebLogic、jboss 等。
 
 ## 10. Cloud Programming Landscape
 
@@ -466,7 +465,7 @@ Key difference between the two architectures is exactly where that intelligence 
 
 雾计算并非是些性能强大的服务器，而是由性能较弱、更为分散的各种功能的计算机组成的，渗入到平时生活中的各种物品。雾计算是介于云计算和个人计算之间的，是半虚拟化的服务计算架构模型，强调数量，并不在乎单个节点微弱的性能。
 
-雾计算的实现是使用雾计算软件、软件包计算程序或者其它的工具在网络边缘为雾节点编写或者移植IoT程序。靠近边缘的节点或者边缘设备本身会接收数据，然后将它们接收的任何数据定向到最佳的位置进行分析。
+雾计算的实现是使用雾计算软件、软件包计算程序或者其它的工具在网络边缘为雾节点编写或者移植 IoT 程序。靠近边缘的节点或者边缘设备本身会接收数据，然后将它们接收的任何数据定向到最佳的位置进行分析。
 
 与云计算相比，雾计算所采用的架构更呈分布式，更接近网络边缘。**雾计算将数据、数据处理和应用程序集中在网络边缘的设备中，而不像云计算几乎是全部保存在云中**。数据的存储及处理更依赖本地设备，而非云端的服务器。所以，云计算是新一代的**集中式计算**，而雾计算是新一代的**分布式计算**，符合互联网目前的「去中心化」特征。
 
