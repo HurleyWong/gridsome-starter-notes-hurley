@@ -1,14 +1,16 @@
 <template>
   <div id="app">
-    <header class="header">
-      <div class="header__left">
-        <Logo v-if="showLogo" />
-      </div>
+    <div id="nprogress-container">
+      <header class="header">
+        <div class="header__left">
+          <Logo v-if="showLogo" />
+        </div>
 
-      <div class="header__right">
-        <ToggleTheme />
-      </div>
-    </header>
+        <div class="header__right">
+          <ToggleTheme />
+        </div>
+      </header>
+    </div>
 
     <main class="main">
       <!-- <slot /> -->
