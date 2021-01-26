@@ -13,7 +13,7 @@
       <div v-for="year in backwardsTimeKey" :key="year">
         <h5>{{ year }}</h5>
         <p v-for="p in timeline[year]" :key="p.id">
-          <span>{{
+          <span class="date">{{
             new Date(p.date)
               .toLocaleString('en-US', {
                 month: 'short',
@@ -21,7 +21,9 @@
               })
               .replace(' ', '.')
           }}</span
-          ><g-link :to="p.path">{{ p.title }}</g-link>
+          ><g-link :to="p.path" class="title"
+            ><span>{{ p.title }}</span></g-link
+          >
         </p>
       </div>
     </div>
@@ -94,10 +96,28 @@ export default {
   p span {
     font-size: 0.85rem;
     font-family: var(--monospace-font-family);
-
     &::after {
       content: ' ';
     }
+  }
+
+  .date {
+    color: #666666;
+  }
+
+  .title {
+    color: black;
+    text-decoration: none;
+
+    span {
+      font-size: 16px;
+    }
+  }
+
+  .title:hover {
+    color: #4361ee;
+    font-size: 16px;
+    font-weight:bold;
   }
 }
 </style>
