@@ -10,9 +10,9 @@ canonical_url: false
 description: 到底什么是 DevOps？流程和管理？运维和自动化？架构和服务？
 ---
 
-:::note ℹ️ Introduction
+:::note 👀 Background
 
-随着软件发布迭代的频率越来越高，传统的「瀑布型」（开发-测试-发布）模式已经不能够满足快速交付的需求。2009 年 DevOps 应运而生，就是更好的优化开发 (DEV)、测试 (QA)、运维 (OPS) 的流程。这样就通过开发运维一体化，通过高度自动化工具与流程来使得软件构建、测试、发布更加快捷、频繁和可靠。
+随着软件发布迭代的频率越来越高，传统的「瀑布型」（开发-测试-发布）模式已经不能够满足快速交付的需求。2009 年 DevOps 应运而生，就是更好的优化**开发 (DEV)**、**测试 (QA)**、**运维 (OPS)** 的流程。这样就通过开发运维一体化，通过高度自动化工具与流程来使得软件构建、测试、发布更加快捷、频繁和可靠。
 
 :::
 
@@ -44,11 +44,11 @@ description: 到底什么是 DevOps？流程和管理？运维和自动化？架
 |  ----  | ----  |
 | 强调的是打破开发人员和管理层之间的障碍  | DevOps 主要是关于开发团队和运维团队的 |
 | 解决了客户需求和开发团队之间的距离 | 解决了开发和运维团队之间的距离 |
-| 敏捷开发管理 「Sprint」，时间更短 | DevOps 主要是争取主要版本的稳定和可靠，而不是频繁地发布新的小版本 |
+| 敏捷开发管理 「**Sprint**」，时间更短 | DevOps 主要是争取主要版本的稳定和可靠，而不是频繁地发布新的小版本 |
 
-DevOps 就像一颗神奇的子弹，将敏捷开发扩展至了生产端。DevOps 的共存实现了扩展敏捷开发实践，进一步完善软件变更在**构建**、**验证**、**部署**、**交付**等阶段中的流动。它鼓励软件开发人员和IT运维人员之间进行沟通、协作、集成和自动化。
+DevOps 就像一颗神奇的子弹，将敏捷开发扩展至了生产端。DevOps 的共存实现了扩展敏捷开发实践，进一步完善软件变更在**构建**、**验证**、**部署**、**交付**等阶段中的流动。它鼓励软件开发人员和 IT 运维人员之间进行沟通、协作、集成和自动化。
 
-> DevOps实际上是向着大规模敏捷 (**Scaling Agility**) 迈出的另一步！
+> DevOps 实际上是向着大规模敏捷 (**Scaling Agility**) 迈出的另一步！
 
 ## 优势
 
@@ -75,11 +75,11 @@ DevOps 允许敏捷开发团队实施持续集成和持续交付。
 
 ### CI
 
-CI (Continuous Integration)，持续集成。即开发人员在工作时不断地集成工作分支到主分支（一天内，频繁地将代码集成到主干）。这样不仅可以提高开发效率，还可以自动测试和构建工作，快速迭代的时候还可以及时地发现错误。同时，也防止分支大幅地偏离主干。因为如果不是经常集成的话，主干又在不断地更新，那么以后集成的难度也会增大，甚至难以集成。
+CI (**Continuous Integration**)，持续集成。即开发人员在工作时不断地集成工作分支到主分支（一天内，频繁地将代码集成到主干）。这样不仅可以提高开发效率，还可以自动测试和构建工作，快速迭代的时候还可以及时地发现错误。同时，也防止分支大幅地偏离主干。因为如果不是经常集成的话，主干又在不断地更新，那么以后集成的难度也会增大，甚至难以集成。
 
 ### CD
 
-CD (Continuous Delivery)，持续交付。即频繁地将集成的产品交付给质量团队或者用户进行下一步的评审，通过了才会部署到生产阶段。
+CD (**Continuous Delivery**)，持续交付。即频繁地将集成的产品交付给质量团队或者用户进行下一步的评审，通过了才会部署到生产阶段。
 
 CD 可以看成是 CI 的下一步。它强调的是，不管怎么更新，代码都是可以随时随地地交付的。
 
@@ -153,7 +153,7 @@ Github CI / CD 是 GitLab 内置的强大工具，允许将所有连续方法（
 
 ### Maven
 
-> Apache Maven is a software project management and comprehension tool. Based on the concept of a project object model(POM), Maven can manage a project's build, reporting and documentation from a central piece of information.
+> Apache Maven is a software project management and comprehension tool. Based on the concept of a project object model (POM), Maven can manage a project's build, reporting and documentation from a central piece of information.
 
 ![](https://i.loli.net/2021/01/07/NOxXEeobRzvmTdK.png)
 
@@ -165,11 +165,11 @@ Github CI / CD 是 GitLab 内置的强大工具，允许将所有连续方法（
 
 ### Gradle
 
-Gradle是一个基于Apache Ant和Apache Maven概念的**项目自动化构建**开源工具。它使用一种基于Groovy的语言来声明项目配置，抛弃了基于XML的各种繁琐的配置，主要是面向以Java项目为主。
+Gradle 是一个基于 Apache Ant 和 Apache Maven 概念的**项目自动化构建**开源工具。它使用一种基于 Groovy 的语言来声明项目配置，抛弃了基于 XML 的各种繁琐的配置，主要是面向以 Java 项目为主。
 
 ![](https://i.loli.net/2021/01/07/gcKUn21yZ9EvDlm.png)
 
-* gradle对多工程的构建支持很出色
+* gradle 对多工程的构建支持很出色
 * 支持局部构建
 * 支持多方式依赖管理
 * 轻松迁移
@@ -200,11 +200,11 @@ SonarQube empowers all developers to write cleaner and safer code.
 
 Chef 由三大组件组成：
 
-* Chef Server：是核心服务器，维护了一套配置脚本 (Cookbook) ，与每个被管节点 (Chef Node) 交互并且给出配置的指令。
-* Chef Workstation：提供了与 Chef Server 交互的接口，在 Workstation 上创建定义 Cookbook ，并将 Cookbook 上传到 Chef Server 上以保证 Chef Node 能从 Chef Server 上获得最新的配置指令。
-* Chef Node 是安装了 Chef Client 并注册了的被管理的节点，可以是物理机或者虚拟机或者其它对象。Chef Node 每次运行 Chef Client 都会从 Chef Server 端取得最新的配置指令 (Cookbook)，并按照指令配置自己。
+* **Chef Server**：是核心服务器，维护了一套配置脚本 (Cookbook) ，与每个被管节点 (Chef Node) 交互并且给出配置的指令。
+* **Chef Workstation**：提供了与 Chef Server 交互的接口，在 Workstation 上创建定义 Cookbook ，并将 Cookbook 上传到 Chef Server 上以保证 Chef Node 能从 Chef Server 上获得最新的配置指令。
+* **Chef Node** 是安装了 Chef Client 并注册了的被管理的节点，可以是物理机或者虚拟机或者其它对象。Chef Node 每次运行 Chef Client 都会从 Chef Server 端取得最新的配置指令 (Cookbook)，并按照指令配置自己。
 
-一套环境里包含一个 Chef Server，至少一个 Chef Workstation，以及多个 Chef Node。
+> 一套环境里包含一个 Chef Server，至少一个 Chef Workstation，以及多个 Chef Node。
 
 ### Puppet
 
@@ -223,7 +223,7 @@ Puppet 是一个 IT 基础设施自动化管理工具，它能够帮助系统管
 
 ### Zabbix
 
-Zabbix 是一个高度集成的网络监控解决方案，基于 web 界面，可以提供企业级的开源分布式监控解决方案。它能监控各种网络参数，保证服务器系统的安全运营，并提供灵活的通知机制让系统管理员快速定位、解决存在的各种问题。Zabbix 主要由 zabbix server 和 zabbix agent，以及可选组建 zabbix proxy。
+Zabbix 是一个高度集成的网络监控解决方案，基于 web 界面，可以提供企业级的开源分布式监控解决方案。它能监控各种网络参数，保证服务器系统的安全运营，并提供灵活的通知机制让系统管理员快速定位、解决存在的各种问题。Zabbix 主要由 **zabbix server** 和 **zabbix agent**，以及可选组建 **zabbix proxy**。
 
 ![](https://i.loli.net/2021/01/07/qFb6JX2s735riRa.png)
 

@@ -10,7 +10,7 @@ canonical_url: false
 description: 对「云计算」这门课程学习过的知识进行总结。
 ---
 
-:::note ℹ️ Module Objectives
+:::note ☁️ Module Objectives
 
 * **Demonstrate** an understanding of cloud computing techniques and technologies;
 * **Identify** the paradigms that determine the requirements, capabilities and performance of Cloud systems;
@@ -40,9 +40,9 @@ description: 对「云计算」这门课程学习过的知识进行总结。
 
 ### Taxonomy of Cloud Systems
 
-* Software as a Service(SaaS): This is an alternative to locally run applications. Software packages run remotely, e.g. Google Apps
-* Platform as a Service(PaaS): This is a alternative to locally run applications. Software stack facilitating the deployment of applications, e.g. MicroSoft Azure
-* Infrastructure as a Service(IaaS): Through virtualization, infrastructure providers are able to split, assign and dynamically manage service Providers, that will deploy on these systems the software stacks that run their services Virtualised resource manager.
+* Software as a Service (SaaS): This is an alternative to locally run applications. Software packages run remotely, e.g. Google Apps
+* Platform as a Service (PaaS): This is a alternative to locally run applications. Software stack facilitating the deployment of applications, e.g. MicroSoft Azure
+* Infrastructure as a Service (IaaS): Through virtualization, infrastructure providers are able to split, assign and dynamically manage service Providers, that will deploy on these systems the software stacks that run their services Virtualised resource manager.
 
 ![](https://i.loli.net/2021/01/07/E3hRYwKsLtify1l.png)
 
@@ -87,7 +87,7 @@ OpenStack 是一个开源的云计算管理平台项目，是一系列开源项�
 
 * Built with both public and private clouds
 
-For example, IBM Research Compute Cloud(RC2) has serval features as followings:
+  For example, IBM Research Compute Cloud(RC2) has serval features as followings:
 
 * Private cloud built by IBM
 * Interconnects the computing and IT resources at 8 IBM research centres scattered throughout the US, Europe and Asia
@@ -105,13 +105,13 @@ For example, IBM Research Compute Cloud(RC2) has serval features as followings:
 
 负载均衡是高可用网络架构的关键组件，通常用于将工作负载分布到多个服务器来提高网站应用、数据库或者其它服务的性能和可靠性。
 
-如何理解呢？一个没有负载均衡的web服务架构如下所示：
+如何理解呢？一个没有负载均衡的 web 服务架构如下所示：
 
 ![](https://i.loli.net/2021/01/07/Syb2QfHjzBai7e4.png)
 
 我们可以看出用户是直连到 web 服务器的，所以如果服务器宕机了，那么用户也就自然无法访问了。或者如果是同时很多用户试图访问服务器，超过了其它处理的极限，就会出现加载速度变慢或者根本连接不上的情况。
 
-那么，可以在后端引入一个「负载均衡器」和至少一个额外的web服务器，就可以解决这个故障。如下图所示，用户首先访问负载均衡器，再由负载均衡器将请求转发给后端的服务器。
+那么，可以在后端引入一个「负载均衡器」和至少一个额外的 web 服务器，就可以解决这个故障。如下图所示，用户首先访问负载均衡器，再由负载均衡器将请求转发给后端的服务器。
 
 ![](https://i.loli.net/2021/01/07/G5igm94wdzDBpKt.png)
 
@@ -119,7 +119,7 @@ For example, IBM Research Compute Cloud(RC2) has serval features as followings:
 
 ![](https://i.loli.net/2021/01/07/Yx39AtgP4J6asCb.png)
 
-当主负载均衡器发生了故障，就需要将用户请求转到第二个负载均衡器，因为 DNS 更改通常会较长的时间才会生效，因此需要解决 IP 地址重新映射的方法。所以，需要使用一个浮动IP的负载均衡架构示意图：
+当主负载均衡器发生了故障，就需要将用户请求转到第二个负载均衡器，因为 DNS 更改通常会较长的时间才会生效，因此需要解决 IP 地址重新映射的方法。所以，需要使用一个浮动 IP 的负载均衡架构示意图：
 
 ![](https://i.loli.net/2021/01/07/eE8jBaNVQKdoWUZ.gif)
 
@@ -207,7 +207,7 @@ The difference between containers and VMs:
 
 单体应用是指将所有的业务场景的表示层、业务逻辑层和数据访问层都放在一个工作中，最终通过编译、打包、部署在一台服务器上。
 
-![](https://i.loli.net/2021/01/07/qDz7l4UCGaMmSHh.png)
+![单体架构](https://i.loli.net/2021/01/07/qDz7l4UCGaMmSHh.png)
 
 在应用的初始阶段，单体架构无论是在开发速度和运维速度上，都有着显著的优势。但是随着应用业务的发展和复杂度的提高，这种架构明显存在以下不足：
 
@@ -219,7 +219,7 @@ The difference between containers and VMs:
 
 随着业务的发展，大多数公司都会将单体应用进行集群部署，增加负载均衡服务器（例如 Nginx），以应对用户量的增加而带来的高并发访问量。
 
-![](https://i.loli.net/2021/01/07/G3I7AN6X8H5gtCJ.png)
+![集群架构](https://i.loli.net/2021/01/07/G3I7AN6X8H5gtCJ.png)
 
 其**优化策略**为：
 
@@ -237,7 +237,7 @@ The difference between containers and VMs:
 
 #### 微服务架构
 
-![](https://i.loli.net/2021/01/07/YXZaLGQUHmKqJ3x.png)
+![微服务架构](https://i.loli.net/2021/01/07/YXZaLGQUHmKqJ3x.png)
 
 微服务架构的**特性**包括：
 
@@ -261,7 +261,7 @@ The difference between containers and VMs:
 * **服务网关**：用户请求过载时，就会进行限流、排队，过载保护，黑白名单、异常用户拦截等操作
 * **服务依赖、版本管理**：自动生成接口文档，让接口版本化管理
 * **日志收集、追踪、分析**：集中收集各服务的日志汇总，方便排查故障，对应用日志进行分析等
-* **性能监测APM**：对各服务性能进行监测与分析，为服务优化提供数据支持
+* **性能监测 APM**：对各服务性能进行监测与分析，为服务优化提供数据支持
 
 然而，微服务同时也存在挑战：
 
@@ -298,7 +298,7 @@ There are serval policies of cloud resource management:
 * **Capacity allocation**: allocate resources for individual activations of a service
 * **Load balancing**: distribute the workload evenly among the servers
 * **Energy optimization**: minimization of energy consumption
-* **Quality of service(QoS) guarantees**: ability to satisfy timing or other conditions specified by a Service Level Agreement
+* **Quality of service (QoS) guarantees**: ability to satisfy timing or other conditions specified by a Service Level Agreement
 
 ### VM Migration
 
@@ -373,7 +373,7 @@ OpenStack 的组件非常多：
 * **Cinder**: manages block-based storage, enables presistent storage
 * **Keystone**: Identity service offers unified, project-wide identity, token, service catalog, and policy service designed to integrate with existing systems
 * **Glance**: Image service providers basic discovery, registration, and delivery services for virtual disk images
-* **Horizon**: Dashboard enables administrators and users to access and provision cloud-based resources through a self-service portal（UI服务）
+* **Horizon**: Dashboard enables administrators and users to access and provision cloud-based resources through a self-service portal (UI 服务)
 
 ### AMQP：Advanced Message Queueing Protocol
 
@@ -422,7 +422,7 @@ API Server 提供了友好易用的 API 外部调用，比如用一些工具 kub
 
 > What's middleware? The software layer that lies between the operating system and applications on each side of a distributed computing system in a network.
 
-![](https://i.loli.net/2021/01/07/Fwg78CNjEuchsGa.png)
+![中间件](https://i.loli.net/2021/01/07/Fwg78CNjEuchsGa.png)
 
 Middleware 的作用：
 
@@ -439,14 +439,14 @@ Middleware 的作用：
 
 Cloud Service Construction makes abstraction of the programming language, like C, C++, Java, Python, etc.
 
-The Message-Passing Interface(MPI) is designed for parallel applications. It makes use of underlying network, assumes that communication takes place within a known group of processes.
+The Message-Passing Interface (MPI) is designed for parallel applications. It makes use of underlying network, assumes that communication takes place within a known group of processes.
 
 ### Parallel Programming on Amazon Web Service(AWS)
 
 Some Amazon Platforms and Service Offerings:
 
 * AWS Elastic Compute Cloud (EC2) is a web service that provides resizable compute capacity, designed to make web-scale cloud computing easy for developers.
-* AWS Simple Storage Service (S3) provides users with secure, durable, highly-scalable object storage. It is a simple web service interface to store and retrieve any amount of data from anywhere on the Web
+* AWS Simple Storage Service (S3) provides users with secure, durable, highly-scalable object storage. It is a simple web service interface to store and retrieve any amount of data from anywhere on the Web.
 
 ## 11. Trends
 
@@ -456,8 +456,8 @@ Many in industry use the terms fog computing and edge computing interchangeably.
 
 Key difference between the two architectures is exactly where that intelligence and computing power is placed:
 
-* Fog: pushes intelligence down to the local area network level of network architecture, processing data in a fog node or IoT gateway.
-* Edge: pushes the intelligence, processing power and communication capabilities of an edge gateway or appliance directly into devices like programming automation controllers.
+* **Fog**: pushes intelligence down to the local area network level of network architecture, processing data in a fog node or IoT gateway.
+* **Edge**: pushes the intelligence, processing power and communication capabilities of an edge gateway or appliance directly into devices like programming automation controllers.
 
 ### Fog computing
 

@@ -64,7 +64,7 @@ public static enum Priority {
 public abstract class Request<T> implements Comparable<Request<T>> {
 
     /**
-     * 默认的编码方式是UTF-8
+     * 默认的编码方式是 UTF-8
      */
     public static final String DEFAULT_PARAMS_ENCODING = "UTF-8";
     /**
@@ -72,15 +72,15 @@ public abstract class Request<T> implements Comparable<Request<T>> {
      */
     public static final String HEADER_CONTENT_TYPE = "";
     /**
-     * 请求的序列号，默认从0开始
+     * 请求的序列号，默认从 0 开始
      */
     protected int mSerialNum = 0;
     /**
-     * 优先级默认设置为NORMAL
+     * 优先级默认设置为 NORMAL
      */
     protected Priority mPriority = Priority.NORMAL;
     /**
-     * 是否取消该请求，默认为false
+     * 是否取消该请求，默认为 false
      */
     protected boolean isCancel = false;
     /**
@@ -88,19 +88,19 @@ public abstract class Request<T> implements Comparable<Request<T>> {
      */
     private boolean mShouldCache = true;
     /**
-     * 请求Listener
+     * 请求 Listener
      */
     protected RequestListener<T> mRequestListener;
     /**
-     * 请求的URL
+     * 请求的 URL
      */
     private String mUrl = "";
     /**
-     * 请求方法，默认GET，可更改
+     * 请求方法，默认 GET，可更改
      */
     HttpMethod mHttpMethod = HttpMethod.GET;
     /**
-     * 请求header
+     * 请求 header
      */
     private Map<String, String> mHeaders = new HashMap<>();
     /**
@@ -130,7 +130,7 @@ public abstract class Request<T> implements Comparable<Request<T>> {
     public abstract T parseResponse(Response response);
 
     /**
-     * 处理得到的结果Response，该方法需要运行在UI主线程中
+     * 处理得到的结果 Response，该方法需要运行在 UI 主线程中
      */
     public final void deliveryResponse(Response response) {
         // 解析结果
@@ -138,7 +138,7 @@ public abstract class Request<T> implements Comparable<Request<T>> {
         if (mRequestListener != null) {
             int stCode = response != null ? response.getStatusCode() : -1;
             String msg = response != null ? response.getMessage() : "unknown error";
-            // 调用onComplete回调接口
+            // 调用 onComplete 回调接口
             mRequestListener.onComplete(stCode, result, msg);
         }
     }
@@ -153,7 +153,7 @@ public abstract class Request<T> implements Comparable<Request<T>> {
     }
 
     /**
-     * 获得Body的内容类型
+     * 获得 Body 的内容类型
      * 格式为：application/x-www-form-urlencoded; charset=UTF-8
      *
      * @return
@@ -163,7 +163,7 @@ public abstract class Request<T> implements Comparable<Request<T>> {
     }
 
     /**
-     * 返回POST或者PUT请求时的Body参数字节数组
+     * 返回 POST 或者 PUT 请求时的 Body 参数字节数组
      *
      * @return
      */
@@ -194,7 +194,7 @@ public abstract class Request<T> implements Comparable<Request<T>> {
     }
 
     /**
-     * 获得请求的URL链接
+     * 获得请求的 URL 链接
      *
      * @return
      */
@@ -212,7 +212,7 @@ public abstract class Request<T> implements Comparable<Request<T>> {
     }
 
     /**
-     * 将参数转换为URL编码的参数串，格式为key1=value&key2=value2
+     * 将参数转换为 URL 编码的参数串，格式为 key1=value&key2=value2
      *
      * @param params
      * @param paramsEncoding
@@ -222,10 +222,10 @@ public abstract class Request<T> implements Comparable<Request<T>> {
         StringBuilder encodedParams = new StringBuilder();
         try {
             for (Map.Entry<String, String> entry : params.entrySet()) {
-                // key值
+                // key 值
                 encodedParams.append(URLEncoder.encode(entry.getKey(), paramsEncoding));
                 encodedParams.append("=");
-                // value值
+                // value 值
                 encodedParams.append(URLEncoder.encode(entry.getValue(), paramsEncoding));
                 encodedParams.append("&");
             }
@@ -237,7 +237,7 @@ public abstract class Request<T> implements Comparable<Request<T>> {
 
     /**
      * 用于对请求的排序处理，根据优先级和加入到队列的序号进行排序
-     * 之所以要实现Comparable的接口，就是为了重写CompareTo方法，以实现优先级的比较
+     * 之所以要实现 Comparable 的接口，就是为了重写 CompareTo 方法，以实现优先级的比较
      *
      * @param another
      * @return
@@ -279,7 +279,7 @@ public abstract class Request<T> implements Comparable<Request<T>> {
     }
 
     /**
-     * 网络请求Listener会被执行在UI线程
+     * 网络请求 Listener 会被执行在 UI 线程
      *
      * @param <T>
      */
@@ -320,11 +320,11 @@ public final class RequestQueue {
      */
     private AtomicInteger mSerialNumGenerator = new AtomicInteger(0);
     /**
-     * 默认的核心数为CPU数加1
+     * 默认的核心数为 CPU 数加 1
      */
     public static int DEFAULT_CORE_NUMS = Runtime.getRuntime().availableProcessors() + 1;
     /**
-     * CPU核心数 + 1个分发线程数
+     * CPU 核心数 + 1 个分发线程数
      */
     private int mDispatcherNums = DEFAULT_CORE_NUMS;
     /**
@@ -332,7 +332,7 @@ public final class RequestQueue {
      */
     private NetworkExecutor[] mDispatchers = null;
     /**
-     * Http请求的真正执行者
+     * Http 请求的真正执行者
      */
     private HttpStack mHttpStack;
 
@@ -413,11 +413,11 @@ public class HttpUrlConnStack implements HttpStack {
     public Response performRequest(Request<?> request) {
         HttpURLConnection urlConnection = null;
         try {
-            // 构建HttpURLConnection
+            // 构建 HttpURLConnection
             urlConnection = createUrlConnection(request.getUrl());
-            // 设置headers
+            // 设置 headers
             setRequestHeaders(urlConnection, request);
-            // 设置body参数
+            // 设置 body 参数
             setRequestParams(urlConnection, request);
             return fetchResponse(urlConnection);
         } catch (Exception e) {
@@ -464,7 +464,7 @@ public class HttpUrlConnStack implements HttpStack {
     }
 
     /**
-     * 解析response
+     * 解析 response
      *
      * @param connection
      * @return
@@ -479,16 +479,16 @@ public class HttpUrlConnStack implements HttpStack {
         // 状态行数据
         StatusLine responseStatus = new BasicStatusLine(protocolVersion, connection.getResponseCode(),
                 connection.getResponseMessage());
-        // 构建response
+        // 构建 response
         Response response = new Response(responseStatus);
-        // 设置response数据
+        // 设置 response 数据
         response.setEntity(entityFromURLConnection(connection));
         addHeadersToResponse(response, connection);
         return response;
     }
 
     /**
-     * 执行HTTP请求之后获取到其数据流，即返回请求结果的流
+     * 执行 HTTP 请求之后获取到其数据流，即返回请求结果的流
      *
      * @param connection
      * @return
@@ -511,14 +511,14 @@ public class HttpUrlConnStack implements HttpStack {
     }
 
     /**
-     * 添加header到response中
+     * 添加 header 到 response 中
      *
      * @param response
      * @param connection
      */
     private void addHeadersToResponse(BasicHttpResponse response, HttpURLConnection connection) {
         for (Map.Entry<String, List<String>> header : connection.getHeaderFields().entrySet()) {
-            // 将header依次加入response中
+            // 将 header 依次加入 response 中
             if (header.getKey() != null) {
                 Header h = new BasicHeader(header.getKey(), header.getValue().get(0));
                 response.addHeader(h);
@@ -535,7 +535,7 @@ public class HttpUrlConnStack implements HttpStack {
 ```java
 public final class HttpStackFactory {
     /**
-     * 定义Android版本
+     * 定义 Android 版本
      */
     private static final int GINGERBREAD_SDK_NUM = 9;
 
@@ -543,10 +543,10 @@ public final class HttpStackFactory {
         int runtimeSDKApi = Build.VERSION.SDK_INT;
         // 如果版本号大于这个版本
         if (runtimeSDKApi >= GINGERBREAD_SDK_NUM) {
-            // 使用HttpURLConnection()来创建连接
+            // 使用 HttpURLConnection() 来创建连接
             return new HttpUrlConnStack();
         }
-        // 使用HttpClient()来创建连接
+        // 使用 HttpClient() 来创建连接
         return new HttpClientStack();
     }
 }
@@ -652,7 +652,7 @@ public final class NetworkExecutor extends Thread {
 public class Response extends BasicHttpResponse {
 
     /**
-     * 原始的Response主体数据
+     * 原始的 Response 主体数据
      */
     public byte[] rawData = new byte[0];
 
@@ -701,7 +701,7 @@ public class Response extends BasicHttpResponse {
     }
 
     /**
-     * 将entity转化为bytes
+     * 将 entity 转化为 bytes
      *
      * @param entity
      * @return
@@ -725,12 +725,12 @@ public class Response extends BasicHttpResponse {
 public class ResponseDelivery implements Executor {
 
     /**
-     * 关联主线程消息队列的Handler
+     * 关联主线程消息队列的 Handler
      */
     Handler mResponseHandler = new Handler(Looper.getMainLooper());
 
     /**
-     * 处理请求结果，在UI主线程中执行
+     * 处理请求结果，在 UI 主线程中执行
      *
      * @param request
      * @param response
@@ -762,18 +762,18 @@ public class ResponseDelivery implements Executor {
 
 ```java
 
-// 创建请求队列，使用默认的请求核心数，并根据Android版本判断使用何种网络连接方式
+// 创建请求队列，使用默认的请求核心数，并根据 Android 版本判断使用何种网络连接方式
 RequestQueue mQueue = new RequestQueue(RequestQueue mQueue = new RequestQueue(Runtime.getRuntime().availableProcessors() + 1, HttpStackFactory.createHttpStack());
 
 // 例如，如下是一个返回字符串的请求
 StringRequest request = new StringRequest(HttpMethod.GET, "http://www.baidu.com", new RequestListener<String>() {
     @Override
     public void onComplete(int stCode, String response, String errMsg) {
-        // 处理结果，例如将response显示在界面中
+        // 处理结果，例如将 response 显示在界面中
         mTv.setText(response);
     }
 });
 
-// 将这个请求request添加到请求队列中去
+// 将这个请求 request 添加到请求队列中去
 mQueue.addRequest(request);
 ```

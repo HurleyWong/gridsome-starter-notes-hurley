@@ -10,7 +10,7 @@ canonical_url: false
 description: 对「分布式系统」这门课程学习过的知识进行总结。
 ---
 
-:::note ℹ️ Module Introduction
+:::note 🖥 Module Introduction
 
 A **distributed system** is:
 
@@ -197,7 +197,7 @@ Interprocess communication is at the heart of all distributed systems. It is imp
 
 Communication in distributed systems is always based on low level message passing as offered by the underlying network. Some widely used models for communication:
 
-* **Remote Procedure Call(RPC)**
+* **Remote Procedure Call (RPC)**
 * **Remote Method Invocation**
 * **Message Oriented Çommunication**
 
@@ -270,7 +270,7 @@ What are Web Services?
   * Invoked through a declared API, usually over a network
   * Composed with other services
 
-最普遍的一种说法是：Web Service = SOAP + HTTP + WSDL。其中，SOAP 协议是 Web Service 的主体部分，它通过 HTTP 等应用层协议进行通讯，自身使用 XML 文件来描述程序的函数方法和参数信息，从而完成不同主机的异构系统间的计算服务处理。WSDL 也是一个 XML 文档，它通过 HTTP 向公众发布，公告客户端程序关于某个具体的 Web Service 服务的 URL 信息，方法的命令，参数，返回值等信息。
+最普遍的一种说法是：**Web Service = SOAP + HTTP + WSDL**。其中，SOAP 协议是 Web Service 的主体部分，它通过 HTTP 等应用层协议进行通讯，自身使用 XML 文件来描述程序的函数方法和参数信息，从而完成不同主机的异构系统间的计算服务处理。WSDL 也是一个 XML 文档，它通过 HTTP 向公众发布，公告客户端程序关于某个具体的 Web Service 服务的 URL 信息，方法的命令，参数，返回值等信息。
 
 ### SOAP: Simple Object Access Protocol
 
@@ -312,7 +312,7 @@ SOAP and REST are essentially the same in what they do, but different in how the
 
 ## 8. Naming
 
-A <font color="red">naming system(service)</font> manages set of bindings between names and attributes of entities in the system.
+A <font color="red">naming system (service)</font> manages set of bindings between names and attributes of entities in the system.
 
 ### Distributed Hash Tables: Principle
 
@@ -321,7 +321,7 @@ A <font color="red">naming system(service)</font> manages set of bindings betwee
 LDAP, implemented directly on top of TCP, provides a simple protocol for accessing services over the Internet.
 
 * <font color="red">Directory Information Base</font>: collection of all directory entries in an LDAP service.
-* Each record is uniquely named as a sequence of naming attributes(called <font color="red">Relative Distinguished Name</font>), so that it can be looked up.
+* Each record is uniquely named as a sequence of naming attributes (called <font color="red">Relative Distinguished Name</font>), so that it can be looked up.
 * <font color="red">Directory Information Tree</font>: the naming graph of an LDAP directory service; each node represents a directory entry.
 
 ![](https://i.loli.net/2021/01/07/ANxe7FpbkDLn5cQ.png)

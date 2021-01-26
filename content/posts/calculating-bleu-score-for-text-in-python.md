@@ -11,7 +11,7 @@ canonical_url: false
 description: 对外文 "A Gentle Introduction to Calculating the BELU Score for Text in Python" 的翻译与解释
 ---
 
-:::note ℹ️ Introduction
+:::note 📜 Intro
 
 BLEU, or the Bilingual Evaluation Understudy, is a score for comparing a candidate translation or text to one or more reference translations.
 
@@ -166,4 +166,4 @@ Cumulative 4-gram: 0.000000
 
 ### Reference
 
-[A Gentle Introduction to Calculating the BELU Score for Text in Python](https://machinelearningmastery.com/calculate-bleu-score-for-text-python/)
+1. [A Gentle Introduction to Calculating the BELU Score for Text in Python](https://machinelearningmastery.com/calculate-bleu-score-for-text-python/)

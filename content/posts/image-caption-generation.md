@@ -13,7 +13,7 @@ canonical_url: false
 description: Do text pre-processing and text embeddings with an image to text model, compare the performance and usage of RNNs versus LSTMs as sequence generators.
 ---
 
-:::note ℹ️ Introduction
+:::note 📋 Abstract
 
 This project is using RNN and LSTM to generate captions separately according to the images in the Flick8k data set, then compare the BLEU scores for captions.
 :::
@@ -459,7 +459,7 @@ def plot_loss(lstm, rnn):
 plot_loss(loss_lstm, loss_rnn)
 ```
 
-![](https://i.loli.net/2021/01/07/kLKFWE2YeNbUulo.png)
+![The loss function curve of RNN and LSTM](https://i.loli.net/2021/01/07/kLKFWE2YeNbUulo.png)
 
 ### BLEU for evaluation
 

@@ -23,8 +23,8 @@ The first part of the assignment is to build a CNN and train it on ImageNet10. S
 |       3        |       16        |   convolution   |    3 x 3    |
 |       16       |       24        |   convolution   |    4 x 4    |
 |       24       |       32        |   convolution   |    4 x 4    |
-|       *        |       512       | fully-connected |             |
-|      512       |       10        | fully-connected |             |
+|       *        |       512       | fully-connected |     N/A     |
+|      512       |       10        | fully-connected |     N/A     |
 
 (*) Calculate the input size, which is the flattened previous layer.
 
@@ -465,7 +465,7 @@ Normalized confusion matrix
  [  1  25   1   4   2   0   1   1   5 129]]
 ```
 
-![](https://i.loli.net/2021/01/07/xOh8PFrzBKqdZH2.png)
+![混淆矩阵](https://i.loli.net/2021/01/07/xOh8PFrzBKqdZH2.png)
 
 #### Filter visualisation
 
@@ -491,15 +491,15 @@ def filter_visual():
 
 **训练前**：
 
-![](https://i.loli.net/2021/01/07/wJc6iKuYrWyPEbD.png)
+![训练前的卷积核](https://i.loli.net/2021/01/07/wJc6iKuYrWyPEbD.png)
 
 **训练中**：
 
-![](https://i.loli.net/2021/01/07/hSjB4NXfOmGRAF8.png)
+![训练中的卷积核](https://i.loli.net/2021/01/07/hSjB4NXfOmGRAF8.png)
 
 **训练后**：
 
-![](https://i.loli.net/2021/01/07/uVjPcpHQeRmTF61.png)
+![训练后的卷积核](https://i.loli.net/2021/01/07/uVjPcpHQeRmTF61.png)
 
 #### Feature map visualisation
 
@@ -613,6 +613,6 @@ Normalized confusion matrix
  [  2   5   4   1   8   1   1   0   6 141]]
 ```
 
-![](https://i.loli.net/2021/01/07/P5rNXj7Qgu8kanF.png)
+![混淆矩阵](https://i.loli.net/2021/01/07/P5rNXj7Qgu8kanF.png)
 
 可以发现自带的性能的确比我们自己搭建的模型要好的多，同理也可以使用其它 PyTorch 中自带的网络模型，例如 VGG16 等。

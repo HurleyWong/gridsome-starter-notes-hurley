@@ -10,7 +10,7 @@ canonical_url: false
 description: How to make a blog cover with suitable size and awesome image?
 ---
 
-:::note ℹ️ Introduction
+:::note 🖼 Background
 
 在逛他人的博客时，会发现每篇 post 都会有精美的封面图，那么这些图片是如何制作的呢？作为一个一点不会 PS 的小白，我将尽最大的努力寻求一个制作精美博客封面图的步骤。
 
@@ -28,11 +28,11 @@ description: How to make a blog cover with suitable size and awesome image?
 
 [freepik](https://www.freepik.com/) 这个网站是寻找「矢量图」的一个便捷的网站。即使不是会员，也能够下载很多精美的矢量图片（非会员每天会有下载数量限制），当前，前提是使用英文去进行搜索，但我相信这对大家并不是一个难题。
 
-![](https://i.loli.net/2021/01/07/1dyGQvucCfE5hWk.png)
+![freepik](https://i.loli.net/2021/01/07/1dyGQvucCfE5hWk.png)
 
 ### Delesign
 
-![](https://i.loli.net/2021/01/07/Q2IfceG851jlug9.png)
+![Delesign](https://i.loli.net/2021/01/07/Q2IfceG851jlug9.png)
 
 如上图所示，打开网站就可以看到默认显示的插画素材，输入 Email 就可以订阅此网站并且免费下载图片，插画的种类也是应有尽有。
 
@@ -58,19 +58,19 @@ Canva 是一个设计网站，可以设计例如 Post、Presentation、Video、L
 
 ### RemoveBg
 
-![](https://i.loli.net/2021/01/07/CsE6Rz4cyJG73mX.png)
+![RemoveBg](https://i.loli.net/2021/01/07/CsE6Rz4cyJG73mX.png)
 
 RemoveBg 是一个基于 AI 技术，以训练好的模型快速分辨招聘前景和背景，将主题分离后成为透明背景的网站（除免费次数之外，需要收费）。
 
 ### Slazzer
 
-![](https://i.loli.net/2021/01/07/9WxUMOGd3E5BSLT.png)
+![Slazzer](https://i.loli.net/2021/01/07/9WxUMOGd3E5BSLT.png)
 
 Slazzer 是基于 AI 技术实现的在短短几秒内自动删除图像背景，只需要 5 秒就可以实现一键抠图去除背景。
 
 ## Unscreen
 
-![](https://i.loli.net/2021/01/07/R8baXvCu2JyT5jf.png)
+![Unscreen](https://i.loli.net/2021/01/07/R8baXvCu2JyT5jf.png)
 
 Unscreen 同样是一个在线免费的**扣视频神器**，支持 mp4、gif、mov 等格式，可以上传视频或者 GIF，自动去除背景，保留视频主体。
 

@@ -10,7 +10,7 @@ canonical_url: false
 description: 对「大数据」这门课程学习过的知识进行总结。
 ---
 
-:::note ℹ️ Module Introduction
+:::note 📦 Module Introduction
 
 **Big Data** is the name of one of the largest and most profound movements in modern computing and business. It refers to the huge volumes of data being generated in modern life, and the challenges, risks, and rewards of storing and extracting meaningful information from this data.
 
@@ -20,7 +20,7 @@ description: 对「大数据」这门课程学习过的知识进行总结。
 
 Doug Laney first defined 3 characteristics of Big Data (Three V's) in 2001.
 
-![](https://i.loli.net/2021/01/07/2SrqzOnRk98ZvV7.png)
+![Three V's](https://i.loli.net/2021/01/07/2SrqzOnRk98ZvV7.png)
 
 * **Volume** means that many different factors can contribute to the increase in data volume.
 * **Data velocity** is both the speed at which data streams in, and the timely manner in which data must be dealt with to maintain time based relevance.
@@ -30,7 +30,7 @@ Doug Laney first defined 3 characteristics of Big Data (Three V's) in 2001.
 
 Although the three V's have traditionally been used to define Big Data, increasingly extra Vs have been proposed. However, these typically describe characteristics rather than being deinitional.
 
-![](https://i.loli.net/2021/01/07/Ri5qSWl4Hd2AzYh.png)
+![The rest two V's](https://i.loli.net/2021/01/07/Ri5qSWl4Hd2AzYh.png)
 
 Therefore, The Five V's:
 
@@ -95,7 +95,7 @@ Job Tracker 会始终尝试为 Map 任务选择具有本地数据的节点，Nam
 
 $$Input \rightarrow Splitting \rightarrow Mapping \rightarrow Shuffling \rightarrow Reducing \rightarrow Final Result$$
 
-![](https://i.loli.net/2021/01/07/9janJXCMkwuEoWc.png)
+![MapReduce 执行步骤](https://i.loli.net/2021/01/07/9janJXCMkwuEoWc.png)
 
 ## 3. Hadoop
 
@@ -103,7 +103,7 @@ Hadoop 的第一个核心版本就是 HDFS 和 MapReduce，HDFS 是 Hadoop 的�
 
 ### HDFS
 
-HDFS was inspired by the GFS(Google File System), published in 2003. It has a **master/slave** architecture.
+HDFS was inspired by the GFS(Google File System), published in 2003. It has a **master / slave** architecture.
 
 ![](https://i.loli.net/2021/01/07/DvUSRMtZpfme9gQ.png)
 
@@ -140,12 +140,12 @@ NoSQL doesn't mean there is literally no SQL! For some, it means "Not Only SQL".
 
 NoSQL databases can be categorised into four types:
 
-* Key-value stores
-* Column-oriented databases
-* Document databases
-* Graph databases
+* **Key-value stores**
+* **Column-oriented databases**
+* **Document databases**
+* **Graph databases**
 
-![](https://i.loli.net/2021/01/07/2wlzIPZqc3msDOi.png)
+![NoSQL Database](https://i.loli.net/2021/01/07/2wlzIPZqc3msDOi.png)
 
 #### Key-value Stores
 
@@ -173,7 +173,7 @@ Document-oriented databases are similar to key-value, except that the key links 
 
 面向文档的数据库的查询更加有效，能够直接查询和更新。
 
-#### Graph/Tree Databases
+#### Graph / Tree Databases
 
 Graph databases use a flexible graph model, which can scale across multiple machines. It consists of two elements: a **node** and a **relationship**. Each node represents an entity and each relationship represents how two entites are related.
 
@@ -211,9 +211,9 @@ Problem spaces with connected data:
 * Block-level: 以磁盘 block 为单位来删除整合数据（能去除更多的重复，但是 CPU、IO 操作要求高）
 * Byte-level: 字节级重复数据的删除（基于字节，对 CPU 要求更高）
 
-### Source/Target - Based Deduplication
+### Source / Target - Based Deduplication
 
-## 7. BigTable(HBase)
+## 7. BigTable (HBase)
 
 Google BigTable is one of the first major NoSQL databases, published in 2006. It is designed to reliably scale to petabytes of data across thousands of machines.
 
@@ -239,9 +239,9 @@ It is designed to find patterns, it can scans the database and quickly finds nod
 
 MapReduce on Hadoop has a number of limitations, like difficulty and performance. The result is that MapReduce dose not compose well for large applications. This has led to the development of a very popular system that tries to combine all of this.
 
-Apache Spark is a general-purpose data processing engine. The features of Spark: In memory computation engine, almost 10x faster than Hadoop MapReduce using computations with Disk IO, almost 100x faster than Hadoop MapReduce with in-memory computations. 总而言之就是，Spark比Hadoop MapReduce快很多。
+Apache Spark is a general-purpose data processing engine. The features of Spark: In memory computation engine, almost 10x faster than Hadoop MapReduce using computations with Disk IO, almost 100x faster than Hadoop MapReduce with in-memory computations. 总而言之就是，Spark 比 Hadoop MapReduce 快很多。
 
-![](https://i.loli.net/2021/01/07/XCYlJNtzMe9rDTB.png)
+![Spark 搭配使用的框架](https://i.loli.net/2021/01/07/XCYlJNtzMe9rDTB.png)
 
 ### Spark Streaming
 

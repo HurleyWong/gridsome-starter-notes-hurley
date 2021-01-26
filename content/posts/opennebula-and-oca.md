@@ -11,7 +11,7 @@ canonical_url: false
 description: Using OpenNebula and Java OpenNebula API (OCA) to find a suitable strategy for VM migration.
 ---
 
-:::note ℹ️ Introduction
+:::note 💻 Aim
 
 This exercise aims to give you some practical experience of using a Cloud Virtual Infrastructure Manager (OpenNebula) and Java OpenNebula Cloud API (OCA). It will also give you the opportunity to research on the cloud computing domain of trade-offs between performance and energy efficiency.
 :::
@@ -20,7 +20,7 @@ This exercise aims to give you some practical experience of using a Cloud Virtua
 
 You are provided with the bulk of the code that demonstrates a basic Open- Nebula Cloud API functionality for a VM. The client program will provide some basic information such as a VM template and get various bits of tasks performed, e.g. instantiate a VM. The source code supplied to you is not complete and therefore needs completion. The work required is broken down into a series of small steps that you should follow, in the order shown, to complete the exercise.
 
-Examine the file VMachineSample.java and try to get an overall feel for what the software is doing (or supposed to do). You should focus on the OpenNebula/client interaction aspects. By looking at the file, you should be able to see that the implementation is incomplete.
+Examine the file VMachineSample.java and try to get an overall feel for what the software is doing (or supposed to do). You should focus on the OpenNebula / client interaction aspects. By looking at the file, you should be able to see that the implementation is incomplete.
 
 Complete the implementation of this file. You should focus on the following aspects:
 
@@ -154,10 +154,10 @@ public static void main(String[] args) {
 
                     long startTimeDel = System.currentTimeMillis();
 
-                    //Command to Delete the VM
+                    // Command to Delete the VM
                     rc = vm1.finalizeVM();
 
-                    ///Checking the status of the VM untill we recieve done
+                    // Checking the status of the VM untill we recieve done
                     while (vm1.status() != "done") {
                         rc = vm1.info();
                     }
@@ -305,9 +305,9 @@ diskUsage = (Double.parseDouble(host.xpath("/HOST/HOST_SHARE/DISK_USAGE")) / Dou
 int numVM = Integer.parseInt(host.xpath("/HOST/HOST_SHARE/RUNNING_VMS"));
 ```
 
-在制定策略上，因为一个主机中存在的虚拟机数量对于性能的影响相对较小，因为有些虚拟机会占用更多的 CPU 和内存，有些则不会，所以并不是意味着虚拟机越多，其占用的性能也就越多。因此，在**权重**分配上，我让`numVM`占50%，别的则占 100%，最终相加即是结果。结果越小的说明该主机的负荷越小，就应该把该虚拟机迁移过去。
+在制定策略上，因为一个主机中存在的虚拟机数量对于性能的影响相对较小，因为有些虚拟机会占用更多的 CPU 和内存，有些则不会，所以并不是意味着虚拟机越多，其占用的性能也就越多。因此，在**权重**分配上，我让`numVM`占 50%，别的则占 100%，最终相加即是结果。结果越小的说明该主机的负荷越小，就应该把该虚拟机迁移过去。
 
-通过在 OpenNebula 网站中查看，可以知道学校有 9 个 Host，并且**名称和HOSTID**的数字并不是一样的，所以需要自己手动设置。
+通过在 OpenNebula 网站中查看，可以知道学校有 9 个 Host，并且**名称和 HOSTID **的数字并不是一样的，所以需要自己手动设置。
 
 ```java
 double[] host1 = new double[5];

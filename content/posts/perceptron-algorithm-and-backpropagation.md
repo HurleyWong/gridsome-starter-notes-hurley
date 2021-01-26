@@ -24,8 +24,6 @@ Clearly it is interesting to see if we can train a neural network to classify ir
 
 1. Make a scatter plot of petal length against petal width. This means that for each entry in the data set you plot a point in the 2D plane with petal length as y coordinate, and petal width as x coordinate. Use three different markers (or different colours), one for setosa, one for versicolor and one for virginica. Plot other sepal/petal length/width combinations as well.
 
-<!-- more -->
-
 2. Based on the plots, do you believe that setosa vs. non-setosa can be learnt by a perceptron? That is, given a perceptron with 4 inputs, for petal length, petal width sepal length, and sepal width, can you find four weights and a bias which can classify setosa vs. non-setosa? Explain your answer. If you can, give these weights and bias. Draw the decision line of your perceptron on the plots of the last question.
 
 3. Implement the standard perceptron algorithm without learning rate and train a perceptron for the setosa vs. non-setosa classification problem. Do you expect the algorithm to converge? Explain why! Does the algorithm converge? Is the output correct? If it does not converge, now introduce a learning rate, and use a sensible stopping criterion. Report the learning rate, stopping criterion and argue whether the result you obtain is in line with what you know the algorithm is capable of. The same questions about virginica vs. non-virginica? versicolor vs non-versicolor? There is a major difference between versicolor and the other two. Explain the difference using the plots you made.
@@ -70,19 +68,19 @@ I need to build a simple neural network with four inputs (sepal length, sepal wi
 
 By looking at the outputs I expect to get, when the setosa and virginica output 0, the versicolor will output 1. This is a NOR gate which means I can use setosa and virginica to replace the output of versicolor. So, I can only use two classes, setosa and virginica, in the hidden layer without versicolor. Specifically, due to I define that when input  0, it will output for 0, and when input  0, it will output for 1. Hence, I set setosa and virginica both output -1, and set bias 0.5 to make virginica output 1 at the end. The sub-neural network of versicolor as shown below:
 
-![img](https://s1.ax1x.com/2020/04/23/JdQnHA.png)
+![](https://s1.ax1x.com/2020/04/23/JdQnHA.png)
 
 In addition, when the setosa get input 1, it will output 1 as well. And the virginica is same. These sub-neural network show as following:
 
-![img](https://s1.ax1x.com/2020/04/23/JdQKAI.png)
+![](https://s1.ax1x.com/2020/04/23/JdQKAI.png)
 
 
 
-![img](https://s1.ax1x.com/2020/04/23/JdQmBd.png)
+![](https://s1.ax1x.com/2020/04/23/JdQmBd.png)
 
 As for whole network, I would make 4 parameters: PL, PW, SL, SW as the input layer of this neural network. I decide to use `np.random.randn()` to get 4 weights and a bias randomly with standard normal distribution. Then, the hidden layer as I mentioned above, so the full network work is below:
 
-![img](https://s1.ax1x.com/2020/04/23/Jdlkan.png)
+![Final Neural Network](https://s1.ax1x.com/2020/04/23/Jdlkan.png)
 
 I run this neural network serval times to get a average accuracy: , and there are an average of 5 misclassified points per run.
 
@@ -90,19 +88,19 @@ I run this neural network serval times to get a average accuracy: , and there ar
 
 The last requirement make me use Keras to build a model, solving this XOR problem. Compared to AND and OR problems, XOR problems is inseparable (cannot find only one line to achieve linear separation), as shown below.
 
-![img](https://s1.ax1x.com/2020/04/23/Jdlcz8.png)
+![](https://s1.ax1x.com/2020/04/23/Jdlcz8.png)
 
 As we know, perceptron is a linear classification model that cannot deal with non-linear separation problem. So, I need to use Keras to build network to solve this problem.
 
 This model built by Keras includes a input layer, a hidden layer (4 nodes at first experiment) and an output layer (including 3 nodes which represent label predictions). I decide to use `ReLU` as the hidden layer activation and `softmax` for the output layer activation. The optimization function is SGD with learning rate 0.01 and momentum 0.9. The full network model is as follows:
 
-![img](https://s1.ax1x.com/2020/04/23/Jdl2QS.png)
+![layers](https://s1.ax1x.com/2020/04/23/Jdl2QS.png)
 
-![img](https://s1.ax1x.com/2020/04/23/JdlRsg.png)
+![](https://s1.ax1x.com/2020/04/23/JdlRsg.png)
 
 The plot of loss and accuracy as shown below:
 
-![img](https://s1.ax1x.com/2020/04/23/JdlWLQ.png)
+![Loss and Accuracy](https://s1.ax1x.com/2020/04/23/JdlWLQ.png)
 
 According to this plot above, it is clear that the curves have converged after 200 epochs. In addition, the accuracy is high as  (even more than ), and the accuracy of the test data set (30 data) is , which means this model by Keras is excellent. So, it is clear that this model has better performance that the network I built in Q4.
 

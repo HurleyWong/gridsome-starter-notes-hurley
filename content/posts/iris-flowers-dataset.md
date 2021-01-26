@@ -25,13 +25,11 @@ description: Build and use neural networks for the Iris classification task via 
 
 > 这是最好的时代，这是最坏的时代。我们一无所有，我们巍然矗立。
 
-:::note ℹ️ Introduction
+:::note 🙋‍♂️ Introduction
 
 We will build and use a neural network for the Iris classification task. We will use Keras as a high-level library for managing neural networks.
 
 :::
-
-<!-- more -->
 
 ## Analysis Code
 
@@ -48,13 +46,13 @@ from keras.layers import Dense, Dropout, Flatten
 from keras import optimizers
 
 # -- Load Iris dataset using sklearn (save "bunch" object containing iris dataset and its attributes) -- ##
-# 导入Iris数据集
-# Iris数据集是sklearn中自带的
-# Iris数据集有3个种类，4个属性，每个属性有50个样例
+# 导入 Iris 数据集
+# Iris 数据集是 sklearn 中自带的
+# Iris 数据集有 3 个种类，4 个属性，每个属性有 50 个样例
 iris = load_iris()
-# x代表iris数据集的数据
+# x代表 iris 数据集的数据
 X = iris.data
-# y代表着着iris的目标属性，即花的类型
+# y代表着着 iris 的目标属性，即花的类型
 y = iris.target
 
 # -- Change the labels from categorical to one-hot encoding -- ##
@@ -74,9 +72,9 @@ print(y_one_hot.shape)
 
 # -- Split the dataset for training, validation, and test -- ##
 
-# x是被划分的样本特征集
-# y_one_hot是被划分的样本标签
-# 如果是浮点数，就在0~1之间，表示样本所占比例；如果是整数，就是样本的数量
+# x 是被划分的样本特征集
+# y_one_hot 是被划分的样本标签
+# 如果是浮点数，就在 0~1 之间，表示样本所占比例；如果是整数，就是样本的数量
 train_and_valid_X, test_X, train_and_valid_y, test_y = train_test_split(X, y_one_hot, test_size=0.1)
 train_X, valid_X, train_y, valid_y = train_test_split(train_and_valid_X, train_and_valid_y, test_size=0.2)
 
@@ -89,35 +87,35 @@ def baseline_model():
     input_dimensions = 4
     learning_rate = 0.002
     # create model
-    # keras.models.Sequential是神经网络模型的封装容器。它会提供常见的函数
+    # keras.models.Sequential 是神经网络模型的封装容器。它会提供常见的函数
     model = Sequential()
-    # 第一层级 - 添加有 input_dimensions = 4个节点的输入层
-    # 激活函数使用ReLU运算
+    # 第一层级 - 添加有 input_dimensions = 4 个节点的输入层
+    # 激活函数使用 ReLU 运算
     model.add(Dense(nb_nurons, input_dim=input_dimensions, activation='relu'))
     # HINT: a 'softmax' activation will output a probability distribution over the output dimensions
-    # 激活函数使用softmax函数
+    # 激活函数使用 softmax 函数
     model.add(Dense(nb_Classes,
                     activation='softmax'))
     # Compile model
-    # 实例化一个优化器对象，这里采用RMSprop优化器
+    # 实例化一个优化器对象，这里采用 RMSprop 优化器
     opt = optimizers.RMSprop(lr=learning_rate)
     # HINT: a 'binary_crossentropy' is only useful for at most 2 labels, look for another suitable loss function in Keras
-    # compile用于配置训练模型，loss是字符串或目标函数名，optimizer是优化器名或优化器实例，metrics是在训练和测试期间的模型评估标准
-    # binary_crossentropy是交叉熵损失函数，一般用于二分类
-    # 因为这里要实现3中分类即多分类，所以使用categorical_crossentropy
+    # compile 用于配置训练模型，loss 是字符串或目标函数名，optimizer 是优化器名或优化器实例，metrics 是在训练和测试期间的模型评估标准
+    # binary_crossentropy 是交叉熵损失函数，一般用于二分类
+    # 因为这里要实现 3 中分类即多分类，所以使用 categorical_crossentropy
     model.compile(loss='categorical_crossentropy', optimizer=opt, metrics=['accuracy'])
     return model
 
 
 def find_correct_and_incorrect_labels(model, test_X, test_y):
     # Computes for every input in the test dataset a probability distribution over the categories
-    # predict是为输入样本生成输出预测，计算是分批进行的
+    # predict 是为输入样本生成输出预测，计算是分批进行的
     predicted_classes = model.predict(test_X)
-    # argmax是找到样本以最大概率所属的类别作为样本的预测标签
+    # argmax 是找到样本以最大概率所属的类别作为样本的预测标签
     # HINT: choose the prediction with the highest probability, np.argmax( ..... , axis=1 )
-    # np.round是取返回四舍五入后的值，可指定精度，与np.around等效
+    # np.round 是取返回四舍五入后的值，可指定精度，与 np.around 等效
     predicted_classes = np.argmax(predicted_classes, axis=1)
-    # np.where(conditions)满足conditions的条件即输出数组的下标
+    # np.where(conditions) 满足 conditions 的条件即输出数组的下标
     correctIndex = np.where(predicted_classes == np.argmax(test_y))[0]  # HINT: replace test_y by np.argmax(test_y,axis=1)
     incorrectIndex = np.where(predicted_classes != np.argmax(test_y))[0]  # HINT: replace test_y by np.argmax(test_y,axis=1)
     print("Found %d correct labels using the model" % len(correctIndex))
@@ -125,19 +123,19 @@ def find_correct_and_incorrect_labels(model, test_X, test_y):
 
 
 def plot_train_performance(trained_model):
-  	# history函数会每轮训练收集损失和准确率，如果有测试集也会收集测试集的数据
+  	# history 函数会每轮训练收集损失和准确率，如果有测试集也会收集测试集的数据
     print(trained_model.history.keys())
     accuracy = trained_model.history['accuracy']
     val_accuracy = trained_model.history['val_accuracy']
     loss = trained_model.history['loss']
     val_loss = trained_model.history['val_loss']
-    # epoch表示完成了1遍训练集中的所有样本
+    # epoch 表示完成了1遍训练集中的所有样本
     epochs = range(len(accuracy))
-    # 创建一个画板，1为画板的编号，可以不填
+    # 创建一个画板，1 为画板的编号，可以不填
     f1 = plt.figure(1)
-    # 一个figure对象包含了多个子图，可以使用subplot()函数来绘制子图
+    # 一个 figure 对象包含了多个子图，可以使用 subplot() 函数来绘制子图
     plt.subplot(1, 2, 1)
-    # axis设置坐标轴
+    # axis 设置坐标轴
     plt.axis((0, len(epochs), 0, 1.2))
     plt.plot(epochs, accuracy, 'bo', label='Training accuracy')
     plt.plot(epochs, val_accuracy, 'b', label='valid accuracy')

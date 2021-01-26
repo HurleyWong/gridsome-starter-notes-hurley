@@ -14,13 +14,13 @@ description: 通过 Bitmap 的高效加载模式，借助 LruCache 以及 DiskLr
 
 Generally speaking, a perfect ImageLoader should have serval functions as following:
 
-* 图片的同步加载
-* 图片的异步加载
-* 图片压缩
-* 三级缓存机制
-  * 内存缓存
-  * 磁盘缓存
-  * 网络请求
+* **图片的同步加载**
+* **图片的异步加载**
+* **图片压缩**
+* **三级缓存机制**
+  * **内存缓存**
+  * **磁盘缓存**
+  * **网络请求**
 
 所以，搭配 Bitmap，使用 LruCache 以及 DiskLruCache 的三级缓存机制，就可以实现一个简单的、优秀的 ImageLoader。
 
@@ -40,7 +40,7 @@ public class ImageResizer {
     }
 
     /**
-     * 从resource中进行decode
+     * 从 resource 中进行 decode
      *
      * @param res
      * @param resId
@@ -63,7 +63,7 @@ public class ImageResizer {
     }
 
     /**
-     * 从FileDescriptor中进行decode
+     * 从 FileDescriptor 中进行 decode
      *
      * @param fd
      * @param reqWidth
@@ -145,10 +145,10 @@ public Bitmap loadBitmap(String uri, int reqWidth, int reqHeight) {
         e.printStackTrace();
     }
 
-    // 如果bitmap仍然为空，并且磁盘缓存未创建
+    // 如果 bitmap 仍然为空，并且磁盘缓存未创建
     if (bitmap == null && !mIsDiskLruCacheCreated) {
         Log.w(TAG, "encounter error, DiskLruCache is not created.");
-        // 根据提供的uri下载图片
+        // 根据提供的 uri 下载图片
         bitmap = downloadBitmapFromUrl(uri);
     }
     return bitmap;
@@ -175,14 +175,14 @@ public void bindBitmap(final String uri, final ImageView imageView, final int re
             // 请求加载图片
             Bitmap bitmap = loadBitmap(uri, reqWidth, reqHeight);
             if (bitmap != null) {
-                // 将ImageView、URI、Bitmap封装成一个LoaderResult对象
+                // 将 ImageView、URI、Bitmap 封装成一个 LoaderResult 对象
                 LoaderResult result = new LoaderResult(imageView, uri, bitmap);
-                // 通过Handler向主线程中发送一个消息
+                // 通过 Handler 向主线程中发送一个消息
                 mMainHandler.obtainMessage(MESSAGE_POST_RESULT, result).sendToTarget();
             }
         }
     };
-    // 在线程池中调用loadBitmapTask线程
+    // 在线程池中调用 loadBitmapTask 线程
     THREAD_POOL_EXECUTOR.execute(loadBitmapTask);
 }
 ```
@@ -211,7 +211,7 @@ public static final Executor THREAD_POOL_EXECUTOR = new ThreadPoolExecutor(
 );
 
 /**
- * 构建Handler
+ * 构建 Handler
  */
 private Handler mMainHandler = new Handler(Looper.getMainLooper()) {
     @Override
@@ -266,15 +266,15 @@ private Bitmap loadBitmapFromDiskCache(String url, int reqWidth, int reqHeight) 
 
     Bitmap bitmap = null;
     String key = hashKeyFormUrl(url);
-    // 磁盘缓存的读取需要通过Snapshot来完成，通过Snapshot可以得到磁盘缓存对象对应的FileInputStream
+    // 磁盘缓存的读取需要通过 Snapshot 来完成，通过 Snapshot 可以得到磁盘缓存对象对应的 FileInputStream
     DiskLruCache.Snapshot snapshot = mDiskLruCache.get(key);
     if (snapshot != null) {
         FileInputStream fileInputStream = (FileInputStream) snapshot.getInputStream(DISK_CACHE_INDEX);
-        // 因为FileInputStream无法便捷地进行压缩，通过FileDescriptor来加载压缩后的图片
+        // 因为 FileInputStream 无法便捷地进行压缩，通过 FileDescriptor 来加载压缩后的图片
         FileDescriptor fileDescriptor = fileInputStream.getFD();
         bitmap = mImageResizer.decodeSampleBitmapFromFileDescriptor(fileDescriptor, reqWidth, reqHeight);
         if (bitmap != null) {
-            // 将加载过后的Bitmap添加到内存缓存中
+            // 将加载过后的 Bitmap 添加到内存缓存中
             addBitmapToMemoryCache(key, bitmap);
         }
     }
@@ -290,7 +290,7 @@ private Bitmap loadBitmapFromDiskCache(String url, int reqWidth, int reqHeight) 
 // 从网络中拉取图片
 private Bitmap loadBitmapFromHttp(String url, int reqWidth, int reqHeight) throws IOException {
     // 因为耗时复杂的请求不能在主线程中调用，所以需要检查是否为主线程
-    // 通过检查当前线程的Looper是否为主线程的Looper来判断
+    // 通过检查当前线程的 Looper 是否为主线程的 Looper 来判断
     if (Looper.myLooper() == Looper.getMainLooper()) {
         throw new RuntimeException("can not visit network from UI Thread.");
     }
@@ -299,8 +299,8 @@ private Bitmap loadBitmapFromHttp(String url, int reqWidth, int reqHeight) throw
     }
 
     String key = hashKeyFormUrl(url);
-    // 磁盘缓存的添加需要通过Editor来完成
-    // Editor提供了commit和abort方法来提交和撤销对文件系统的写操作
+    // 磁盘缓存的添加需要通过 Editor 来完成
+    // Editor 提供了 commit 和 abort 方法来提交和撤销对文件系统的写操作
     DiskLruCache.Editor editor = mDiskLruCache.edit(key);
     if (editor != null) {
         OutputStream outputStream = editor.newOutputStream(DISK_CACHE_INDEX);
@@ -318,7 +318,7 @@ private Bitmap loadBitmapFromHttp(String url, int reqWidth, int reqHeight) throw
 ```
 
 ```java
-// 根据url连接，以输出流的方式下载
+// 根据 url 连接，以输出流的方式下载
 public boolean downloadUrlToStream(String urlString, OutputStream outputStream) {
     HttpURLConnection connection = null;
     BufferedOutputStream out = null;

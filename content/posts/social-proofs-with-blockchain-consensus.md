@@ -13,13 +13,11 @@ canonical_url: false
 description: Proof of Witness Presence - Social Proofs, to develop blockchain smart contracts that prove social claims (situation awareness) on the smart phone.
 ---
 
-:::note ℹ️ Introduction
+:::note 📌 Abstract
 
 在 Dr. Evangelos Pournaras 的毕设项目中，我主要负责第二部分的内容：Proof of Witness Presence - Social Proofs, and main job is to develop blockchain smart contracts that prove social claims (situation awareness) on the smart phone. The smart contracts can use a combination of CAPTCHA, QR codes, puzzles tests, social proofs and other. A demonstrator needs to be delivered and later an integration to Smart Agora.
 
 :::
-
-<!-- more -->
 
 ## Background research
 
@@ -148,11 +146,11 @@ uint256 transportTicketIndex = 0;
 
 首先在 Infura 中创建项目，选择使用 Ropsten 网络。完成后复制下 EndPoints 的地址，并将其配置在`truffle-config.js`文件中。
 
-![](https://i.loli.net/2021/01/07/zFoct9vxPmwjbuM.png)
+![Infura](https://i.loli.net/2021/01/07/zFoct9vxPmwjbuM.png)
 
 同时在 Chrome 浏览器中安装 MetaMask 插件，注册账号并获得 3 个测试以太币。在设置隐私界面中找到 12 个助记词并将其配置在`truffle-config.js`文件中。
 
-![](https://i.loli.net/2021/01/07/JnaSUuTvzb2rx4W.png)
+![MetaMask](https://i.loli.net/2021/01/07/JnaSUuTvzb2rx4W.png)
 
 最后，在控制台中，使用`truffle compile`命令编译智能合约，并使用以下命令将智能合约部署迁移到以太坊区块链测试网络中：
 
@@ -165,7 +163,7 @@ truffle migrate --reset --network ropsten # --reset optional
 
 部署完毕之后，控制台中会出现智能合约的具体信息，包括被部署到的具体地址中，例如https://ropsten.etherscan.io/tx/address.
 
-![](https://i.loli.net/2021/01/07/4PtqNuaQTZwO5fH.png)
+![Contract Address](https://i.loli.net/2021/01/07/4PtqNuaQTZwO5fH.png)
 
 ### web3j
 
@@ -197,7 +195,7 @@ Social Proof Point 是指当公民无法直接证明他们在某个特定时间�
 
 因此，需要在公民（用户）进入手机端的Google Map界面后，根据提示询问公民是将该地点添加为 Point of Interest 还是 Social Proof Point。选择完毕之后，就进入证明的过程，即下一部分（二维码）。
 
-![](https://s3.ax1x.com/2021/01/07/se2fGF.jpg)
+![Google Map User Interface](https://s3.ax1x.com/2021/01/07/se2fGF.jpg)
 
 #### QR Code
 
@@ -207,7 +205,7 @@ Social Proof Point 是指当公民无法直接证明他们在某个特定时间�
 
 具体解析二维码的方式可以使用 Google 提供的开源库 ZXing。通过扫描二维码，解析二维码的数据并与区块链中已保存的数据进行比对，判断是否真实并且有效。如果有效，则说明成功证明公民到达过 Point of Interest 或者 Social Proof Point。
 
-![](https://s3.ax1x.com/2021/01/07/seRSsA.jpg)
+![Scan QR Code User Interface](https://s3.ax1x.com/2021/01/07/seRSsA.jpg)
 
 :::note 💡 Tips
 
@@ -219,6 +217,6 @@ Social Proof Point 是指当公民无法直接证明他们在某个特定时间�
 
 本文仅仅是该毕设项目的整体思路和实现逻辑的介绍，具体的细节已经在论文中全部列出。
 
-The dissertation is available at: https://hurleyjames.github.io/download/HUANG2020-FPR.pdf.
+The dissertation is available at: [HUANG2020-FPR.pdf](https://blog.hurley.fun/download/HUANG2020-FPR.pdf).
 
-The source code of the project is available at: https://github.com/epournaras/ProofOfSituationAwareness. I will appreciate it if you can give some improvement opinions.
+The source code of the project is available at: [ProofOfSituationAwareness](https://github.com/epournaras/ProofOfSituationAwareness). I will appreciate it if you can give some improvement opinions.

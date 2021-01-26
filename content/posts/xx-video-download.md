@@ -12,7 +12,7 @@ canonical_url: false
 description: 不怕XX耍流氓，就怕XX有文化
 ---
 
-:::note ℹ️ Why Do This
+:::note ⚡️ Why Do This
 
 随着马上就要成为一名社畜，也意味着马上就会拥有一个自己的小家（租的）。因此，折腾狂的我不禁就想把一切能想到的配置都给配上。虽然暂时没钱配群辉 NAS，但是作为一名司机，如何离线的、流畅地观看视频也是一项必备技能！在国外时，我最常访问的视频网站，除了 Netflix 就是 XX 了。然而，国内网络环境的限制，导致即使你有了梯子，速度也不尽如人意，总不能动手的同时，眼睛却得盯着进度条转圈圈吧？赶紧动手下载下来！
 
@@ -62,7 +62,7 @@ Mac 端的迅雷应用应该相比 Windows 端的广告要少很多，Windows �
 
 Free Download Manager，简称 FDM。它是一款免费的软件，界面十分简洁易用，更没有任何广告捆绑。它支持直接的链接下载、磁力链接、BT文件。除此之外，它还可以下载 YouTube 视频，并选择视频的分辨率。
 
-![](https://i.loli.net/2021/01/07/xzCSi48dGsrk6XY.png)
+![Free Download Manager](https://i.loli.net/2021/01/07/xzCSi48dGsrk6XY.png)
 
 然而，它并不支持下载 XX 网站中的视频。
 
@@ -70,7 +70,7 @@ Free Download Manager，简称 FDM。它是一款免费的软件，界面十分�
 
 Motrix 是一款开源免费的全功能下载器，支持 HTTP、FTP、BT、Magnet（磁力链接）以及百度网络和迅雷下载协议。这个开源部门调用了 Aria2，并且是支持全平台的 (Windows、macOS、Linux)。
 
-![](https://i.loli.net/2021/01/07/LuzUcnZkG7VyAwY.png)
+![Motrix](https://i.loli.net/2021/01/07/LuzUcnZkG7VyAwY.png)
 
 ### Downie
 
@@ -327,9 +327,9 @@ graph TD;
 
 # 要复制的文件名
 cp FileName=seg-900-v1-a1.ts
-# 复制的起始文件名的index
+# 复制的起始文件名的 index
 firstNum=901
-# 复制的最终文件名的index
+# 复制的最终文件名的 index
 lastNum=968
 # 中间的拼接字段
 str1=seg-
@@ -339,7 +339,7 @@ str2=-v1-a1.ts
 while [ $firstNum -le $lastNum ]; do
 	# cp 批量复制文件并改成有顺序的文件名
 	cp -vf $cpFileName $str1$firstNum$str2
-	# 循环加1，改名
+	# 循环加 1，改名
 	let i+=1
 done
 ```
@@ -357,7 +357,7 @@ def _get_file_urls(file_url_txt):
 	filepath = []
 	file = open(file_url_txt, 'r')
 	for line in file.readlines():
-    	# strip()用于移除字符串头尾指定的字符（只能开头或者结尾），默认删除空格或者换行符
+    	# strip() 用于移除字符串头尾指定的字符（只能开头或者结尾），默认删除空格或者换行符
 		line = line.strip()
 		filepath.append(line)
 
@@ -377,8 +377,8 @@ if __name__ == '__main__':
 我们可以通过该维基百科的说明来进行更改：[File_URI_scheme](https://en.wikipedia.org/wiki/File_URI_scheme)，但我们也可以通过编写脚本`path2url.js`来完成：
 
 ```js
-// 前提需要安装好node.js
-// 前提需要通过以下命令安装好file-url
+// 前提需要安装好 node.js
+// 前提需要通过以下命令安装好 file-url
 // npm install --save file-url
 var fileUrl = require('file-url');
 
@@ -387,7 +387,7 @@ console.log(fileUrl('/path/of/your/m3u8/in/your/computer.m3u8'))
 
 ---
 
-:::note 💡 Tips
+:::note 🤫 New Site
 
 后来发现了一个更好的网站，不仅支持更多的种类、搜索，也提供下载功能，下次争取编写一个脚本实现自动化！
 
