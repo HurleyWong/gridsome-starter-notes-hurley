@@ -72,8 +72,11 @@ module.exports = {
             autolinkHeadings: true,
             autolinkClassName: 'icon icon-link',
             plugins: [
-                // flow chart plugin
-                'gridsome-plugin-remark-mermaid', ['@gridsome/remark-prismjs', { transformInlineCode: false }],
+                ['gridsome-plugin-remark-mermaid', {
+                    language: "graph",
+                    theme: "forest",
+                }],
+                ['@gridsome/remark-prismjs', { transformInlineCode: true }],
                 // ['gridsome-plugin-remark-shiki', { theme: 'nord', skipInline: true }],
                 'gridsome-plugin-remark-container',
                 'gridsome-remark-katex',

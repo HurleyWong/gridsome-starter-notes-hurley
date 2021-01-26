@@ -295,7 +295,7 @@ function betterDownloader() {
 
 所以，该脚本总的流程图大致如下所示：
 
-```mermaid
+```graph
 graph TD;
     显示Banner图-->设置动态代理
     设置动态代理-->加载相关依赖
@@ -305,8 +305,6 @@ graph TD;
     生成下载队列-->调用aria2下载,储存进临时文件夹
     调用aria2下载,储存进临时文件夹-->调用ffmpeg合成mp4视频文件
 ```
-
-
 
 ### Bug
 
