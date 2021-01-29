@@ -1,6 +1,6 @@
 <p align="center">
-  <a href="https://tech.hurley.fun/">
-    <h2 align="center">Hurley's Tech Site</h2>
+  <a href="https://tech.withh.life/">
+    <h2 align="center">Hurley's Article Blog</h2>
   </a>
 </p>
 
@@ -8,7 +8,7 @@
 
 ## Copyrights
 
-This portfolio is developed and designed by [Spencer Wooo](https://github.com/spencerwooo/blog) and Gridsome's official template [gridsome-starter-blog](https://github.com/gridsome/gridsome-starter-blog). Thanks for their excellent blog templates.
+This portfolio is developed and designed by [Spencerwooo](https://github.com/spencerwooo/blog) and Gridsome's official template [gridsome-starter-blog](https://github.com/gridsome/gridsome-starter-blog). Thanks for their excellent blog starter templates.
 
 ## Install Locally
 
@@ -23,15 +23,8 @@ npm install --global @gridsome/cli
 1. `gridsome create your-own-name https://github.com/HurleyJames/gridsome-blog-starter-hurley`
 2. `cd your-own-name` to open folder
 3. `gridsome develop` to start local dev server at http://localhost:8080
-4. Prettier by `yarn prettier`
-5. Happy coding by yourself 🎉
-
-### 3. Prettier
-
-```bash
-yarn prettier
-```
+4. Happy coding by yourself 🎉
 
 ---
 
-**Hurley's blog** ©Hurley. Released under the MIT License.
+**Hurley's Article Blog** ©Hurley. Released under the MIT License.
