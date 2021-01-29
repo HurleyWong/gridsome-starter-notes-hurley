@@ -13,14 +13,12 @@
       {{ $static.metadata.siteName }}
     </h1>
 
-    <p class="author__intro">
-      随时意气风发，独自声势浩大
-    </p>
+    <p class="author__intro">随时意气风发，独自声势浩大</p>
 
     <p class="author__links">
       <!-- <g-link to="/"><font-awesome :icon="['fas', 'home']"/></g-link> -->
       <g-link
-        href="//hurley.fun"
+        href="//withh.life"
         target="_blank"
         v-tooltip="{ content: '🚀 Portfolio' }"
         ><font-awesome :icon="['fas', 'id-badge']"
@@ -28,9 +26,9 @@
 
       <g-link
         to="/archives"
-        style="color: var(--title-color);"
+        style="color: var(--title-color)"
         v-tooltip="{ content: '📂 Archives' }"
-        ><font-awesome :icon="['fas', 'archive']"/></g-link
+        ><font-awesome :icon="['fas', 'archive']" /></g-link
       >/
       <!-- <a
         href="//blog.spencerwoo.com/posts/index.xml"
@@ -54,19 +52,19 @@
       <a
         href="//twitter.com/HurleyHuang23"
         target="_blank"
-        style="color: #1da1f2;"
+        style="color: #1da1f2"
         ><font-awesome :icon="['fab', 'twitter']"
       /></a>
-      <a href="//weibo.com/5628559861" target="_blank" style="color: #E00;"
+      <a href="//weibo.com/5628559861" target="_blank" style="color: #e00"
         ><font-awesome :icon="['fab', 'weibo']"
       /></a>
-      <a href="//t.me/realSpencerWoo" target="_blank" style="color: #179cde;"
+      <!-- <a href="//t.me/realSpencerWoo" target="_blank" style="color: #179cde;"
         ><font-awesome :icon="['fab', 'telegram']"
-      /></a>
+      /></a> -->
       <a
         href="//github.com/HurleyJames"
         target="_blank"
-        style="color: var(--title-color);"
+        style="color: var(--title-color)"
         ><font-awesome :icon="['fab', 'github']"
       /></a>
     </p>
