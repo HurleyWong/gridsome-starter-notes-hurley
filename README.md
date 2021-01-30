@@ -20,7 +20,7 @@ npm install --global @gridsome/cli
 
 ### 2. Install this blog starter
 
-1. `gridsome create your-own-name https://github.com/HurleyJames/gridsome-blog-starter-hurley`
+1. `gridsome create your-own-name https://github.com/HurleyJames/gridsome-starter-blog-hurley`
 2. `cd your-own-name` to open folder
 3. `gridsome develop` to start local dev server at http://localhost:8080
 4. Happy coding by yourself 🎉
