@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://tech.withh.life/">
+  <a href="https://article.withh.life/">
     <h2 align="center">Hurley's Article Blog</h2>
   </a>
 </p>
@@ -8,7 +8,7 @@
 
 ## Copyrights
 
-This portfolio is developed and designed by [Spencerwooo](https://github.com/spencerwooo/blog) and Gridsome's official template [gridsome-starter-blog](https://github.com/gridsome/gridsome-starter-blog). Thanks for their excellent blog starter templates.
+This article blog is developed and designed by [Spencerwooo](https://github.com/spencerwooo/blog) and Gridsome's official template [gridsome-starter-blog](https://github.com/gridsome/gridsome-starter-blog). Thanks for their excellent blog starter templates.
 
 ## Install Locally
 
