@@ -217,6 +217,20 @@ Social Proof Point 是指当公民无法直接证明他们在某个特定时间�
 
 本文仅仅是该毕设项目的整体思路和实现逻辑的介绍，具体的细节已经在论文中全部列出。
 
-The dissertation is available at: [HUANG2020-FPR.pdf](https://blog.hurley.fun/download/HUANG2020-FPR.pdf).
+The dissertation is available at: [HUANG2020-FPR.pdf](https://blog.withh.life/download/HUANG2020-FPR.pdf).
 
 The source code of the project is available at: [ProofOfSituationAwareness](https://github.com/epournaras/ProofOfSituationAwareness). I will appreciate it if you can give some improvement opinions.
+
+### Reference
+
+该毕设项目的智能合约部分的实现，除了参考了导师的论文之外，很多还借鉴了国内研究生论文的思路，下面是我有参考到的国内研究生的毕业论文列表：
+
+[1] 区块链智能合约在学位管理系统上的研究与实现_党京
+[2] 基于区块链智能合约的高校学历认证系统的研究与实现_吴春龙
+[3] 基于区块链技术的电子数据存证系统_冒小乐
+[4] 基于安卓的智能合约平台的设计与实现_朱翀
+[5] 基于区块链技术的可信数据通证化方法的研究与应用_周桐
+[6] 区块链智能合约技术的研究_许雄
+[7] 基于区块链智能合约的可信存证系统研究与实现_曹迪迪
+[8] 基于区块链技术的去中心化管理系统的研究与应用_孙韵秋
+[9] 基于区块链技术的学位信息验证系统设计与实现_高翔
