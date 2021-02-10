@@ -18,7 +18,7 @@ description: 到底什么是 DevOps？流程和管理？运维和自动化？架
 
 ## 区别
 
-### DevOps与传统的运维有什么不同？
+### DevOps 与传统的运维有什么不同？
 
 下面我们就拿传统的瀑布式开发与 DevOps 进行一个对比：
 
@@ -38,7 +38,7 @@ description: 到底什么是 DevOps？流程和管理？运维和自动化？架
 * 通过自动化部署将目前这种手动、人工的任务所需时间减少
 * 通过产业化措施，将需要处理的这些与部署有关的问题减少
 
-### DevOps与敏捷开发有什么不同？
+### DevOps 与敏捷开发有什么不同？
 
 |  敏捷开发   | DevOps  |
 |  ----  | ----  |
@@ -91,10 +91,10 @@ CD 可以看成是 CI 的下一步。它强调的是，不管怎么更新，代�
 
 ### 总结
 
-CI / CD 是 DevOps 中的核心流程，但是在团队实际运用中（比如严选团队）仍然会存在以下几个问题：
+CI/CD 是 DevOps 中的核心流程，但是在团队实际运用中（比如严选团队）仍然会存在以下几个问题：
 
 * 分支管理策略的不一致：大部分是主干发布方式，但是也会存在分支发布方式。在主干发布策略中，分支命令方式也存在差异，分支合并的策略也存在差异
-* CI / CD 工具的统一性：有些团队会使用比如 gitlab-ci，有些则可能会使用 Jenkins。gitlab-ci 可以和代码工程自然结合，可以省略在 Jenkins 上配置，易用性好；而用 Jenkins，则可以更好的管理必须的 CI 任务，并且可以使用到 Jenkins 中丰富的插件；
+* CI/CD 工具的统一性：有些团队会使用比如 gitlab-ci，有些则可能会使用 Jenkins。gitlab-ci 可以和代码工程自然结合，可以省略在 Jenkins 上配置，易用性好；而用 Jenkins，则可以更好的管理必须的 CI 任务，并且可以使用到 Jenkins 中丰富的插件；
 * 自动化测试覆盖率不足：能够真正达到比较高自动化程度的模块较少，很多情况下还是需要人工来触发，或者人工执行校验。
 
 下面这个是严选团队的 DevOps 工具链建设的架构图：
@@ -123,20 +123,20 @@ DevOps 有很多技术栈与工具的运用，如下所示：
 
 **部分应用场景**：
 
-* 集成 svn / git 客户端实现源代码的下载检出
-* 集成 maven / ant / gradle / npm 等构建工具实现源代码的编译打包测试等
+* 集成 svn/git 客户端实现源代码的下载检出
+* 集成 maven/ant/gradle/npm 等构建工具实现源代码的编译打包测试等
 * 集成 sonarqube 对源代码进行质量检查
-* 集成 SaltStack / Ansible 实现自动化部署发布
-* 集成 Jmeter / Soar / Kubernetes 等
+* 集成 SaltStack/Ansible 实现自动化部署发布
+* 集成 Jmeter/Soar/Kubernetes 等
 * 自定义插件或者脚本，通过 Jenkins 传参运行
 
-### GitLab CI / CD
+### GitLab CI/CD
 
-Github CI / CD 是 GitLab 内置的强大工具，允许将所有连续方法（持续集成，交付和部署）应用于软件，而无须集成或者使用其他第三方应用程序。
+Github CI/CD 是 GitLab 内置的强大工具，允许将所有连续方法（持续集成，交付和部署）应用于软件，而无须集成或者使用其他第三方应用程序。
 
-![GitLab CI / CD](https://i.loli.net/2021/01/07/XsBuU4qNxDWfTcj.png)
+![GitLab CI/CD](https://i.loli.net/2021/01/07/XsBuU4qNxDWfTcj.png)
 
-那么，一个常见的基于 GitLab CI / CD的开发工作流程是这样的。开发者已经在一个问题中讨论过代码的实现，并在本地处理了提出的更改。将提交推送到 GitLab 远程存储库中的 feature 分支后，就会触发 GitLab 的 CI / CD 流水线运行。这时候会：
+那么，一个常见的基于 GitLab CI/CD的开发工作流程是这样的。开发者已经在一个问题中讨论过代码的实现，并在本地处理了提出的更改。将提交推送到 GitLab 远程存储库中的 feature 分支后，就会触发 GitLab 的 CI/CD 流水线运行。这时候会：
 
 * 运行自动脚本
   * 构建并测试应用
@@ -146,7 +146,7 @@ Github CI / CD 是 GitLab 内置的强大工具，允许将所有连续方法（
 
 * 让代码提交审核并等待被批准
 * 将 feature 分支合并到 default 分支
-  * GitLab CI / CD 会自动将更改部署到生产环境中
+  * GitLab CI/CD 会自动将更改部署到生产环境中
 * 最后，如果有问题，可以轻松地回滚
 
 ![](https://i.loli.net/2021/01/07/LM2jlUyk7eviTdn.png)

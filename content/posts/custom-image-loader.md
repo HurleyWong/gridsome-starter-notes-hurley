@@ -10,7 +10,7 @@ canonical_url: false
 description: 通过 Bitmap 的高效加载模式，借助 LruCache 以及 DiskLruCache，实现一个有三级缓存机制的 ImageLoader。
 ---
 
-:::note ℹ️ Introduction
+:::note 🔖 Table of Contents
 
 Generally speaking, a perfect ImageLoader should have serval functions as following:
 

@@ -19,7 +19,7 @@ In this article, I will compare and explain the differences between a static web
 
 ## JAMstack
 
-If you still have not use static websites, then I think it is necessary for you to try. Static sites, or what we call JMAstack, have become very popular recently.
+If you still have not use static websites, then I think now is the best time for you to try. Static sites, or what we call JMAstack, have become very popular recently.
 
 The term JAMstack was first proposed by Netlify, and it stands for:
 
@@ -35,13 +35,13 @@ The key aspect to JAMstack is that it does not depend on a web server. It can ma
 
 ### Pricing
 
-Price is the biggest advantage of static websites that I totally agree with this view. As JAmstack was proposed by Netlify, we can deploy our static website on Netlify, free and fast. Of course, you can choose to host it on other platforms, such as Vercel, which is also simple to use. The simplest possibility is to deploy directly on Github Pages, while the speed may not be ideal.
+Price is the biggest advantage of static websites that I totally agree with this view. We can deploy our static website on Netlify, free and fast. Of course, you can choose to host it on other platforms, such as Vercel, which is also simple to use. The simplest possibility is to deploy websites directly on Github Pages, while the speed may not be ideal.
 
-In any case, the basic needs for using these platforms are free, and the free package can already meet the needs of most people. If you want a meaningful or easy-to-remember domain name, then you can go to domain name service provider to buy a domain name and bind it to your JAMstack adderss. It depends on you.
+In any case, the basic needs for using these platforms are free, and the free package can already meet the needs of most people. If you want a meaningful or easy-to-remember domain name, then you can go to domain name service providers to buy a domain name and bind it to your JAMstack adderss. It depends on you.
 
 ### Stability
 
-Someone worry that the development of static websites is so cheap and fast. Well, is it not enough stability? In fact, the stability is great. Because we deploy websites in the stable services, including Netlify, Vercel, etc. They are good enough for the performance of static websites. Additionally, there are better, big-name serverless service providers, such as AWS, Google, etc. for developers to choose!
+Well, is it not enough stability? In fact, as we deploy websites in the stable services, including Netlify, Vercel, etc., the stability is great! They are good enough for the performance of static websites. Additionally, there are better, big-name serverless service providers, such as AWS, Google, etc. for developers to choose!
 
 ### Shortcoming
 
@@ -57,7 +57,7 @@ Gatsby can be said to be the most popular static website generator at present. I
 
 In terms of development language, it is based on React, which means you need to master at least `.JSX` and other skills. Everything in Gatsby is built with React! As for data sources, it use the query language developed by Fackbook. Yes, that's **GraphQL**. Although I think that different SQLs are essentially the same, the synatx of GraphQL is indeed different from the Oracle or MySQL that developers often choose to use, so, I hope you do not mind and can control it.
 
-Finally, one of the most important aspects of Gatsby is its eco-system. As of the time of writing this blog post, it already has about 700 plugins and a huge number of starters that the developers can choose to build directly and quickly. Note that the code in their starter project is not **shit**, that is to say, it is not difficult to modify the style and functions of the website you want to own on the basis of other developer's starter.
+Finally, one of the most important aspects of Gatsby is its **eco-system**. As of the time of writing this blog post, it already has about 700 plugins and a huge number of starters that the developers can choose to build directly and quickly. Note that the code in their starter project is not **shit**, that is to say, it is not difficult to modify the style and functions of the website you want to own on the basis of other developer's starter.
 
 ### Quick Start
 
@@ -83,11 +83,11 @@ Finally, one of the most important aspects of Gatsby is its eco-system. As of th
 
 ## Gridsome
 
-For static websites based on Vue.js, Gridsome is undoubtedly the leader framework. It also uses GraphQL, also has convenient construction packages and browsing performance, and also supports necessary functions for sites such as PWA and SQL. However, the shortcomings of it are of course obvious. Compared with React, Vue.js is indeed not born so early, so the birth of Girdsome is much later than Gatsby. Fortunately, its project documentation and community are constantly growing, so it can really give developers high hopes.
+For static websites based on Vue.js, Gridsome is undoubtedly the leader framework. It also uses GraphQL, also has convenient construction packages and browsing performance, and also supports necessary functions for sites such as PWA. However, the shortcomings of it are of course obvious. Compared with React, Vue.js is indeed not born so early, so the birth of Girdsome is much later than Gatsby. Fortunately, its project documentation and community are constantly growing, so it can really give developers high hopes.
 
 ![](https://i.loli.net/2021/01/30/Bc9yEZderbhPLtl.png)
 
-As you can see this tech-site, it is based on the Gridsome-Blog-Starter. I just modified the style, use plugins to add some useful functions on the basis. Then, you see, this is my tech-site which I am proud of!
+As you can see this site, my own article blog, it is based on the Gridsome-Blog-Starter. I just modified the style, use plugins to add some useful functions on the basis. Then, I am proud of it!
 
 ### Usage
 
@@ -108,7 +108,7 @@ GraphQL was invented by Fackbook. It is a query language for Graph, actually, fo
 
 The biggest advantage of GraphQL is to query graph data as I mentioned above. Well, in this way, it may be a little abstract, so if I mention RESTful API, it will not unfamiliar to the developers. We usually develop a RESTful API to request complex tree data, such as using JSON format. However, if a new attribute needs to be added, then the implementation of the RESTful API needs to be changed. GraphQL can help us solve this problem well. If the produce introduces some new object types, for the GraphQL, we only need to use GraphQL to describe these newly added edges and vertices when querying the data, without changing the API to implement.
 
-Still abstract? Let's compare how a GraphQL is used basically.
+Abstract? Let's compare how a GraphQL is used basically.
 
 ```json
 {
@@ -132,7 +132,7 @@ The above is a simple data returned in JSON format. Then, if it corresponds to s
 }
 ```
 
-Is to too simple and direct! You only need to make a GraphQL request to the API to get exactly the data you want. Applications using GraphQL work fast and stable.
+Too simple and direct! You only need to make a GraphQL request to the API to get exactly the data you want. Applications using GraphQL work fast and stable.
 
 It also has some other differences from the RESTful API. We make RESTful API requests by loading multiple URLs and then processing at the same time. As for the GraphQL, it can get all the data with one request, too fast!
 
@@ -155,7 +155,7 @@ There are too many features actually, and there is definitely no end to the intr
 
 In this article, I have shown you how to use these two different JS frameworks to build static sites. So, which one is better?
 
-From my own perspective, I would not say that one is better than other because both are great! Hence, I use Gatsby to build my [Homepage](https://withh.life) and Gridsome in my [Article Blog](https://article.withh.life). If you can both use React and Vue.js, or if you know how to use JavaScirpt, you might as well try both of them and choose which one is the better framework for you.
+From my own perspective, I would not say that one is better than other because both are great! Hence, I use Gatsby to build my [Homepage](https://withh.life) and Gridsome in my [Article Blog](https://article.withh.life). If you can both use React and Vue.js, or if you know how to use JavaScirpt, you might as well try both of them and choose which one is the suitable framework for you.
 
 ## Reference
 
