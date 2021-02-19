@@ -23,7 +23,7 @@ description: Proof of Witness Presence - Social Proofs, to develop blockchain sm
 
 ### 初探索
 
-在一开始，我对这个项目是十分不了解的。即使我阅读了导师的 [Proof of Witness Presence--Blockchain Consensus for Augmented Democracy in Smart Cities]() 这篇论文以及关于这篇论文的一个 use case 的 work paper: [On cycling risk and discomfort: urban safety mapping and bike route recommendations]()，我只是大致理清了整个场景中公民（用户）的操作流程：当用户到达地图中的某个兴趣点（地图中具有一定范围的圆圈）附近时，可以使用他们的智能手机回答问题或者评估风险等，公民的这些意见都会为系统设计者或者城市规划者带来巨大的帮助。同时，公民通过制定决策也可以获得虚拟加密货币的奖励。第三部分是关于游戏化的，即问题和兴趣点的设置具有引导式，让公民从兴趣点A到兴趣点B这样的方式，连续回答问题等。当然，第三部分就不是我负责的项目部分了，所以这里不作考虑。
+在一开始，我对这个项目是十分不了解的。即使我阅读了导师的 [Proof of Witness Presence--Blockchain Consensus for Augmented Democracy in Smart Cities](https://www.sciencedirect.com/science/article/pii/S0743731520303282) 这篇论文以及关于这篇论文的一个 use case 的 work paper: [On cycling risk and discomfort: urban safety mapping and bike route recommendations](https://link.springer.com/content/pdf/10.1007/s00607-019-00771-y.pdf)，我只是大致理清了整个场景中公民（用户）的操作流程：当用户到达地图中的某个兴趣点（地图中具有一定范围的圆圈）附近时，可以使用他们的智能手机回答问题或者评估风险等，公民的这些意见都会为系统设计者或者城市规划者带来巨大的帮助。同时，公民通过制定决策也可以获得虚拟加密货币的奖励。第三部分是关于游戏化的，即问题和兴趣点的设置具有引导式，让公民从兴趣点A到兴趣点B这样的方式，连续回答问题等。当然，第三部分就不是我负责的项目部分了，所以这里不作考虑。
 
 我负责的部分就是除了位置证明之外，需要使用 social proof 来证明公民到达了兴趣点附近。因为只有公民到达了兴趣点附近，才能开始制定决策的过程。可是 social proof 究竟是什么呢？
 
