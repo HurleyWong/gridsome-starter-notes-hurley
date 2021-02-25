@@ -9,7 +9,7 @@ tags:
 - BEAST
 cover_image: "./images/mice-chase-beast.png"
 canonical_url: false
-description: 运行BEAST中的Mice和Chase的demo，根据现象分析遗传算法。
+description: 运行 BEAST 中的 Mice 和 Chase 的 demo，根据现象分析遗传算法。
 ---
 
 ### 遗传算法

@@ -25,7 +25,7 @@ description: Build and use neural networks for the Iris classification task via 
 
 > 这是最好的时代，这是最坏的时代。我们一无所有，我们巍然矗立。
 
-:::note 🙋‍♂️ Introduction
+:::important 🙋‍♂️ Introduction
 
 We will build and use a neural network for the Iris classification task. We will use Keras as a high-level library for managing neural networks.
 

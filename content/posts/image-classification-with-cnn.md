@@ -53,7 +53,7 @@ Feature maps are the filters applied to the layer input; i.e., they are the acti
 
 Choose two input images of different classes and compare the resulting feature maps, commenting on how they change with the depth of the network.
 
-:::note ⚡️ Tips
+:::tip ⚡️ Tips
 
 When visualising a PyTorch tensor object, you will want to first move the tensor to CPU (if using a GPU), detach it from the gradients, make a copy, and convert to a NumPy array.
 :::
