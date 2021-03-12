@@ -1,6 +1,6 @@
 <p align="center">
-  <a href="https://article.withh.life/">
-    <h2 align="center">Hurley's Article Blog</h2>
+  <a href="https://blog.withh.life/">
+    <h2 align="center">Hurley's Blog</h2>
   </a>
 </p>
 
@@ -27,4 +27,4 @@ npm install --global @gridsome/cli
 
 ---
 
-**Hurley's Article Blog** ©Hurley. Released under the MIT License.
+**Hurley's Blog** ©Hurley. Released under the MIT License.
