@@ -241,7 +241,34 @@ MapReduce on Hadoop has a number of limitations, like difficulty and performance
 
 Apache Spark is a general-purpose data processing engine. The features of Spark: In memory computation engine, almost 10x faster than Hadoop MapReduce using computations with Disk IO, almost 100x faster than Hadoop MapReduce with in-memory computations. 总而言之就是，Spark 比 Hadoop MapReduce 快很多。
 
+不同于 MapReduce 仅支持 Map 和 Reduce 两个编程算子，Spark 有 80 多种不同的 Transformation 和 Action 的算子，如 map、reduce、filter、foreach 等。
+
+Spark 能够和很多开源项目框架搭配使用。例如，Spark 能够使用 Hadoop 的 YARN 和 Apache Mesos 作为它的资源管理和调度器，Spark 还可以读取多种数据源，如 HDFS、HBase、MySQL 等。
+
 ![Spark 搭配使用的框架](https://i.loli.net/2021/01/07/XCYlJNtzMe9rDTB.png)
+
+### Spark 基本概念
+
+* **RDD**：是**弹性分布式数据集**（Resilient Distributed Dataset）的简称，是分布式内存的一个抽象概念，提供了一种高度受限的共享内存模型。
+* **DAG**：是指**有向无环图**，反应了 RDD 之间的依赖关系。
+* **Driver Program**：控制程序，负责为 Application 构建 DAG 图。
+* **Cluster Manager**：集群资源管理中心，负责分配计算资源。
+* **Worker Node**：工作节点，负责具体的计算工作。
+* **Executor**：是运行在工作节点上的一个进程，负责运行 Task，并为应用程序存储数据。
+* **Application**：是用户编写的 Spark 应用程序。一个 Application 包含多个 Job。
+* **Job**：作业。一个 Job 包含了多个 RDD 以及作用于相应 RDD 上的各种操作。
+* **Stage**：阶段，是指 **Job 的基本调度单位**。一个作业会分为多组任务，每组任务都被称为阶段。
+* **Task**：任务，是运行在 Executor 上的工作单元，是 Executor 的一个线程。
+
+上面的有些名词可能看起来有些晕了，实际上是一种包含的关系，即：
+
+:::important 🔍 包含关系
+
+Application >> Job >> Stage >> Task
+
+:::
+
+![](https://i.loli.net/2021/03/12/T1HzeBdnNaXGA2m.jpg)
 
 ### Spark Streaming
 
@@ -257,6 +284,20 @@ To address these issues, the Spark Streaming component uses a new architecture c
 Each of these batches of data is an RDD. This allows the streaming data to be processed using any Spark code or library.
 
 ![](https://i.loli.net/2021/01/07/sUWL4bY71ZwKlmG.png)
+
+Spark Streaming 其实一个 Spark Core API 的一种扩展，它可以用于进行大规模、高吞吐量、容错的实时数据流的处理。它支持从多种数据源中读取数据，比如 Kafka、Flume等。处理后的数据可以被保存到文件系统、数据库、Dashboard 中。
+
+Spark Streaming 的基本工作原理是：
+
+> 接收实时输入数据里，然后将数据拆分成多个 batch，比如每收集 1 秒的数据就封装为一个 batch，然后将每个 batch 交给 Spark 的计算引擎进行处理，最后能生产出一个结果的数据流。其中的数据，也是由一个一个 batch 所组成的。
+
+让我们来理解一下上面英文所提到的概念吧：
+
+* **离散流（discretized stream）**或者 **DStream**：这就是我们处理的一个实时数据流（是对内部持续的实时数据流的抽象描述）。
+* **批数据（batch data）**：这是将实时流数据以**时间片*为单位进行分批处理，将流处理转化为时间片数据的批处理。它的处理结果就是对饮的批数据。
+* **时间片**或者**批处理时间间隔（batch interval）**：人为对流数据进行处理，以时间片作为拆分流数据的依据。一个时间片的数据对应一个 RDD 实例。
+* **窗口长度（window length）**：一个窗口覆盖的流数据的时间长度，必须是批处理时间间隔的倍数。
+
 ## 10. Storm
 
 > Apache Storm is a distributed real-time computation system for processing large volumes of high-velocity data.
@@ -268,6 +309,17 @@ It is extremely fast, and can process over one million records per second per no
 The core abstraction in Storm is the **Stream**. A stream is data in the form of an unbounded sequence of tuples.
 
 On a Storm cluster there are two types of nodes: a master node and workder nodes.
+
+在 Spark Steaming 中我们提到过它的出现正是为了解决 Storm 中面临的一些问题，那么两者之间究竟有何不同呢？
+
+|  对比点 | Storm | Spark Streaming |
+|  :----:  | :----:  | :---------------: |
+| 实时计算模型  | 纯实时，来一条数据处理一条 | 准实时，收集一个时间段内的数据之后再处理 |
+| 实时计算延迟度  | 毫秒级 | 秒级 |
+| 吞吐量 | 低 | 高 |
+| 事务机制 | 支持完善 | 支持但不够完善 |
+| 健壮性/容错性 | ZooKeeper，非常强 | Checkpoint，一般 |
+| 动态调整并行度 | 支持 | 不支持 |
 
 ## 11. ZooKeeper
 
@@ -281,8 +333,45 @@ ZooKeeper 是一个针对大型应用提供高可用的数据管理、应用程�
 
 > Apache Kafka is an open-source distributed event streaming platform for high-performance data pipelines, streaming analytics, data integration, and mission-critical applications.
 
-Apache Kafka 是一个快速、可扩展的、高吞吐、可容错的分布式发布-订阅消息系统，具有高吞吐量、内置分区、支持数据副本和容错的特性，适合在大规模消息处理的场景中使用。
+Apache Kafka 是一个快速、可扩展的、高吞吐、可容错的**分布式发布-订阅**消息系统，具有高吞吐量、内置分区、支持数据副本和容错的特性，适合在大规模消息处理的场景中使用。它可以作为消息系统、存储系统、流处理。
 
 在发布-订阅消息系统中，消息被持久化到一个 topic 中，消费者可以订阅一个或者多个 topic，消费者可以消费该 topic 中所有的数据，同一条数据也可以被多个消费者消费。消费的生产者被定义为发布者，消费者被定义为订阅者。
 
-![](https://i.loli.net/2021/01/07/gCb5TRKqV7tEHZY.png)
+![Kafka 系统架构图](https://i.loli.net/2021/01/07/gCb5TRKqV7tEHZY.png)
+
+:::tip 💡 Tips
+
+由上图中的 ZooKeeper 我们可以发现，Kafka 要正常运行，必须配置 ZooKeeper，否则无论是 Kafka 集群还是客户端的生存者和消费者都是无法正常工作的。所以必须要配置启动 ZooKeeper 服务。
+
+:::
+
+### 核心 API
+
+* Producer API（生产者 API）：允许应用程序发布记录流至一个或多个 Kafka 的 Topics。
+* Consumer API（消费者 API）：允许应用程序订阅一个或多个 Topics，并且处理所产生的对它们记录的数据流。
+* Streams API（流 API）：允许应用程序充当流处理器，从一个或者多个 Topics 消耗的输入流，并产生一个输出流至一个或多个输出的 Topics，有效地变换所述输入流，以输出流。
+* Connector API（连接器 API）：允许构建和运行 Kafka Topics，连接到现有的应用程序或者数据系统中重用生产者或者消费者。
+
+### Topics 主题和 partitions 分区
+
+一个 Topic 可以被认为是一类信息，每个 Topic 将分成多个 partitions（区）。主题是发布记录的类别或者订阅源名称。Kafka 的主题总是多用户，一个主题可以有零个，一个或多个消费者订阅写入它的数据。
+
+对于每个主题，Kafka 集群都维护一个如下所示的分区日志：
+
+![](https://i.loli.net/2021/03/12/KpYV2zb16BmUCqw.jpg)
+
+每个分区都有一个有序的、不可变的记录序列，不断地附加到结构化的提交日志中。分区中的记录每个都分配了一个称为偏移的顺序 ID 号，它是唯一地标识分区中的每个记录。
+
+### Distribution
+
+一个 Topic 的多个 partitions，被分布在 Kafka 集群中的多个 server 上；每个 server 负责 partitions 中消息的读写操作；每个 partitions 都会被备份到多台机器上，提高可用性。
+
+从集群的整体考虑，有多少个 partitions 就意味着有多少个 leader。leader 负责所以的读写操作，如果 leader 失效，就会有其它的 follower 来接管成为新的 leader，所以作为 leader 的 server 承载了全部的请求压力。
+
+### Producers 和 Consumers
+
+Producers 可以将数据发布到指定的 topics，同时 Producer 也能决定将此消息归属到哪个 partition。
+
+每个 consumer 属于一个 consumer group，也就是每个 consumer group 可以有多个 consumer。消息只会被订阅此 Topic 的每个 group中的一个 consumer 消费。
+
+![](https://i.loli.net/2021/03/12/jZSCOiDqN84eHgW.jpg)
