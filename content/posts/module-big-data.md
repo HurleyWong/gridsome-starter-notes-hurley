@@ -225,7 +225,24 @@ BigTable is a simple concept - map two arbitrary string values (a row key and a 
 (row:string, column:string, time:int64) -> string
 ```
 
+上文翻译一下就是：BigTable 会把数据存储在若干个 Table 表中，Table 中的每个 Cell（数据单元）的格式就如上公式所示。Cell 内的数据由字符串（string）构成，使用行、列和时间戳三个维度进行定位。
+
+具体的 BigTable 的实现原理可以参考阅读该篇论文————《[Bigtable: A Distributed Storage System for Structured Data](https://static.usenix.org/events/osdi06/tech/chang/chang_html/?em_x=22)》
+
 ![](https://i.loli.net/2021/01/07/EJYP7AzyiRkmq3I.png)
+
+### HBase
+
+HBase 是建立在 Hadoop 文件系统之上的分布式 column-oriented 的数据库，是建立在 HDFS 之上的。它是一个开源项目，是横向拓展的。HBase 的表一般有以下特点：
+
+* 大：一个表可以有上亿行，上百万列
+* 面向列：面向列的存储和权限控制，列独立检索
+* 稀疏：对于空（null）的列，并不占用存储空间，所以表可以设计得十分稀疏
+
+之所以将 HBase 放在 BigTable中，是因为最初 HBase 的实现是完全参考了 BigTable 的论文。它们在技术栈上的组成是类似的：
+
+* GFS/Colossus <-> HDFS
+* Chubby <-> ZooKeeper
 
 ## 8. Neo4j
 
@@ -234,6 +251,14 @@ BigTable is a simple concept - map two arbitrary string values (a row key and a 
 Neo4j has Java integration through both a native API and the Cypher API. Cypher API is a Java API that allows us to execute CQL commands directly.
 
 It is designed to find patterns, it can scans the database and quickly finds nodes and relationships that match the pattern asked for.
+
+一个图数据库的最大不同就是它将结构化数据存储在图中而不是在表中。在这个图中，包含两种基本的数据类型：Nodes（节点）和 Relationships（关系）。Nodes 和 Relationships 包括 key/value 形式的属性，Nodes 通过 Relationships 定义的关系相连。
+
+它的应用场景通常包括：
+
+* 金融行业（例如洗钱网络）
+* 社交网络图谱（例如追踪 COVID-19 密切接触人群）
+* 企业关系图谱（例如天眼查的企业关系控股等）
 
 ## 9. Spark
 
@@ -321,13 +346,43 @@ On a Storm cluster there are two types of nodes: a master node and workder nodes
 | 健壮性/容错性 | ZooKeeper，非常强 | Checkpoint，一般 |
 | 动态调整并行度 | 支持 | 不支持 |
 
+### Storm 基本组件
+
+* **Nimbus**：就是 Storm 的 Master，负责资源分配和任务调度。一个 Storm 的集群只有一个 Master。
+* **Supervisor**：即 Storm 的 Slave，负责接收 Nimbus 分配的任务，管理所有的 Worker，一个 Supervisor 节点包含了多个 Worker 进程。
+* **Worker**：工作进程，每个工作进程都多个 Task。
+* **Task**：指工作中的每一个任务，在 Storm 集群中的 Spout 和 Bolt 都由若干个 Task 来执行。每个 Task 都有对应的执行线程。
+* **Topology**：计算拓扑，是对实时计算应用逻辑的封装。它是一个由 Soputs 和 Bolts 通过 Stream 连接起来的有向无环图。
+* **Stream**：数据流是 Storm 中最核心的抽象概念。一个数据流指的是在分布式环境中并行创建、处理的一组 Tuple 的无界序列。
+* **Spout**：是数据流的来源。一般 Spout 会从一个外部的数据源读取元组，然后将它们发送到拓扑中。
+* **Bolt**：拓扑中所有的数据处理均是由 Bolt 完成的，是流数据的处理单元。包括数据过滤（filtering）、函数处理（functions）、聚合（aggregations）、联结（joins）等功能，Bolt 几乎可以完成任何一种数据处理需求。
+* **Stream groupings**：当 Spouts 和 Bolts 在集群上执行任务时，因为是多个 Task 并行执行，那么具体该发送给哪个 Task 来执行呢？这就是由 Stream groupings 来执行的。
+
+![Storm 架构](https://i.loli.net/2021/03/13/NwWPmoHA5VQxhiq.jpg)
+
 ## 11. ZooKeeper
 
 > Zookeeper was originally a Hadoop sub-project but is now a full Apache project. ZooKeeper is a centralized service for distributed configuration, synchronization services, and naming registry for distributed systems. It allows distributed processes to coordinate with each other through a shared hierarchical namespace of data registers.
 
-![](https://i.loli.net/2021/01/07/dAxBoaNCmUv72tF.png)
+![ZooKeeper Logo](https://i.loli.net/2021/01/07/dAxBoaNCmUv72tF.png)
 
 ZooKeeper 是一个针对大型应用提供高可用的数据管理、应用程序协调服务的分布式服务框架，基于对 Paxos 算法的实现，使该框架保证了分布式环境中数据的强一致性，提供的功能包括：配合维护、统一命名服务、状态同步服务、集群管理等。
+
+ZooKeeper 是一个顺序一致性的分布式数据库，由多个节点共同组成一个分布式集群，挂掉任意一个节点，数据库仍然可以正常工作，客户端无感知故障。客户端向任意一个节点写入数据，其它节点就可以立即看到更新后的数据。
+
+### 角色管理
+
+在 ZooKeeper 中没有用传统的 Master/Slave 的概念，而是引入了 Leader、Follower 和 Observer 三种角色。所有机器通过选举来选定一个 Leader 的机器，Leader 可以提供读写操作，Follower 和 Observer 只能提供读的服务。Observer 相比 Follower 就是不参与 Leader 的选举过程，也不参与写操作的“过半写成功”的策略。
+
+![](https://i.loli.net/2021/03/13/4v76cnruzymHEMk.jpg)
+
+### 集群管理
+
+为了保证高可用，最好以集群的形态来部署 ZooKeeper，这样只要集群中的大部分机器都是可用的（可容忍一定的机器故障），那么 ZooKeeper 本身仍然是可用的。
+
+![](https://i.loli.net/2021/03/13/ghsIXik4HtNDBnd.jpg)
+
+上图中的每一个 Server 都代表一个安装 ZooKeeper 服务的服务器。这些服务器会选举出一个 Leader 服务器，并且每台服务器之间都会互相保持着通信。集群间通过 Zab（ZooKeeper Atomic Broadcast） 协议来保持数据的一致性。
 
 ## 12. Kafka
 
