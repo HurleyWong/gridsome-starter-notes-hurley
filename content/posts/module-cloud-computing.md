@@ -290,6 +290,20 @@ The difference between containers and VMs:
 
 A Docker container wraps an application's software into an invisible box with everything the application needs to run.
 
+#### 镜像、容器与仓库
+
+Docker 主要包含三个基本概念：镜像、容器和仓库。
+
+* **镜像**：Docker 镜像是一个特殊的文件系统，除了提供容器运行时所需的程序、库、资源、配置等文件外，还要包含一些必要的环境配置参数等。
+* **容器**：容器的实质是进程，可以创建、启动、停止、删除和暂停等。镜像和容器的关系，就像是面向程序设计中的类和类的实例。
+* **仓库**：镜像构建完成后，可以在当前宿主机上运行。如果在其它服务器上使用这个镜像，就需要一个集中存储、发布镜像的服务，即 Docker Registry。最常使用的 Registry 公开服务，就是官方的 Docker Hub，也是默认的 Registry，拥有大量的高质量的官方镜像。
+
+#### Docker 三剑客
+
+* `docker-compose`：docker-compose 技术就是将所有容器的部署方式、文件映射、容器连接等各种一系列的配置都写入一个`.yml`配置文件中，最终执行`docker-compose up`命令，就可以向执行脚本一样去安装容器并部署。
+* `docker-machine`：docker-machine 用于在各种平台上快速创建具有 docker 服务的虚拟机的技术。
+* `docker-swarm`：swarm 是基于 docker 平台实现的集群技术，可以快速地创建一个 docker 集群，在集群的共享网络上部署应用，最终实现分布式的服务。
+
 ## 5. Cloud Resource Management and Scheduling
 
 There are serval policies of cloud resource management:
@@ -347,6 +361,8 @@ OpenStack 为云计算服务，是一套 IaaS 软件。主要功能包括：
 * 计算资源管理
 * 向外提供 REST 风格的 API
 
+OpenStack 和 VMWare 一样，作为虚拟机技术的代表。相比 OpenNebula，OpenStack 要火得多。
+
 ### Components
 
 OpenStack 的组件非常多：
@@ -363,6 +379,13 @@ OpenStack 的组件非常多：
 | Ceilometer | Telemetry，监控服务 |
 | Heat | Orchestration，集群服务 |
 | Trove | Database Service，数据库服务 |
+
+* **Keystone**：认证服务，提供用户信息管理，为其它组件提供认证服务
+* **Nova**：计算服务，计算资源生命周期管理组件
+* **Glance**：镜像服务，提供虚拟机镜像的发现、注册、获取服务
+* **Horizon**：仪表盘，用于控制、管理 OpenStack 服务的 web 控制面板
+* **Cinder**：块存储服务，管理计算实例使用到的块存储
+* **Neutron**：网络服务，提供云计算环境下的虚拟网络功能
 
 主要组件包括：
 
@@ -403,7 +426,7 @@ Example of AMQP Support:
 * Coordinates what containers run where and when across your system
 * Easily coordinate deployments of your system
 
-## Definitions
+### Definitions
 
 Kubernetes 中有两个重要的概念，一个是 Cluster，一个是 Pod。
 
@@ -416,7 +439,15 @@ Master 负责调度资源和为客户端提供 API，Node 就是相对于 Master
 
 Master 有三个组件：API Server、Scheduler、Controller Manager。
 
-API Server 提供了友好易用的 API 外部调用，比如用一些工具 kubectl 等能封装大量的API调用。当 API Server 收到部署的请求后，Scheduler 会根据所需资源，判断各个节点资源的占用情况来分配合适的 Node 给容器。而 Controller 负责整个集群的整体协调和健康，保证每个组件以正确的方式进行。
+API Server 提供了友好易用的 API 外部调用，比如用一些工具 kubectl 等能封装大量的 API 调用。当 API Server 收到部署的请求后，Scheduler 会根据所需资源，判断各个节点资源的占用情况来分配合适的 Node 给容器。而 Controller 负责整个集群的整体协调和健康，保证每个组件以正确的方式进行。
+
+### k8s and Docker
+
+现在已经有一种声音，即 **Docker 要灭亡，Kubernetes 要兴起**。为什么这么说呢？
+
+Docker 是用来创建和管理容器的，当然现在也加入了很多高级的功能，例如：组件多节点的集群、容器编排、服务发现等。然而，Kubernetes，是搭建容器集群和进行容器编排的主流开源项目。它其实可以和 Docker 去搭配使用，Kubernetes 调用每个节点上的 Docker 去创建和管理容器。所以，其实可以理解为 k8s 是大脑，而 Docker 是四肢。所以，四肢肯定比不过大脑了，Docker 也就日渐式微了。
+
+从 20 年 12 月开始，Kubernetes 就宣布，在接下来的版本中，将会弃用 Docker 作为容器运行时，即不再支持维护 Dockershim这个让 Docker 和 k8s 进行通信的桥接服务。在 Docker 弃用之后，目前最好的选项是使用 Containerd 这个工业级标准的容器运行时作为代替方案。当然，Docker 仍然是本地开发或者单级部署的最佳的容器工具，但是我们也能从这其中发现未来容器化趋势的走向。
 
 ## 9. Cloud Middleware
 
@@ -498,3 +529,5 @@ A serverless computing platform like AWS Lambda allows you to build your code an
 * Dynamic allocation of resources
 * Avoid overallocation of resources
 * Never pay for Idle: pay-per-usage (financial advantage)
+
+开发人员通过直接编写运行在云上的函数、功能、服务，专注于业务代码，而不用关心由云服务产商提供的操作系统、运行环境、网关等一系列的基础环境。除了上面提到的 AWS Lambda 之外，腾讯云、阿里云，包括国外的 Netlify、Vercel 都能很方便地提供 Serverless 服务。
