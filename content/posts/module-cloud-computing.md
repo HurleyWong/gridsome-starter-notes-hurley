@@ -402,11 +402,15 @@ OpenStack 的组件非常多：
 
 AMQP provides a platform-agnostic method for ensuring information is safely transported between applications, among organizations, within mobile infrastructures, and across the Cloud.
 
+高级消息队列协议是应用层协议的一个开放标准，为面向消息的中间件设计，基于此协议的客户端与消息中间件可传递消息，并不受产品、开发语言等条件的限制。
+
 Example of AMQP Support:
 
 * RabbitMQ
 * Qpid
 * ActiveMQ
+
+关于最常使用到的 AMQP：RabbitMQ、ActiveMQ 和 RocketMQ 的细节可以参考我的这篇笔记内容：[RabbitMQ ActiveMQ RocketMQ 入门](https://notes.withh.life/2020/11/22/rabbitmq%20activemq%20rocketmq入门/)。
 
 ## 8. Kubernetes
 
