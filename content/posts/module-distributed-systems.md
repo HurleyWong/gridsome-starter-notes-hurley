@@ -354,7 +354,14 @@ There are two types of clock synchronisation algorithms:
 
 #### Cristian's Algorithm
 
-#### Berkeley Algorithm
+Cristian's Algorithm 的应用场景是一个进程 P 向一个服务器 S 请求时间（**一个客户端向一个服务器请求正确的时间**）：
+
+1. P 发送一个请求包到服务器 S 去请求时间
+2. 服务器 S 收到请求包之后，在包上面再加上当前 S 的时间，发送回去
+3. P 收到数据包之后，把当前的时间设置为 $T + RTT / 2$
+
+RTT 是 Round Trip Time，即 P 从 发送到它接收到数据包的时间。
+
 
 这个算法存在一个 time daemon，即时间守护程序。所以其原理就是：
 
@@ -362,9 +369,38 @@ There are two types of clock synchronisation algorithms:
 * 其他机器做出应答
 * 时间守护程序通知每台机器如何调整时钟
 
-#### Election Algorithms
+#### Berkeley Algorithm
+
+Berkeley 算法的使用场景和 Cristian 算法是有所不同的。Berkeley 算法是**几个客户端之间去同步时钟的算法，并且是主动地去询问**。
+
+1. 时间守护程序去询问其他机器的时钟值
+2. 其他机器作出应答
+3. 时间守护程序告诉每台机器应该如何调整时钟
+
+注意，Berkeley 算法并没有采用 UTC 全局时钟。
+
+### Election Algorithms
+
+分布式选举的算法有 Bully 算法、Raft算法、ZAB 算法等。下面主要分析 Bully 算法的原理。
 
 #### Bully Algorithm
+
+Bully 算法的选举原则是：**在所有存活的节点中，选取节点 ID 最大或者最小的节点作为主节点**。
+
+它的消息类型包括：
+
+* Election 消息，表示向节点发起要选举的消息
+* Alive 消息，表示节点对 Election 消息的应答
+* Victory 消息，即竞选成功的节点向普通的节点发送其竞选成功的消息
+
+它的选举过程是这样的：
+
+1. 集群中，每个活着的节点都查找比自己 ID 大的节点，如果不存在，那么就向其他的节点发送 Victory 的消息；
+2. 如果存在比自己 ID 更大的节点，就向这些节点发送 Election 要选举的消息，并且等待响应；
+3. 如果在给定的时间内，没有收到这些节点回复的消息，那么自己就暂时作为主节点，并且向比自己 ID 小的节点发送 Victory 的消息；
+4. 节点如果收到比自己 ID 小的节点发来的 Election 消息，就回复 Alive 消息。
+
+![选举过程](https://i.loli.net/2021/03/14/ZQRNvFxgXGjLPoO.jpg)
 
 #### NTP: Network Time Protocol
 
@@ -411,9 +447,11 @@ Hence, how to handle faults?
 
 Question: Which failure type is worst?
 
-### Process Resilience
-
 ### Consensus
+
+> In fault-tolerant process group, each nonfaulty process executes the same commands, and in the same order, as every other nonfaulty process.
+>
+> Nonfaulty group members need to reach consensus on which command to execute next.
 
 ### The Byzantine Generals Problem
 
@@ -422,5 +460,43 @@ Question: Which failure type is worst?
 > The generals must only decide whether to <font color="blue">attack</font> or <font color="blue">retreat</font>. Some generals may prefer to attack, while others prefer to retreat. The important thing is that every general agrees on a <font color="blue">common decision</font>, for a half hearted attack by a few generals would be worse than a coordinated attack or a coordinated retreat.
 >
 > Since it is impossible to know which generals are <font color="blue">traitors</font> trying to prevent to loyal generals from reaching agreement, the generals must have algorithm to guarantee that
+>
 > 1. all loyal generals decide upon the same plan of action, and
+>
 > 2. a small number of traitors cannot cause the loyal generals to adopt a bad plan
+
+听起来神秘的拜占庭将军问题，实际上是在分布式系统中的一个共识问题。即，一个多主机的系统如何处理一个或者多个组件失效的问题。那么，将这个共识问题转化为将军发起进攻，就更容易理解了。
+
+拜占庭帝国想要进攻一个城市，为此派出了 10 个将军率领 10 支军队，这个城市足以抵御 5 支常规拜占庭军队的同时袭击。这 10 支军队不能集合在一起单点突破，必须在分开的包围状态下同时攻击，至少 6 支军队同时袭击才能攻下敌国。10 支军队分散在敌国的四周，依靠通信兵相互通信来协商进攻意向及进攻时间。这里的问题是，对应于有的主机坏掉了，将军中可能会有叛徒，忠诚的将军希望达成命令的一致（比如约定某个时间一起进攻），但背叛的将军会通过发送错误的消息阻挠忠诚的将军达成命令上的一致。在这种状态下，拜占庭将军们能否找到一种分布式的协议来让他们能够远程协商，从而赢取战斗？
+
+研究的结论是：**如果叛徒的数量大于或者等于 1/3，那么拜占庭问题就无法解决了**。
+
+我们举一个 4 个将军的例子。4 个将军，分别是 A、B、C、D。假设 4 个将军中最多只有 1 个背叛者。如果超过一半的将军，也即 3 个将军去进攻，也能取得胜利。
+
+1. 假设 A 将军分别告诉 B、C、D 将军，下午 1 点发起进攻。假设 B、C、D 中有一人是叛徒。那么，到了下午 1 点，将有 3 个将军发起进攻，同时他们能发现发现没有参与进攻的将军是叛徒。在这种情况中，对任务执行没有影响。
+
+2. 假设如果 A 是背叛的，A 分别告诉 B、C、D 将军在下午 1 点、2 点、3 点发起进攻。于是，到了下午，B、C、D 三个将军分别去进攻，都失败了。这种情况下，对任务就是毁灭性的打击。
+
+所以为了上述的 2 情况出现，对于忠诚的将军来说，它不能直接去相信接收到的命令，而是必须要对命令做出判断。
+
+所以在 1999 年，出现了著名的 PBFT 算法（Practical Byzantine Fault Tolerance），即**实用拜占庭容错算法**。这个算法的核心思想是：对于每一个接收到命令的将军，都要去询问其他的人，它们收到的命令是什么。
+
+所以，这样的情况下，只要叛徒数量不超过 1/3，那么，三个人就能判断出哪个究竟是叛徒。如果超过了 1/3，那么就无法判断出，拜占庭问题也就无法解决了。
+
+#### Two Generals' Problem
+
+这里由拜占庭问题再引出一个**两军问题**。在期末考试中的开放题型中，我们也考察过。当时就觉得这个问题非常奇怪，然而国人的固有思维还是觉得考试一般都是有解的，认为这问题是可以解决、可以实现的。然而，两军问题是第一个被证明是无解的计算机通信问题。
+
+那么，什么是两军问题？
+
+两个将军 A1 和 A2 决定攻打同一个敌人 B ，任一方都没有敌人强大，所以只有共同进攻才有胜算。敌军正好位于两个将军之间，意味着信使可能会被敌军抓住。两军问题指的就是在这样的条件下两个将军如何就是否进攻达成共识。
+
+![两军问题](https://i.loli.net/2021/03/14/ftixAjKqZeCMEIu.jpg)
+
+蓝军（B）驻扎在山谷之中，红军分两部分驻扎在山谷两旁（A1, A2）。A1 和 A2 需要同时进攻才能击败蓝军。为了约定共同进攻的时间，A1 派出通信兵将攻击时间传达给 A2，但通信兵需要穿过山谷才能将攻击时间传达给 A2。而这个过程中，通信兵极有可能被蓝军截获从而导致 A2 不知道 A1 的进攻时间，于是 A1 不能确定进攻时间。
+
+如果 A2 收到了进攻时间，为了和 A1 确定，A2 在收到 A1 的信息之后也派出通信兵将自己受到的消息传给 A1。然而，A2 的通信兵同样可能被拦截。于是 A2 也也不确定 A1 是否知道自己的进攻时间。
+
+A1 收到 A2 的消息，可以发出第三条消息，对 A2 做确认或者发现消息被篡改。但是，这又开始新的不确定过程。从而形成了无限循环，双方始终不能对进攻时间达成一致。
+
+这个问题其实和拜占庭将军问题的本质是不一样的。拜占庭问题描述的是**可靠信道上**的多主体共识问题，而两军问题则是**不可靠信息上**的共识问题。它有些类似于 TCP 的三次握手，然而第三次的消息是否能够成功送达同样是未知的。
