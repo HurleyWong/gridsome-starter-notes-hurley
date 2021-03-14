@@ -1,5 +1,5 @@
 ---
-title: XXX视频下载折腾总结
+title: XXX 视频下载折腾总结
 date: 2021-01-05T21:00:00+08:00
 published: true
 slug: xx-video-download
@@ -9,7 +9,7 @@ tags:
 - media
 cover_image: "./images/xx-video-download.png"
 canonical_url: false
-description: 不怕XX耍流氓，就怕XX有文化
+description: 不怕 XX 耍流氓，就怕 XX 有文化
 ---
 
 :::note ⚡️ Why Do This

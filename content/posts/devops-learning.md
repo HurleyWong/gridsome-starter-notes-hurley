@@ -1,5 +1,5 @@
 ---
-title: DevOps初学者的入门指南
+title: DevOps 初学者的入门指南
 date: 2020-12-23T21:00:00+08:00
 published: true
 slug: devops-learning
