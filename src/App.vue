@@ -21,12 +21,11 @@
 
     <footer class="footer">
       <div class="footer__copyright">
-        Copyright ©2020 - {{ new Date().getFullYear() }}.
+        Copyright ©2019 - {{ new Date().getFullYear() }}.
       </div>
       <div class="footer__links">
         Runs on <font-awesome :icon="['fas', 'rocket']" />
-        <a href="//gridsome.org">Gridsome</a> .
-        Deployed on
+        <a href="//gridsome.org">Gridsome</a> . Deployed on
         <font-awesome :icon="['fas', 'caret-square-up']" /><a
           href="//app.netlify.com/sites/tech-hurley/"
           >Netlify</a
@@ -34,11 +33,11 @@
       </div>
       <div class="footer__links"></div>
       <div class="footer__links">
-        Subscriber statistics powered by
+        <!-- Subscriber statistics powered by
         <font-awesome :icon="['fas', 'rss']" /><a
           href="//api.spencerwoo.com/substats"
           >Substats</a
-        >.
+        >. -->
       </div>
       <!-- <div id="rss-stats">
         <a href="https://blog.spencerwoo.com/posts/index.xml"
