@@ -155,7 +155,7 @@ There are too many features actually, and there is definitely no end to the intr
 
 In this article, I have shown you how to use these two different JS frameworks to build static sites. So, which one is better?
 
-From my own perspective, I would not say that one is better than other because both are great! Hence, I use Gatsby to build my [Homepage](https://withh.life) and Gridsome in my [Article Blog](https://article.withh.life). If you can both use React and Vue.js, or if you know how to use JavaScirpt, you might as well try both of them and choose which one is the suitable framework for you.
+From my own perspective, I would not say that one is better than other because both are great! Hence, I use Gatsby to build my [Homepage](https://withh.life) and Gridsome in my [Blog](https://blog.withh.life). If you can both use React and Vue.js, or if you know how to use JavaScirpt, you might as well try both of them and choose which one is the suitable framework for you.
 
 ## Reference
 

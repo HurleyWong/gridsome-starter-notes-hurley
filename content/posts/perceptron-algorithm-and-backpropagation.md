@@ -111,4 +111,4 @@ There are some reasons can explain it:
 
 ### Source code
 
-The source code of this project can be viewed at [Perceptron](https://github.com/HurleyJames/NNs/tree/master/Perceptron).
+The source code of this project can be viewed at [Perceptron](https://github.com/HurleyWong/NNs/tree/master/Perceptron).

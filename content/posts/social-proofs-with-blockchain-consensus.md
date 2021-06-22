@@ -217,9 +217,9 @@ Social Proof Point 是指当公民无法直接证明他们在某个特定时间�
 
 本文仅仅是该毕设项目的整体思路和实现逻辑的介绍，具体的细节已经在论文中全部列出。
 
-The dissertation is available at: [HUANG2020-FPR.pdf](https://blog.withh.life/download/HUANG2020-FPR.pdf).
+The dissertation is available at: [HUANG2020-FPR.pdf](https://notes.withh.life/download/HUANG2020-FPR.pdf).
 
-The source code of the project is available at: [ProofOfSituationAwareness](https://github.com/epournaras/ProofOfSituationAwareness). I will appreciate it if you can give some improvement opinions.
+The source code of the project is available at: [ProofOfSituationAwareness](https://github.com/epournaras/ProofOfSituationAwareness) (currently maybe private). I will appreciate it if you can give some improvement opinions.
 
 ### Reference
 

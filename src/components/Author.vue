@@ -62,7 +62,7 @@
         ><font-awesome :icon="['fab', 'telegram']"
       /></a> -->
       <a
-        href="//github.com/HurleyJames"
+        href="//github.com/HurleyWong"
         target="_blank"
         style="color: var(--title-color)"
         ><font-awesome :icon="['fab', 'github']"

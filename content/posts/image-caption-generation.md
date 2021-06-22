@@ -729,11 +729,11 @@ As for RNN model, almost same as LSTM, only a few parameters shoudl replace `LST
 
 ### Conclusion
 
-By comparing the BLEU scores of LSTM and RNN, it can be seen that LSTM has better performance than RNN. The scores of LSTM are higher overall than RNN. 
+By comparing the BLEU scores of LSTM and RNN, it can be seen that LSTM has better performance than RNN. The scores of LSTM are higher overall than RNN.
 
 In addition, the short captions have high BLEU scores than long captions ( I set a long caption have more than 12 words at least), both for LSTM and RNN model. May be BLEU does well in short captions.
 
-The full code can be viewed at Github: [Image_Caption_Generation.ipynb](https://github.com/HurleyJames/NNs/blob/master/Image_Caption_Generation.ipynb).
+The full code can be viewed at Github: [Image_Caption_Generation.ipynb](https://github.com/HurleyWong/NNs/blob/master/Image_Caption_Generation.ipynb).
 
 ### Reference
 

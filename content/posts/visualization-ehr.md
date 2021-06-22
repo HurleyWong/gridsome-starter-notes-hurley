@@ -48,7 +48,7 @@ are how the world productionizes Python analytics.
 
 ### Usage
 
-因为本项目的核心部分是可视化数据分析吗，所以界面的精美程度暂时不在考虑范围之内。所以，在界面 UI 方面，我们实现地十分简洁，只提供了一个上传 .csv 文件的方式，然后将结果展现给用户。本项目代码位于：[Visualization-EHRs](https://github.com/HurleyJames/Visualization-EHRs)
+因为本项目的核心部分是可视化数据分析吗，所以界面的精美程度暂时不在考虑范围之内。所以，在界面 UI 方面，我们实现地十分简洁，只提供了一个上传 .csv 文件的方式，然后将结果展现给用户。本项目代码位于：[Visualization-EHRs](https://github.com/HurleyWong/Visualization-EHRs)
 
 1. Open this Django project by Pycharm and type `python manage.py runserver` in the terminal.
 2. Enter `localhost:8080/datagrid` in the browser, upload the `test_data.csv` file in the `EHR_statistic_app` directory of this project, select `Program_Year` or `Payment_Year` in the top bar `Provider Name`, and then click the `Submit` button to see the visual analysis interface.

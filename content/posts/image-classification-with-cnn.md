@@ -76,7 +76,7 @@ Consider and implement at least two adjustments which you anticipate will improv
 
 ### Solution
 
-具体代码见[AI_Coursework1.ipynb](https://github.com/HurleyJames/GoogleColabExercise/blob/master/AI_Coursework1.ipynb)。
+具体代码见[Image_Classification_with_Convolutional_Neural_Networks_ImageNet10.ipynb](https://github.com/HurleyWong/NNs/blob/master/Image_Classification_with_Convolutional_Neural_Networks_ImageNet10.ipynb)。
 
 #### Building the network
 

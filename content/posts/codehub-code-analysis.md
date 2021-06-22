@@ -11,7 +11,7 @@ description: 基于 WanAndroid 开放 API 编写的安卓应用 Codehub 的源�
 ---
 
 :::note 📱 Description
-CodeHub 是一款使用 WanAndroid 开放 API 开发的技术阅读类的开源项目。项目技术栈使用到了 Material Design + MVP + RxJava + Retrofit + Dagger2 + Glide 等框架，由本人一人开发。项目开源链接位于：https://github.com/HurleyJames/CodeHub
+CodeHub 是一款使用 WanAndroid 开放 API 开发的技术阅读类的开源项目。项目技术栈使用到了 Material Design + MVP + RxJava + Retrofit + Dagger2 + Glide 等框架，由本人一人开发。项目开源链接位于：https://github.com/HurleyWong/CodeHub
 :::
 
 ## 体系架构
