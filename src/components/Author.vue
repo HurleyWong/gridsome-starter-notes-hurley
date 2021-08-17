@@ -13,7 +13,7 @@
       {{ $static.metadata.siteName }}
     </h1>
 
-    <p class="author__intro">随时意气风发，独自声势浩大</p>
+    <p class="author__intro">天上浮云似白衣，斯须改变如苍狗</p>
 
     <p class="author__links">
       <!-- <g-link to="/"><font-awesome :icon="['fas', 'home']"/></g-link> -->
@@ -42,13 +42,6 @@
       </g-link> -->
 
       <!-- / -->
-
-      <!-- <a
-        href="//medium.com/spencerweekly"
-        target="_blank"
-        style="color: var(--title-color);"
-        ><font-awesome :icon="['fab', 'medium']"
-      /></a> -->
       <a
         href="//twitter.com/HurleyHuang23"
         target="_blank"
