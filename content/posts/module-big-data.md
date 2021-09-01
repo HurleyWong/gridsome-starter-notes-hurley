@@ -35,10 +35,24 @@ Although the three V's have traditionally been used to define Big Data, increasi
 Therefore, The Five V's:
 
 * Volume    容量
+
+    > 数据量大，从 TB（1024 GB）、PB（1024 TB）、EB（1024 PB）、ZB（1024 EB）甚至到 YB（1024 ZB）。目前全球数据总量已经在 ZB 级，相当于 1,000,000 PB，也就是大家更熟悉的 10 亿 TB。基于更大规模的数据，我们可以对某个研究对象的历史、现状和未来有更加全面的了解。
+
 * Velocity  速率
+
+    > 数据产生速度快，所要求的处理速度和时效性高。更快的数据处理速度，让我们基于最新的数据上做更加实时的决策。
+
 * Variety   多样性
+
+    > 据类型繁多，包括数字、文字、图片、视频等不同的数据形式，也包括来自社交网络、视频网站、可穿戴设备以及各类传感器的数据。数据可能是 Excel 里**高度结构化**的数据，也可能是图片和视频这种**非结构化**的数据。
+
 * Veracity  准确性
+
+    > 数据真实性。一方面，**数据并非天然具有高价值**，一些**异常值**会被掺杂进来，例如，统计偏差、人的情感影响、天气、经济因素甚至谎报数据等。另一方面，**数据源类型不同**，**数据源多样**，如何将这些多元异构数据连接、匹配、清洗和转化，形成具有高置信度的数据是一项非常有挑战的工作。
+
 * Value 值
+
+    > 研究和利用大数据的最终目的是提供更有价值的决策支持，基于以上提到的四个 V，挖掘大数据的深层价值。
 
 ## 2. MapReduce
 
@@ -48,6 +62,8 @@ MapReduce is
 * Execution framework for organizaing and performing computation.
 * Originally developed by Google.
 * Open-source implementation called Hadoop.
+
+> MapReduce 是 Google 2004 年提出的一种编程范式，比起MPI将所有事情交给程序员控制不同，MapReduce 编程模型只需要程序员定义两个操作：`map`和`reduce`。
 
 GFS(Google File System) for Google's MapReduce, and HDFS(Hadoop Distributed File System) for Hadoop.
 
@@ -97,9 +113,23 @@ $$Input \rightarrow Splitting \rightarrow Mapping \rightarrow Shuffling \rightar
 
 ![MapReduce 执行步骤](https://i.loli.net/2021/01/07/9janJXCMkwuEoWc.png)
 
+---
+
+在大数据的 5V 定义中我们已经提到，数据的容量大且产生速度快。从时间维度上来讲，数据源源不断地产生，形成一个无界的数据流（**Unbounded Stream**）。例如金融交易随时随地发生着，传感器会持续监控并生成数据。数据流中的某段有界数据流（**Bounded Stream**）可以组成一个数据集。随着数据的产生速度越来越快，数据源越来越多，如何处理数据流成了大家更为关注的问题。
+
+**批处理**
+
+**批处理（Batch Processing）**是对一批数据进行处理。批量任务一般是对一段时间的数据聚合后进行处理。对于数据量庞大的应用，如微信运动、银行信用卡等情景，一段时间内积累的数据总量非常大，计算非常耗时。
+
+当前应用最为广泛的当属数据仓库的 ETL（Extract Transform Load）数据转化工作，如以 Oracle 为代表的商业数据仓库和以 **Hadoop/Spark** 为代表的**批处理**开源数据仓库。
+
+**流处理**
+
+数据其实是以**流（Stream）**的方式持续不断地产生着，**流处理（Stream Processing）**就是对数据流进行处理。双十一电商大促销，管理者要以秒级的响应时间查看实时销售业绩、库存信息以及与竞品的对比结果，以争取更多的决策时间；股票交易要以毫秒级的速度来对新信息做出响应等等。
+
 ## 3. Hadoop
 
-Hadoop 的第一个核心版本就是 HDFS 和 MapReduce，HDFS 是 Hadoop 的第一层面，MapReduce 是 Hadoop 的第二层面。
+Hadoop 的第一个核心版本就是 HDFS 和 MapReduce，HDFS 是 Hadoop 的第一层面，MapReduce 是 Hadoop 的第二层面。其中 Hadoop 版本的 MapReduce 编程模型，可以处理海量数据，主要面向**批处理**。
 
 ### HDFS
 
@@ -114,6 +144,8 @@ An HDFS cluster consists of **a single NameNode**, additionally, there are a num
 ### YARN
 
 Hadoop 2 moves from a restricted batch-oriented model to **more interactive and specialized processing models**. The biggest changes in Hadoop 2 are **HDFS Federation**, **YARN**, a highly available **NameNode**, and the concept of **Containers**.
+
+YARN 是 Yet Another Resource Negotiator 的缩写，是 Hadoop 生态系统中的资源调度器，可以管理一个 Hadoop 集群，并为各种类型的大数据任务分配计算资源。
 
 ![](https://i.loli.net/2021/01/07/YMBH4lzwkZeGyUc.png)
 
@@ -264,13 +296,15 @@ It is designed to find patterns, it can scans the database and quickly finds nod
 
 MapReduce on Hadoop has a number of limitations, like difficulty and performance. The result is that MapReduce dose not compose well for large applications. This has led to the development of a very popular system that tries to combine all of this.
 
-Apache Spark is a general-purpose data processing engine. The features of Spark: In memory computation engine, almost 10x faster than Hadoop MapReduce using computations with Disk IO, almost 100x faster than Hadoop MapReduce with in-memory computations. 总而言之就是，Spark 比 Hadoop MapReduce 快很多。
+Apache Spark is a general-purpose data processing engine. The features of Spark: In memory computation engine, almost 10x faster than Hadoop MapReduce using computations with Disk IO, almost 100x faster than Hadoop MapReduce with in-memory computations. 总而言之就是，Spark 比 Hadoop MapReduce 快很多，**快 100 倍往上**。
 
 不同于 MapReduce 仅支持 Map 和 Reduce 两个编程算子，Spark 有 80 多种不同的 Transformation 和 Action 的算子，如 map、reduce、filter、foreach 等。
 
 Spark 能够和很多开源项目框架搭配使用。例如，Spark 能够使用 Hadoop 的 YARN 和 Apache Mesos 作为它的资源管理和调度器，Spark 还可以读取多种数据源，如 HDFS、HBase、MySQL 等。
 
 ![Spark 搭配使用的框架](https://i.loli.net/2021/01/07/XCYlJNtzMe9rDTB.png)
+
+Spark 主要面向**批处理**需求，因其优异的性能和易用的接口，Spark 已经是批处理界绝对的王者。**Spark Streaming** 提供了**流处理**的功能，它的流处理主要基于 mini-batch 的思想，即将输入数据流拆分成多个批次，每个批次使用批处理的方式进行计算。因此，Spark 是一款批量和流式于一体的计算框架。
 
 ### Spark 基本概念
 
@@ -335,7 +369,7 @@ The core abstraction in Storm is the **Stream**. A stream is data in the form of
 
 On a Storm cluster there are two types of nodes: a master node and workder nodes.
 
-在 Spark Steaming 中我们提到过它的出现正是为了解决 Storm 中面临的一些问题，那么两者之间究竟有何不同呢？
+**在 Spark Steaming 中我们提到过它的出现正是为了解决 Storm 中面临的一些问题**，那么同样作为流式处理引擎的两者之间究竟有何不同呢？
 
 |  对比点 | Storm | Spark Streaming |
 |  :----:  | :----:  | :---------------: |
@@ -430,3 +464,19 @@ Producers 可以将数据发布到指定的 topics，同时 Producer 也能决�
 每个 consumer 属于一个 consumer group，也就是每个 consumer group 可以有多个 consumer。消息只会被订阅此 Topic 的每个 group中的一个 consumer 消费。
 
 ![](https://i.loli.net/2021/03/12/jZSCOiDqN84eHgW.jpg)
+
+## 13. Hive
+
+Hive 主要用来实现传统的离线数仓。Hive 数仓搭配 HDFS 有着成熟和稳定的大数据分析能力，结合调度和上下游工具，能够构建一个完整的数据处理分析平台。
+
+## 14. Flink
+
+Flink 是由德国几所大学联合发起的的学术项目，后来不断发展壮大，并于 2014 年末成为 Apache 顶级项目。Flink 主要面向流处理，如果说 Spark 是批处理界的王者，那么 Flink 就是流处理领域的冉冉升起的新星。在 Flink 之前，不乏流式处理引擎，比较著名的有 Storm、Spark Streaming，但某些特性远不如 Flink。
+
+* 第一代 Storm：Event 级别实时计算、毫秒级低延迟；但不支持 SQL，不支持 State，吞吐量不够
+* 第二代 Spark Streaming：mini-batch 级别实时计算、秒级延迟、SQL、状态、流批一体；但实时性不够，流式计算的相关功能不够丰富；
+* 第三代 Flink：Event 级别实时计算、毫秒级低延迟、SQL、状态、流批一体、WaterMark 机制，完善的流式计算功能
+
+## 15. Kylin
+
+大部分的大数据处理结果，是生成了报表供业务人员分析查阅，快速高效地生成报表就比较重要了。不管是 Hive 还是 Spark Sql，经过计算生成报表的时间都在分钟级以上，Kylin 对输入的 Hive 表（组织成维度/度量的星形模型），预先经过 MR 进行计算，把计算结果以 cube 元数据的形式存到 HBase 里，而后用户能够经过 JDBC Driver 以 Sql 的方式对数据进行快速查询。
