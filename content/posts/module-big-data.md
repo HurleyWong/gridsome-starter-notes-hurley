@@ -265,16 +265,24 @@ BigTable is a simple concept - map two arbitrary string values (a row key and a 
 
 ### HBase
 
-HBase 是建立在 Hadoop 文件系统之上的分布式 column-oriented 的数据库，是建立在 HDFS 之上的。它是一个开源项目，是横向拓展的。HBase 的表一般有以下特点：
+![](https://i.loli.net/2021/09/03/vjnhA4ezTMolN3Y.jpg)
 
-* 大：一个表可以有上亿行，上百万列
-* 面向列：面向列的存储和权限控制，列独立检索
-* 稀疏：对于空（null）的列，并不占用存储空间，所以表可以设计得十分稀疏
+HBase 是建立在 Hadoop 文件系统之上的分布式 column-oriented 的适合存储海量数据的数据库，依赖 HDFS 作为底层分布式文件系统。它是一个开源项目，是横向拓展的（可拓展）。HBase 的表一般有以下特点：
+
+* **大**：一个表可以有上亿行，上百万列
+* **面向列**：面向列的存储和权限控制，列独立检索
+* **稀疏**：对于空（null）的列，并不占用存储空间，所以表可以设计得十分稀疏
+* **高并发（多核）**
 
 之所以将 HBase 放在 BigTable中，是因为最初 HBase 的实现是完全参考了 BigTable 的论文。它们在技术栈上的组成是类似的：
 
 * GFS/Colossus <-> HDFS
 * Chubby <-> ZooKeeper
+
+HBase 的主要**缺点**有：
+
+* 不能支持条件查询，只支持按照 Row Key 来查询
+* 暂时不能支持 Master Server 的故障切换，当 Master 宕机后，整个存储系统就会宕掉
 
 ## 8. Neo4j
 
@@ -298,7 +306,7 @@ MapReduce on Hadoop has a number of limitations, like difficulty and performance
 
 Apache Spark is a general-purpose data processing engine. The features of Spark: In memory computation engine, almost 10x faster than Hadoop MapReduce using computations with Disk IO, almost 100x faster than Hadoop MapReduce with in-memory computations. 总而言之就是，Spark 比 Hadoop MapReduce 快很多，**快 100 倍往上**。
 
-不同于 MapReduce 仅支持 Map 和 Reduce 两个编程算子，Spark 有 80 多种不同的 Transformation 和 Action 的算子，如 map、reduce、filter、foreach 等。
+不同于 MapReduce 仅支持 Map 和 Reduce 两个编程算子，Spark 有 80 多种不同的 Transformation 和 Action 的算子，如`map`、`reduce`、`filter`、`foreach`等。
 
 Spark 能够和很多开源项目框架搭配使用。例如，Spark 能够使用 Hadoop 的 YARN 和 Apache Mesos 作为它的资源管理和调度器，Spark 还可以读取多种数据源，如 HDFS、HBase、MySQL 等。
 
@@ -467,16 +475,52 @@ Producers 可以将数据发布到指定的 topics，同时 Producer 也能决�
 
 ## 13. Hive
 
-Hive 主要用来实现传统的离线数仓。Hive 数仓搭配 HDFS 有着成熟和稳定的大数据分析能力，结合调度和上下游工具，能够构建一个完整的数据处理分析平台。
+![](https://i.loli.net/2021/09/02/s25edFxcHSUXpgG.jpg)
+
+Hive 主要用来实现**传统的离线数仓**。Hive 数仓搭配 HDFS 有着成熟和稳定的大数据分析能力，结合调度和上下游工具，能够构建一个完整的数据处理分析平台。
+
+Hive 由 Facebook 实现并开源，是基于 Hadoop 的一个数据仓库工具，可以将结构化的数据映射为一张数据库表，并提供 HQL(Hive SQL) 查询功能，底层数据是存储在 HDFS 上。Hive 的本质是将 SQL 语句转换为 MapReduce 任务运行，使不熟悉 MapReduce 的用户很方便地利用 HQL 处理和计算 HDFS 上的结构化的数据，适用于离线的批量数据计算。
+
+Hive 最大的缺点就是**查询延时非常严重**。
 
 ## 14. Flink
 
-Flink 是由德国几所大学联合发起的的学术项目，后来不断发展壮大，并于 2014 年末成为 Apache 顶级项目。Flink 主要面向流处理，如果说 Spark 是批处理界的王者，那么 Flink 就是流处理领域的冉冉升起的新星。在 Flink 之前，不乏流式处理引擎，比较著名的有 Storm、Spark Streaming，但某些特性远不如 Flink。
+![](https://i.loli.net/2021/09/03/g6ZOGfWVmqQox9p.jpg)
+
+Flink 是由德国几所大学联合发起的的学术项目，后来不断发展壮大，并于 2014 年末成为 Apache 顶级项目。Flink 主要面向**流处理**，如果说 **Spark 是批处理界的王者**，那么 **Flink 就是流处理领域的冉冉升起的新星**。在 Flink 之前，不乏流式处理引擎，比较著名的有 Storm、Spark Streaming，但某些特性远不如 Flink。
 
 * 第一代 Storm：Event 级别实时计算、毫秒级低延迟；但不支持 SQL，不支持 State，吞吐量不够
 * 第二代 Spark Streaming：mini-batch 级别实时计算、秒级延迟、SQL、状态、流批一体；但实时性不够，流式计算的相关功能不够丰富；
 * 第三代 Flink：Event 级别实时计算、毫秒级低延迟、SQL、状态、流批一体、WaterMark 机制，完善的流式计算功能
 
-## 15. Kylin
+相比 Storm，Flink 吞吐量更高，延迟更低；相比 Spark Streaming，Flink 是真正意义上的实时计算，且所需计算资源比较少。
 
-大部分的大数据处理结果，是生成了报表供业务人员分析查阅，快速高效地生成报表就比较重要了。不管是 Hive 还是 Spark Sql，经过计算生成报表的时间都在分钟级以上，Kylin 对输入的 Hive 表（组织成维度/度量的星形模型），预先经过 MR 进行计算，把计算结果以 cube 元数据的形式存到 HBase 里，而后用户能够经过 JDBC Driver 以 Sql 的方式对数据进行快速查询。
+## 15. 主流框架的主要优缺点对比
+
+|  大数据框架 | 优点 | 缺点 | 容量 | 延迟 |
+|  :-:  | :-:  | :-: | :-: | :-: |
+| Hadoop HDFS <br> 分布式文件存储系统 | 高容错性、高吞吐量 | 无法对大量小文件存储 | TB 甚至 PB | 不适合低延迟，其延迟在**分钟甚至小时**级别 |
+| Hadoop MapReduce <br> 分布式离线并行计算框架 |  | 不适合实时计算、流式计算 | PB 以上 | **无法做到毫秒或者秒级** |
+| Hadoop YARN <br> 集群资源管理和调度系统 | 同上 | 同上 | 同上 | 同上 |
+| Hue <br> Hadoop UI 数据查询工具平台 |  |  |  |  |
+| HBase <br> 分布式实时列式存储数据库 |  | 不支持 SQL 语句 | 上十亿行，上百万列 |  |
+| Hive <br> 离线数据仓库 | 类 SQL 语法，避免写 MapReduce | 效率很低 | PB 级别 | **查询延迟很高** |
+| Pig <br> 数据流式处理数据仓库系统 | 使用与 SQL 不同的语言 |  |  |  |
+| Impala <br> 大数据分析查询系统 | 支持 SQL 查询 |  |  | 支持快速查询 |
+| Presto | 基于内存运算，减少磁盘 IO | 连表查询速度慢 | PB 级别 | 秒级查询 |
+| Sqoop <br> 数据库间 ETL 工具 | 支持多种数据库 |  |  |  |
+| Storm <br> 流式纯实时计算 | 不支持 SQL |  | 吞吐量不够 | 毫秒级 |
+| Spark <br> 分布式内存计算（实时计算）| 高吞吐量 |  |  | **比 MapReduce 快 100 倍以上**（不是真正的流，不适合低延迟要求） |
+| Spark Streaming <br> 流式准实时计算框架 |  | 实时性不够 | 吞吐量高 | 秒级 |
+| Flink <br> 流批处理的分布式处理引擎（流式为主） | SQL、流批一体、WaterMark机制 |  | 数 TB 级别，高吞吐量 | 毫秒级 |
+| Flume <br> 分布式日志采集工具 |  |  |  |  |
+| ElasticSearch <br> 分布式搜索引擎 | 面对海量数据时搜索极快 | 容易“脑裂” |  | 默认 1 秒延迟 |
+| Kylin <br> 分布式分析引擎 | 可以实时处理数据 | 只能查询，不能增删改 | 百亿、千亿甚至万亿级别 | 亚秒级响应 |
+| Druid <br> 数据库连接池 |  |  | |  |
+| Greenplum |  |  | |  |
+| ClickHouse |  |  | |  |
+| Doris |  |  | |  |
+| Snowflake |  |  | |  |
+| Hudi |  |  | |  |
+| Kafka <br> 分布式发布订阅消息系统 | 高吞吐量，低延迟，容错 |  | 每秒几千条消息 | 毫秒级 |
+| Zookeeper <br> 分布式协调服务系统 |  |  |  |  |
