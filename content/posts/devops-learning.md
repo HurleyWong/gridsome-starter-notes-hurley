@@ -110,9 +110,9 @@ DevOps 有很多技术栈与工具的运用，如下所示：
 * 持续集成和交付：Jenkins | Fabric | Gump | TinderBox
 * 容器平台：Docker | AWS | 阿里云
 * 配置管理：Chef | Bash | Powershell
-* 微服务平台：Kubernetes | Cloud Foundry
-* 服务开通：Puppet | Powershell | OpenStack
-* 日志管理：Logstash | CollectD
+* 微服务平台：[Kubernetes](https://kubernetes.io/)（管理云平台中多个主机的容器化应用） | [Cloud Foundry](https://www.cloudfoundry.org/)
+* 服务开通：[Puppet](https://puppet.com/)（集中配置管理系统） | [OpenStack](https://www.openstack.org/)（开源的云计算管理平台）
+* 日志管理：[Logstash](https://www.elastic.co/cn/logstash/)（服务器端数据处理管道） | [CollectD](https://collectd.org/)（系统监控和统计工具）
 * 监控和警告： Nagios | Zabbix
 
 但实际上，DevOps 并不是与 Chef 或者 Docker 容器的等工具的熟练运用划等号。它的范畴远远超过 Puppet 或者 Docker 等工具。
