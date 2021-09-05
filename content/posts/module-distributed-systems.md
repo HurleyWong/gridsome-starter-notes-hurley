@@ -167,15 +167,15 @@ Many client-server applications are constructed logically from **three** differe
 * Clients and servers can be on different machines
 * Clients follow request/reply model with respect to using services
 
-![](https://i.loli.net/2021/01/07/7nd2Yrgk1CREJxH.png)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fe6ea7fab-4714-447f-9683-1adf12653bc2%2FUntitled.png?table=block&id=46b8f5fc-3448-4fb1-81ed-229fdb3308d3&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=2320&userId=&cache=v2)
 
 #### 2-Tiered Architecture
 
-![](https://i.loli.net/2021/01/07/8tQIcZPkUy6gulG.png)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Ffd2f12ee-3f4e-4c3a-93fb-904db3c33993%2FUntitled.png?table=block&id=7769aec2-00fb-4c14-9f18-e818fdba95e1&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=2950&userId=&cache=v2)
 
 #### 3-Tiered Architecture
 
-![](https://i.loli.net/2021/01/07/wmbnViC5JfTzZ7L.png)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F97d83226-2946-453f-9041-30da4d65397e%2FUntitled.png?table=block&id=e204e07d-ff52-4b72-9874-73a6d13d3136&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=3020&userId=&cache=v2)
 
 ### Decentralised Organisations
 
@@ -217,7 +217,7 @@ Communication in distributed systems is always based on low level message passin
 * B服务器收到请求后，需要进行反序列化（序列化的逆操作），恢复为内存中的表达方式，然后找到对应的方法（寻址的一部分）进行本地调用，然后得到返回值。
 * 返回值也是通过序列化的方式发送回 A 服务器上的应用，服务器 A 收到后，再进行反序列化，恢复为内存中的表达方式，交个 A 服务器上的应用
 
-![](https://i.loli.net/2021/01/07/XMgVKv7LaR62Jtx.png)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fbacb5355-df5e-4a80-a2f7-3ae6e8e1d81d%2FUntitled.png?table=block&id=fc6dbe7f-60c4-4e58-939f-283bb47748bf&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=1000&userId=&cache=v2)
 
 目前，比较流行的开源 RPC 框架有：
 
@@ -324,7 +324,7 @@ LDAP, implemented directly on top of TCP, provides a simple protocol for accessi
 * Each record is uniquely named as a sequence of naming attributes (called <font color="red">Relative Distinguished Name</font>), so that it can be looked up.
 * <font color="red">Directory Information Tree</font>: the naming graph of an LDAP directory service; each node represents a directory entry.
 
-![](https://i.loli.net/2021/01/07/ANxe7FpbkDLn5cQ.png)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F4328e71f-2c31-470b-ab05-d0ce6d70cb60%2FUntitled.png?table=block&id=20d672d8-1d16-4157-8f84-5ecf16092ba1&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=2570&userId=&cache=v2)
 
 ## 9. Timing and Synchronisation
 
@@ -400,7 +400,7 @@ Bully 算法的选举原则是：**在所有存活的节点中，选取节点 ID
 3. 如果在给定的时间内，没有收到这些节点回复的消息，那么自己就暂时作为主节点，并且向比自己 ID 小的节点发送 Victory 的消息；
 4. 节点如果收到比自己 ID 小的节点发来的 Election 消息，就回复 Alive 消息。
 
-![选举过程](https://i.loli.net/2021/03/14/ZQRNvFxgXGjLPoO.jpg)
+![选举过程](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F0de4b1a7-2143-49f3-9b9e-47c2443aa452%2FUntitled.png?table=block&id=3c3ddc8b-8728-4609-8506-fdd8f67511a2&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=2400&userId=&cache=v2)
 
 #### NTP: Network Time Protocol
 
@@ -491,7 +491,7 @@ Question: Which failure type is worst?
 
 两个将军 A1 和 A2 决定攻打同一个敌人 B ，任一方都没有敌人强大，所以只有共同进攻才有胜算。敌军正好位于两个将军之间，意味着信使可能会被敌军抓住。两军问题指的就是在这样的条件下两个将军如何就是否进攻达成共识。
 
-![两军问题](https://i.loli.net/2021/03/14/ftixAjKqZeCMEIu.jpg)
+![两军问题](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F88f0146f-3370-42c6-80a4-84f507672e38%2FUntitled.png?table=block&id=a1f008b1-6a72-4203-92cb-d75731dbfc15&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=5760&userId=&cache=v2)
 
 蓝军（B）驻扎在山谷之中，红军分两部分驻扎在山谷两旁（A1, A2）。A1 和 A2 需要同时进攻才能击败蓝军。为了约定共同进攻的时间，A1 派出通信兵将攻击时间传达给 A2，但通信兵需要穿过山谷才能将攻击时间传达给 A2。而这个过程中，通信兵极有可能被蓝军截获从而导致 A2 不知道 A1 的进攻时间，于是 A1 不能确定进攻时间。
 

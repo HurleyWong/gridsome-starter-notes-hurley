@@ -28,11 +28,11 @@ description: How to make a blog cover with suitable size and awesome image?
 
 [freepik](https://www.freepik.com/) 这个网站是寻找「矢量图」的一个便捷的网站。即使不是会员，也能够下载很多精美的矢量图片（非会员每天会有下载数量限制），当前，前提是使用英文去进行搜索，但我相信这对大家并不是一个难题。
 
-![freepik](https://i.loli.net/2021/01/07/1dyGQvucCfE5hWk.png)
+![freepik](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fe7b3036c-78a7-4b17-98c7-495e76b34317%2FUntitled.png?table=block&id=abe077c9-231b-4486-84f9-ddf3f9e5a4b1&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=5760&userId=&cache=v2)
 
 ### Delesign
 
-![Delesign](https://i.loli.net/2021/01/07/Q2IfceG851jlug9.png)
+![Delesign](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F1623aa12-da0e-4b1f-8cf2-1f30839e4c82%2FUntitled.png?table=block&id=19213ff0-1fe9-4034-b6ab-3613142a4db4&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=5750&userId=&cache=v2)
 
 如上图所示，打开网站就可以看到默认显示的插画素材，输入 Email 就可以订阅此网站并且免费下载图片，插画的种类也是应有尽有。
 
@@ -58,19 +58,19 @@ Canva 是一个设计网站，可以设计例如 Post、Presentation、Video、L
 
 ### RemoveBg
 
-![RemoveBg](https://i.loli.net/2021/01/07/CsE6Rz4cyJG73mX.png)
+![RemoveBg](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F4953130b-f585-4bcb-9b07-53884f2aa3a0%2FUntitled.png?table=block&id=44f0b970-f5b8-4528-86ac-032fdd759210&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=5760&userId=&cache=v2)
 
 RemoveBg 是一个基于 AI 技术，以训练好的模型快速分辨招聘前景和背景，将主题分离后成为透明背景的网站（除免费次数之外，需要收费）。
 
 ### Slazzer
 
-![Slazzer](https://i.loli.net/2021/01/07/9WxUMOGd3E5BSLT.png)
+![Slazzer](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F3ecfe1f6-1a6a-44ff-923b-5732eff5e6c3%2FUntitled.png?table=block&id=3d2faa92-4037-4ff2-a131-ae174c69567f&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=5700&userId=&cache=v2)
 
 Slazzer 是基于 AI 技术实现的在短短几秒内自动删除图像背景，只需要 5 秒就可以实现一键抠图去除背景。
 
 ## Unscreen
 
-![Unscreen](https://i.loli.net/2021/01/07/R8baXvCu2JyT5jf.png)
+![Unscreen](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F8a941ab8-5077-4ca0-be76-57aed9c7ec3b%2FUntitled.png?table=block&id=bdff8002-e8c0-441d-a084-68d5a7285adb&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=5740&userId=&cache=v2)
 
 Unscreen 同样是一个在线免费的**扣视频神器**，支持 mp4、gif、mov 等格式，可以上传视频或者 GIF，自动去除背景，保留视频主体。
 
@@ -78,9 +78,9 @@ Unscreen 同样是一个在线免费的**扣视频神器**，支持 mp4、gif、
 
 vtracer，可快速将 jpg、png 等格式的图片快速转换为 svg 矢量图，并支持过滤斑点、色彩精度等多种参数配置。
 
-![](https://i.loli.net/2021/01/07/XgCukyfDqREWpBA.png)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fafbbf72f-687b-402c-83e3-7a64268b6227%2FUntitled.png?table=block&id=01efdac5-149c-40cc-a1ef-a81721026d6d&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=6020&userId=&cache=v2)
 
-![](https://i.loli.net/2021/01/07/ybzYXnKZeNxBI23.png)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F89fc53b5-59f9-4c06-a0bf-070769c4dce1%2FUntitled.png?table=block&id=f923405d-680f-4710-833c-a3e6beeae183&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=3490&userId=&cache=v2)
 
 
 ---

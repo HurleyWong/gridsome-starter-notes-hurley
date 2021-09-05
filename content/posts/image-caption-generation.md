@@ -459,7 +459,7 @@ def plot_loss(lstm, rnn):
 plot_loss(loss_lstm, loss_rnn)
 ```
 
-![The loss function curve of RNN and LSTM](https://i.loli.net/2021/01/07/kLKFWE2YeNbUulo.png)
+![The loss function curve of RNN and LSTM](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F999615a7-a7cf-4048-bdf7-3a10caf6feb6%2FUntitled.png?table=block&id=944658ca-2b62-491c-82ca-65133c2b5caa&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=800&userId=&cache=v2)
 
 ### BLEU for evaluation
 
@@ -681,7 +681,7 @@ The code above includes the BLEU scores of two sample images, the whole test dat
 
 Get the scores as following shows:
 
-![](https://i.loli.net/2021/01/07/oQFaVfMy8WUh4Du.png)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F5e3854d9-18ce-427c-82a5-f46805a93926%2FUntitled.png?table=block&id=b9b0988d-6b6f-4b07-9728-8f87dcba29e5&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=470&userId=&cache=v2)
 
 Plot figures to show two sample image and the scores of each epoch:
 
@@ -721,7 +721,7 @@ for j in range(2):
 plt.show()
 ```
 
-![](https://i.loli.net/2021/01/07/Qfx63COUaD74yez.png)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F39a232b8-4991-4e3e-8046-598d4c9aaf81%2FUntitled.png?table=block&id=34b27f97-3507-400c-a94a-3071ee833af6&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=3010&userId=&cache=v2)
 
 #### Get BLEU Scores of RNN
 

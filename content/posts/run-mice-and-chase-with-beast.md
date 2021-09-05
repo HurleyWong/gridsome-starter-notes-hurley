@@ -45,7 +45,7 @@ C++ 有很多新的特性，例如[虚函数](https://zh.wikipedia.org/wiki/虚�
 
 **Cheese 类**：
 
-![](https://i.loli.net/2021/02/01/boFB8lYGJ23VjkX.png)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F6af280ab-4e56-48db-a007-881a12e8a5d1%2FUntitled.png?table=block&id=155a3b4d-07a7-4a1f-9420-6237578e6834&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=3260&userId=&cache=v2)
 
 定义 Cheese 类。半径为 2.5f，颜色为黄色，位置随机初始化。
 
@@ -53,19 +53,19 @@ C++ 有很多新的特性，例如[虚函数](https://zh.wikipedia.org/wiki/虚�
 
 **Mouse 类**：
 
-![](https://i.loli.net/2021/02/01/VOaA9hYZkEt6cgH.png)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F96603171-4563-45f3-a664-a78392020998%2FUntitled.png?table=block&id=863e90b8-013e-44c3-9c71-c4b4f2590893&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=3060&userId=&cache=v2)
 
 定义 Mouse 类。定义其使用`NearestAngleSensor<Cheese>()`最近角度传感器检测 Cheese，并且随机初始化。一个简单的`Control()`方法定义 Mouse 的左右移动。定义虚函数`OnCollision()`即当 Mouse 与 Cheese 发生碰撞时，就会调用 Cheese 的`Eaten()`方法，即 Cheese 被吃。
 
 **NeuralMouse 类**：
 
-![](https://i.loli.net/2021/02/01/lkSXETzZb3GhqHf.png)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fb9e19a37-0774-44b9-a563-7ee69a1f5db9%2FUntitled.png?table=block&id=0ddd2fbe-c4b8-44a8-8fc4-51423478aa45&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=3230&userId=&cache=v2)
 
 拥有神经网络的 Mouse 会使用传感器去探测最近的 Cheese。目前还没有遗传算法或者其它的学习算法。上述代码中主要两层 hidden layer，使用到了神经网络是`FeedForwardNet`。
 
 **EvoMouse 类**：
 
-![](https://i.loli.net/2021/02/01/YX6uUZvJ3hNSKgn.png)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F118f7b9a-4c3c-4d0b-a170-64e729c48cd2%2FUntitled.png?table=block&id=a149db23-7b97-481a-83a0-8ad70823833f&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=4100&userId=&cache=v2)
 
 对于 EvoMouse 类，其初始化代码的`OnCollision()`方法几乎都与 Mouse 类一样，但是增加了遗传算法和 FFN。
 
@@ -75,7 +75,7 @@ C++ 有很多新的特性，例如[虚函数](https://zh.wikipedia.org/wiki/虚�
 
 **MouseSimulation 类**：
 
-![](https://i.loli.net/2021/02/01/nSIK6gczHfUowQa.png)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fc0f22ba2-25ff-4657-8038-ca16f89807af%2FUntitled.png?table=block&id=2133a9b9-cce9-4a55-9f63-e043f891a4d2&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=3470&userId=&cache=v2)
 
 这个类是最终将 Simulation 在 BEAST 中启动
 
@@ -95,13 +95,13 @@ Group<Cheese> theCheese;
 
 **Prey 类**：
 
-![](https://i.loli.net/2021/02/01/hZ3HWwp4gKmMVQ5.png)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F4e395d29-901a-4429-823c-bb7ef1c7b2f5%2FUntitled.png?table=block&id=c4f27731-6fa4-4d50-959e-307894c0ad69&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=3470&userId=&cache=v2)
 
 这里定义了 Prey 的具体实现。其拥有最大速度，最小速度，使用了两个`ProximitySensor<Predator>`传感器进行探测从而躲避捕食者的追捕，其适应度函数`GetFitness`为`1.0f / static_cast<float>(timeEaten)`，即`timeEaten`越小，其适应度越高，越难被捕捉。
 
 **Predator 类**：
 
-![](https://i.loli.net/2021/02/01/VEy62U9rX8NmMGi.png)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F83a03d2e-4a40-41c0-8989-bdb1c03a2bfc%2FUntitled.png?table=block&id=d7ad6a45-f332-458b-9b29-1d7562e102e9&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=3360&userId=&cache=v2)
 
 捕食者 Predator 同样使用了两个`Proximity<Prey>`传感器，但是范围比 Prey 的要大。速度和 Prey 的一样，但是增加半径`Radius`因素。它的`GetFitness`直接返回`preyEaten`，这样就代表其捕捉的猎物越高适应度越高。
 
@@ -109,7 +109,7 @@ Group<Cheese> theCheese;
 
 **结果**：
 
-![](https://i.loli.net/2021/01/07/FQwDEc8ztV9SOXd.png)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fda6311a6-9466-4da1-9227-0d7db45e8ade%2FUntitled.png?table=block&id=82a0dc68-2739-4da9-a5b5-0bfa0da80412&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=1280&userId=&cache=v2)
 
 上面两张图片是运行了 100 generation 后的图片，可以看到，无论是 average fitness 还是 best fitness，两张图片都呈**互补**关系。即当 Prey 上升到时候，Predator 下降；反之，Prey下降则是因为 Predator 上升了。
 

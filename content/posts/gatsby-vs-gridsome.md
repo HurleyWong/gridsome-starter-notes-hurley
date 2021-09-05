@@ -27,7 +27,7 @@ The term JAMstack was first proposed by Netlify, and it stands for:
 * APIs -- providers for JS to pull data from
 * Markup -- templates, processed at deployment time of your website
 
-![What is JAMstack?](https://i.loli.net/2021/01/30/OEDweCaodHlnfTS.png)
+![What is JAMstack?](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F26982df2-0caf-44d1-8960-57bba01844ab%2FUntitled.png?table=block&id=bedeaa7f-66b7-4da0-967b-df63bcd57ecc&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=3810&userId=&cache=v2)
 
 The key aspect to JAMstack is that it does not depend on a web server. It can make you to run a beautiful website within a few hours.
 
@@ -53,7 +53,7 @@ Therefore, not all websites can be replaced by serverless services, and JAMstack
 
 Gatsby can be said to be the most popular static website generator at present. It allows developers to use Webpack. In addition, because of the powerful community, it has many plugins that can help you implement any functions you want.
 
-![](https://i.loli.net/2021/01/30/OWzmTeyUZ4DKBY7.png)
+![Gatsby](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F7fb04379-0803-4267-acd7-eb091a5f93bf%2FUntitled.png?table=block&id=89d69069-7e3c-4695-85c2-98bbebc189c3&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=5700&userId=&cache=v2)
 
 In terms of development language, it is based on React, which means you need to master at least `.JSX` and other skills. Everything in Gatsby is built with React! As for data sources, it use the query language developed by Fackbook. Yes, that's **GraphQL**. Although I think that different SQLs are essentially the same, the synatx of GraphQL is indeed different from the Oracle or MySQL that developers often choose to use, so, I hope you do not mind and can control it.
 
@@ -85,7 +85,7 @@ Finally, one of the most important aspects of Gatsby is its **eco-system**. As o
 
 For static websites based on Vue.js, Gridsome is undoubtedly the leader framework. It also uses GraphQL, also has convenient construction packages and browsing performance, and also supports necessary functions for sites such as PWA. However, the shortcomings of it are of course obvious. Compared with React, Vue.js is indeed not born so early, so the birth of Girdsome is much later than Gatsby. Fortunately, its project documentation and community are constantly growing, so it can really give developers high hopes.
 
-![](https://i.loli.net/2021/01/30/Bc9yEZderbhPLtl.png)
+![Gridsome](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F2644378a-905f-4018-b30e-06d8d96cb86f%2FUntitled.png?table=block&id=13120fc7-3eac-4b11-85eb-2685a91722ec&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=5550&userId=&cache=v2)
 
 As you can see this site, my own article blog, it is based on the Gridsome-Blog-Starter. I just modified the style, use plugins to add some useful functions on the basis. Then, I am proud of it!
 
@@ -149,7 +149,7 @@ It also has some other differences from the RESTful API. We make RESTful API req
 
 There are too many features actually, and there is definitely no end to the introduction here. Look below, GraphQL is already being used by teams of all sizes. I highly recommend that since you have been experienced to Gatsby and Gridsome, you might as well learn about this simple and promising GraphQL!
 
-![](https://i.loli.net/2021/01/30/p7LcyXTYKm8496x.png)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F7490423a-b150-4c35-81b0-fa29979e11e6%2FUntitled.png?table=block&id=4f97d5bc-c923-43a9-97db-11b61dd1be81&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=4230&userId=&cache=v2)
 
 ## Which one is the Winner
 

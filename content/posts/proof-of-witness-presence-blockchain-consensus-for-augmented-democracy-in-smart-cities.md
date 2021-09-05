@@ -139,7 +139,7 @@ The core of witness presence lies **proof of location** that is the secure verif
 
 **关于四者的对比**：
 
-![](https://i.loli.net/2021/01/07/4uITy9kDm6OJ3nq.png)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F1fb4692d-38d2-4aeb-bb99-74b9e836c2df%2FUntitled.png?table=block&id=299f2833-f1f1-4be1-a29d-8433f50b720a&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=3120&userId=&cache=v2)
 
 **GPS 的好处**：
 

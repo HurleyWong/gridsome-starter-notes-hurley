@@ -71,7 +71,7 @@ DevOps 允许敏捷开发团队实施持续集成和持续交付。
 4. **部署**：在此阶段，部署过程持续进行，它的执行方式是任何时候在代码中进行的任何更改都不应该影响流量网站的运行。
 5. **监测**：在此阶段，运维团队将负责处理不合适的系统行为或者生产中发现的错误。
 
-![DevOps 生命周期](https://i.loli.net/2021/01/07/RyhPSe7tqpr925T.png)
+![DevOps 生命周期](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F96b39a9b-1333-4694-840c-b33dabb41bf9%2FUntitled.png?table=block&id=8c05e053-4902-444e-b5dc-12e4f4fea9f3&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=3960&userId=&cache=v2)
 
 ### CI
 
@@ -99,7 +99,7 @@ CI/CD 是 DevOps 中的核心流程，但是在团队实际运用中（比如严
 
 下面这个是严选团队的 DevOps 工具链建设的架构图：
 
-![严选团队 DevOps 架构图](https://i.loli.net/2021/01/07/EYyDuk1RFeBq96T.png)
+![严选团队 DevOps 架构图](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F356ef626-9f83-4535-a89f-2703b92cc6c7%2FUntitled.png?table=block&id=2aa883c2-d0aa-482b-862b-25b318e2545d&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=2160&userId=&cache=v2)
 
 ## 技术栈与工具链
 
@@ -134,7 +134,7 @@ DevOps 有很多技术栈与工具的运用，如下所示：
 
 Github CI/CD 是 GitLab 内置的强大工具，允许将所有连续方法（持续集成，交付和部署）应用于软件，而无须集成或者使用其他第三方应用程序。
 
-![GitLab CI/CD](https://i.loli.net/2021/01/07/XsBuU4qNxDWfTcj.png)
+![GitLab CI/CD](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F57f9e2b6-26cf-4008-bad5-3b46cc7eebbf%2FUntitled.png?table=block&id=fdda01d3-e755-4a75-88ed-9e72690b615e&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=5990&userId=&cache=v2)
 
 那么，一个常见的基于 GitLab CI/CD的开发工作流程是这样的。开发者已经在一个问题中讨论过代码的实现，并在本地处理了提出的更改。将提交推送到 GitLab 远程存储库中的 feature 分支后，就会触发 GitLab 的 CI/CD 流水线运行。这时候会：
 
@@ -149,13 +149,13 @@ Github CI/CD 是 GitLab 内置的强大工具，允许将所有连续方法（�
   * GitLab CI/CD 会自动将更改部署到生产环境中
 * 最后，如果有问题，可以轻松地回滚
 
-![](https://i.loli.net/2021/01/07/LM2jlUyk7eviTdn.png)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F473d10c4-41c3-45b4-9b03-f4d4f00725df%2FUntitled.png?table=block&id=6a2271dc-46d3-4e68-89de-1f3f3a88007d&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=2400&userId=&cache=v2)
 
 ### Maven
 
 > Apache Maven is a software project management and comprehension tool. Based on the concept of a project object model (POM), Maven can manage a project's build, reporting and documentation from a central piece of information.
 
-![](https://i.loli.net/2021/01/07/NOxXEeobRzvmTdK.png)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F582bad06-5202-42e6-bae8-e58758c54af9%2FUntitled.png?table=block&id=4378c00e-a986-4ebd-a494-3f2448b77463&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=550&userId=&cache=v2)
 
 我们在日常开发中使用到 Maven 最多的地方就是管理第三方库的依赖等。实际上，
 
@@ -167,7 +167,7 @@ Github CI/CD 是 GitLab 内置的强大工具，允许将所有连续方法（�
 
 Gradle 是一个基于 Apache Ant 和 Apache Maven 概念的**项目自动化构建**开源工具。它使用一种基于 Groovy 的语言来声明项目配置，抛弃了基于 XML 的各种繁琐的配置，主要是面向以 Java 项目为主。
 
-![](https://i.loli.net/2021/01/07/gcKUn21yZ9EvDlm.png)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F59b7c29a-a261-4c54-92db-8b1eca01453c%2FUntitled.png?table=block&id=3f1f6f34-e5ee-4910-9393-fe6cc196ab20&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=710&userId=&cache=v2)
 
 * gradle 对多工程的构建支持很出色
 * 支持局部构建
@@ -180,7 +180,7 @@ Gradle 是一个基于 Apache Ant 和 Apache Maven 概念的**项目自动化构
 
 SonarQube empowers all developers to write cleaner and safer code.
 
-![](https://i.loli.net/2021/01/07/g2IhUjPOKC98xzd.png)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F667dda74-77a1-45d5-a89d-34853df0e547%2FUntitled.png?table=block&id=e7adbc8c-6ed5-4bf1-8612-88f71610bab4&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=2040&userId=&cache=v2)
 
 ### Chef
 
@@ -188,7 +188,7 @@ SonarQube empowers all developers to write cleaner and safer code.
 
 简单来说，Chef 就是 IT 自动化服务器配置管理工具，它把服务器的环境（软件、依赖库、网络等）进行抽象，以特有的配置语法 (Ruby 语言) 进行管理，可以自动地进行服务器环境的初始化操作。
 
-![](https://i.loli.net/2021/01/07/6YuxzocPnpdwT14.png)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fad32c700-804f-4c2f-8820-657065b3dd68%2FUntitled.png?table=block&id=7587074d-a03f-471d-bf7d-c1464e855e92&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=1000&userId=&cache=v2)
 
 例如，刚入职一家新公司做开发时，首先要做的一件事就是**配置环境**，那么，如果只是每个人手动地安装，就很容易缺少了某个库或者某个包没有安装。即使有完整的文档说明描述，手动的安装也是不合理的。
 
@@ -210,7 +210,7 @@ Chef 由三大组件组成：
 
 Puppet 是一个 IT 基础设施自动化管理工具，它能够帮助系统管理员管理基础设施的整个生命周期，包括**供应 (provisioning)**、**配置 (configuration)**、**联动 (orchestration) **以及**报告 (reporting)**。
 
-![](https://i.loli.net/2021/01/10/ghHc6mluEAsLxSk.png)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F11c5c8ce-7b90-4cc0-b0e0-b410b717d219%2FUntitled.png?table=block&id=5de7e782-4708-4ce9-aa7c-c03dda2deb17&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=2400&userId=&cache=v2)
 
 基于 Puppet，就可以实现自动化重复任务、快速部署关键性应用以及在本地或者云端完成主动管理变更和快速扩展架构规模等。
 
@@ -225,7 +225,7 @@ Puppet 是一个 IT 基础设施自动化管理工具，它能够帮助系统管
 
 Zabbix 是一个高度集成的网络监控解决方案，基于 web 界面，可以提供企业级的开源分布式监控解决方案。它能监控各种网络参数，保证服务器系统的安全运营，并提供灵活的通知机制让系统管理员快速定位、解决存在的各种问题。Zabbix 主要由 **zabbix server** 和 **zabbix agent**，以及可选组建 **zabbix proxy**。
 
-![](https://i.loli.net/2021/01/07/qFb6JX2s735riRa.png)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F8e7db5fb-c89e-4876-96ac-f649a378990f%2FUntitled.png?table=block&id=c6ff998f-180d-4304-b7ff-dacb172fe8a6&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=2070&userId=&cache=v2)
 
 **优点**：
 
@@ -250,7 +250,7 @@ Zabbix 是一个高度集成的网络监控解决方案，基于 web 界面，�
 
 当时该公司的第一版的“DevOps”如下图所示：
 
-![初创期](https://i.loli.net/2021/03/12/Cd9qW8OaPVKlSsI.jpg)
+![初创期](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F1e72bdc6-efa7-4497-b9db-d5714d56581e%2FUntitled.png?table=block&id=a52f7721-0e9c-4246-9e85-81f391bd2710&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=1310&userId=&cache=v2)
 
 流程可以说是再简单不过了。他们当时是使用 SVN 来管理代码，两个固定的分支，一个是测试环境，一个是发布的线上生产环境。逻辑就是代码编写完毕后，commit 到 SVN 服务器，然后推送到源码服务器，一个分支用来测试，另一个分支用来发布。
 
@@ -269,7 +269,7 @@ Zabbix 是一个高度集成的网络监控解决方案，基于 web 界面，�
 * 工程代码映射关系
 * 代码分发
 
-![业务增长期](https://i.loli.net/2021/03/12/Um3WgnC74aHPGQf.jpg)
+![业务增长期](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fb409d106-bf7f-4e6c-82f3-197853ad7cdb%2FUntitled.png?table=block&id=e6729caf-c6ed-40b3-ae37-790affd2fa3f&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=1660&userId=&cache=v2)
 
 如上图所以，还将应用进行了独立部署。
 
@@ -279,13 +279,13 @@ Zabbix 是一个高度集成的网络监控解决方案，基于 web 界面，�
 
 这一阶段在代码提交上已经改用了 Git 来处理。通过将 Git 服务器与 Jenkins 连接，所有的推送服务都通过 Jenkins 来处理。除此之外，为了更方便地 CD，使用了多套测试环境。
 
-![多语言开发时期](https://i.loli.net/2021/03/12/A6MVBNlEkgqz1vb.jpg)
+![多语言开发时期](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fbf0c9a65-b2e0-4e23-99d7-4c9aa6354874%2FUntitled.png?table=block&id=3643c479-545d-4bec-aade-1f8e1887b181&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=1660&userId=&cache=v2)
 
 ### 微服务与容器化
 
 时间来到了 2016 年，从这一年开始，其实才算是真正地通过 DevOps 来研发项目。下面是一个常见的 DevOps 的架构图：
 
-![微服务与容器化](https://i.loli.net/2021/03/12/IrNspi6WB2zhEjD.jpg)
+![微服务与容器化](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Ffdd388c4-4cee-44e0-8ef5-0233291063f4%2FUntitled.png?table=block&id=82759e54-b374-4589-bfcc-a793dcfe486b&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&userId=&cache=v2)
 
 简要说明一下。Developer push 代码到 GitLab，GitLab 与 Jenkins 相互连接，同时 Jenkins 拥有环境版本一致的开发组件库，保证生成的成品与线下开发环境的一致。CMDB 的作用主要是获取信息，确保信息完善，使得代码、工程、资源的 100% 关联。Ops 方面，可以通过基于 JIRA 的研发流程管控。通过 JIRA 管理研发流程，发布的时候严格校验状态，确保所有发布均符合研发规范。SonarQube 是什么作用呢？我们之前提到过，负责安全评审、每次提交代码的自动扫描以及发布的安全测试等，这样可以确保每次提交的代码是安全的（是代码安全，并非指测试完全通过、功能没有 BUG）。
 
@@ -293,7 +293,7 @@ Zabbix 是一个高度集成的网络监控解决方案，基于 web 界面，�
 
 让我们看看容器云项目的核心组件：
 
-![容器云项目核心组件](https://i.loli.net/2021/03/12/KQ3N6G1Se4M5Uko.jpg)
+![容器云项目核心组件](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F4fe75e54-84a5-4a44-971a-1f4ee6fd4091%2FUntitled.png?table=block&id=c253e040-efc5-44cd-b4a1-8c30c9e8d5b9&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=2160&userId=&cache=v2)
 
 最终经过测试后，通过 OpenStack 发布到华为云服务器中。最终运维人员可以通过监控中心对性能等进行实时的监控。
 
@@ -311,5 +311,5 @@ DevOps 是一次革命，主要是是为了消除拥有大规模 IT 部门的大
 
 所以，企业通过应用 DevOps 原则和实践，例如自动化部署、持续交付等，都能够获益匪浅。
 
-![](https://i.loli.net/2021/01/10/Sz5HryPIpqgTUxk.png)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fdb9a6c8d-a5d9-4797-bb4c-6af83bff9265%2FUntitled.png?table=block&id=612d3d94-87c4-4bef-81ad-4ea6ba320c7c&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=1640&userId=&cache=v2)
 

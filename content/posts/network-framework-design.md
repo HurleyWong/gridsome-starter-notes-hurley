@@ -10,7 +10,7 @@ canonical_url: false
 description: 借鉴 Volley 的实现思路，设计与实现一个简单的 HTTP 网络请求库。
 ---
 
-CustomeNe 的基本架构主要分为 4 个部分：
+CustomeNet 的基本架构主要分为 4 个部分：
 
 * 最上面的部分是**`Request`**，包括了各种请求类型。比如：返回 JSON 数据格式的 JsonRequest ，返回字符串格式的 StringRequest 扥等
 * 第二个部分是**消息队列**，维护了提交给网络框架的请求列表，并且根据相应的规则进行排序。默认情况下，消息队列会按照**优先级**和**进入队列的顺序**来执行，使用到的是线程安全的**`PriorityBlockingQueue<E>`**，因为他们的队列会被并发执行，需要保证队列访问的原子性。
@@ -19,7 +19,7 @@ CustomeNe 的基本架构主要分为 4 个部分：
 
 如下图所示：
 
-<img width="80%" src="https://i.loli.net/2021/01/07/5fLkdRDlSbNnmM2.png"></img>
+<img width="80%" src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F94fe1ae7-bbc9-4ba0-8f21-9684bfb214c5%2FUntitled.png?table=block&id=06c7b795-0945-4be6-8bd2-dc6ee221ef26&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=3070&userId=&cache=v2"></img>
 
 ## Request 部分
 

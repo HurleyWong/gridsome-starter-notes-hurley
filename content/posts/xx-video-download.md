@@ -32,7 +32,7 @@ description: 不怕 XX 耍流氓，就怕 XX 有文化
 
 作为一个非常喜欢收集工具的人，我接触过很多下载类的工具，目前电脑里还留存的有：
 
-![下载工具](https://i.loli.net/2021/01/07/4gPhZtC3NKywQTc.png)
+![下载工具](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fad5af2d9-c94a-4a14-8181-8b80c8cd0168%2FUntitled.png?table=block&id=80b6f46b-a8fc-47db-84ce-2015adc6e6d3&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=6570&userId=&cache=v2)
 
 ### 迅雷
 
@@ -62,7 +62,7 @@ Mac 端的迅雷应用应该相比 Windows 端的广告要少很多，Windows �
 
 Free Download Manager，简称 FDM。它是一款免费的软件，界面十分简洁易用，更没有任何广告捆绑。它支持直接的链接下载、磁力链接、BT 文件。除此之外，它还可以下载 YouTube 视频，并选择视频的分辨率。
 
-![Free Download Manager](https://i.loli.net/2021/01/07/xzCSi48dGsrk6XY.png)
+![Free Download Manager](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F3b539726-f9d9-4387-887c-92bd17a0e1ac%2FUntitled.png?table=block&id=992debab-c047-40e2-936d-670fdd2355b8&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=3640&userId=&cache=v2)
 
 然而，它并不支持下载 XX 网站中的视频。
 
@@ -70,7 +70,7 @@ Free Download Manager，简称 FDM。它是一款免费的软件，界面十分�
 
 Motrix 是一款开源免费的全功能下载器，支持 HTTP、FTP、BT、Magnet（磁力链接）以及百度网络和迅雷下载协议。这个开源部分是调用了 Aria2，并且是支持全平台的 (Windows、macOS、Linux)。
 
-![Motrix](https://i.loli.net/2021/01/07/LuzUcnZkG7VyAwY.png)
+![Motrix](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Ffd29d7ec-f50e-4fb8-904f-7e2203034317%2FUntitled.png?table=block&id=cb2ac161-a1d4-44fa-9e61-2f5ae2b204e2&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=4100&userId=&cache=v2)
 
 ### Downie
 
@@ -124,7 +124,7 @@ ts 文件分为三层：
 * pes (Packet Elemental Stream) 层：在音视频数据上加了时间戳等对数据帧的说明信息
 * es (Elementray Stream) 层：音视频数据
 
-![ts 三层结构](https://i.loli.net/2021/01/07/A1ht7gXpu6ywWrl.png)
+![ts 三层结构](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fc68763fc-05b2-45c6-a737-171730e5c4fb%2FUntitled.png?table=block&id=4561da28-ffbf-4c65-86e2-b686229537b4&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=1300&userId=&cache=v2)
 
 ### 获得 m3u8 和 ts
 
@@ -148,7 +148,7 @@ ts 文件分为三层：
 
 这个插件的开源项目有两个主要分支，目前最新的分支是`3.x.x`，另外一个分支就是`master`。最开始，我认为应该使用`master`分支更为稳定，结果按照 README.md 的使用说明操作后，发现的确是将视频的 m3u8 文件下载下来了。然而不幸的是，它的格式并不与我们上面介绍的 m3u8 的格式一样。它的格式如下：
 
-![](https://i.loli.net/2021/01/07/C2tGTmh6pxYKBzP.png)
+![](https:/www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F5f8ac08b-b6ef-45da-bfc2-c7f827f39205%2FUntitled.png?table=block&id=8db041fb-803c-4da5-9383-6bd68b76535f&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=3260&userId=&cache=v2)
 
 可以发现，这应该是 Base64 解密后的文本。通过复制后进行 Base64 加密，我们发现仍然是一大串的文本，仍然不是传统的 m3u8 格式。
 
@@ -173,7 +173,7 @@ ts 文件分为三层：
 
 这个脚本内容写得非常好，不仅解析了 m3u8 文件，生成 ts 文件的列表，调用 aria2 下载，最终还使用 ffmpeg 来将下载下来的 ts 文件合并成 mp4 文件。
 
-![](https://i.loli.net/2021/01/07/njqDwlkahJBZ8PN.png)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F406e8344-ba0d-49c5-867d-980f9d3a8aac%2FUntitled.png?table=block&id=088dd212-c2ba-4013-867f-f19dd74ceabc&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=2360&userId=&cache=v2)
 
 ### 分析
 

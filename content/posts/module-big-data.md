@@ -20,7 +20,7 @@ description: 对「大数据」这门课程学习过的知识进行总结。
 
 Doug Laney first defined 3 characteristics of Big Data (Three V's) in 2001.
 
-![Three V's](https://i.loli.net/2021/01/07/2SrqzOnRk98ZvV7.png)
+![Three V's](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F637fdbae-1861-4d99-87e4-d6f0ea9bd62c%2FUntitled.png?table=block&id=f3d13022-3b09-432c-830a-b131bd43889e&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=2790&userId=&cache=v2)
 
 * **Volume** means that many different factors can contribute to the increase in data volume.
 * **Data velocity** is both the speed at which data streams in, and the timely manner in which data must be dealt with to maintain time based relevance.
@@ -30,7 +30,7 @@ Doug Laney first defined 3 characteristics of Big Data (Three V's) in 2001.
 
 Although the three V's have traditionally been used to define Big Data, increasingly extra Vs have been proposed. However, these typically describe characteristics rather than being deinitional.
 
-![The rest two V's](https://i.loli.net/2021/01/07/Ri5qSWl4Hd2AzYh.png)
+![The rest two V's](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F01d19e34-e698-4406-aeea-bb2ef4f8ce7b%2FUntitled.png?table=block&id=18da70a3-68e7-4039-ae5a-78fb3087e5d3&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=2050&userId=&cache=v2)
 
 Therefore, The Five V's:
 
@@ -111,7 +111,7 @@ Job Tracker 会始终尝试为 Map 任务选择具有本地数据的节点，Nam
 
 $$Input \rightarrow Splitting \rightarrow Mapping \rightarrow Shuffling \rightarrow Reducing \rightarrow Final Result$$
 
-![MapReduce 执行步骤](https://i.loli.net/2021/01/07/9janJXCMkwuEoWc.png)
+![MapReduce 执行步骤](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fed93ee14-3c88-4144-a723-0022a2b496a8%2FUntitled.png?table=block&id=8390097d-15b2-40a4-9b74-4ddc5b31c29f&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=2290&userId=&cache=v2)
 
 ---
 
@@ -135,7 +135,7 @@ Hadoop 的第一个核心版本就是 HDFS 和 MapReduce，HDFS 是 Hadoop 的�
 
 HDFS was inspired by the GFS(Google File System), published in 2003. It has a **master / slave** architecture.
 
-![](https://i.loli.net/2021/01/07/DvUSRMtZpfme9gQ.png)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fe2ce73e0-1cb7-4b73-81b2-90931cd5b914%2FUntitled.png?table=block&id=fb6a54ba-8f79-4915-afd5-7caaf4a440f8&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=1150&userId=&cache=v2)
 
 An HDFS cluster consists of **a single NameNode**, additionally, there are a number of **DataNodes**.
 
@@ -147,7 +147,7 @@ Hadoop 2 moves from a restricted batch-oriented model to **more interactive and 
 
 YARN 是 Yet Another Resource Negotiator 的缩写，是 Hadoop 生态系统中的资源调度器，可以管理一个 Hadoop 集群，并为各种类型的大数据任务分配计算资源。
 
-![](https://i.loli.net/2021/01/07/YMBH4lzwkZeGyUc.png)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F141afe85-f3ba-46f3-9027-56578a25d202%2FUntitled.png?table=block&id=e2fce3fa-cdc4-4571-8239-eedf664271e9&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=2370&userId=&cache=v2)
 
 The fundamental idea of YARN is to **Split Hadoop resource management and job scheduling into separate processes (daemons)**.   将 Hadoop 资源管理和作业调度划分为单独的流程。
 
@@ -177,7 +177,7 @@ NoSQL databases can be categorised into four types:
 * **Document databases**
 * **Graph databases**
 
-![NoSQL Database](https://i.loli.net/2021/01/07/2wlzIPZqc3msDOi.png)
+![NoSQL Database](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F35589699-9511-42c5-a9df-ff6861a2eb1e%2FUntitled.png?table=block&id=2dc961ab-0596-45f2-98e4-74081dc20c3c&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=930&userId=&cache=v2)
 
 #### Key-value Stores
 
@@ -226,9 +226,9 @@ Problem spaces with connected data:
 
 数据仓库，是为企业所有级别的决策制定过程提供所有类型数据支持的战略集合。
 
-![](https://i.loli.net/2021/01/07/1hHbDMrynxTCg3w.png)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F71d7db1e-5719-443c-99f4-8a6bfed53e17%2FUntitled.png?table=block&id=04ea4b11-bdaa-4ff8-b5b4-c319f5082dba&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=2100&userId=&cache=v2)
 
-![](https://i.loli.net/2021/01/07/LIfwcQFpOh6G2n4.png)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F4c4affd6-4d5f-42ba-aa53-07d3085196c5%2FUntitled.png?table=block&id=ca6799ee-693a-409a-b427-915aa2370481&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=1590&userId=&cache=v2)
 
 * Subject-oriented: 着重于将资料按照其意义归类至相同的主题区
 * Integrated: 资料来自于企业的各个系统，在数据仓库中是集成并且一致的
@@ -261,11 +261,11 @@ BigTable is a simple concept - map two arbitrary string values (a row key and a 
 
 具体的 BigTable 的实现原理可以参考阅读该篇论文————《[Bigtable: A Distributed Storage System for Structured Data](https://static.usenix.org/events/osdi06/tech/chang/chang_html/?em_x=22)》
 
-![](https://i.loli.net/2021/01/07/EJYP7AzyiRkmq3I.png)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Ff2e73b7d-0ec9-4d26-8c7c-7a323846473a%2FUntitled.png?table=block&id=7505a941-85e2-425d-85cf-3bea92590d58&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=1460&userId=&cache=v2)
 
 ### HBase
 
-![](https://i.loli.net/2021/09/03/vjnhA4ezTMolN3Y.jpg)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F5c902b35-c7d3-415a-9f9d-af4162a00073%2FUntitled.png?table=block&id=5e0cfe16-0ae4-450b-ad08-86e91400b75b&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=940&userId=&cache=v2)
 
 HBase 是建立在 Hadoop 文件系统之上的分布式 column-oriented 的适合存储海量数据的数据库，依赖 HDFS 作为底层分布式文件系统。它是一个开源项目，是横向拓展的（可拓展）。HBase 的表一般有以下特点：
 
@@ -310,7 +310,7 @@ Apache Spark is a general-purpose data processing engine. The features of Spark:
 
 Spark 能够和很多开源项目框架搭配使用。例如，Spark 能够使用 Hadoop 的 YARN 和 Apache Mesos 作为它的资源管理和调度器，Spark 还可以读取多种数据源，如 HDFS、HBase、MySQL 等。
 
-![Spark 搭配使用的框架](https://i.loli.net/2021/01/07/XCYlJNtzMe9rDTB.png)
+![Spark 搭配使用的框架](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F67c5e818-9950-40bd-8830-24c0ad88aebd%2FUntitled.png?table=block&id=e0478b6c-48be-4cbf-9cfc-97bfc026890f&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=1370&userId=&cache=v2)
 
 Spark 主要面向**批处理**需求，因其优异的性能和易用的接口，Spark 已经是批处理界绝对的王者。**Spark Streaming** 提供了**流处理**的功能，它的流处理主要基于 mini-batch 的思想，即将输入数据流拆分成多个批次，每个批次使用批处理的方式进行计算。因此，Spark 是一款批量和流式于一体的计算框架。
 
@@ -335,8 +335,6 @@ Application >> Job >> Stage >> Task
 
 :::
 
-![](https://i.loli.net/2021/03/12/T1HzeBdnNaXGA2m.jpg)
-
 ### Spark Streaming
 
 As a traditional stream processing system(an example is Apache Storm), there are some issues:
@@ -350,7 +348,7 @@ To address these issues, the Spark Streaming component uses a new architecture c
 
 Each of these batches of data is an RDD. This allows the streaming data to be processed using any Spark code or library.
 
-![](https://i.loli.net/2021/01/07/sUWL4bY71ZwKlmG.png)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F1f3a4e33-364e-4e85-b62b-e51cea44d108%2FUntitled.png?table=block&id=2c918492-fc38-4508-8dc1-55605c2f03bf&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=2160&userId=&cache=v2)
 
 Spark Streaming 其实一个 Spark Core API 的一种扩展，它可以用于进行大规模、高吞吐量、容错的实时数据流的处理。它支持从多种数据源中读取数据，比如 Kafka、Flume等。处理后的数据可以被保存到文件系统、数据库、Dashboard 中。
 
@@ -371,7 +369,7 @@ Spark Streaming 的基本工作原理是：
 
 It is extremely fast, and can process over one million records per second per node.
 
-![](https://i.loli.net/2021/01/07/24Ayoh7g5HSTIP1.png)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F421ea956-7c14-4488-9139-dff26f337b5e%2FUntitled.png?table=block&id=54239cc2-ec48-49fd-b16e-f2f57163cb09&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=2800&userId=&cache=v2)
 
 The core abstraction in Storm is the **Stream**. A stream is data in the form of an unbounded sequence of tuples.
 
@@ -400,13 +398,13 @@ On a Storm cluster there are two types of nodes: a master node and workder nodes
 * **Bolt**：拓扑中所有的数据处理均是由 Bolt 完成的，是流数据的处理单元。包括数据过滤（filtering）、函数处理（functions）、聚合（aggregations）、联结（joins）等功能，Bolt 几乎可以完成任何一种数据处理需求。
 * **Stream groupings**：当 Spouts 和 Bolts 在集群上执行任务时，因为是多个 Task 并行执行，那么具体该发送给哪个 Task 来执行呢？这就是由 Stream groupings 来执行的。
 
-![Storm 架构](https://i.loli.net/2021/03/13/NwWPmoHA5VQxhiq.jpg)
+![Storm 架构](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F96a62f29-2b21-419a-b99a-79ed30e39e06%2FUntitled.png?table=block&id=f02b5b1f-b279-4ac3-8f15-b9af7b102ac9&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=1280&userId=&cache=v2)
 
 ## 11. ZooKeeper
 
 > Zookeeper was originally a Hadoop sub-project but is now a full Apache project. ZooKeeper is a centralized service for distributed configuration, synchronization services, and naming registry for distributed systems. It allows distributed processes to coordinate with each other through a shared hierarchical namespace of data registers.
 
-![ZooKeeper Logo](https://i.loli.net/2021/01/07/dAxBoaNCmUv72tF.png)
+![ZooKeeper Logo](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F5725cb8c-f72b-433c-bcd9-68cb0c8b7d57%2FUntitled.png?table=block&id=82c41fd6-242a-498c-a09d-08e99bfdfb21&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=2400&userId=&cache=v2)
 
 ZooKeeper 是一个针对大型应用提供高可用的数据管理、应用程序协调服务的分布式服务框架，基于对 Paxos 算法的实现，使该框架保证了分布式环境中数据的强一致性，提供的功能包括：配合维护、统一命名服务、状态同步服务、集群管理等。
 
@@ -416,13 +414,13 @@ ZooKeeper 是一个顺序一致性的分布式数据库，由多个节点共同�
 
 在 ZooKeeper 中没有用传统的 Master/Slave 的概念，而是引入了 Leader、Follower 和 Observer 三种角色。所有机器通过选举来选定一个 Leader 的机器，Leader 可以提供读写操作，Follower 和 Observer 只能提供读的服务。Observer 相比 Follower 就是不参与 Leader 的选举过程，也不参与写操作的“过半写成功”的策略。
 
-![](https://i.loli.net/2021/03/13/4v76cnruzymHEMk.jpg)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F1659e21a-441f-4a0a-a8ba-cead3062e0eb%2FUntitled.png?table=block&id=5e4b787c-d0a3-4295-92ba-46f48e61dfc8&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=2880&userId=&cache=v2)
 
 ### 集群管理
 
 为了保证高可用，最好以集群的形态来部署 ZooKeeper，这样只要集群中的大部分机器都是可用的（可容忍一定的机器故障），那么 ZooKeeper 本身仍然是可用的。
 
-![](https://i.loli.net/2021/03/13/ghsIXik4HtNDBnd.jpg)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F4c94fd69-d3ed-43a5-9283-67ec7443472d%2FUntitled.png?table=block&id=dbcfa0c7-f41f-4fe4-b239-4832cd71f6ff&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=2880&userId=&cache=v2)
 
 上图中的每一个 Server 都代表一个安装 ZooKeeper 服务的服务器。这些服务器会选举出一个 Leader 服务器，并且每台服务器之间都会互相保持着通信。集群间通过 Zab（ZooKeeper Atomic Broadcast） 协议来保持数据的一致性。
 
@@ -434,7 +432,7 @@ Apache Kafka 是一个快速、可扩展的、高吞吐、可容错的**分布�
 
 在发布-订阅消息系统中，消息被持久化到一个 topic 中，消费者可以订阅一个或者多个 topic，消费者可以消费该 topic 中所有的数据，同一条数据也可以被多个消费者消费。消费的生产者被定义为发布者，消费者被定义为订阅者。
 
-![Kafka 系统架构图](https://i.loli.net/2021/01/07/gCb5TRKqV7tEHZY.png)
+![Kafka 系统架构图](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F6eafd274-b4ce-4f18-ad8c-a23992c3893e%2FUntitled.png?table=block&id=87a29cce-d4dc-4c89-8d11-463a1c428f48&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=1550&userId=&cache=v2)
 
 :::tip 💡 Tips
 
@@ -455,7 +453,7 @@ Apache Kafka 是一个快速、可扩展的、高吞吐、可容错的**分布�
 
 对于每个主题，Kafka 集群都维护一个如下所示的分区日志：
 
-![](https://i.loli.net/2021/03/12/KpYV2zb16BmUCqw.jpg)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F075b5cae-42b1-4231-abe6-754997ffc762%2FUntitled.png?table=block&id=792cacab-1d44-427f-a050-c2e1d457e91f&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=830&userId=&cache=v2)
 
 每个分区都有一个有序的、不可变的记录序列，不断地附加到结构化的提交日志中。分区中的记录每个都分配了一个称为偏移的顺序 ID 号，它是唯一地标识分区中的每个记录。
 
@@ -471,11 +469,11 @@ Producers 可以将数据发布到指定的 topics，同时 Producer 也能决�
 
 每个 consumer 属于一个 consumer group，也就是每个 consumer group 可以有多个 consumer。消息只会被订阅此 Topic 的每个 group中的一个 consumer 消费。
 
-![](https://i.loli.net/2021/03/12/jZSCOiDqN84eHgW.jpg)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F6843c5e6-989e-474b-a5a7-98182b3a9ae7%2FUntitled.png?table=block&id=9175d45b-a796-40e9-9b5d-dd09fe070efd&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=950&userId=&cache=v2)
 
 ## 13. Hive
 
-![](https://i.loli.net/2021/09/02/s25edFxcHSUXpgG.jpg)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F255bd576-a409-415f-9ee8-45f28f0a0680%2FUntitled.png?table=block&id=8d37c958-ed6c-465a-bb81-1b1fdd40308f&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=1600&userId=&cache=v2)
 
 Hive 主要用来实现**传统的离线数仓**。Hive 数仓搭配 HDFS 有着成熟和稳定的大数据分析能力，结合调度和上下游工具，能够构建一个完整的数据处理分析平台。
 
@@ -485,7 +483,7 @@ Hive 最大的缺点就是**查询延时非常严重**。
 
 ## 14. Flink
 
-![](https://i.loli.net/2021/09/03/g6ZOGfWVmqQox9p.jpg)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F47f14bc4-465b-49ff-be75-a8d665523fbb%2FUntitled.png?table=block&id=6ce9aee1-3461-4109-b5c0-24137a4b7e1b&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=630&userId=&cache=v2)
 
 Flink 是由德国几所大学联合发起的的学术项目，后来不断发展壮大，并于 2014 年末成为 Apache 顶级项目。Flink 主要面向**流处理**，如果说 **Spark 是批处理界的王者**，那么 **Flink 就是流处理领域的冉冉升起的新星**。在 Flink 之前，不乏流式处理引擎，比较著名的有 Storm、Spark Streaming，但某些特性远不如 Flink。
 

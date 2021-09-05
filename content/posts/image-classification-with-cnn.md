@@ -348,11 +348,11 @@ def train_and_valid(num_epochs, model, optimizer, flag):
 
 2 层的损失率：
 
-![2 层的损失率](https://i.loli.net/2021/01/07/UKkgazHCnT9WM6E.png)
+![2 层的损失率](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Ffe1b32ab-aaf3-455e-a4de-cd2dbc98405b%2FUntitled.png?table=block&id=d3ec742d-a257-4548-b27b-a4a1967e4f94&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=750&userId=&cache=v2)
 
 2 层的准确率：
 
-![2 层的准确率](https://i.loli.net/2021/01/07/UfHelP9g7Ty1uwR.png)
+![2 层的准确率](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F49a32060-7dc8-4406-bafc-0587266dfc1d%2FUntitled.png?table=block&id=833c9b7a-547c-413e-aab1-f45770d05ae6&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=750&userId=&cache=v2)
 
 可以看见图像仍然没完全收敛，存在欠拟合现象。
 
@@ -360,7 +360,7 @@ def train_and_valid(num_epochs, model, optimizer, flag):
 
 4 层的损失率：
 
-![4 层的损失率](https://i.loli.net/2021/01/07/Qh79pqrGmLutKEZ.png)
+![4 层的损失率](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F8e52546b-a119-45e8-9aff-7266650e151a%2FUntitled.png?table=block&id=8b8c5d26-1d5e-4d48-b622-1bb4f836e197&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=750&userId=&cache=v2)
 
 ##### 改变参数
 
@@ -465,7 +465,7 @@ Normalized confusion matrix
  [  1  25   1   4   2   0   1   1   5 129]]
 ```
 
-![混淆矩阵](https://i.loli.net/2021/01/07/xOh8PFrzBKqdZH2.png)
+![混淆矩阵](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F41959022-8ea7-482f-8e1a-ab46d63b9fce%2FUntitled.png?table=block&id=6ca40ff4-d0b3-43ae-b784-4177e238a662&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=680&userId=&cache=v2)
 
 #### Filter visualisation
 
@@ -491,15 +491,15 @@ def filter_visual():
 
 **训练前**：
 
-![训练前的卷积核](https://i.loli.net/2021/01/07/wJc6iKuYrWyPEbD.png)
+![训练前的卷积核](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F2487a7bf-5c75-4d59-bc2b-5e0e91f12341%2FUntitled.png?table=block&id=be79da9d-fce4-4aa5-a0de-2453d7c9cafa&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=1660&userId=&cache=v2)
 
 **训练中**：
 
-![训练中的卷积核](https://i.loli.net/2021/01/07/hSjB4NXfOmGRAF8.png)
+![训练中的卷积核](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F55b930fd-e8b4-4eca-aabc-24df2c185991%2FUntitled.png?table=block&id=2cf20b87-8b14-48ca-9292-3d3957bf33c6&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=1660&userId=&cache=v2)
 
 **训练后**：
 
-![训练后的卷积核](https://i.loli.net/2021/01/07/uVjPcpHQeRmTF61.png)
+![训练后的卷积核](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F1197c5c5-12e5-43f1-89aa-b3eb2992849f%2FUntitled.png?table=block&id=ce9efa01-6439-4790-a227-cfd144d2fd78&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=1660&userId=&cache=v2)
 
 #### Feature map visualisation
 
@@ -523,7 +523,7 @@ for i in range(4):
     plt.imshow(feature_maps_x[0][0, i, ...].data.cpu().numpy(), cmap='gray')
 ```
 
-![](https://i.loli.net/2021/01/07/yaHFVB1tZ4h6plo.png)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Ff0030828-4411-414d-aaf0-f2b1c70d2389%2FUntitled.png?table=block&id=b799de89-257e-415c-9b52-2ec708afa0a0&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=2260&userId=&cache=v2)
 
 **第二层**：
 
@@ -535,7 +535,7 @@ for i in range(4):
     plt.imshow(feature_maps_x[1][0, i,...].data.cpu().numpy(), cmap='gray')
 ```
 
-![](https://i.loli.net/2021/01/07/WyjNrPRLVQ5BZU1.png)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F5fab82fb-1289-40cd-9f46-e6b221b66b5c%2FUntitled.png?table=block&id=8739ed9b-a4a3-40bc-96f5-c7e1b413e6fb&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=2260&userId=&cache=v2)
 
 **第三层**：
 
@@ -547,7 +547,7 @@ for i in range(4):
     plt.imshow(feature_maps_x[3][0, i,...].data.cpu().numpy(), cmap='gray')
 ```
 
-![](https://i.loli.net/2021/01/07/i32LDheCuvUZfIz.png)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F4d5b79ad-dbcf-4162-938c-b8e1cb1bf1e6%2FUntitled.png?table=block&id=39d4d3a4-c10e-401b-aeed-70ae46183b73&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=2220&userId=&cache=v2)
 
 可以看见，随着层次的增加，图片越来越模糊，特征越来越不明显。
 
@@ -573,11 +573,11 @@ final_optimizer = optim.Adam(final_model.parameters(), lr = 0.001)
 
 训练集和验证集的损失率：
 
-![](https://i.loli.net/2021/01/07/5ADsNBhtLITmnbj.png)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Ffdb4d544-6277-4ebb-9b18-d442768feb59%2FUntitled.png?table=block&id=7b7a9611-703a-4b91-893b-078337519b5b&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=750&userId=&cache=v2)
 
 训练集和验证集的准确率：
 
-![](https://i.loli.net/2021/01/07/XDrMy2zSl6TA8pv.png)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F329b34cc-82f2-4275-9e67-a3d9e22249e5%2FUntitled.png?table=block&id=16eb24f8-1e58-4020-babc-7619d977c308&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=750&userId=&cache=v2)
 
 **测试集的准确率**：
 
@@ -613,6 +613,6 @@ Normalized confusion matrix
  [  2   5   4   1   8   1   1   0   6 141]]
 ```
 
-![混淆矩阵](https://i.loli.net/2021/01/07/P5rNXj7Qgu8kanF.png)
+![混淆矩阵](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F460f7dec-0278-4784-91f1-384be888af23%2FUntitled.png?table=block&id=22a3c3ae-2c27-4e65-9b7e-37ec6ce500f5&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=680&userId=&cache=v2)
 
 可以发现自带的性能的确比我们自己搭建的模型要好的多，同理也可以使用其它 PyTorch 中自带的网络模型，例如 VGG16 等。

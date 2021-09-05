@@ -19,7 +19,7 @@ description: Build and use neural networks for the Iris classification task via 
 —— 约翰·卡马克
 :::
 
-![约翰·卡马克](https://i.loli.net/2021/01/07/XR892ceDVO5h1fZ.png)
+![约翰·卡马克](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F2525e1a9-f207-4a2d-aa09-b686fb0a840c%2FUntitled.png?table=block&id=e467688b-ac44-4528-a25d-d5b47973be0e&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=660&userId=&cache=v2)
 
 约翰·卡马克的最后一句话，通俗易懂。又不禁让我想起了那段台词：
 
@@ -172,7 +172,7 @@ plot_train_performance(trained_model)
 
 ## Result
 
-![运行结果](https://i.loli.net/2021/01/07/2flu4zmsqdJ1FLR.png)
+![运行结果](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F425f36a7-3b27-4213-a447-0a7338800f41%2FUntitled.png?table=block&id=faf7cafa-8a7e-4ddb-966b-2b650b437bb2&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=5760&userId=&cache=v2)
 
 ## Error
 

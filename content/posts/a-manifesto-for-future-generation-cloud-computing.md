@@ -36,7 +36,7 @@ Provide an overview of the existing solutions addressing problems related to the
 
 > As can be observed from the emerging trends and proposed future research directions, there will be significant developments across all the service models (IaaS, PaaS and IaaS) of Cloud computing.
 
-![三种主要服务模型](https://i.loli.net/2021/01/07/E3hRYwKsLtify1l.png)
+![三种主要服务模型](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fe668abed-8d2c-43c7-808a-93f7b5aa9f98%2FUntitled.png?table=block&id=9a21eae8-9dd3-4032-9a41-7e447c579aff&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=2050&userId=&cache=v2)
 
 #### SaaS
 

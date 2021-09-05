@@ -22,7 +22,7 @@ CodeHub 是一款使用 WanAndroid 开放 API 开发的技术阅读类的开源�
 
 在本应用的首页界面，有一个推荐模块位于 Banner 轮播图的下方，首页文章列表的上方。推荐模块是根据用户所关注的文章标签以及用户对不同知识体系的文章的阅读时长这两个变量来计算相似度。
 
-![推荐算法流程图](https://i.loli.net/2021/02/19/n9YmMxFcE2rAUZN.png)
+![推荐算法流程图](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F08c288dd-2f47-4115-85ec-172b8bb9c931%2FUntitled.png?table=block&id=ac4ce49a-5eae-479f-b9f7-adc7c6a680b2&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=1730&userId=&cache=v2)
 
 首先，在文章界面进行埋点。当用户点击一篇文章进行阅读，系统会记录用户打开文章的时间和退出阅读该文章的时间。通过相减计算，得出用户阅读该篇文章的时长。然后将用户 id、用户阅读文章的属性以及阅读时长存储进数据库，视为该用户的阅读行为。
 
@@ -34,7 +34,7 @@ CodeHub 是一款使用 WanAndroid 开放 API 开发的技术阅读类的开源�
 
 而如果用户进行了首页的下拉刷新操作，则需要重新计算相似度，根据重新计算的相似度排序，显示出要推荐的文章显示在首页；如果用户只是进行推荐模块的刷新操作，那么则推荐出该知识体系下第二篇发布的文章，再刷新则推荐出第三篇文章，以此类推。
 
-<center><img src="https://i.loli.net/2021/02/19/pWvqXROeFt5LJkl.png"></center>
+<center><img src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F28bf8556-3abe-41d4-8748-26406c1b591f%2FUntitled.png?table=block&id=013c1b29-b1c8-477c-8af4-ea1a0f8d52cf&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=530&userId=&cache=v2"></center>
 
 ## 目录结构
 

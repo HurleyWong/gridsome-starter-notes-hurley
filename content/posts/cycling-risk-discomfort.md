@@ -94,7 +94,7 @@ $$
 6. application of insurance recompensation data from the Swiss Federal Office of Justice to obtain $f_R(x)$ from $\hat{f}_{A_{s}} \mid T(\mathbf{x})$
 7. 将 $f_R(x)$ 插入到处理的街道网络中去
 
-![An overview of the data science pipeline for bike riding risk assessment](https://s3.ax1x.com/2021/02/02/yuch6I.png)
+![An overview of the data science pipeline for bike riding risk assessment](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fdcfc9675-c42f-44c5-b23f-59fd0f7c91bd%2FUntitled.png?table=block&id=690ba895-d5b8-4207-a541-c86a2a260583&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=1790&userId=&cache=v2)
 
 ### Stage 1: accident data extraction
 

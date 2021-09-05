@@ -85,7 +85,7 @@ social 还可以被理解为社会，所以是社会证明？社会是一个十�
 所以，这也是没有办法的办法了。当无法直接证明公民到达过某个兴趣点附近时，那么只能找该兴趣点附近的地点，通过间接证明的方式来完成。具体如下：
 
 <center>
-    <img width="60%" src="https://i.loli.net/2021/01/07/rumjFoIV8JPLBz5.png">
+    <img width="60%" src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fa60817e2-dc97-4d41-ab46-d5d06370a110%2FUntitled.png?table=block&id=282a7611-6019-41ba-b7ce-45ee064a587e&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=3350&userId=&cache=v2">
 </center>
 
 As figure shown above, setting a park as a point of interest can be given by an oracle. In addition, there are some locations such as a bus stop, a shop, a cinema, a hospital and a train station (from near to far) within the scope of this oracle.
@@ -146,11 +146,11 @@ uint256 transportTicketIndex = 0;
 
 首先在 Infura 中创建项目，选择使用 Ropsten 网络。完成后复制下 EndPoints 的地址，并将其配置在`truffle-config.js`文件中。
 
-![Infura](https://i.loli.net/2021/01/07/zFoct9vxPmwjbuM.png)
+![Infura](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F41f6198f-e982-4ea8-b36e-746886cdf0f5%2FUntitled.png?table=block&id=8fac8569-4d4f-47b9-941e-d70ae7556ac5&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=3280&userId=&cache=v2)
 
 同时在 Chrome 浏览器中安装 MetaMask 插件，注册账号并获得 3 个测试以太币。在设置隐私界面中找到 12 个助记词并将其配置在`truffle-config.js`文件中。
 
-![MetaMask](https://i.loli.net/2021/01/07/JnaSUuTvzb2rx4W.png)
+![MetaMask](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fdcfadf3b-5236-4fc5-97ab-99d0b0090e52%2FUntitled.png?table=block&id=c572045e-04bf-406b-bf86-d96d51fbbca7&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=710&userId=&cache=v2)
 
 最后，在控制台中，使用`truffle compile`命令编译智能合约，并使用以下命令将智能合约部署迁移到以太坊区块链测试网络中：
 
@@ -158,18 +158,18 @@ uint256 transportTicketIndex = 0;
 truffle migrate --reset --network ropsten # --reset optional
 ```
 
-![](https://i.loli.net/2021/01/07/GRapZlI96EhzV2f.png)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F5928d8f3-1276-4d51-b640-4c051bc24a24%2FUntitled.png?table=block&id=e5f7c1be-4dba-46f6-950c-8ac7bfe58b1f&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=2430&userId=&cache=v2)
 
 
 部署完毕之后，控制台中会出现智能合约的具体信息，包括被部署到的具体地址中，例如https://ropsten.etherscan.io/tx/address.
 
-![Contract Address](https://i.loli.net/2021/01/07/4PtqNuaQTZwO5fH.png)
+![Contract Address](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fc1a52b91-cd0a-48b5-9179-4b9989b85851%2FUntitled.png?table=block&id=e09979dd-93b5-4267-ba8b-544355fbb5a6&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=2160&userId=&cache=v2)
 
 ### web3j
 
 需要将移动终端与智能合约连接起来的方式有很多，最传统的就是使用网络请求的方式。然后对于 Java 语言，有一个 web3j 的库能够很方便地帮助我们实现。
 
-![](https://i.loli.net/2021/01/07/vfQXc9oZEFgGrnl.png)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fb0dd7b4e-822a-4801-aaec-cbed5559badc%2FUntitled.png?table=block&id=3d5c6753-fad1-4384-8a84-23932a3c9692&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=1910&userId=&cache=v2)
 
 通过在本地安装好 web3j ，然后使用 web3j 的以下命令，可以将智能合约的代码逻辑自动以 Java 的方式实现。
 
@@ -195,7 +195,7 @@ Social Proof Point 是指当公民无法直接证明他们在某个特定时间�
 
 因此，需要在公民（用户）进入手机端的Google Map界面后，根据提示询问公民是将该地点添加为 Point of Interest 还是 Social Proof Point。选择完毕之后，就进入证明的过程，即下一部分（二维码）。
 
-![Google Map User Interface](https://s3.ax1x.com/2021/01/07/se2fGF.jpg)
+![Google Map User Interface](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F898b46dd-d9c5-4675-a5cf-0075ee5d4c6e%2FUntitled.png?table=block&id=dafb15db-5268-4495-9a47-29b9eb245930&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=6480&userId=&cache=v2)
 
 #### QR Code
 
@@ -205,7 +205,7 @@ Social Proof Point 是指当公民无法直接证明他们在某个特定时间�
 
 具体解析二维码的方式可以使用 Google 提供的开源库 ZXing。通过扫描二维码，解析二维码的数据并与区块链中已保存的数据进行比对，判断是否真实并且有效。如果有效，则说明成功证明公民到达过 Point of Interest 或者 Social Proof Point。
 
-![Scan QR Code User Interface](https://s3.ax1x.com/2021/01/07/seRSsA.jpg)
+![Scan QR Code User Interface](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Ff4a60b58-f4ce-487a-ba38-86bed4414cf0%2FUntitled.png?table=block&id=068953e9-95e7-43f6-99a4-178549626fb5&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=8820&userId=&cache=v2)
 
 :::note 💡 Tips
 

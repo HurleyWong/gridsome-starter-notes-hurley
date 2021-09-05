@@ -44,11 +44,11 @@ description: 对「云计算」这门课程学习过的知识进行总结。
 * Platform as a Service (PaaS): This is a alternative to locally run applications. Software stack facilitating the deployment of applications, e.g. MicroSoft Azure
 * Infrastructure as a Service (IaaS): Through virtualization, infrastructure providers are able to split, assign and dynamically manage service Providers, that will deploy on these systems the software stacks that run their services Virtualised resource manager.
 
-![](https://i.loli.net/2021/01/07/E3hRYwKsLtify1l.png)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fe668abed-8d2c-43c7-808a-93f7b5aa9f98%2FUntitled.png?table=block&id=9a21eae8-9dd3-4032-9a41-7e447c579aff&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=2050&userId=&cache=v2)
 
 ### Open Nebula
 
-![](https://i.loli.net/2021/01/07/WetbXC7ZUB85oz4.png)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F5bb67754-d15d-4b94-b3f3-ca86f63778c1%2FUntitled.png?table=block&id=b02ace41-4003-4f83-a737-3c1db0e9700b&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=1120&userId=&cache=v2)
 
 可以利用 Open Nebula 轻松地创建私有云、混合云和公有云。
 
@@ -65,7 +65,7 @@ Some features:
 
 OpenStack 是一个开源的云计算管理平台项目，是一系列开源项目的组合。OpenStack 为私有云和公有云提供可拓展的弹性的云计算服务，项目目标是提供实施简单、可大规模扩展、标准统一的云计算管理平台。
 
-![](https://i.loli.net/2021/01/07/MQhNS8UD79HeJCG.png)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F3c7c9291-1b5c-41d8-8edb-d62ad59e0e6a%2FUntitled.png?table=block&id=9dc00477-5a28-42f4-bb6a-1422cf47134d&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=1160&userId=&cache=v2)
 
 ## 2. Cloud Platform Architecture over Virtualized Datacenters
 
@@ -101,27 +101,27 @@ OpenStack 是一个开源的云计算管理平台项目，是一系列开源项�
 * directs workload within data centre
 * returns results to external client (hiding data centre internals from client)
 
-![](https://i.loli.net/2021/01/07/AdbFw3gLhlkuxGM.png)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F0b470129-65a5-4c3f-88a3-5c29b5ec1337%2FUntitled.png?table=block&id=4a08514a-fc6f-4bf0-9d58-9e471d0b3b8d&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=2080&userId=&cache=v2)
 
 负载均衡是高可用网络架构的关键组件，通常用于将工作负载分布到多个服务器来提高网站应用、数据库或者其它服务的性能和可靠性。
 
 如何理解呢？一个没有负载均衡的 web 服务架构如下所示：
 
-![](https://i.loli.net/2021/01/07/Syb2QfHjzBai7e4.png)
+![No Load Balancing](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F8e84dc68-1aa4-48ed-8b7e-b7fe4825421d%2FUntitled.png?table=block&id=854bd467-68c5-4945-a6ea-0749301d258f&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=1380&userId=&cache=v2)
 
 我们可以看出用户是直连到 web 服务器的，所以如果服务器宕机了，那么用户也就自然无法访问了。或者如果是同时很多用户试图访问服务器，超过了其它处理的极限，就会出现加载速度变慢或者根本连接不上的情况。
 
 那么，可以在后端引入一个「负载均衡器」和至少一个额外的 web 服务器，就可以解决这个故障。如下图所示，用户首先访问负载均衡器，再由负载均衡器将请求转发给后端的服务器。
 
-![](https://i.loli.net/2021/01/07/G5igm94wdzDBpKt.png)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F5ce5feab-8f58-4b7d-b79f-2e0a6186b40d%2FUntitled.png?table=block&id=f0eab927-2fc7-456c-bc97-005fe642da7b&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=1440&userId=&cache=v2)
 
 但上面这个情况还有一个缺点，如果单点故障是出现在了负载均衡器上，那么在负载均衡器这里就无法转发给 web 服务器了，所以我们仍然需要引入第二个负载均衡器来缓解。
 
-![](https://i.loli.net/2021/01/07/Yx39AtgP4J6asCb.png)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Ffed91edd-6db1-4986-b874-dfb1d8bc6f8e%2FUntitled.png?table=block&id=430dc9ce-2f23-4b5b-bec7-35156b6a403f&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=1440&userId=&cache=v2)
 
 当主负载均衡器发生了故障，就需要将用户请求转到第二个负载均衡器，因为 DNS 更改通常会较长的时间才会生效，因此需要解决 IP 地址重新映射的方法。所以，需要使用一个浮动 IP 的负载均衡架构示意图：
 
-![](https://i.loli.net/2021/01/07/eE8jBaNVQKdoWUZ.gif)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F1dbe4747-dc12-4bde-93aa-0ccbb89cd853%2FUntitled.png?table=block&id=1c25b36b-e81f-4cf4-b353-eacfb6d22bd0&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=1440&userId=&cache=v2)
 
 
 #### 负载均衡算法
@@ -207,7 +207,7 @@ The difference between containers and VMs:
 
 单体应用是指将所有的业务场景的表示层、业务逻辑层和数据访问层都放在一个工作中，最终通过编译、打包、部署在一台服务器上。
 
-![单体架构](https://i.loli.net/2021/01/07/qDz7l4UCGaMmSHh.png)
+![单体架构](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F136d93a1-f467-4331-9672-d8f0170291df%2FUntitled.png?table=block&id=627c0da2-8aba-4810-8282-20aab13772f5&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=800&userId=&cache=v2)
 
 在应用的初始阶段，单体架构无论是在开发速度和运维速度上，都有着显著的优势。但是随着应用业务的发展和复杂度的提高，这种架构明显存在以下不足：
 
@@ -219,7 +219,7 @@ The difference between containers and VMs:
 
 随着业务的发展，大多数公司都会将单体应用进行集群部署，增加负载均衡服务器（例如 Nginx），以应对用户量的增加而带来的高并发访问量。
 
-![集群架构](https://i.loli.net/2021/01/07/G3I7AN6X8H5gtCJ.png)
+![集群架构](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F7d6e7d6a-8ca2-43c0-a6cd-c618dd21498e%2FUntitled.png?table=block&id=944458b0-6240-4b21-8406-9fb83b02ff85&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=1600&userId=&cache=v2)
 
 其**优化策略**为：
 
@@ -237,7 +237,7 @@ The difference between containers and VMs:
 
 #### 微服务架构
 
-![微服务架构](https://i.loli.net/2021/01/07/YXZaLGQUHmKqJ3x.png)
+![微服务架构](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F00a7e441-57dd-4231-bb2c-1305113a1abc%2FUntitled.png?table=block&id=4cedc10e-2c46-417a-b13c-fade77ce63cf&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=1600&userId=&cache=v2)
 
 微服务架构的**特性**包括：
 
@@ -276,7 +276,7 @@ The difference between containers and VMs:
 
 > Docker is an open-source project that automates the deployment of applications inside software containers, by providing an additional layer of abstraction and automation of operating system level virtualization on Linux.
 
-![](https://i.loli.net/2021/01/07/9dCsO4A3KhQcuHq.png)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F39258cfd-7764-4796-8656-a75a8e79728c%2FUntitled.png?table=block&id=ef35a176-8974-4d4c-be56-09ba9ff41af1&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=1600&userId=&cache=v2)
 
 **The concepts of Docker**:
 
@@ -416,7 +416,7 @@ Example of AMQP Support:
 
 > Kubernetes is a declarative language for launching containers, a highly collaborative open source project originally conceived by Google. Sometimes called k8s.
 
-![](https://i.loli.net/2021/01/07/oTBOcm9EsrMheUg.png)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F88f16286-0118-4058-832f-667f5a4bbd11%2FUntitled.png?table=block&id=6e06eaee-f904-4d8e-a239-9ee2e7c78481&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&userId=&cache=v2)
 
 当容器实例越来越多的时候，容器管理对于我们来说是灾难的，这时候就需要 Kubernetes 登场了！它是一款优秀的开源容器管理软件，能够帮助我们对容器进行部署发布编排等一系列操作。
 
@@ -457,7 +457,7 @@ Docker 是用来创建和管理容器的，当然现在也加入了很多高级�
 
 > What's middleware? The software layer that lies between the operating system and applications on each side of a distributed computing system in a network.
 
-![中间件](https://i.loli.net/2021/01/07/Fwg78CNjEuchsGa.png)
+![中间件](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fffa5957b-b535-4fb5-b1c0-af0f00c4f766%2FUntitled.png?table=block&id=6ef0d2db-2c0a-4ff3-8ef0-a4bd7e545288&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=1200&userId=&cache=v2)
 
 Middleware 的作用：
 
@@ -487,7 +487,7 @@ Some Amazon Platforms and Service Offerings:
 
 Many in industry use the terms fog computing and edge computing interchangeably. Both fog computing and edge computing involve pushing intelligence and processing capabilities down closer to where the data originates from pumps, motors, sensors, relays ...
 
-![](https://i.loli.net/2021/01/07/5znSY6VMrONGJpc.png)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F6eb0225f-a70b-49f7-8566-d3ba0ef89df7%2FUntitled.png?table=block&id=4bcbe85f-2727-47eb-8ca2-dbadad3c91f1&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=2050&userId=&cache=v2)
 
 Key difference between the two architectures is exactly where that intelligence and computing power is placed:
 
@@ -524,7 +524,7 @@ Serverless computing simply means that you, the developer, do not have to deal w
 
 A serverless computing platform like AWS Lambda allows you to build your code and deploy it without ever needing to configure or manage underlying servers. Your unit of deployment is your code; not the container that hosts the code, or the server that runs the code, but simply the code itself.
 
-![](https://i.loli.net/2021/01/07/nTehWr91tQ6HNaE.png)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F765829d0-120a-4163-ad24-efe5f93a67de%2FUntitled.png?table=block&id=39eb581f-69d3-41ce-b4e9-41dd799c095e&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=2750&userId=&cache=v2)
 
 ### Benefits
 
