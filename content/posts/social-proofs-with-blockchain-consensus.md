@@ -158,7 +158,7 @@ uint256 transportTicketIndex = 0;
 truffle migrate --reset --network ropsten # --reset optional
 ```
 
-![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F5928d8f3-1276-4d51-b640-4c051bc24a24%2FUntitled.png?table=block&id=e5f7c1be-4dba-46f6-950c-8ac7bfe58b1f&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=2430&userId=&cache=v2)
+![Truffle 三件套](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F5928d8f3-1276-4d51-b640-4c051bc24a24%2FUntitled.png?table=block&id=e5f7c1be-4dba-46f6-950c-8ac7bfe58b1f&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=2430&userId=&cache=v2)
 
 
 部署完毕之后，控制台中会出现智能合约的具体信息，包括被部署到的具体地址中，例如https://ropsten.etherscan.io/tx/address.

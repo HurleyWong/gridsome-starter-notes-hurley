@@ -148,7 +148,7 @@ ts 文件分为三层：
 
 这个插件的开源项目有两个主要分支，目前最新的分支是`3.x.x`，另外一个分支就是`master`。最开始，我认为应该使用`master`分支更为稳定，结果按照 README.md 的使用说明操作后，发现的确是将视频的 m3u8 文件下载下来了。然而不幸的是，它的格式并不与我们上面介绍的 m3u8 的格式一样。它的格式如下：
 
-![](https:/www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F5f8ac08b-b6ef-45da-bfc2-c7f827f39205%2FUntitled.png?table=block&id=8db041fb-803c-4da5-9383-6bd68b76535f&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=3260&userId=&cache=v2)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F5f8ac08b-b6ef-45da-bfc2-c7f827f39205%2FUntitled.png?table=block&id=8db041fb-803c-4da5-9383-6bd68b76535f&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=3260&userId=&cache=v2)
 
 可以发现，这应该是 Base64 解密后的文本。通过复制后进行 Base64 加密，我们发现仍然是一大串的文本，仍然不是传统的 m3u8 格式。
 

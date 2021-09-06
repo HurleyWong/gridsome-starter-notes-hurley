@@ -101,7 +101,7 @@ OpenStack 是一个开源的云计算管理平台项目，是一系列开源项�
 * directs workload within data centre
 * returns results to external client (hiding data centre internals from client)
 
-![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F0b470129-65a5-4c3f-88a3-5c29b5ec1337%2FUntitled.png?table=block&id=4a08514a-fc6f-4bf0-9d58-9e471d0b3b8d&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=2080&userId=&cache=v2)
+![负载均衡](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F0b470129-65a5-4c3f-88a3-5c29b5ec1337%2FUntitled.png?table=block&id=4a08514a-fc6f-4bf0-9d58-9e471d0b3b8d&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=2080&userId=&cache=v2)
 
 负载均衡是高可用网络架构的关键组件，通常用于将工作负载分布到多个服务器来提高网站应用、数据库或者其它服务的性能和可靠性。
 
@@ -119,9 +119,9 @@ OpenStack 是一个开源的云计算管理平台项目，是一系列开源项�
 
 ![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Ffed91edd-6db1-4986-b874-dfb1d8bc6f8e%2FUntitled.png?table=block&id=430dc9ce-2f23-4b5b-bec7-35156b6a403f&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=1440&userId=&cache=v2)
 
-当主负载均衡器发生了故障，就需要将用户请求转到第二个负载均衡器，因为 DNS 更改通常会较长的时间才会生效，因此需要解决 IP 地址重新映射的方法。所以，需要使用一个浮动 IP 的负载均衡架构示意图：
+当主负载均衡器发生了故障，就需要将用户请求转到第二个负载均衡器，因为 DNS 更改通常会较长的时间才会生效，因此需要解决 IP 地址重新映射的方法。所以，需要使用一个**浮动 IP 的负载均衡架构**示意图：
 
-![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F1dbe4747-dc12-4bde-93aa-0ccbb89cd853%2FUntitled.png?table=block&id=1c25b36b-e81f-4cf4-b353-eacfb6d22bd0&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=1440&userId=&cache=v2)
+![浮动 IP 的负载均衡架构](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F1dbe4747-dc12-4bde-93aa-0ccbb89cd853%2FUntitled.png?table=block&id=1c25b36b-e81f-4cf4-b353-eacfb6d22bd0&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=1440&userId=&cache=v2)
 
 
 #### 负载均衡算法
@@ -330,7 +330,7 @@ There are some problems that should be considering:
 * **Where** to migrate VMs?
   * VM placement algorithms
 
-具体的例子可以参考这篇之前的文章：[OpenNebula and Java OpenNebula Cloud API (OCA)](https://tech.hurley.fun/2020/03/opennebula-and-oca/)
+具体的例子可以参考这篇之前的文章：[OpenNebula and Java OpenNebula Cloud API (OCA)](https://blog.withh.life/2020/03/opennebula-and-oca/)
 
 ## 6. OpenNebula
 

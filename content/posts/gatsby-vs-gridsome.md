@@ -149,7 +149,7 @@ It also has some other differences from the RESTful API. We make RESTful API req
 
 There are too many features actually, and there is definitely no end to the introduction here. Look below, GraphQL is already being used by teams of all sizes. I highly recommend that since you have been experienced to Gatsby and Gridsome, you might as well learn about this simple and promising GraphQL!
 
-![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F7490423a-b150-4c35-81b0-fa29979e11e6%2FUntitled.png?table=block&id=4f97d5bc-c923-43a9-97db-11b61dd1be81&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=4230&userId=&cache=v2)
+![使用 GraphQL 的部分厂商](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F7490423a-b150-4c35-81b0-fa29979e11e6%2FUntitled.png?table=block&id=4f97d5bc-c923-43a9-97db-11b61dd1be81&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=4230&userId=&cache=v2)
 
 ## Which one is the Winner
 

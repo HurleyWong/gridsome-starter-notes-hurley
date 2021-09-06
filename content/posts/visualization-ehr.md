@@ -53,7 +53,7 @@ are how the world productionizes Python analytics.
 1. Open this Django project by Pycharm and type `python manage.py runserver` in the terminal.
 2. Enter `localhost:8080/datagrid` in the browser, upload the `test_data.csv` file in the `EHR_statistic_app` directory of this project, select `Program_Year` or `Payment_Year` in the top bar `Provider Name`, and then click the `Submit` button to see the visual analysis interface.
 
-![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F2d87e504-5d1b-46b4-915b-38dfd87b7120%2FUntitled.png?table=block&id=fc288b54-c144-4447-bf09-94f655f214b0&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=6270&userId=&cache=v2)
+![The Screenshot of Result for Visualization-EHRs](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F2d87e504-5d1b-46b4-915b-38dfd87b7120%2FUntitled.png?table=block&id=fc288b54-c144-4447-bf09-94f655f214b0&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=6270&userId=&cache=v2)
 
 ## Reference
 

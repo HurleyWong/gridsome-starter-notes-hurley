@@ -225,7 +225,7 @@ Puppet 是一个 IT 基础设施自动化管理工具，它能够帮助系统管
 
 Zabbix 是一个高度集成的网络监控解决方案，基于 web 界面，可以提供企业级的开源分布式监控解决方案。它能监控各种网络参数，保证服务器系统的安全运营，并提供灵活的通知机制让系统管理员快速定位、解决存在的各种问题。Zabbix 主要由 **zabbix server** 和 **zabbix agent**，以及可选组建 **zabbix proxy**。
 
-![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F8e7db5fb-c89e-4876-96ac-f649a378990f%2FUntitled.png?table=block&id=c6ff998f-180d-4304-b7ff-dacb172fe8a6&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=2070&userId=&cache=v2)
+![Zabbix 仪表盘截图](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F8e7db5fb-c89e-4876-96ac-f649a378990f%2FUntitled.png?table=block&id=c6ff998f-180d-4304-b7ff-dacb172fe8a6&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=2070&userId=&cache=v2)
 
 **优点**：
 
