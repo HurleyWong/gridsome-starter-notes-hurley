@@ -13,7 +13,7 @@
       {{ $static.metadata.siteName }}
     </h1>
 
-    <p class="author__intro">天上浮云似白衣，斯须改变如苍狗</p>
+    <p class="author__intro">当时只道是寻常</p>
 
     <p class="author__links">
       <!-- <g-link to="/"><font-awesome :icon="['fas', 'home']"/></g-link> -->
