@@ -1,7 +1,7 @@
 ---
 title: Paxos、Raft 和 PBFT 算法剖析
 date: 2021-02-04T21:00:00+08:00
-published: true
+published: false
 slug: paxos-raft-pbft
 tags:
 - Blockchain
