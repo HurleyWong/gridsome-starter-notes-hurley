@@ -13,12 +13,12 @@
       {{ $static.metadata.siteName }}
     </h1>
 
-    <p class="author__intro">当时只道是寻常</p>
+    <p class="author__intro">世事浮云何足问，不如高卧且加餐</p>
 
     <p class="author__links">
       <!-- <g-link to="/"><font-awesome :icon="['fas', 'home']"/></g-link> -->
       <g-link
-        href="//withh.life"
+        href="//hurleywong.com"
         target="_blank"
         v-tooltip="{ content: '🚀 Portfolio' }"
         ><font-awesome :icon="['fas', 'id-badge']"
