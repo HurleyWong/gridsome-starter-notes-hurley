@@ -8,7 +8,7 @@ const marked = require('marked')
     // const yaml = require('js-yaml')
 
 module.exports = {
-    siteUrl: 'https://blog.withh.life/',
+    siteUrl: 'https://blog.hurleywong.com/',
     siteName: "Hurley's Blog",
     siteDescription: '',
 
