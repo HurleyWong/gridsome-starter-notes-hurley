@@ -1,7 +1,7 @@
 ---
 title: 论文阅读：On Cycling Risk and Discomfort -- Urban Safety Mapping and Bike Route Recommendations
 date: 2021-02-02T21:00:00+08:00
-published: true
+published: false
 slug: cycling-risk-discomfort
 tags:
 - cycling

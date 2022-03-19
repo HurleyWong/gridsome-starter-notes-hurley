@@ -1,7 +1,7 @@
 ---
 title: Run Mice and Chase demo with BEAST
 date: 2020-04-01T21:00:00+08:00
-published: true
+published: false
 slug: mice-chase-beast
 tags:
 - bio-inspired

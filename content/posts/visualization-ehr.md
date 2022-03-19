@@ -1,7 +1,7 @@
 ---
 title: 论文实现：A visual data profiling tool for Electronic Health Records (EHRs) dataset
 date: 2021-02-17T21:00:00+08:00
-published: true
+published: false
 slug: visualization-ehr
 tags:
 - visualization

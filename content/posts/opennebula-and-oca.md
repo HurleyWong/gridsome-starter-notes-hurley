@@ -1,7 +1,7 @@
 ---
 title: OpenNebula and Java OpenNebula Cloud API (OCA)
 date: 2020-03-21T21:00:00+08:00
-published: true
+published: false
 slug: opennebula-and-oca
 tags:
 - cloud computing

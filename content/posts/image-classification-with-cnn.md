@@ -1,7 +1,7 @@
 ---
 title: Image Classification with Convolutional Neural Networks
 date: 2020-03-20T21:00:00+08:00
-published: true
+published: false
 slug: image-classification-cnn
 tags:
 - CNN

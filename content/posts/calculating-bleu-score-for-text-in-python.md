@@ -1,7 +1,7 @@
 ---
 title: 外文翻译：A Gentle Introduction to Calculating the BELU Score for Text in Python
 date: 2020-04-04T21:00:00+08:00
-published: true
+published: false
 slug: calculating-belu-for-text
 tags:
 - BLEU

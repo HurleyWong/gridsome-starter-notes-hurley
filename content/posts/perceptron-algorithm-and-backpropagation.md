@@ -1,7 +1,7 @@
 ---
 title: Perceptron Algorithm and Backpropagation with Iris Flower Data
 date: 2020-04-23T21:00:00+08:00
-published: true
+published: false
 slug: iris-perceptron-backpropagation
 tags:
 - perceptron

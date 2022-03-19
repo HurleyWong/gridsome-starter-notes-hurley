@@ -1,7 +1,7 @@
 ---
 title: Image Caption Generation with BLEU
 date: 2020-04-08T21:00:00+08:00
-published: true
+published: false
 slug: image-caption-generation
 tags:
 - RNN
