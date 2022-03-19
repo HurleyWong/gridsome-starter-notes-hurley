@@ -1,6 +1,6 @@
 <p align="center">
-  <a href="https://blog.hurleywong.com/">
-    <h2 align="center">Hurley's Blog</h2>
+  <a href="https://notes.hurleywong.com/">
+    <h2 align="center">Hurley's Notes</h2>
   </a>
 </p>
 
@@ -8,7 +8,7 @@
 
 ## Copyrights
 
-This article blog is developed and designed by [spencerwooo](https://github.com/spencerwooo/blog) and Gridsome's official template [gridsome-starter-blog](https://github.com/gridsome/gridsome-starter-blog). Thanks for their excellent blog starter templates.
+This website is developed and designed by [spencerwooo](https://github.com/spencerwooo/blog) and Gridsome's official template [gridsome-starter-blog](https://github.com/gridsome/gridsome-starter-blog). Thanks for their excellent blog starter templates.
 
 ## Install Locally
 
@@ -20,7 +20,7 @@ npm install --global @gridsome/cli
 
 ### 2. Install this blog starter
 
-1. `gridsome create your-own-name https://github.com/HurleyWong/gridsome-starter-blog-hurley`
+1. `gridsome create your-own-name https://github.com/HurleyWong/gridsome-starter-notes-hurley`
 2. `cd your-own-name` to open folder
 3. `gridsome develop` to start local dev server at http://localhost:8080
 4. Happy coding by yourself 🎉
