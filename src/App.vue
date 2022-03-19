@@ -27,7 +27,7 @@
         Runs on <font-awesome :icon="['fas', 'rocket']" />
         <a href="//gridsome.org">Gridsome</a> . Deployed on
         <font-awesome :icon="['fas', 'caret-square-up']" /><a
-          href="//app.netlify.com/sites/blog-hurley/"
+          href="//app.netlify.com/sites/notes-hurley/"
           >Netlify</a
         >.
       </div>
